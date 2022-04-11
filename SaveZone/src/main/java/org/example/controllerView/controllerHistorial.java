@@ -67,6 +67,7 @@ public class controllerHistorial {
 
         Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
         myStage.close();
+        
 
     }
 
