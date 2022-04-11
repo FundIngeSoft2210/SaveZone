@@ -34,7 +34,7 @@ public class controllerAcceder {
 
     @FXML
     void olvidoContraseña(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Vista_olvidasteContraseña.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Vista_olvidasteContrasena.fxml"));
         Parent root = loader.load();
         controllerRecuperarContraseña controllerRecuperarContraseña = loader.getController();
         Scene scene = new Scene(root);
