@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="766.0" style="-fx-background-color: #f4f1f1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="46.0" prefWidth="766.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="67.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@4.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="Button_Nuevo" layoutX="170.0" layoutY="12.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Nuevo" />
+            <Button fx:id="Button_ProductosPopulares" layoutX="376.0" layoutY="12.0" mnemonicParsing="false" style="-fx-background-color: #3fdfd4;" text="Populares" />
+            <ComboBox fx:id="Categorías" layoutX="245.0" layoutY="12.0" prefHeight="26.0" prefWidth="116.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;" />
+            <TextField fx:id="BuscarProducto" layoutX="530.0" layoutY="13.0" prefHeight="26.0" prefWidth="178.0" promptText="             Search" style="-fx-background-color: #f4f1f1;" />
+            <ImageView fitHeight="26.0" fitWidth="33.0" layoutX="501.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@LUPA.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="26.0" fitWidth="39.0" layoutX="694.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@canasta.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="64.0" layoutY="97.0" prefHeight="407.0" prefWidth="366.0" style="-fx-background-color: #3fdfd4;">
+         <children>
+            <AnchorPane layoutY="-2.0" prefHeight="36.0" prefWidth="372.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="14.0" layoutY="9.0" text="1. Tus datos">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="99.0" prefHeight="36.0" prefWidth="372.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="14.0" layoutY="9.0" text="2. Seleccione el medio de Pago">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <SplitPane dividerPositions="0.5" layoutY="135.0" orientation="VERTICAL" prefHeight="272.0" prefWidth="372.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #3fdfd4;">
+                     <children>
+                        <Button fx:id="visa" layoutX="122.0" layoutY="23.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="62.0" style="-fx-background-color: WHITE;">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@visa.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="MC" layoutX="212.0" layoutY="23.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="62.0" style="-fx-background-color: WHITE;">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@MC.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="Codensa" layoutX="295.0" layoutY="24.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" />
+                        <ImageView fitHeight="36.0" fitWidth="78.0" layoutX="298.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@codensa.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="14.0" layoutY="14.0" prefHeight="54.0" prefWidth="99.0" text="Tarjeta de crédito" textAlignment="CENTER" />
+                        <Label layoutX="30.0" layoutY="33.0" prefHeight="54.0" prefWidth="58.0" text="o débito" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="151.0" prefWidth="370.0" style="-fx-background-color: #3fdfd4;">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" prefHeight="54.0" prefWidth="99.0" text="Débito bancario" textAlignment="CENTER" />
+                        <Label layoutX="36.0" layoutY="27.0" prefHeight="54.0" prefWidth="99.0" text="PSE" textAlignment="CENTER" />
+                        <Button fx:id="PSE" layoutX="113.0" layoutY="26.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="69.0" style="-fx-background-color: WHITE;">
+                           <graphic>
+                              <ImageView fitHeight="48.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@PSE.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label layoutX="194.0" layoutY="32.0" text="Recuerda verificar el monto" textAlignment="CENTER" />
+                        <Label layoutX="194.0" layoutY="45.0" text="máximo que tienes habilitado" textAlignment="CENTER" />
+                        <Label layoutX="194.0" layoutY="59.0" text="para pagos por internet." textAlignment="CENTER" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+            <Label layoutX="59.0" layoutY="42.0" prefHeight="26.0" prefWidth="156.0" text="Natalia Gaona Salamanca" />
+            <Label layoutX="58.0" layoutY="62.0" prefHeight="26.0" prefWidth="156.0" text="tatis.gaona1942@gmail.com" />
+            <ImageView fitHeight="36.0" fitWidth="31.0" layoutX="14.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@persona.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="480.0" layoutY="160.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="495.0" layoutY="160.0" prefHeight="199.0" prefWidth="226.0" style="-fx-background-color: #3fdfd4;">
+         <children>
+            <AnchorPane prefHeight="36.0" prefWidth="226.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="14.0" layoutY="9.0" text="Resumen de la compra">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label layoutY="74.0" text="Referencia: 22831483125846" />
+            <Label layoutY="92.0" text="Descripción: SafeZone #22831483125846" />
+            <Label layoutY="122.0" text="Total compra..................................13'000.000" />
+            <Label layoutX="2.0" layoutY="140.0" text="IVA.......................................................1'000.000" />
+            <Label layoutX="1.0" layoutY="158.0" text="Total ...................................................12'000.000" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
