@@ -63,11 +63,6 @@
                               <Image url="@LUPA.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="26.0" fitWidth="39.0" layoutX="694.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@canasta.png" />
-                           </image>
-                        </ImageView>
                         <Avatar layoutX="458.0" layoutY="8.0" />
                      </children>
                   </AnchorPane>
@@ -75,11 +70,11 @@
                   <Button layoutX="108.0" layoutY="276.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="69.0" text="Atras" />
                   <ImageView fitHeight="480.0" fitWidth="758.0" layoutX="4.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../../../../Imagenes/12.PNG" />
+                        <Image url="@12.PNG" />
                      </image>
                   </ImageView>
                   <Button layoutX="239.0" layoutY="363.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="149.0" style="-fx-background-color: #3fdfd4;" text="Aceptar" />
-                  <Button layoutX="397.0" layoutY="363.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="142.0" text="Cancelar" />
+                  <Button layoutX="392.0" layoutY="363.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="150.0" text="Cancelar" />
                </children>
             </AnchorPane>
          </children>
