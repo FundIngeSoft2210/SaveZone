@@ -12,7 +12,7 @@
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerAnadirProducto">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="942.0" style="-fx-background-color: #f4f1f1;">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="941.0" style="-fx-background-color: #f4f1f1;">
          <children>
             <AnchorPane prefHeight="61.0" prefWidth="942.0" style="-fx-background-color: white;">
                <children>
@@ -43,32 +43,23 @@
                   </Button>
                </children>
             </AnchorPane>
-            <TextField fx:id="Descripcion_Producto" alignment="TOP_LEFT" layoutX="550.0" layoutY="381.0" prefHeight="139.0" prefWidth="342.0" promptText="Descripción" style="-fx-background-color: #efecec;" />
-            <ComboBox fx:id="Categoria" layoutX="221.0" layoutY="367.0" prefHeight="29.0" prefWidth="208.0" promptText="Categoría" style="-fx-background-color: #efecec;" />
-            <Button fx:id="Button_Anadir" layoutX="345.0" layoutY="552.0" mnemonicParsing="false" onAction="#AnadirProducto" prefHeight="36.0" prefWidth="132.0" style="-fx-background-color: #1f55a6;" text="Agregar Producto" textFill="#edf7f0">
+            <AnchorPane layoutX="301.0" layoutY="132.0" prefHeight="98.0" prefWidth="338.0" style="-fx-background-color: white;">
+               <children>
+                  <Button fx:id="Producto" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="86.0" prefWidth="328.0" style="-fx-background-color: white;" />
+                  <Label fx:id="NombreProducto" layoutX="185.0" layoutY="35.0" text=" Cámara Samsung" />
+                  <ImageView fx:id="ImagenProducto" fitHeight="81.0" fitWidth="145.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@1.PNG" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Label layoutX="369.0" layoutY="74.0" text="Tus Productos">
                <font>
-                  <Font size="13.0" />
-               </font>
-            </Button>
-            <Button fx:id="Button_Cancelar" layoutX="550.0" layoutY="552.0" mnemonicParsing="false" onAction="#Cancelar" prefHeight="36.0" prefWidth="99.0" text="Cancelar">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Button>
-            <TextField fx:id="Precio" alignment="TOP_LEFT" layoutX="221.0" layoutY="411.0" prefHeight="26.0" prefWidth="168.0" promptText="Precio $" style="-fx-background-color: #efecec;" />
-            <TextField fx:id="Nombre_Producto" alignment="TOP_LEFT" layoutX="221.0" layoutY="322.0" prefHeight="36.0" prefWidth="190.0" promptText="Nombre Del Producto" style="-fx-background-color: #efecec;" />
-            <Button fx:id="subir_Producto" layoutX="273.0" layoutY="217.0" mnemonicParsing="false" onAction="#SubirImagenProducto" prefHeight="47.0" prefWidth="156.0" text="Subir imagen" />
-            <TextField fx:id="Nombre_Producto11" alignment="TOP_LEFT" layoutX="550.0" layoutY="129.0" prefHeight="36.0" prefWidth="99.0" promptText="Peso (50 kg)" style="-fx-background-color: #efecec;" />
-            <TextField fx:id="Nombre_Producto111" alignment="TOP_LEFT" layoutX="550.0" layoutY="181.0" prefHeight="36.0" prefWidth="99.0" promptText="Alto (150 cm)" style="-fx-background-color: #efecec;" />
-            <TextField fx:id="Nombre_Producto1111" alignment="TOP_LEFT" layoutX="221.0" layoutY="451.0" prefHeight="36.0" prefWidth="190.0" promptText="Porcentaje Descuento" style="-fx-background-color: #efecec;" />
-            <TextField fx:id="Nombre_Producto1112" alignment="TOP_LEFT" layoutX="550.0" layoutY="231.0" prefHeight="36.0" prefWidth="99.0" promptText="Ancho (150 cm)" style="-fx-background-color: #efecec;" />
-            <TextField fx:id="Nombre_Producto1113" alignment="TOP_LEFT" layoutX="550.0" layoutY="277.0" prefHeight="36.0" prefWidth="99.0" promptText="Largo (150 cm)" style="-fx-background-color: #efecec;" />
-            <TextField fx:id="Nombre_Producto1" alignment="TOP_LEFT" layoutX="549.0" layoutY="322.0" prefHeight="36.0" prefWidth="190.0" promptText="Cantidad" style="-fx-background-color: #efecec;" />
-            <Label layoutX="389.0" layoutY="80.0" text="Añadir Producto">
-               <font>
-                  <Font name="System Bold Italic" size="21.0" />
+                  <Font name="System Bold Italic" size="31.0" />
                </font>
             </Label>
+            <Button fx:id="Button_AnadirProductos" layoutX="408.0" layoutY="378.0" mnemonicParsing="false" onAction="#anadirProductos" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: #3fdfd4;" text="Añadir Producto" />
          </children>
       </AnchorPane>
    </children>
