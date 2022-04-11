@@ -1,5 +1,8 @@
 package org.example.Entidades.Usuarios;
 
+import java.util.*;
+import java.text.*;
+
 public class Administrador extends Usuario{
     private int nivelAdmin;
 
@@ -13,14 +16,14 @@ public class Administrador extends Usuario{
      * @param fechaNac: Fecha de nacimiento del usuario
      * @param telefono: Numero de telefono del usuario
      * @param direccion: Dirección de residencia del usuario
-     * @param nivelAdmin
+     * @param nivelAdmin: Indica el tipo de administrador
      */
-    public  Administrador (String nombre, String apellido, String usuario, String contraseña, String correo,
+    public  Administrador (String nombre, String apellido, String usuario, String contrasena, String correo,
                    Date fechaNac, String telefono, String direccion, int nivelAdmin){
         this.nombre = nombre;
         this.apellido = apellido;
         this.usuario = usuario;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
         this.correo = correo;
         this.fechaNac = fechaNac;
         this.telefono = telefono;

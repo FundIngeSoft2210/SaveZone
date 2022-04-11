@@ -1,7 +1,6 @@
 package org.example.Entidades.Usuarios;
 
 import java.text.SimpleDateFormat;
-import java.io.*;
 import java.util.*;
 
 public class Usuario {
@@ -11,10 +10,13 @@ public class Usuario {
     protected String contrasena;
     protected String correo;
     protected Date fechaNac;
-    protected Date fechaReg;
+    protected String fechaReg;
     protected String telefono;
     protected String direccion;
 
+    public Usuario(){
+
+    }
     /**
      * @summary Método creador de un usuario a partir de la información capturada en la pantalla de registro
      * @param nombre: Nombre(s) del usuario registrado
@@ -89,11 +91,11 @@ public class Usuario {
         this.fechaNac = fechaNac;
     }
 
-    public Date getFechaReg() {
+    public String getFechaReg() {
         return fechaReg;
     }
 
-    public void setFechaReg(Date fechaReg) {
+    public void setFechaReg(String fechaReg) {
         this.fechaReg = fechaReg;
     }
 
