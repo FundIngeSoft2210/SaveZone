@@ -16,8 +16,11 @@ public class ControladorPropiedades {
             properties.setProperty("usuarioBD", "root");
             properties.setProperty("contrasenaBD", "1234");
             properties.setProperty("driverBD", "jdbc:mysql://localhost:3306/safezone_db");
+            properties.setProperty("classDriver", "com.mysql.cj.jdbc.Driver");
+            properties.setProperty("ultimoUser", "");
 
-            properties.store(outputStream, "Config");
+            properties.store(outputStream, "Configuración aplicación SafeZone");
+
             return true;
         } catch (Exception e) {
             System.out.println("[Error al crear archivo properties] " + e.getStackTrace());
@@ -36,6 +39,21 @@ public class ControladorPropiedades {
         } catch (Exception e) {
             System.out.println("[Error al obtener property " + propiedad + "] " + e.getStackTrace());
             return null;
+        }
+    }
+
+    public boolean setPropiedad(String propiedad, String valor) {
+        try {
+            if (!existeArchivo()) return false;
+
+            Properties properties = new Properties();
+            properties.load(new FileReader(NOMBRE_ARCHIVO));
+            properties.setProperty(propiedad, valor);
+
+            return true;
+        } catch (Exception e) {
+            System.out.println("[Error al almacenar property " + propiedad + ":" + valor + "] " + e.getStackTrace());
+            return false;
         }
     }
 
