@@ -10,22 +10,14 @@ public class ControladorBD {
         return conexionEstablecida;
     }
 
-    public void conectarBD() {
-        try {
-            ControladorPropiedades controladorPropiedades = new ControladorPropiedades();
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(controladorPropiedades.getPropiedad("driverBD"), controladorPropiedades.getPropiedad("usuarioBD"), controladorPropiedades.getPropiedad("contrasenaBD"));
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM USUARIO");
-            System.out.println("[!] Conexion exitosa a la base de datos.");
-            conexionEstablecida = true;
-        } catch (SQLException e) {
-            System.out.print("[SQL] " + e.getStackTrace());
-            conexionEstablecida = false;
-        } catch (Exception e) {
-            System.out.print("[Error al conectar a la base de datos] " + e.getStackTrace());
-            conexionEstablecida = false;
-        }
+    public void conectarBD() throws SQLException, ClassNotFoundException {
+        ControladorPropiedades controladorPropiedades = new ControladorPropiedades();
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection con = DriverManager.getConnection(controladorPropiedades.getPropiedad("driverBD"), controladorPropiedades.getPropiedad("usuarioBD"), controladorPropiedades.getPropiedad("contrasenaBD"));
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM USUARIO");
+        System.out.println("[!] Conexion exitosa a la base de datos.");
+        conexionEstablecida = true;
     }
 
     public ResultSet ejecutarQuery (String query) {
