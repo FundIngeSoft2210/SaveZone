@@ -77,7 +77,7 @@ public class Usuario {
     }
 
     public void setContrasena(String contrasena) {
-        this.contrasena = this.contrasena;
+        this.contrasena = contrasena;
     }
 
     public String getCorreo() {
