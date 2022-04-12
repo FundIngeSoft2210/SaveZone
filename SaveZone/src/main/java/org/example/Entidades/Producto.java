@@ -17,6 +17,35 @@ public class Producto {
     private String color;
 
     /**
+     * @param vendedor: Es el vendedor que publicó el producto
+     * @param nombre: Es el nombre del producto
+     * @param cantidad: Indica la cantidad de producto que hay disponible
+     * @param descripcion: Breve descripción del producto publicado
+     * @param peso: Peso en kgs de cada unidad de producto
+     * @param valor: Valor en pesos de la unidad de cada producto
+     * @param porcentajeDesc: Indica si hay un porcentaje de descuento en el pedido
+     * @param alto: Alto de cada unidad en centimetros
+     * @param largo: Largo de cada unidad en centimetros
+     * @param ancho: Ancho de cada unidad en centimetros
+     * @param color: Color del producto
+     */
+    public Producto(Usuario vendedor, String nombre, int cantidad, String descripcion,
+                    float peso, int valor, int porcentajeDesc, float alto, float largo,
+                    float ancho, String color) {
+        this.vendedor = vendedor;
+        this.nombre = nombre;
+        this.cantidad = cantidad;
+        this.descripcion = descripcion;
+        this.peso = peso;
+        this.valor = valor;
+        this.porcentajeDesc = porcentajeDesc;
+        this.alto = alto;
+        this.largo = largo;
+        this.ancho = ancho;
+        this.color = color;
+    }
+
+    /**
      * @summary Método creador de un producto a partir de información ingresada por el usuario
      * @param cantidad: Cantidad de elementos disponibles del mismo producto
      * @param descripcion: Descripcion breve del producto
@@ -28,18 +57,7 @@ public class Producto {
      * @param ancho: Ancho en cms del producto
      * @param color: Color del producto publicado
      */
-    public Producto(int cantidad, String descripcion, float peso, int valor, int porcentajeDesc,
-                    float alto, float largo, float ancho, String color) {
-        this.cantidad = cantidad;
-        this.descripcion = descripcion;
-        this.peso = peso;
-        this.valor = valor;
-        this.porcentajeDesc = porcentajeDesc;
-        this.alto = alto;
-        this.largo = largo;
-        this.ancho = ancho;
-        this.color = color;
-    }
+
 
     public int getIdProducto() {return idProducto; }
 
