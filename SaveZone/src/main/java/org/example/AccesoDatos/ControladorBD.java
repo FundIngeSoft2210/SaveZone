@@ -26,17 +26,19 @@ public class ControladorBD {
     }
 
     public ResultSet ejecutarConsulta(String query) throws SQLException, ClassNotFoundException {
+        ControladorPropiedades controladorPropiedades = new ControladorPropiedades();
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/safezone_db", "root", "1234");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/safezone_db", controladorPropiedades.getPropiedad("usuarioBD"), controladorPropiedades.getPropiedad("contrasenaBD"));
         Statement stmt = con.createStatement();
         ResultSet resultSet = stmt.executeQuery(query);
-        resultSet.next();
+        if (!resultSet.next()) return null;
         return resultSet;
     }
 
     public int ejecutarInsert(String insert) throws SQLException, ClassNotFoundException {
+        ControladorPropiedades controladorPropiedades = new ControladorPropiedades();
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/safezone_db", "root", "1234");
+        Connection con = DriverManager.getConnection(controladorPropiedades.getPropiedad("driverBD"), controladorPropiedades.getPropiedad("usuarioBD"), controladorPropiedades.getPropiedad("contrasenaBD"));
         Statement stmt = con.createStatement();
         return stmt.executeUpdate(insert);
     }
@@ -77,8 +79,7 @@ public class ControladorBD {
         if (resultSet == null) return null;
 
         do {
-            Producto nuevoProducto = null;
-
+            Producto nuevoProducto = new Producto();
             nuevoProducto.setIdProducto(resultSet.getInt(1));
             nuevoProducto.setVendedor(obtenerUsuariosConsulta(ejecutarConsulta("SELECT * FROM USUARIO WHERE ID = " + resultSet.getInt(2))).get(0));
             nuevoProducto.setCantidad(resultSet.getInt(3));
