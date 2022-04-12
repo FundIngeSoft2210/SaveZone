@@ -30,6 +30,9 @@ public class Main {
 
         try {
                 gestionUsuario.crearUsuario(usuarioPrueba);
+                usuarioPrueba.setContrasena("Laura123");
+                usuarioPrueba.setTelefono("6969");
+                gestionUsuario.modificarUsuario(usuarioPrueba);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
