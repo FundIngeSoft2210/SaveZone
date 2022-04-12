@@ -13,10 +13,13 @@ public class Usuario {
     protected String fechaReg;
     protected String telefono;
     protected String direccion;
+    protected Integer ciudadID;
 
-    public Usuario(){
+    public Usuario() {
 
     }
+
+
     /**
      * @summary Método creador de un usuario a partir de la información capturada en la pantalla de registro
      * @param nombre: Nombre(s) del usuario registrado
@@ -27,9 +30,10 @@ public class Usuario {
      * @param fechaNac: Fecha de nacimiento del usuario
      * @param telefono: Numero de telefono del usuario
      * @param direccion: Dirección de residencia del usuario
+     * @param ciudadID: ID de Ciudad del usuario
      */
     public Usuario(String nombre, String apellido, String usuario, String contrasena, String correo,
-                   Date fechaNac, String telefono, String direccion){
+                   Date fechaNac, String telefono, String direccion, Integer ciudadID){
         this.nombre = nombre;
         this.apellido = apellido;
         this.usuario = usuario;
@@ -41,6 +45,7 @@ public class Usuario {
         Date fecha = new Date();
         fechaReg = new SimpleDateFormat("dd-MM-yyyy").format(fecha);
         setFechaReg(fechaReg);
+        this.ciudadID = ciudadID;
     }
 
     public String getNombre() {
@@ -113,5 +118,28 @@ public class Usuario {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public Integer getCiudadID() {
+        return ciudadID;
+    }
+
+    public void setCiudadID(Integer ciudadID) {
+        this.ciudadID = ciudadID;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", usuario='" + usuario + '\'' +
+                ", contrasena='" + contrasena + '\'' +
+                ", correo='" + correo + '\'' +
+                ", fechaNac=" + fechaNac +
+                ", fechaReg='" + fechaReg + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", direccion='" + direccion + '\'' +
+                '}';
     }
 }
