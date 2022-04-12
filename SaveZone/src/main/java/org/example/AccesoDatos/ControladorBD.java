@@ -109,8 +109,8 @@ public class ControladorBD {
         do {
             Categoria nuevaCategoria = new Categoria();
             nuevaCategoria.setID(resultSet.getInt(1));
-            nuevaCategoria.setNombre(resultSet.getString(1));
-            nuevaCategoria.setDescripcion(resultSet.getString(1));
+            nuevaCategoria.setNombre(resultSet.getString(2));
+            nuevaCategoria.setDescripcion(resultSet.getString(3));
             categorias.add(nuevaCategoria);
         } while (resultSet.next());
         return categorias;
