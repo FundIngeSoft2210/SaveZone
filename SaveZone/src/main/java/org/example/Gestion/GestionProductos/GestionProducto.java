@@ -9,7 +9,10 @@ public class GestionProducto {
     ControladorBD controladorBD = new ControladorBD();
     public boolean crearProducto(Producto nuevoProducto){
         String queryInsert = null;
+        System.out.println("");
         try {
+            if(controladorBD.ejecutarConsulta("SELECT * FROM `safezone_db`.`producto` WHERE TITULO = '" + nuevoProducto.getTitulo() + "' AND VENDEDORID = " +
+                                                    nuevoProducto.getVendedor().getId())!=null) return false;
             queryInsert = "INSERT INTO `safezone_db`.`producto` (`Titulo`, `Cantidad`, `Descripcion`, `Peso`, `Valor`, " +
                     "`PorcentajeDescuento`, `Alto`, `Largo`, `Ancho`, `Color`, `VendedorID`, `EstadoProductoID`, `CiudadID`, `CategoriaID`) VALUES " +
                     "('" + nuevoProducto.getTitulo() + "', " + nuevoProducto.getCantidad() + ", '" + nuevoProducto.getDescripcion() + "', " +
@@ -31,18 +34,20 @@ public class GestionProducto {
         }
     }
 
-    public boolean modificarProducto (Producto productoModificar){
+    public boolean modificarProducto (Producto productoModificar, String tituloAnt){
         String insert = null;
         try {
+            if(controladorBD.ejecutarConsulta("SELECT * FROM `safezone_db`.`producto` WHERE TITULO = '" + productoModificar.getTitulo() + "' AND VENDEDORID = " +
+                    productoModificar.getVendedor().getId())!=null) return false;
             insert = "UPDATE `safezone_db`.`producto` SET TITULO = " +
                     "'" + productoModificar.getTitulo() + "', CANTIDAD = " + productoModificar.getCantidad() + ", DESCRIPCION = '" + productoModificar.getDescripcion() +
-                    "', PESO = " + productoModificar.getPeso() + ", VALOR = " + productoModificar.getValor() + ", PORCENTAJEDESC = " +
+                    "', PESO = " + productoModificar.getPeso() + ", VALOR = " + productoModificar.getValor() + ", PORCENTAJEDESCUENTO = " +
                     productoModificar.getPorcentajeDesc() + ", ALTO = " + productoModificar.getAlto() + ", LARGO = " + productoModificar.getLargo() + ", ANCHO = " + productoModificar.getAncho()
                     + ", COLOR = '" + productoModificar.getColor() + "', CIUDADID = " + productoModificar.getCiudadID() + ", ESTADOPRODUCTOID = " + productoModificar.getEstadoProductoID() +
-                    " WHERE TITULO = '" + productoModificar.getTitulo() + "' AND VENDEDORID = " + productoModificar.getVendedor().getId();
-            //System.out.println(queryInsert);
+                    " WHERE TITULO = '" + tituloAnt + "' AND VENDEDORID = " + productoModificar.getVendedor().getId();
+            System.out.println(insert);
             controladorBD.ejecutarInsert(insert);
-            System.out.println("[!] Usuario modificado (ID: " + productoModificar.getIdProducto() + ")");
+            System.out.println("[!] Producto modificado (ID: " + productoModificar.getIdProducto() + ")");
             return true;
         } catch (SQLException e) {
             System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());

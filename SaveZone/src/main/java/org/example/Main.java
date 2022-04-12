@@ -35,11 +35,16 @@ public class Main {
         Producto productoPrueba = null;
         try {
             if (!gestionUsuario.crearUsuario(usuarioPrueba))
-                usuarioPrueba = gestionUsuario.autenticarUsuario(usuarioPrueba.getUsuario(), usuarioPrueba.getContrasena());
+            for (Producto producto : controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO"))) {
+                System.out.println(producto.toString());
+            }
+                //gestionUsuario.recuperarContrasena("nicolasd-cubillos", "nicolasdavidcubillos@gmail.com");
+
             Categoria categoriaPrueba = controladorBD.obtenerCategoriaConsulta(controladorBD.ejecutarConsulta("SELECT * FROM CATEGORIA")).get(13);
             productoPrueba = new Producto(usuarioPrueba, "Flores rojas", 15, "Muchas flores rojas", 5.5f, 50000, 3, 5f, 5f, 5f, "Rojo", 1, categoriaPrueba);
             gestionProducto.crearProducto(productoPrueba);
             //gestionUsuario.recuperarContrasena("nicolasd-cubillos", "nicolasdavidcubillos@gmail.com");
+
         } catch (Exception e) {
             e.printStackTrace();
         }
