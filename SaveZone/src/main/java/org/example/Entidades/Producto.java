@@ -4,7 +4,7 @@ import org.example.Entidades.Usuarios.Usuario;
 
 public class Producto {
     private int idProducto;
-    private Usuario usuario;
+    private Usuario vendedor;
     private String nombre;
     private int cantidad;
     private String descripcion;
@@ -45,9 +45,9 @@ public class Producto {
 
     public void setIdProducto(int idProducto) { this.idProducto = idProducto; }
 
-    public Usuario getUsuario() {return usuario; }
+    public Usuario getVendedor() { return vendedor; }
 
-    public void setUsuario(Usuario usuario) { this.usuario = usuario; }
+    public void setVendedor(Usuario vendedor) { this.vendedor = vendedor; }
 
     public String getNombre() { return nombre; }
 
