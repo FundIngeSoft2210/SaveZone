@@ -1,6 +1,11 @@
 package org.example.Entidades;
 
+import org.example.Entidades.Usuarios.Usuario;
+
 public class Producto {
+    private int idProducto;
+    private Usuario usuario;
+    private String nombre;
     private int cantidad;
     private String descripcion;
     private float peso;
@@ -35,6 +40,18 @@ public class Producto {
         this.ancho = ancho;
         this.color = color;
     }
+
+    public int getIdProducto() {return idProducto; }
+
+    public void setIdProducto(int idProducto) { this.idProducto = idProducto; }
+
+    public Usuario getUsuario() {return usuario; }
+
+    public void setUsuario(Usuario usuario) { this.usuario = usuario; }
+
+    public String getNombre() { return nombre; }
+
+    public void setNombre(String nombre) { this.nombre = nombre; }
 
     public int getCantidad() {
         return cantidad;
