@@ -35,8 +35,8 @@ public class Main {
         try {
             if (!gestionUsuario.crearUsuario(usuarioPrueba))
                 usuarioPrueba = gestionUsuario.autenticarUsuario(usuarioPrueba.getUsuario(), usuarioPrueba.getContrasena());
-            productoPrueba = new Producto(usuarioPrueba, "Flores rojas", 15, "Muchas flores rojas", 5.5f, 50000, 3, 5f, 5f, 5f, "Rojo", 1, 1);
-            gestionProducto.crearProducto(productoPrueba);
+                productoPrueba = new Producto(usuarioPrueba, "Flores rojas", 15, "Muchas flores rojas", 5.5f, 50000, 3, 5f, 5f, 5f, "Rojo", 1, 1);
+                gestionProducto.crearProducto(productoPrueba);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
