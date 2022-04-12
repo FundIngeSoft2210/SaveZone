@@ -1,6 +1,5 @@
 package org.example;
 
-import org.apache.commons.codec.digest.DigestUtils;
 import org.example.AccesoDatos.ControladorBD;
 import org.example.AccesoDatos.ControladorPropiedades;
 import org.example.Entidades.Producto;
