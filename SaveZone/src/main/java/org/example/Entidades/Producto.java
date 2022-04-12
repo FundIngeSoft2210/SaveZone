@@ -3,20 +3,24 @@ package org.example.Entidades;
 import org.example.Entidades.Usuarios.Usuario;
 
 public class Producto {
-    private int idProducto;
+    private Integer idProducto;
     private Usuario vendedor;
     private String nombre;
-    private int cantidad;
+    private Integer cantidad;
     private String descripcion;
-    private float peso;
-    private int valor;
-    private int porcentajeDesc;
-    private float alto;
-    private float largo;
-    private float ancho;
+    private Float peso;
+    private Integer valor;
+    private Integer porcentajeDesc;
+    private Float alto;
+    private Float largo;
+    private Float ancho;
     private String color;
+    private Integer ciudadID;
+    private Integer estadoProductoID;
+    private Integer categoriaID;
 
     /**
+     * @summary Método creador de un producto a partir de información ingresada por el usuario
      * @param vendedor: Es el vendedor que publicó el producto
      * @param nombre: Es el nombre del producto
      * @param cantidad: Indica la cantidad de producto que hay disponible
@@ -28,10 +32,13 @@ public class Producto {
      * @param largo: Largo de cada unidad en centimetros
      * @param ancho: Ancho de cada unidad en centimetros
      * @param color: Color del producto
+     * @param ciudadID: Ciudad a la que pertenece el producto
+     * @param estadoProductoID: Estado actual del producto
+     * @param categoriaID: Categoria a la que pertenece el producto
      */
-    public Producto(Usuario vendedor, String nombre, int cantidad, String descripcion,
-                    float peso, int valor, int porcentajeDesc, float alto, float largo,
-                    float ancho, String color) {
+    public Producto(Usuario vendedor, String nombre, Integer cantidad, String descripcion,
+                    Float peso, Integer valor, Integer porcentajeDesc, Float alto, Float largo,
+                    Float ancho, String color, Integer ciudadID, Integer categoriaID) {
         this.vendedor = vendedor;
         this.nombre = nombre;
         this.cantidad = cantidad;
@@ -43,25 +50,14 @@ public class Producto {
         this.largo = largo;
         this.ancho = ancho;
         this.color = color;
+        this.ciudadID = ciudadID;
+        this.categoriaID = categoriaID;
+        estadoProductoID = porcentajeDesc > 0 ? 5 : 1;
     }
 
-    /**
-     * @summary Método creador de un producto a partir de información ingresada por el usuario
-     * @param cantidad: Cantidad de elementos disponibles del mismo producto
-     * @param descripcion: Descripcion breve del producto
-     * @param peso: Peso del producto en kg
-     * @param valor: Costo individual del producto
-     * @param porcentajeDesc: Indica si el dueño del producto desea agragar algún descuento en caso de compra
-     * @param alto: Alto en cms del producto
-     * @param largo: Largo en cms del producto
-     * @param ancho: Ancho en cms del producto
-     * @param color: Color del producto publicado
-     */
+    public Integer getIdProducto() {return idProducto; }
 
-
-    public int getIdProducto() {return idProducto; }
-
-    public void setIdProducto(int idProducto) { this.idProducto = idProducto; }
+    public void setIdProducto(Integer idProducto) { this.idProducto = idProducto; }
 
     public Usuario getVendedor() { return vendedor; }
 
@@ -71,11 +67,11 @@ public class Producto {
 
     public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public int getCantidad() {
+    public Integer getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(int cantidad) {
+    public void setCantidad(Integer cantidad) {
         this.cantidad = cantidad;
     }
 
@@ -87,51 +83,51 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public float getPeso() {
+    public Float getPeso() {
         return peso;
     }
 
-    public void setPeso(float peso) {
+    public void setPeso(Float peso) {
         this.peso = peso;
     }
 
-    public int getValor() {
+    public Integer getValor() {
         return valor;
     }
 
-    public void setValor(int valor) {
+    public void setValor(Integer valor) {
         this.valor = valor;
     }
 
-    public int getPorcentajeDesc() {
+    public Integer getPorcentajeDesc() {
         return porcentajeDesc;
     }
 
-    public void setPorcentajeDesc(int porcentajeDesc) {
+    public void setPorcentajeDesc(Integer porcentajeDesc) {
         this.porcentajeDesc = porcentajeDesc;
     }
 
-    public float getAlto() {
+    public Float getAlto() {
         return alto;
     }
 
-    public void setAlto(float alto) {
+    public void setAlto(Float alto) {
         this.alto = alto;
     }
 
-    public float getLargo() {
+    public Float getLargo() {
         return largo;
     }
 
-    public void setLargo(float largo) {
+    public void setLargo(Float largo) {
         this.largo = largo;
     }
 
-    public float getAncho() {
+    public Float getAncho() {
         return ancho;
     }
 
-    public void setAncho(float ancho) {
+    public void setAncho(Float ancho) {
         this.ancho = ancho;
     }
 
@@ -141,5 +137,29 @@ public class Producto {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public Integer getCiudadID() {
+        return ciudadID;
+    }
+
+    public void setCiudadID(Integer ciudadID) {
+        this.ciudadID = ciudadID;
+    }
+
+    public Integer getEstadoProductoID() {
+        return estadoProductoID;
+    }
+
+    public void setEstadoProductoID(Integer estadoProductoID) {
+        this.estadoProductoID = estadoProductoID;
+    }
+
+    public Integer getCategoriaID() {
+        return categoriaID;
+    }
+
+    public void setCategoriaID(Integer categoriaID) {
+        this.categoriaID = categoriaID;
     }
 }

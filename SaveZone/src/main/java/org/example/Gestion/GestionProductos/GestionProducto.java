@@ -8,19 +8,19 @@ import org.example.Entidades.Producto;
 public class GestionProducto {
     public boolean crearProducto(Producto nuevoProducto){
         ControladorBD controladorBD = new ControladorBD();
-        String queryInsert = null, ID;
+        String queryInsert = null;
         try {
-            queryInsert = "INSERT INTO `safezone_db`.`producto` (`Nombre`, `Cantidad`, `Descripcion`, `Peso`, `Valor`, " +
-                    "`PorcentajeDescuento`, `Alto`, `Largo`, `Ancho`, `Color`, `VendedorID`) VALUES " +
-                    "('" + nuevoProducto.getNombre() + "', '" + nuevoProducto.getCantidad() + "', '" + nuevoProducto.getDescripcion() + "', '" +
-                    nuevoProducto.getPeso() + "', '" + nuevoProducto.getValor() + "', '" + nuevoProducto.getPorcentajeDesc() + "', '" +
-                    nuevoProducto.getAlto() + "', '" + nuevoProducto.getLargo() + "', '" + nuevoProducto.getAncho() + "', '" + nuevoProducto.getColor()
-                    + "', '" + nuevoProducto.getVendedor().getId() +"')";
-            System.out.println(queryInsert);
+            queryInsert = "INSERT INTO `safezone_db`.`producto` (`Titulo`, `Cantidad`, `Descripcion`, `Peso`, `Valor`, " +
+                    "`PorcentajeDescuento`, `Alto`, `Largo`, `Ancho`, `Color`, `VendedorID`, `EstadoProductoID`, `CiudadID`, `CategoriaID`) VALUES " +
+                    "('" + nuevoProducto.getNombre() + "', " + nuevoProducto.getCantidad() + ", '" + nuevoProducto.getDescripcion() + "', " +
+                    nuevoProducto.getPeso() + ", " + nuevoProducto.getValor() + ", " + nuevoProducto.getPorcentajeDesc() + ", " +
+                    nuevoProducto.getAlto() + ", " + nuevoProducto.getLargo() + ", " + nuevoProducto.getAncho() + ", '" + nuevoProducto.getColor()
+                    + "', " + nuevoProducto.getVendedor().getId() + ", " + nuevoProducto.getEstadoProductoID() + ", " + nuevoProducto.getCiudadID() +
+                    ", " + nuevoProducto.getCategoriaID() + ")";
             controladorBD.ejecutarInsert(queryInsert);
-            ID = controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE NOMBRE = '" + nuevoProducto.getNombre() + "' AND VENDEDORID = "
-                    + nuevoProducto.getVendedor().getId()).getString(1);
-            System.out.println("[!] Producto creado (ID: " + ID + ")");
+            nuevoProducto.setIdProducto(Integer.parseInt(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE TITULO = '" + nuevoProducto.getNombre() + "' AND VENDEDORID = "
+                    + nuevoProducto.getVendedor().getId()).getString(1)));
+            System.out.println("[!] Producto creado (ID: " + nuevoProducto.getIdProducto() + ")");
             return true;
         } catch (SQLException e) {
             System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());

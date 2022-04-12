@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Usuario {
-    protected int id;
+    protected Integer id;
     protected String nombre;
     protected String apellido;
     protected String usuario;
@@ -49,9 +49,9 @@ public class Usuario {
         this.ciudadID = ciudadID;
     }
 
-    public int getId() { return id; }
+    public Integer getId() { return id; }
 
-    public void setId(int id) { this.id = id; }
+    public void setId(Integer id) { this.id = id; }
 
     public String getNombre() {
         return nombre;
