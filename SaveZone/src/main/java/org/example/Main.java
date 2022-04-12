@@ -31,19 +31,12 @@ public class Main {
         GestionUsuario gestionUsuario = new GestionUsuario();
         Usuario usuarioPrueba = new Usuario("NATALIA", "GAONA", "nat-gaona", "Natalia123", "natagaona@gmail.com", new Date(), "3163009999", "Cra 55 55 3", 1);
         GestionProducto gestionProducto = new GestionProducto();
-        Producto productoPrueba = new Producto(15, "Flores rojas", 5.5f, 50000, 3, 5, 5, 5, "Rojo");
-
+        Producto productoPrueba = null;
         try {
-            /*
-            gestionUsuario.crearUsuario(usuarioPrueba);
-            usuarioPrueba.setContrasena("Laura123");
-            usuarioPrueba.setTelefono("6969");
-            gestionUsuario.modificarUsuario(usuarioPrueba);
-             */
-            System.out.println("");
+            if (!gestionUsuario.crearUsuario(usuarioPrueba))
+                usuarioPrueba = gestionUsuario.autenticarUsuario(usuarioPrueba.getUsuario(), usuarioPrueba.getContrasena());
+            productoPrueba = new Producto(usuarioPrueba, "Flores rojas", 15, "Muchas flores rojas", 5.5f, 50000, 3, 5f, 5f, 5f, "Rojo", 1, 1);
             gestionProducto.crearProducto(productoPrueba);
-
-            System.out.println("");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

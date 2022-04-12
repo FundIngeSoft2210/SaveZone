@@ -43,8 +43,9 @@ public class ControladorBD {
     public ArrayList<Usuario> obtenerUsuariosConsulta (ResultSet resultSet) throws SQLException {
         ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 
-        while (resultSet.next()) {
-            System.out.println("");
+        if (resultSet == null) return null;
+
+        do {
             Usuario nuevoUsuario = null;
 
             if (resultSet.getInt(12) == 1)
@@ -52,6 +53,7 @@ public class ControladorBD {
             else if (resultSet.getInt(12) == 2)
                 nuevoUsuario = new Administrador();
 
+            nuevoUsuario.setId(resultSet.getInt(1));
             nuevoUsuario.setNombre(resultSet.getString(2));
             nuevoUsuario.setApellido(resultSet.getString(3));
             nuevoUsuario.setUsuario(resultSet.getString(4));
@@ -64,8 +66,7 @@ public class ControladorBD {
             nuevoUsuario.setDireccion(resultSet.getString(10));
 
             usuarios.add(nuevoUsuario);
-        }
-
+        } while (resultSet.next());
         return usuarios;
     }
 }

@@ -10,7 +10,7 @@ public class GestionUsuario {
     private ControladorBD controladorBD = new ControladorBD();
 
     public boolean crearUsuario (Usuario nuevoUsuario) {
-        String queryInsert = null, ID;
+        String queryInsert = null;
         try {
             queryInsert = "INSERT INTO `safezone_db`.`usuario` (`Nombre`, `Apellido`, `Usuario`, `Contraseña`, `CorreoElectronico`, " +
                     "`FechaNacimiento`, `FechaRegistro`, `Telefono`, `Direccion`, `CiudadID`, `TipoUsuarioID`) VALUES " +
@@ -19,8 +19,8 @@ public class GestionUsuario {
                     nuevoUsuario.getDireccion() + "', '" + nuevoUsuario.getCiudadID().toString() + "', '1')"; // Arreglar tipo ciudad ID
             //System.out.println(queryInsert);
             controladorBD.ejecutarInsert(queryInsert);
-            ID = controladorBD.ejecutarConsulta("SELECT * FROM USUARIO WHERE USUARIO = '" + nuevoUsuario.getUsuario() + "'").getString(1);
-            System.out.println("[!] Usuario creado (ID: " + ID + ")");
+            nuevoUsuario.setId(Integer.parseInt(controladorBD.ejecutarConsulta("SELECT * FROM USUARIO WHERE USUARIO = '" + nuevoUsuario.getUsuario() + "'").getString(1)));
+            System.out.println("[!] Usuario creado (ID: " + nuevoUsuario.getId() + ")");
             return true;
          } catch (SQLException e) {
             System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
@@ -87,23 +87,23 @@ public class GestionUsuario {
         }
     }
 
-    public boolean autenticarUsuario (String nombreUsuario, String contrasena) {
+    public Usuario autenticarUsuario (String nombreUsuario, String contrasena) {
         ArrayList<Usuario> usuarios = null;
         try {
             usuarios = controladorBD.obtenerUsuariosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM USUARIO"));
             for (Usuario usuario : usuarios) {
                 if (usuario.getUsuario().equals(nombreUsuario) && usuario.getContrasena().equals(contrasena)) {
                     System.out.println("[!] " + usuario.getUsuario() + " ingresó a la aplicación.");
-                    return true;
+                    return usuario;
                 }
             }
-            return false;
+            return null;
         } catch (SQLException e) {
             System.out.print("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
-            return false;
+            return null;
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            return false;
+            return null;
         }
     }
 }
