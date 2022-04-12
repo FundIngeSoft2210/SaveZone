@@ -1,6 +1,7 @@
 package org.example.Entidades;
 
 public class Categoria {
+    private Integer ID;
     private String descripcion;
     private String nombre;
 
@@ -9,9 +10,14 @@ public class Categoria {
      * @param nombre: nombre de la categoría
      * @param : breve descripción relacionada a la categoría
      */
-    public Categoria(String nombre, String descripcion){
+    public Categoria(String nombre, String descripcion, Integer ID){
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.ID = ID;
+    }
+
+    public Categoria() {
+
     }
 
     public String getDescripcion() {
@@ -28,5 +34,21 @@ public class Categoria {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public Integer getID() {
+        return ID;
+    }
+
+    public void setID(Integer ID) {
+        this.ID = ID;
+    }
+
+    @Override
+    public String toString() {
+        return "Categoria{" +
+                "descripcion='" + descripcion + '\'' +
+                ", nombre='" + nombre + '\'' +
+                '}';
     }
 }
