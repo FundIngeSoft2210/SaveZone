@@ -1,5 +1,6 @@
 package org.example;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.example.AccesoDatos.ControladorBD;
 import org.example.AccesoDatos.ControladorPropiedades;
 import org.example.Entidades.Producto;
@@ -37,8 +38,10 @@ public class Main {
                 usuarioPrueba = gestionUsuario.autenticarUsuario(usuarioPrueba.getUsuario(), usuarioPrueba.getContrasena());
                 productoPrueba = new Producto(usuarioPrueba, "Flores rojas", 15, "Muchas flores rojas", 5.5f, 50000, 3, 5f, 5f, 5f, "Rojo", 1, 1);
                 gestionProducto.crearProducto(productoPrueba);
+                gestionUsuario.recuperarContrasena("nicolasd-cubillos", "nicolasdavidcubillos@gmail.com");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+
     }
 }

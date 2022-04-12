@@ -68,6 +68,22 @@
       <version>8.0.28</version>
     </dependency>
 
+    <!-- Dependencia de java mail -->
+
+    <dependency>
+      <groupId>com.sun.mail</groupId>
+      <artifactId>javax.mail</artifactId>
+      <version>1.6.2</version>
+    </dependency>
+
+    <!-- Dependencia de Apache para Hashing -->
+
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.11</version>
+    </dependency>
+
   </dependencies>
 
   <build>
