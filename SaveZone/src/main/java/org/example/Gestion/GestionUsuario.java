@@ -1,10 +1,18 @@
 package org.example.Gestion;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.example.AccesoDatos.ControladorBD;
+import org.example.AccesoDatos.ControladorPropiedades;
 import org.example.Entidades.Usuarios.Usuario;
 
+import javax.mail.Message;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Properties;
 
 public class GestionUsuario {
     private ControladorBD controladorBD = new ControladorBD();
@@ -67,32 +75,56 @@ public class GestionUsuario {
         }
     }
 
-    public String recuperarContrasena(String nombreUsuario, String correo) { // Recuperar por usuario o por correo
+    public boolean recuperarContrasena(String nombreUsuario, String correo) { // Recuperar por usuario o por correo
         ArrayList<Usuario> usuarios = null;
+        ControladorPropiedades controladorPropiedades = new ControladorPropiedades();
+        Properties props = System.getProperties();
+        String correoSafeZoneAdm = controladorPropiedades.getPropiedad("correo_adm");
         try {
             usuarios = controladorBD.obtenerUsuariosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM USUARIO"));
             for (Usuario usuario : usuarios) {
                 if (usuario.getUsuario().equals(nombreUsuario) || usuario.getCorreo().equals(correo)) {
-                    return usuario.getContrasena();
+                    props.put("mail.smtp.host", "smtp.gmail.com");
+                    props.put("mail.smtp.user", correoSafeZoneAdm);
+                    props.put("mail.smtp.clave", "");
+                    props.put("mail.smtp.auth", "true");
+                    props.put("mail.smtp.starttls.enable", "true");
+                    props.put("mail.smtp.port", "587");
+
+                    Session session = Session.getDefaultInstance(props);
+                    MimeMessage message = new MimeMessage(session);
+                    message.setFrom(new InternetAddress(controladorPropiedades.getPropiedad("correo_adm")));
+                    message.addRecipient(Message.RecipientType.TO, new InternetAddress(correo));   //Se podrían añadir varios de la misma manera
+                    message.setSubject("Recuperación de contraseña - Administración de SafeZone.");
+                    message.setText("La contraseña de tu cuenta es " + usuario.getContrasena());
+                    Transport transport = session.getTransport("smtp");
+                    System.out.println("[!] Enviando correo de recuperación de contraseña...");
+                    transport.connect("smtp.gmail.com", correoSafeZoneAdm, controladorPropiedades.getPropiedad("password_adm"));
+                    transport.sendMessage(message, message.getAllRecipients());
+                    transport.close();
+                    System.out.println("[!] Correo de recuperación de contraseña enviado a " + correo + ".");
+                    return true;
                 }
             }
-            return null;
+            return false;
         } catch (SQLException e) {
             System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
-            return null;
+            return false;
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            return null;
+            return false;
         }
     }
 
     public Usuario autenticarUsuario (String nombreUsuario, String contrasena) {
         ArrayList<Usuario> usuarios = null;
+        ControladorPropiedades controladorPropiedades = new ControladorPropiedades();
         try {
             usuarios = controladorBD.obtenerUsuariosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM USUARIO"));
             for (Usuario usuario : usuarios) {
                 if (usuario.getUsuario().equals(nombreUsuario) && usuario.getContrasena().equals(contrasena)) {
                     System.out.println("[!] " + usuario.getUsuario() + " ingresó a la aplicación.");
+                    controladorPropiedades.setPropiedad("ultimoUser", usuario.getUsuario());
                     return usuario;
                 }
             }

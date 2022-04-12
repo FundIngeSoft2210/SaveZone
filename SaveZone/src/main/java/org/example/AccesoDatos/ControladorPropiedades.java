@@ -18,6 +18,8 @@ public class ControladorPropiedades {
             properties.setProperty("driverBD", "jdbc:mysql://localhost:3306/safezone_db");
             properties.setProperty("classDriver", "com.mysql.cj.jdbc.Driver");
             properties.setProperty("ultimoUser", "");
+            properties.setProperty("correo_adm", "safezonemoderacion@gmail.com");
+            properties.setProperty("password_adm", "f4488fecb9caa22ed1fd12cb25d9d6611d6a6c4604ecd398bacaf286d4b3e4e3");
 
             properties.store(outputStream, "Configuración aplicación SafeZone");
 
