@@ -23,7 +23,7 @@ public class GestionUsuario {
             System.out.println("[!] Usuario creado (ID: " + ID + ")");
             return true;
          } catch (SQLException e) {
-            System.out.print("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
+            System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
             return false;
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -44,7 +44,7 @@ public class GestionUsuario {
             System.out.println("[!] Usuario modificado (ID: " + ID + ")");
             return true;
         } catch (SQLException e) {
-            System.out.print("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
+            System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
             return false;
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -60,7 +60,7 @@ public class GestionUsuario {
             // Validar si la eliminación fue exitosa por medio del return del ejecutarInsert (integer)
             return true;
         } catch (SQLException e) {
-            System.out.print("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
+            System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
             return false;
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -79,7 +79,7 @@ public class GestionUsuario {
             }
             return null;
         } catch (SQLException e) {
-            System.out.print("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
+            System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
             return null;
         } catch (Exception e) {
             System.out.println(e.getMessage());
