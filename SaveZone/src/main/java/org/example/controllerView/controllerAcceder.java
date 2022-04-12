@@ -28,15 +28,31 @@ public class controllerAcceder {
     private Button olvidarContraseña;
 
     @FXML
-    void Entrar(ActionEvent event) {
+    void Entrar(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Principal.fxml"));
+        Parent root = loader.load();
+        controllerPaginaInicio controllerPaginaInicio = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Página Inicio");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
 
+        Stage myStage = (Stage) this.Button_entrar.getScene().getWindow();
+        myStage.close();
     }
 
     @FXML
     void olvidoContraseña(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../Vista_olvidasteContrasena.fxml"));
         Parent root = loader.load();
-        controllerRecuperarContraseña controllerRecuperarContraseña = loader.getController();
+        controllerRecuperarContrasena controllerRecuperarContrasena = loader.getController();
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="967.0" style="-fx-background-color: #f4f1f1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerEscogerMetodoPago">
+   <children>
+      <AnchorPane layoutX="64.0" layoutY="97.0" prefHeight="407.0" prefWidth="366.0" style="-fx-background-color: #3fdfd4;">
+         <children>
+            <AnchorPane layoutY="-2.0" prefHeight="36.0" prefWidth="372.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="14.0" layoutY="9.0" text="1. Tus datos">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="99.0" prefHeight="36.0" prefWidth="372.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="14.0" layoutY="9.0" text="2. Seleccione el medio de Pago">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <SplitPane dividerPositions="0.5" layoutY="135.0" orientation="VERTICAL" prefHeight="272.0" prefWidth="372.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #3fdfd4;">
+                     <children>
+                        <Button fx:id="visa" layoutX="122.0" layoutY="23.0" mnemonicParsing="false" onAction="#PagarPorVisa" prefHeight="36.0" prefWidth="62.0" style="-fx-background-color: WHITE;">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@visa.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="MC" layoutX="212.0" layoutY="23.0" mnemonicParsing="false" onAction="#PagarPorMC" prefHeight="36.0" prefWidth="62.0" style="-fx-background-color: WHITE;">
+                           <graphic>
+                              <ImageView fx:id="MasterCard" fitHeight="24.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@MC.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="Codensa" layoutX="293.0" layoutY="17.0" mnemonicParsing="false" onAction="#PagarPorCodensa" prefHeight="50.0" prefWidth="68.0" style="-fx-background-color: #3fdfd4;">
+                           <graphic>
+                              <ImageView fitHeight="36.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@codensa.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Label layoutX="14.0" layoutY="14.0" prefHeight="54.0" prefWidth="99.0" text="Tarjeta de crédito" textAlignment="CENTER" />
+                        <Label layoutX="30.0" layoutY="33.0" prefHeight="54.0" prefWidth="58.0" text="o débito" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="151.0" prefWidth="370.0" style="-fx-background-color: #3fdfd4;">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" prefHeight="54.0" prefWidth="99.0" text="Débito bancario" textAlignment="CENTER" />
+                        <Label layoutX="36.0" layoutY="27.0" prefHeight="54.0" prefWidth="99.0" text="PSE" textAlignment="CENTER" />
+                        <Button fx:id="PSE" layoutX="113.0" layoutY="26.0" mnemonicParsing="false" onAction="#PagoPSE" prefHeight="56.0" prefWidth="69.0" style="-fx-background-color: WHITE;">
+                           <graphic>
+                              <ImageView fitHeight="48.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@PSE.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label layoutX="205.0" layoutY="32.0" text="Recuerda verificar el monto" textAlignment="CENTER" />
+                        <Label layoutX="205.0" layoutY="45.0" text="máximo que tienes habilitado" textAlignment="CENTER" />
+                        <Label layoutX="205.0" layoutY="59.0" text="para pagos por internet." textAlignment="CENTER" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+            <Label fx:id="nombre" layoutX="59.0" layoutY="42.0" prefHeight="26.0" prefWidth="156.0" text="Natalia Gaona Salamanca" />
+            <Label fx:id="correo" layoutX="58.0" layoutY="62.0" prefHeight="26.0" prefWidth="156.0" text="tatis.gaona1942@gmail.com" />
+            <ImageView fitHeight="36.0" fitWidth="31.0" layoutX="14.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@persona.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="480.0" layoutY="160.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="620.0" layoutY="160.0" prefHeight="199.0" prefWidth="226.0" style="-fx-background-color: #3fdfd4;">
+         <children>
+            <AnchorPane prefHeight="36.0" prefWidth="226.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="14.0" layoutY="9.0" text="Resumen de la compra">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label layoutY="74.0" text="Referencia: " />
+            <Label layoutY="92.0" text="Descripción: " />
+            <Label layoutY="122.0" text="Total compra.................................." />
+            <Label layoutX="2.0" layoutY="140.0" text="IVA...................................................." />
+            <Label layoutX="1.0" layoutY="158.0" text="Total ................................................." />
+            <Label fx:id="numReferencia" layoutX="66.0" layoutY="74.0" text="#referencia" />
+            <Label fx:id="descripcionCompra" layoutX="66.0" layoutY="92.0" text="Descripcion compra" />
+            <Label fx:id="totalCompra" layoutX="172.0" layoutY="122.0" text="\$" />
+            <Label fx:id="iva" layoutX="172.0" layoutY="140.0" text="\$" />
+            <Label fx:id="total" layoutX="172.0" layoutY="158.0" text="\$" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="63.0" prefWidth="966.0" style="-fx-background-color: white;">
+         <children>
+            <Button fx:id="Boton_vender" layoutX="429.0" layoutY="13.0" mnemonicParsing="false" onAction="#VenderProductos" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Vender" />
+            <Button fx:id="Boton_populares" layoutX="278.0" layoutY="13.0" mnemonicParsing="false" onAction="#Populares" style="-fx-background-color: #3fdfd4;" text="Populares" />
+            <ComboBox fx:id="Boton_categorias" layoutX="162.0" layoutY="13.0" onAction="#Categorias" prefHeight="26.0" prefWidth="106.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;" />
+            <TextField fx:id="Nombre1" layoutX="749.0" layoutY="12.0" onAction="#Buscar" prefHeight="26.0" prefWidth="178.0" promptText="             Search" style="-fx-background-color: #f4f1f1;" />
+            <Button fx:id="Boton_Historial" layoutX="356.0" layoutY="13.0" mnemonicParsing="false" onAction="#Historial" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Historial" />
+            <Button fx:id="Boton_Ayuda" layoutX="502.0" layoutY="13.0" mnemonicParsing="false" onAction="#Ayuda" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Ayuda" />
+            <Button fx:id="Boton_VerMisProductos" layoutX="577.0" layoutY="13.0" mnemonicParsing="false" onAction="#Productos" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: #3fdfd4;" text="Mis productos" />
+            <Button fx:id="Button_uscar" layoutX="715.0" layoutY="12.0" mnemonicParsing="false" onAction="#BuscarProductos" prefHeight="18.0" prefWidth="26.0" style="-fx-background-color: #f4f1f1;">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@LUPA.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="RegresarAlInicio" layoutX="13.0" layoutY="5.0" mnemonicParsing="false" onAction="#VolverInicio" prefHeight="50.0" prefWidth="116.0" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@4.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

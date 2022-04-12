@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerAnadirProducto">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="941.0" style="-fx-background-color: #f4f1f1;">
+         <children>
+            <AnchorPane prefHeight="61.0" prefWidth="942.0" style="-fx-background-color: white;">
+               <children>
+                  <Button fx:id="Boton_vender" layoutX="429.0" layoutY="13.0" mnemonicParsing="false" onAction="#VenderProductos" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Vender" />
+                  <Button fx:id="Boton_populares" layoutX="278.0" layoutY="13.0" mnemonicParsing="false" onAction="#Populares" style="-fx-background-color: #3fdfd4;" text="Populares" />
+                  <ComboBox fx:id="Boton_categorias" layoutX="152.0" layoutY="13.0" onAction="#Categorias" prefHeight="26.0" prefWidth="116.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;" />
+                  <TextField fx:id="Nombre1" layoutX="749.0" layoutY="12.0" onAction="#Buscar" prefHeight="26.0" prefWidth="178.0" promptText="             Search" style="-fx-background-color: #f4f1f1;" />
+                  <Button fx:id="Boton_Historial" layoutX="356.0" layoutY="13.0" mnemonicParsing="false" onAction="#Historial" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Historial" />
+                  <Button fx:id="Boton_Ayuda" layoutX="502.0" layoutY="13.0" mnemonicParsing="false" onAction="#Ayuda" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Ayuda" />
+                  <Button fx:id="Boton_VerMisProductos" layoutX="577.0" layoutY="13.0" mnemonicParsing="false" onAction="#Productos" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: #3fdfd4;" text="Mis productos" />
+                  <Button fx:id="Button_uscar" layoutX="715.0" layoutY="12.0" mnemonicParsing="false" onAction="#BuscarProductos" prefHeight="18.0" prefWidth="26.0" style="-fx-background-color: #f4f1f1;">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@LUPA.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="RegresarAlInicio" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#VolverInicio" prefHeight="50.0" prefWidth="116.0" style="-fx-background-color: white;">
+                     <graphic>
+                        <ImageView fitHeight="42.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@4.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="301.0" layoutY="132.0" prefHeight="98.0" prefWidth="338.0" style="-fx-background-color: white;">
+               <children>
+                  <Button fx:id="Producto" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="86.0" prefWidth="328.0" style="-fx-background-color: white;" />
+                  <Label fx:id="NombreProducto" layoutX="185.0" layoutY="35.0" text=" Cámara Samsung" />
+                  <ImageView fx:id="ImagenProducto" fitHeight="81.0" fitWidth="145.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@1.PNG" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Label layoutX="369.0" layoutY="74.0" text="Tus Productos">
+               <font>
+                  <Font name="System Bold Italic" size="31.0" />
+               </font>
+            </Label>
+            <Button fx:id="Button_AnadirProductos" layoutX="408.0" layoutY="378.0" mnemonicParsing="false" onAction="#anadirProductos" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: #3fdfd4;" text="Añadir Producto" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

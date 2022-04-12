@@ -54,7 +54,9 @@ public class GestionUsuario {
     public boolean eliminarUsuario (Usuario usuarioEliminar) {
         String delete;
         try {
-            delete = "DELETE FROM USUARIO WHERE USUARIO = '" + usuarioEliminar.getUsuario() +
+            delete = "DELETE FROM USUARIO WHERE USUARIO = '" + usuarioEliminar.getUsuario();
+            ControladorBD c=new ControladorBD();
+            c.ejecutarInsert(delete);
             return true;
         } catch (SQLException e) {
             System.out.print("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());

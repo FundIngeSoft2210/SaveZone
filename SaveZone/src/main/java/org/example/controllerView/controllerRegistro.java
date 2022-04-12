@@ -64,7 +64,24 @@ public class controllerRegistro {
     }
 
     @FXML
-    void Registro(ActionEvent event) {
+    void Registro(ActionEvent event)  throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Principal.fxml"));
+        Parent root = loader.load();
+        controllerPaginaInicio controllerPaginaInicio = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Página Inicio");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
+
+        Stage myStage = (Stage) this.Button_Registrarse.getScene().getWindow();
+        myStage.close();
 
     }
 }
