@@ -1,5 +1,6 @@
 package org.example.AccesoDatos;
 
+import org.example.Entidades.Categoria;
 import org.example.Entidades.Producto;
 import org.example.Entidades.Usuarios.Administrador;
 import org.example.Entidades.Usuarios.Usuario;
@@ -94,9 +95,24 @@ public class ControladorBD {
             nuevoProducto.setColor(resultSet.getString(12));
             nuevoProducto.setEstadoProductoID(resultSet.getInt(13));
             nuevoProducto.setCiudadID(resultSet.getInt(14));
-            nuevoProducto.setCategoriaID(resultSet.getInt(15));
-
+            nuevoProducto.setCategoria(obtenerCategoriaConsulta(ejecutarConsulta("SELECT * FROM CATEGORIA WHERE ID = " + resultSet.getInt(15))).get(0));
+            productos.add(nuevoProducto);
         } while (resultSet.next());
         return productos;
+    }
+
+    public ArrayList<Categoria> obtenerCategoriaConsulta (ResultSet resultSet) throws  SQLException, ClassNotFoundException {
+        ArrayList<Categoria> categorias = new ArrayList<Categoria>();
+
+        if (resultSet == null) return null;
+
+        do {
+            Categoria nuevaCategoria = new Categoria();
+            nuevaCategoria.setID(resultSet.getInt(1));
+            nuevaCategoria.setNombre(resultSet.getString(2));
+            nuevaCategoria.setDescripcion(resultSet.getString(3));
+            categorias.add(nuevaCategoria);
+        } while (resultSet.next());
+        return categorias;
     }
 }
