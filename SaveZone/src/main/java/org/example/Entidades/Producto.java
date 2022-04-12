@@ -54,6 +54,10 @@ public class Producto {
         estadoProductoID = porcentajeDesc > 0 ? 5 : 1;
     }
 
+    public Producto() {
+
+    }
+
     public Integer getIdProducto() {return idProducto; }
 
     public void setIdProducto(Integer idProducto) { this.idProducto = idProducto; }

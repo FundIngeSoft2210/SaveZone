@@ -75,6 +75,7 @@
                   </Button>
                </children>
             </AnchorPane>
+            <!-- Desde acá -->
             <AnchorPane layoutX="20.0" layoutY="114.0" prefHeight="201.0" prefWidth="222.0" style="-fx-background-color: white;">
                <children>
                   <Button fx:id="Producto" layoutX="3.0" layoutY="8.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;">
@@ -89,6 +90,7 @@
                   <Label layoutX="56.0" layoutY="153.0" text=" Cámara Samsung" />
                </children>
             </AnchorPane>
+            <!-- Hasta acá -->
             <Label layoutX="20.0" layoutY="68.0" text="Página Principal:">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
