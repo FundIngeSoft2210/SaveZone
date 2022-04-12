@@ -95,7 +95,7 @@ public class ControladorBD {
             nuevoProducto.setEstadoProductoID(resultSet.getInt(13));
             nuevoProducto.setCiudadID(resultSet.getInt(14));
             nuevoProducto.setCategoriaID(resultSet.getInt(15));
-
+            productos.add(nuevoProducto);
         } while (resultSet.next());
         return productos;
     }
