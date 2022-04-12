@@ -34,10 +34,10 @@ public class controllerHistorial {
     private Button Boton_vender;
 
     @FXML
-    private Button Button_Cancelar;
+    private Button Button_HistorialCompras;
 
     @FXML
-    private Button Button_Enviar;
+    private Button Button_HistorialVendedor;
 
     @FXML
     private Button Button_uscar;
@@ -67,7 +67,7 @@ public class controllerHistorial {
 
         Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
         myStage.close();
-        
+
 
     }
 
@@ -81,10 +81,7 @@ public class controllerHistorial {
 
     }
 
-    @FXML
-    void Cancelar(ActionEvent event) {
 
-    }
 
     @FXML
     void Categorias(ActionEvent event) {
@@ -92,9 +89,50 @@ public class controllerHistorial {
     }
 
     @FXML
-    void Enviar(ActionEvent event) {
+    void HistorialCompras(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../HistorialCompras.fxml"));
+        Parent root = loader.load();
+        controllerHistorialCompras controllerHistorialCompras = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Historial Compras");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
+
+        Stage myStage = (Stage) this.Button_HistorialCompras.getScene().getWindow();
+        myStage.close();
 
     }
+
+    @FXML
+    void HistorialVendedor(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../HistorialVendido.fxml"));
+        Parent root = loader.load();
+        controllerHistorialVendedor controllerHistorialVendedor = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Historial Ventas");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
+
+        Stage myStage = (Stage) this.Button_HistorialVendedor.getScene().getWindow();
+        myStage.close();
+
+    }
+
+
 
     @FXML
     void Historial(ActionEvent event) throws IOException {
@@ -117,10 +155,25 @@ public class controllerHistorial {
         myStage.close();
 
     }
-
     @FXML
-    void Populares(ActionEvent event) {
+    void Populares(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../ProductosPopulares.fxml"));
+        Parent root = loader.load();
+        controllerPopulares controllerPopulares = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Productos Populares");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
 
+        Stage myStage = (Stage) this.Boton_VerMisProductos.getScene().getWindow();
+        myStage.close();
     }
 
     @FXML

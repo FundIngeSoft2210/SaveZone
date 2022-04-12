@@ -89,7 +89,7 @@
                   <Label layoutX="56.0" layoutY="153.0" text=" Cámara Samsung" />
                </children>
             </AnchorPane>
-            <Label layoutX="20.0" layoutY="68.0" text="Productos Novedosos:">
+            <Label layoutX="20.0" layoutY="68.0" text="Página Principal:">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>

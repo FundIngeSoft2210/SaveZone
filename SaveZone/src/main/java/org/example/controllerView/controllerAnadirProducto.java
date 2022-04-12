@@ -16,6 +16,12 @@ import java.io.IOException;
 public class controllerAnadirProducto {
 
     @FXML
+    private TextField Alto;
+
+    @FXML
+    private TextField Ancho;
+
+    @FXML
     private Button Boton_Ayuda;
 
     @FXML
@@ -43,10 +49,16 @@ public class controllerAnadirProducto {
     private Button Button_uscar;
 
     @FXML
+    private TextField Cantidad;
+
+    @FXML
     private ComboBox<?> Categoria;
 
     @FXML
     private TextField Descripcion_Producto;
+
+    @FXML
+    private TextField Largo;
 
     @FXML
     private TextField Nombre1;
@@ -55,22 +67,10 @@ public class controllerAnadirProducto {
     private TextField Nombre_Producto;
 
     @FXML
-    private TextField Nombre_Producto1;
+    private TextField Peso;
 
     @FXML
-    private TextField Nombre_Producto11;
-
-    @FXML
-    private TextField Nombre_Producto111;
-
-    @FXML
-    private TextField Nombre_Producto1111;
-
-    @FXML
-    private TextField Nombre_Producto1112;
-
-    @FXML
-    private TextField Nombre_Producto1113;
+    private TextField Porcentaje_Descuento;
 
     @FXML
     private TextField Precio;
@@ -80,7 +80,6 @@ public class controllerAnadirProducto {
 
     @FXML
     private Button subir_Producto;
-
     @FXML
     void AnadirProducto(ActionEvent event) throws IOException{
 
@@ -151,7 +150,23 @@ public class controllerAnadirProducto {
 
     @FXML
     void Populares(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../ProductosPopulares.fxml"));
+        Parent root = loader.load();
+        controllerPopulares controllerPopulares = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Productos Populares");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
 
+        Stage myStage = (Stage) this.Boton_VerMisProductos.getScene().getWindow();
+        myStage.close();
     }
 
     @FXML

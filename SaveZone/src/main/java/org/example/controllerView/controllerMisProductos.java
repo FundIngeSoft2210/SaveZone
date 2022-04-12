@@ -57,6 +57,11 @@ public class controllerMisProductos {
     private Button RegresarAlInicio;
 
     @FXML
+    private Button Button_ModificarProducto;
+    @FXML
+    private Button Boton_eliminarProducto;
+
+    @FXML
     void Ayuda(ActionEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../ConQuePodemosAyudarte.fxml"));
         Parent root = loader.load();
@@ -116,8 +121,24 @@ public class controllerMisProductos {
     }
 
     @FXML
-    void Populares(ActionEvent event) {
+    void Populares(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../ProductosPopulares.fxml"));
+        Parent root = loader.load();
+        controllerPopulares controllerPopulares = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Productos Populares");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
 
+        Stage myStage = (Stage) this.Boton_VerMisProductos.getScene().getWindow();
+        myStage.close();
     }
 
     @FXML
@@ -164,7 +185,24 @@ public class controllerMisProductos {
     }
 
     @FXML
-    void VerDetallesProducto(ActionEvent event) {
+    void VerDetallesProducto(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../VendedorProducto.fxml"));
+        Parent root = loader.load();
+        controllerVendedorProducto controllerVendedorProducto = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Productos del Vendedor");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
+
+        Stage myStage = (Stage) this.RegresarAlInicio.getScene().getWindow();
+        myStage.close();
 
     }
 
@@ -209,6 +247,48 @@ public class controllerMisProductos {
 
         Stage myStage = (Stage) this.Boton_vender.getScene().getWindow();
         myStage.close();
+    }
+    @FXML
+    void ModificarProducto(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../modificarProducto.fxml"));
+        Parent root = loader.load();
+        controllerModificarProducto controllerModificarProducto = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Modificar Producto");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
+
+        Stage myStage = (Stage) this.Boton_vender.getScene().getWindow();
+        myStage.close();
+    }
+
+    @FXML
+    void EliminarProducto(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../eliminarProducto.fxml"));
+        Parent root = loader.load();
+        controllerEliminarProducto controllerEliminarProducto = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Eliminar Producto");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
+
+        Stage myStage = (Stage) this.Boton_vender.getScene().getWindow();
+        myStage.close();
+
     }
 
 }

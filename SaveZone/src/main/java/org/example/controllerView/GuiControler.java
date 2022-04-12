@@ -45,7 +45,24 @@ public class GuiControler {
     }
 
     @FXML
-    void EntrarComoInvitado(ActionEvent event) {
+    void EntrarComoInvitado(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Principal.fxml"));
+        Parent root = loader.load();
+        controllerPaginaInicio controllerPaginaInicio = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Página Inicio");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
+
+        Stage myStage = (Stage) this.boton_Invitado.getScene().getWindow();
+        myStage.close();
 
     }
 

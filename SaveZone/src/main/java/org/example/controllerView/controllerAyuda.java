@@ -125,7 +125,23 @@ public class controllerAyuda {
 
     @FXML
     void Populares(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../ProductosPopulares.fxml"));
+        Parent root = loader.load();
+        controllerPopulares controllerPopulares = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Productos Populares");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
 
+        Stage myStage = (Stage) this.Boton_VerMisProductos.getScene().getWindow();
+        myStage.close();
     }
 
     @FXML
