@@ -165,4 +165,25 @@ public class Producto {
     public void setCategoriaID(Integer categoriaID) {
         this.categoriaID = categoriaID;
     }
+
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "idProducto=" + idProducto +
+                ", vendedor=" + vendedor +
+                ", titulo='" + titulo + '\'' +
+                ", cantidad=" + cantidad +
+                ", descripcion='" + descripcion + '\'' +
+                ", peso=" + peso +
+                ", valor=" + valor +
+                ", porcentajeDesc=" + porcentajeDesc +
+                ", alto=" + alto +
+                ", largo=" + largo +
+                ", ancho=" + ancho +
+                ", color='" + color + '\'' +
+                ", ciudadID=" + ciudadID +
+                ", estadoProductoID=" + estadoProductoID +
+                ", categoriaID=" + categoriaID +
+                '}';
+    }
 }
