@@ -35,9 +35,14 @@ public class Main {
         try {
             if (!gestionUsuario.crearUsuario(usuarioPrueba))
                 usuarioPrueba = gestionUsuario.autenticarUsuario(usuarioPrueba.getUsuario(), usuarioPrueba.getContrasena());
-            productoPrueba = new Producto(usuarioPrueba, "Flores rojas", 15, "Muchas flores rojas", 5.5f, 50000, 3, 5f, 5f, 5f, "Rojo", 1, 1);
-            gestionProducto.crearProducto(productoPrueba);
-
+                productoPrueba = new Producto(usuarioPrueba, "Flores rojas", 15, "Muchas flores rojas", 5.5f, 50000, 3, 5f, 5f, 5f, "Rojo", 1, 1);
+                String tituloAnt = productoPrueba.getTitulo();
+                gestionProducto.crearProducto(productoPrueba);
+                productoPrueba.setCantidad(12);
+                productoPrueba.setTitulo("Flores");
+                productoPrueba.setPeso(5.0f);
+                productoPrueba.setValor(45000);
+                gestionProducto.modificarProducto(productoPrueba, tituloAnt);
             for (Producto producto : controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO"))) {
                 System.out.println(producto.toString());
             }
