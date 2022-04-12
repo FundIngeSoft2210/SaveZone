@@ -17,7 +17,7 @@ public class Producto {
     private String color;
     private Integer ciudadID;
     private Integer estadoProductoID;
-    private Integer categoriaID;
+    private Categoria categoria;
 
     /**
      * @summary Método creador de un producto a partir de información ingresada por el usuario
@@ -37,7 +37,7 @@ public class Producto {
      */
     public Producto(Usuario vendedor, String titulo, Integer cantidad, String descripcion,
                     Float peso, Integer valor, Integer porcentajeDesc, Float alto, Float largo,
-                    Float ancho, String color, Integer ciudadID, Integer categoriaID) {
+                    Float ancho, String color, Integer ciudadID, Categoria categoria) {
         this.vendedor = vendedor;
         this.titulo = titulo;
         this.cantidad = cantidad;
@@ -50,8 +50,8 @@ public class Producto {
         this.ancho = ancho;
         this.color = color;
         this.ciudadID = ciudadID;
-        this.categoriaID = categoriaID;
         estadoProductoID = porcentajeDesc > 0 ? 5 : 1;
+        this.categoria = categoria;
     }
 
     public Producto() {
@@ -158,12 +158,12 @@ public class Producto {
         this.estadoProductoID = estadoProductoID;
     }
 
-    public Integer getCategoriaID() {
-        return categoriaID;
+    public Categoria getCategoria() {
+        return categoria;
     }
 
-    public void setCategoriaID(Integer categoriaID) {
-        this.categoriaID = categoriaID;
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     @Override
@@ -183,7 +183,7 @@ public class Producto {
                 ", color='" + color + '\'' +
                 ", ciudadID=" + ciudadID +
                 ", estadoProductoID=" + estadoProductoID +
-                ", categoriaID=" + categoriaID +
+                ", categoria=" + categoria +
                 '}';
     }
 }

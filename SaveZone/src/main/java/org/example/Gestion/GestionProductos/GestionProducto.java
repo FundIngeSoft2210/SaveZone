@@ -16,7 +16,7 @@ public class GestionProducto {
                     nuevoProducto.getPeso() + ", " + nuevoProducto.getValor() + ", " + nuevoProducto.getPorcentajeDesc() + ", " +
                     nuevoProducto.getAlto() + ", " + nuevoProducto.getLargo() + ", " + nuevoProducto.getAncho() + ", '" + nuevoProducto.getColor()
                     + "', " + nuevoProducto.getVendedor().getId() + ", " + nuevoProducto.getEstadoProductoID() + ", " + nuevoProducto.getCiudadID() +
-                    ", " + nuevoProducto.getCategoriaID() + ")";
+                    ", " + nuevoProducto.getCategoria().getID() + ")";
             controladorBD.ejecutarInsert(queryInsert);
             nuevoProducto.setIdProducto(Integer.parseInt(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE TITULO = '" + nuevoProducto.getTitulo() + "' AND VENDEDORID = "
                     + nuevoProducto.getVendedor().getId()).getString(1)));
