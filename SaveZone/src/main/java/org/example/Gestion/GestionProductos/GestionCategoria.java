@@ -6,7 +6,7 @@ import org.example.Entidades.Categoria;
 import java.sql.SQLException;
 
 public class GestionCategoria {
-    private ControladorBD controladorBD = new ControladorBD();
+    private final ControladorBD controladorBD = new ControladorBD();
 
     public boolean crearCategoria (Categoria nuevaCategoria) {
         String queryInsert = null;
