@@ -32,7 +32,7 @@ public class GestionUsuario {
     }
 
     public boolean modificarUsuario (Usuario usuarioModificar) {
-        String insert = null, ID;
+        String insert = null;
         try {
             insert = "UPDATE `safezone_db`.`usuario` SET NOMBRE = " +
                     "'" + usuarioModificar.getNombre() + "', APELLIDO = '" + usuarioModificar.getApellido() + "', CONTRASEÑA = '" + usuarioModificar.getContrasena() +
@@ -40,8 +40,7 @@ public class GestionUsuario {
                     usuarioModificar.getDireccion() + "', CIUDADID = " + usuarioModificar.getCiudadID().toString() + " WHERE USUARIO = '" + usuarioModificar.getUsuario() + "'"; // Arreglar tipo USUARIO
             //System.out.println(queryInsert);
             controladorBD.ejecutarInsert(insert);
-            ID = controladorBD.ejecutarConsulta("SELECT * FROM USUARIO WHERE USUARIO = '" + usuarioModificar.getUsuario() + "'").getString(1);
-            System.out.println("[!] Usuario modificado (ID: " + ID + ")");
+             System.out.println("[!] Usuario modificado (ID: " + usuarioModificar.getId() + ")");
             return true;
         } catch (SQLException e) {
             System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());

@@ -1,5 +1,6 @@
 package org.example.AccesoDatos;
 
+import org.example.Entidades.Producto;
 import org.example.Entidades.Usuarios.Administrador;
 import org.example.Entidades.Usuarios.Usuario;
 
@@ -68,5 +69,33 @@ public class ControladorBD {
             usuarios.add(nuevoUsuario);
         } while (resultSet.next());
         return usuarios;
+    }
+
+    public ArrayList<Producto> obtenerProductosConsulta (ResultSet resultSet) throws SQLException, ClassNotFoundException {
+        ArrayList<Producto> productos = new ArrayList<Producto>();
+
+        if (resultSet == null) return null;
+
+        do {
+            Producto nuevoProducto = null;
+
+            nuevoProducto.setIdProducto(resultSet.getInt(1));
+            nuevoProducto.setVendedor(obtenerUsuariosConsulta(ejecutarConsulta("SELECT * FROM USUARIO WHERE ID = " + resultSet.getInt(2))).get(0));
+            nuevoProducto.setCantidad(resultSet.getInt(3));
+            nuevoProducto.setTitulo(resultSet.getString(4));
+            nuevoProducto.setDescripcion(resultSet.getString(5));
+            nuevoProducto.setValor(resultSet.getInt(6));
+            nuevoProducto.setPorcentajeDesc(resultSet.getInt(7));
+            nuevoProducto.setPeso(resultSet.getFloat(8));
+            nuevoProducto.setAlto(resultSet.getFloat(9));
+            nuevoProducto.setLargo(resultSet.getFloat(10));
+            nuevoProducto.setAncho(resultSet.getFloat(11));
+            nuevoProducto.setColor(resultSet.getString(12));
+            nuevoProducto.setEstadoProductoID(resultSet.getInt(13));
+            nuevoProducto.setCiudadID(resultSet.getInt(14));
+            nuevoProducto.setCategoriaID(resultSet.getInt(15));
+
+        } while (resultSet.next());
+        return productos;
     }
 }

@@ -5,7 +5,7 @@ import org.example.Entidades.Usuarios.Usuario;
 public class Producto {
     private Integer idProducto;
     private Usuario vendedor;
-    private String nombre;
+    private String titulo;
     private Integer cantidad;
     private String descripcion;
     private Float peso;
@@ -22,7 +22,7 @@ public class Producto {
     /**
      * @summary Método creador de un producto a partir de información ingresada por el usuario
      * @param vendedor: Es el vendedor que publicó el producto
-     * @param nombre: Es el nombre del producto
+     * @param titulo: Es el nombre del producto
      * @param cantidad: Indica la cantidad de producto que hay disponible
      * @param descripcion: Breve descripción del producto publicado
      * @param peso: Peso en kgs de cada unidad de producto
@@ -36,11 +36,11 @@ public class Producto {
      * @param estadoProductoID: Estado actual del producto
      * @param categoriaID: Categoria a la que pertenece el producto
      */
-    public Producto(Usuario vendedor, String nombre, Integer cantidad, String descripcion,
+    public Producto(Usuario vendedor, String titulo, Integer cantidad, String descripcion,
                     Float peso, Integer valor, Integer porcentajeDesc, Float alto, Float largo,
                     Float ancho, String color, Integer ciudadID, Integer categoriaID) {
         this.vendedor = vendedor;
-        this.nombre = nombre;
+        this.titulo = titulo;
         this.cantidad = cantidad;
         this.descripcion = descripcion;
         this.peso = peso;
@@ -63,9 +63,9 @@ public class Producto {
 
     public void setVendedor(Usuario vendedor) { this.vendedor = vendedor; }
 
-    public String getNombre() { return nombre; }
+    public String getTitulo() { return titulo; }
 
-    public void setNombre(String nombre) { this.nombre = nombre; }
+    public void setTitulo(String titulo) { this.titulo = titulo; }
 
     public Integer getCantidad() {
         return cantidad;
