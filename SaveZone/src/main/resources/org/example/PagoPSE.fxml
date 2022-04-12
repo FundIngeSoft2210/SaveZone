@@ -10,31 +10,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="766.0" style="-fx-background-color: #f4f1f1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="967.0" style="-fx-background-color: #f4f1f1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerPagoPSE">
    <children>
-      <AnchorPane prefHeight="46.0" prefWidth="766.0" style="-fx-background-color: white;">
-         <children>
-            <ImageView fitHeight="67.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@4.png" />
-               </image>
-            </ImageView>
-            <Button fx:id="Button_Nuevo" layoutX="170.0" layoutY="12.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Nuevo" />
-            <Button fx:id="Button_ProductosPopulares" layoutX="376.0" layoutY="12.0" mnemonicParsing="false" style="-fx-background-color: #3fdfd4;" text="Populares" />
-            <ComboBox fx:id="Categorías" layoutX="245.0" layoutY="12.0" prefHeight="26.0" prefWidth="116.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;" />
-            <TextField fx:id="BuscarProducto" layoutX="530.0" layoutY="13.0" prefHeight="26.0" prefWidth="178.0" promptText="             Search" style="-fx-background-color: #f4f1f1;" />
-            <ImageView fitHeight="26.0" fitWidth="33.0" layoutX="501.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@LUPA.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="26.0" fitWidth="39.0" layoutX="694.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@canasta.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
       <AnchorPane layoutX="47.0" layoutY="85.0" prefHeight="346.0" prefWidth="372.0" style="-fx-background-color: #3fdfd4;">
          <children>
             <AnchorPane layoutY="-1.0" prefHeight="36.0" prefWidth="372.0" style="-fx-background-color: white;">
@@ -76,8 +53,8 @@
                   </AnchorPane>
                </items>
             </SplitPane>
-            <Label layoutX="59.0" layoutY="42.0" prefHeight="26.0" prefWidth="156.0" text="Natalia Gaona Salamanca" />
-            <Label layoutX="58.0" layoutY="62.0" prefHeight="26.0" prefWidth="156.0" text="tatis.gaona1942@gmail.com" />
+            <Label fx:id="nombre" layoutX="59.0" layoutY="42.0" prefHeight="26.0" prefWidth="156.0" text="Natalia Gaona Salamanca" />
+            <Label fx:id="correo" layoutX="58.0" layoutY="62.0" prefHeight="26.0" prefWidth="156.0" text="tatis.gaona1942@gmail.com" />
             <ImageView fitHeight="36.0" fitWidth="31.0" layoutX="14.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@persona.png" />
@@ -90,7 +67,7 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="495.0" layoutY="160.0" prefHeight="199.0" prefWidth="226.0" style="-fx-background-color: #3fdfd4;">
+      <AnchorPane layoutX="653.0" layoutY="160.0" prefHeight="199.0" prefWidth="226.0" style="-fx-background-color: #3fdfd4;">
          <children>
             <AnchorPane prefHeight="36.0" prefWidth="226.0" style="-fx-background-color: white;">
                <children>
@@ -101,22 +78,56 @@
                   </Label>
                </children>
             </AnchorPane>
-            <Label layoutY="74.0" text="Referencia: 22831483125846" />
-            <Label layoutY="92.0" text="Descripción: SafeZone #22831483125846" />
-            <Label layoutY="122.0" text="Total compra..................................13'000.000" />
-            <Label layoutX="2.0" layoutY="140.0" text="IVA.......................................................1'000.000" />
-            <Label layoutX="1.0" layoutY="158.0" text="Total ...................................................12'000.000" />
+            <Label layoutY="74.0" text="Referencia: " />
+            <Label layoutY="92.0" text="Descripción: " />
+            <Label layoutY="122.0" text="Total compra.................................." />
+            <Label layoutX="2.0" layoutY="140.0" text="IVA......................................................." />
+            <Label layoutX="1.0" layoutY="158.0" text="Total ..................................................." />
+            <Label fx:id="numReferencia" layoutX="65.0" layoutY="74.0" text="# referencia" />
+            <Label fx:id="descripcion" layoutX="69.0" layoutY="92.0" text="descripcion" />
+            <Label fx:id="totalCompra" layoutX="174.0" layoutY="122.0" text="\$" />
+            <Label fx:id="iva" layoutX="174.0" layoutY="140.0" text="\$" />
+            <Label fx:id="total" layoutX="174.0" layoutY="158.0" text="\$" />
          </children>
       </AnchorPane>
-      <Button fx:id="Button_Pagar" layoutX="233.0" layoutY="472.0" mnemonicParsing="false" onAction="#ConfirmarDatosParaCompra" prefHeight="36.0" prefWidth="99.0" style="-fx-background-color: #1f55a6;" text="Pagar -&gt;" textFill="#edf7f0">
+      <Button fx:id="Button_Pagar" layoutX="603.0" layoutY="472.0" mnemonicParsing="false" onAction="#ConfirmarDatosParaCompra" prefHeight="36.0" prefWidth="99.0" style="-fx-background-color: #3fdfd4;" text="Pagar -&gt;" textFill="#edf7f0">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="Button_Cancelar" layoutX="419.0" layoutY="472.0" mnemonicParsing="false" onAction="#Cancelar" prefHeight="36.0" prefWidth="99.0" text="Cancelar">
+      <Button fx:id="Button_Cancelar" layoutX="747.0" layoutY="472.0" mnemonicParsing="false" onAction="#Cancelar" prefHeight="36.0" prefWidth="99.0" text="Cancelar">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
+      <AnchorPane layoutX="-1.0" layoutY="1.0" prefHeight="63.0" prefWidth="966.0" style="-fx-background-color: white;">
+         <children>
+            <Button fx:id="Boton_vender" layoutX="429.0" layoutY="13.0" mnemonicParsing="false" onAction="#VenderProductos" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Vender" />
+            <Button fx:id="Boton_populares" layoutX="278.0" layoutY="13.0" mnemonicParsing="false" onAction="#Populares" style="-fx-background-color: #3fdfd4;" text="Populares" />
+            <ComboBox fx:id="Boton_categorias" layoutX="162.0" layoutY="13.0" onAction="#Categorias" prefHeight="26.0" prefWidth="106.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;" />
+            <TextField fx:id="Nombre1" layoutX="749.0" layoutY="12.0" onAction="#Buscar" prefHeight="26.0" prefWidth="178.0" promptText="             Search" style="-fx-background-color: #f4f1f1;" />
+            <Button fx:id="Boton_Historial" layoutX="356.0" layoutY="13.0" mnemonicParsing="false" onAction="#Historial" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Historial" />
+            <Button fx:id="Boton_Ayuda" layoutX="502.0" layoutY="13.0" mnemonicParsing="false" onAction="#Ayuda" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Ayuda" />
+            <Button fx:id="Boton_VerMisProductos" layoutX="577.0" layoutY="13.0" mnemonicParsing="false" onAction="#Productos" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: #3fdfd4;" text="Mis productos" />
+            <Button fx:id="Button_uscar" layoutX="715.0" layoutY="12.0" mnemonicParsing="false" onAction="#BuscarProductos" prefHeight="18.0" prefWidth="26.0" style="-fx-background-color: #f4f1f1;">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@LUPA.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="RegresarAlInicio" layoutX="13.0" layoutY="5.0" mnemonicParsing="false" onAction="#VolverInicio" prefHeight="50.0" prefWidth="116.0" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@4.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
