@@ -3,7 +3,7 @@ package org.example.Entidades.Usuarios;
 import java.util.*;
 import java.text.*;
 
-public class Administrador extends Usuario{
+public class Administrador extends Usuario {
     private int nivelAdmin;
 
     /**
@@ -32,6 +32,10 @@ public class Administrador extends Usuario{
         fechaReg = new SimpleDateFormat("dd-MM-yyyy").format(fecha);
         setFechaReg(fechaReg);
         this.nivelAdmin = nivelAdmin;
+    }
+
+    public Administrador() {
+
     }
 
     public int getNivelAdmin() {
