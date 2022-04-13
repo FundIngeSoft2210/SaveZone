@@ -9,7 +9,7 @@ import org.example.Entidades.Usuarios.Usuario;
 public class GestionProducto {
     ControladorBD controladorBD = new ControladorBD();
     public boolean crearProducto(Producto nuevoProducto){
-        String queryInsert = null;
+        String queryInsert;
         try {
             if(controladorBD.ejecutarConsulta("SELECT * FROM `safezone_db`.`producto` WHERE TITULO = '" + nuevoProducto.getTitulo() + "' AND VENDEDORID = " +
                                                     nuevoProducto.getVendedor().getId())!=null) return false;
@@ -35,17 +35,18 @@ public class GestionProducto {
     }
 
     public boolean modificarProducto (Producto productoModificar, String tituloAnt){
-        String insert = null;
+        String insert;
         try {
             if(controladorBD.ejecutarConsulta("SELECT * FROM `safezone_db`.`producto` WHERE TITULO = '" + productoModificar.getTitulo() + "' AND VENDEDORID = " +
-                    productoModificar.getVendedor().getId())!=null) return false;
+                    productoModificar.getVendedor().getId() + " AND ESTADOPRODUCTOID != " + 6)==null) return false;
             insert = "UPDATE `safezone_db`.`producto` SET TITULO = " +
                     "'" + productoModificar.getTitulo() + "', CANTIDAD = " + productoModificar.getCantidad() + ", DESCRIPCION = '" + productoModificar.getDescripcion() +
                     "', PESO = " + productoModificar.getPeso() + ", VALOR = " + productoModificar.getValor() + ", PORCENTAJEDESCUENTO = " +
                     productoModificar.getPorcentajeDesc() + ", ALTO = " + productoModificar.getAlto() + ", LARGO = " + productoModificar.getLargo() + ", ANCHO = " + productoModificar.getAncho()
                     + ", COLOR = '" + productoModificar.getColor() + "', CIUDADID = " + productoModificar.getCiudadID() + ", ESTADOPRODUCTOID = " + productoModificar.getEstadoProductoID() +
                     " WHERE TITULO = '" + tituloAnt + "' AND VENDEDORID = " + productoModificar.getVendedor().getId();
-            System.out.println(insert);
+            productoModificar.setIdProducto(Integer.parseInt(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE TITULO = '" + productoModificar.getTitulo() + "' AND VENDEDORID = "
+                    + productoModificar.getVendedor().getId()).getString(1)));
             controladorBD.ejecutarInsert(insert);
             System.out.println("[!] Producto modificado (ID: " + productoModificar.getIdProducto() + ")");
             return true;

@@ -68,6 +68,7 @@ public class ControladorBD {
 
             nuevoUsuario.setTelefono(resultSet.getString(9));
             nuevoUsuario.setDireccion(resultSet.getString(10));
+            nuevoUsuario.setCiudadID(resultSet.getInt(11));
 
             usuarios.add(nuevoUsuario);
         } while (resultSet.next());

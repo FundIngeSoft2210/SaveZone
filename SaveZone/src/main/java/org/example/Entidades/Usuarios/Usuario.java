@@ -146,6 +146,7 @@ public class Usuario {
                 ", telefono='" + telefono + '\'' +
                 ", direccion='" + direccion + '\'' +
                 ", ID='" + id + '\'' +
+                ", CiudadID='" + ciudadID + '\'' +
                 '}';
     }
 }
