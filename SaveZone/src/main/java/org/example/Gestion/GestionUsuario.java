@@ -45,7 +45,6 @@ public class GestionUsuario {
                     "'" + usuarioModificar.getNombre() + "', APELLIDO = '" + usuarioModificar.getApellido() + "', CONTRASEÑA = '" + usuarioModificar.getContrasena() +
                     "', CORREOELECTRONICO = '" + usuarioModificar.getCorreo() + "', FECHANACIMIENTO = CURDATE(), TELEFONO = '" + usuarioModificar.getTelefono() + "', DIRECCION = '" +
                     usuarioModificar.getDireccion() + "', CIUDADID = " + usuarioModificar.getCiudadID().toString() + " WHERE USUARIO = '" + usuarioModificar.getUsuario() + "'"; // Arreglar tipo USUARIO
-            //System.out.println(queryInsert);
             controladorBD.ejecutarInsert(insert);
              System.out.println("[!] Usuario modificado (ID: " + usuarioModificar.getId() + ")");
             return true;

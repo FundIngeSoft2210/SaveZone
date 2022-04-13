@@ -30,22 +30,19 @@ public class Main {
 
         ControladorBD controladorBD = new ControladorBD();
         GestionUsuario gestionUsuario = new GestionUsuario();
-        Usuario usuarioPrueba = new Usuario("NATALIA", "GAONA", "nat-gaona", "Natalia123", "natagaona@gmail.com", new Date(), "3163009999", "Cra 55 55 3", 1);
-        System.out.println(usuarioPrueba.toString());
+        //Usuario usuarioPrueba = new Usuario("NATALIA", "GAONA", "nat-gaona", "Natalia123", "natagaona@gmail.com", new Date(), "3163009999", "Cra 55 55 3", 1);
+        Usuario usuarioPrueba = gestionUsuario.autenticarUsuario("nat-gaona", "Natalia123");
         GestionProducto gestionProducto = new GestionProducto();
-        Producto productoPrueba = null;
+        Producto productoPrueba;
         try {
-            if (!gestionUsuario.crearUsuario(usuarioPrueba))
+            //if (!gestionUsuario.crearUsuario(usuarioPrueba))
             for (Producto producto : controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO"))) {
                 //System.out.println(producto.toString());
             }
-                //gestionUsuario.recuperarContrasena("nicolasd-cubillos", "nicolasdavidcubillos@gmail.com");
-
             Categoria categoriaPrueba = controladorBD.obtenerCategoriaConsulta(controladorBD.ejecutarConsulta("SELECT * FROM CATEGORIA")).get(13);
             productoPrueba = new Producto(usuarioPrueba, "Flores rojas", 15, "Muchas flores rojas", 5.5f, 50000, 3, 5f, 5f, 5f, "Rojo", 1, categoriaPrueba);
             gestionProducto.crearProducto(productoPrueba);
             //gestionUsuario.recuperarContrasena("nicolasd-cubillos", "nicolasdavidcubillos@gmail.com");
-            System.out.println(productoPrueba.getVendedor().getId());
             gestionProducto.eliminarProducto(productoPrueba);
 
         } catch (Exception e) {
