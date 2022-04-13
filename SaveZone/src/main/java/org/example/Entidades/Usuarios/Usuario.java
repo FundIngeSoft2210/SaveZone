@@ -145,6 +145,7 @@ public class Usuario {
                 ", fechaReg='" + fechaReg + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", direccion='" + direccion + '\'' +
+                ", ID='" + id + '\'' +
                 '}';
     }
 }

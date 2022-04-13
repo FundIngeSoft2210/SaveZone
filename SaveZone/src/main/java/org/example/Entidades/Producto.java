@@ -33,7 +33,7 @@ public class Producto {
      * @param ancho: Ancho de cada unidad en centimetros
      * @param color: Color del producto
      * @param ciudadID: Ciudad a la que pertenece el producto
-     * @param categoriaID: Categoria a la que pertenece el producto
+     * @param categoria: Categoria a la que pertenece el producto
      */
     public Producto(Usuario vendedor, String titulo, Integer cantidad, String descripcion,
                     Float peso, Integer valor, Integer porcentajeDesc, Float alto, Float largo,

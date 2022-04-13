@@ -4,12 +4,12 @@ import org.example.AccesoDatos.ControladorBD;
 
 import java.sql.SQLException;
 import org.example.Entidades.Producto;
+import org.example.Entidades.Usuarios.Usuario;
 
 public class GestionProducto {
     ControladorBD controladorBD = new ControladorBD();
     public boolean crearProducto(Producto nuevoProducto){
         String queryInsert = null;
-        System.out.println("");
         try {
             if(controladorBD.ejecutarConsulta("SELECT * FROM `safezone_db`.`producto` WHERE TITULO = '" + nuevoProducto.getTitulo() + "' AND VENDEDORID = " +
                                                     nuevoProducto.getVendedor().getId())!=null) return false;
@@ -52,6 +52,19 @@ public class GestionProducto {
         } catch (SQLException e) {
             System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
             return false;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean eliminarProducto (Producto productoEliminar) {
+        try {
+            productoEliminar.setEstadoProductoID(6);
+            String titulo = productoEliminar.getTitulo();
+            GestionProducto gestion = new GestionProducto();
+            gestion.modificarProducto(productoEliminar, titulo);
+            return true;
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return false;
