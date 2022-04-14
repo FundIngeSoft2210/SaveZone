@@ -11,6 +11,7 @@ import org.example.Gestion.GestionUsuario;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -35,16 +36,20 @@ public class Main {
         GestionProducto gestionProducto = new GestionProducto();
         Producto productoPrueba;
         try {
-            //if (!gestionUsuario.crearUsuario(usuarioPrueba))
+            /**if (!gestionUsuario.crearUsuario(usuarioPrueba))
             for (Producto producto : controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO"))) {
-                //System.out.println(producto.toString());
-            }
+                System.out.println(producto.toString());
+            }*/
             Categoria categoriaPrueba = controladorBD.obtenerCategoriaConsulta(controladorBD.ejecutarConsulta("SELECT * FROM CATEGORIA")).get(13);
             productoPrueba = new Producto(usuarioPrueba, "Flores rojas", 15, "Muchas flores rojas", 5.5f, 50000, 3, 5f, 5f, 5f, "Rojo", 1, categoriaPrueba);
             gestionProducto.crearProducto(productoPrueba);
             //gestionUsuario.recuperarContrasena("nicolasd-cubillos", "nicolasdavidcubillos@gmail.com");
             gestionProducto.eliminarProducto(productoPrueba);
-            gestionProducto.buscarProducto("tapabocas");
+            ArrayList<Producto> productos = null;
+            productos = gestionProducto.buscarProducto("flores");
+            for (Producto producto : productos){
+                System.out.println(producto.toString());
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
