@@ -11,8 +11,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import org.example.Entidades.Producto;
+import org.example.Gestion.GestionProductos.GestionProducto;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class controllerPaginaInicio {
 
@@ -197,6 +200,20 @@ public class controllerPaginaInicio {
 
     @FXML
     void VolverInicio(ActionEvent event) throws IOException {
+        // Ejemplo de despliegue.
+        GestionProducto gestion = new GestionProducto();
+        ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
+
+        System.out.println("Iniciado.");
+        ArrayList<org.example.Entidades.Producto> desplegar = new ArrayList<>();
+        desplegar = gestion.buscarProducto("airpods");
+        System.out.println("[!] Llamada al armado del FXML sobre pantalla principal.");
+        try {
+            controladorDespliegue.desplegarProductos("/Principal", desplegar, 20, 114);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../Principal.fxml"));
         Parent root = loader.load();
         controllerPaginaInicio controllerPaginaInicio = loader.getController();

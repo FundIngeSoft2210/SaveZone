@@ -57,18 +57,7 @@ public class Main {
     }
 
     public static void main (String[] args) {
-        GestionProducto gestion = new GestionProducto();
-        ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
 
-        System.out.println("Iniciado.");
-        ArrayList <Producto> desplegar = new ArrayList<>();
-        desplegar = gestion.buscarProducto("");
-        System.out.println("[!] Llamada al armado del FXML sobre pantalla principal.");
-        try {
-            controladorDespliegue.desplegarProductos("/Principal", desplegar, 20, 114);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         // Función de armado fxml
         Launcher.main(args);
         System.out.println("[!] Despliegue finalizado.");

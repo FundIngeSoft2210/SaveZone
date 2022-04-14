@@ -8,7 +8,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class ControladorDespliegueProductos {
-    public void desplegarProductos(String archivo, ArrayList<Producto> productosDesplegar, Integer x_inicial, Integer y_inicial) throws IOException {
+    public void desplegarProductos(String archivo, ArrayList<Producto> productosDesplegar, Integer x_inicial, Integer y_inicial) throws Exception {
         Integer x_actual = x_inicial, y_actual = y_inicial;
         ControladorPropiedades controladorPropiedades = new ControladorPropiedades();
 
@@ -77,7 +77,7 @@ public class ControladorDespliegueProductos {
         copiarBufferOriginal(file.getAbsolutePath(), fileCopia.getAbsolutePath());
     }
 
-    private void copiarBufferOriginal (String pathOriginal, String pathBuffer) throws IOException {
+    private void copiarBufferOriginal (String pathOriginal, String pathBuffer) throws Exception {
         File file = new File (pathOriginal);
         File fileBuffer = new File (pathBuffer);
 
@@ -92,5 +92,8 @@ public class ControladorDespliegueProductos {
 
         in.close();
         bw.close();
+
+        if (!fileBuffer.delete())
+            throw new Exception("[!] Error al eliminar el buffer del FXML.");
     }
 }
