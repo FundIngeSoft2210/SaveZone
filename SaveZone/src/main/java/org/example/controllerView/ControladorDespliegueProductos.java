@@ -9,10 +9,12 @@ import java.util.ArrayList;
 
 public class ControladorDespliegueProductos {
     public void desplegarProductos(String archivo, ArrayList<Producto> productosDesplegar, Integer x_inicial, Integer y_inicial) throws IOException {
-        System.out.println("");
+        Integer x_actual = x_inicial, y_actual = y_inicial;
         ControladorPropiedades controladorPropiedades = new ControladorPropiedades();
+
         String resourcesPath = controladorPropiedades.getPropiedad("resourcesPath");
-        String path = resourcesPath + archivo + ".fxml", pathCopia = resourcesPath + archivo + "Buffer" + ".fxml";
+        String path = resourcesPath + archivo + ".fxml", pathCopia = resourcesPath + archivo + "Buffer" + ".fxml", etiquetaProducto = null;
+
         File file = new File (path);
         File fileCopia = new File (pathCopia);
 
@@ -31,10 +33,12 @@ public class ControladorDespliegueProductos {
                 throw new FileNotFoundException("[!] No se pudo encontrar el indicador de despliegue en el archivo " + archivo + ".fxml en la ruta especificada (despliegueProductos).");
         }
 
+        bw.write("\n<!--DESPL-->\n");
+
         // Etiqueta quemada del producto XML.
 
         for (Producto producto : productosDesplegar) {
-            String etiquetaProducto = " <AnchorPane layoutX=\"" + x_inicial + "\" layoutY=\"" + y_inicial + "\" prefHeight=\"201.0\" prefWidth=\"222.0\" style=\"-fx-background-color: white;\">\n" +
+            etiquetaProducto = " <AnchorPane layoutX=\"" + x_actual + "\" layoutY=\"" + y_actual + "\" prefHeight=\"201.0\" prefWidth=\"222.0\" style=\"-fx-background-color: white;\">\n" +
                     "               <children>\n" +
                     "                  <Button fx:id=\"Producto\" layoutX=\"3.0\" layoutY=\"8.0\" mnemonicParsing=\"false\" onAction=\"#VerDetallesProducto\" prefHeight=\"182.0\" prefWidth=\"215.0\" style=\"-fx-background-color: white;\">\n" +
                     "                     <graphic>\n" +
@@ -48,12 +52,20 @@ public class ControladorDespliegueProductos {
                     "                  <Label layoutX=\"56.0\" layoutY=\"153.0\" text=\"" + producto.getTitulo() + "\" />\n" +
                     "               </children>\n" +
                     "            </AnchorPane>";
-            x_inicial += 250;
+
+            x_actual += 235;
+
+            if (x_actual > 235 * 3) {
+                y_actual += 210;
+                x_actual = x_inicial;
+            }
+
             bw.write(etiquetaProducto);
-            System.out.println("Producto desplegado.");
         }
 
-        bw.write("\n<!--DESPL-->\n"); // Indicador de despliegue
+        bw.write("\n<!--DESPL_FINAL-->\n"); // Indicador de despliegue
+
+        while (!in.readLine().contains("<!--DESPL_FINAL-->"));
 
         while ((fileLine = in.readLine()) != null) {
             bw.write(fileLine + "\n");
