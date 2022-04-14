@@ -3,6 +3,8 @@ package org.example.Gestion.GestionProductos;
 import org.example.AccesoDatos.ControladorBD;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+
 import org.example.Entidades.Producto;
 import org.example.Entidades.Usuarios.Usuario;
 
@@ -66,6 +68,23 @@ public class GestionProducto {
             GestionProducto gestion = new GestionProducto();
             gestion.modificarProducto(productoEliminar, titulo);
             return true;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean buscarProducto (String productoBuscar) {
+        ArrayList <Producto> productos = null;
+        try {
+            productos = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE TITULO LIKE '%" + productoBuscar + "%'"));
+            for (Producto producto : productos){
+                System.out.println(producto.toString());
+            }
+            return true;
+        } catch (SQLException e) {
+            System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
+            return false;
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return false;

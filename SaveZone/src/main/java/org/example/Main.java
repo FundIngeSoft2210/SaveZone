@@ -44,7 +44,7 @@ public class Main {
             gestionProducto.crearProducto(productoPrueba);
             //gestionUsuario.recuperarContrasena("nicolasd-cubillos", "nicolasdavidcubillos@gmail.com");
             gestionProducto.eliminarProducto(productoPrueba);
-
+            gestionProducto.buscarProducto("tapabocas");
         } catch (Exception e) {
             e.printStackTrace();
         }
