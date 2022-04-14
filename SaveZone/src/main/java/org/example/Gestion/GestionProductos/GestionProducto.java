@@ -10,6 +10,14 @@ import org.example.Entidades.Usuarios.Usuario;
 
 public class GestionProducto {
     ControladorBD controladorBD = new ControladorBD();
+
+    /**
+     * @summary Método encargado de crear el producto recibido como parametro y meterlo en la Base de Datos del programa
+     * @param nuevoProducto: Es un objeto de tipo producto el cuál tiene todos los atributos del producto que se creará
+     *                     e ingresará en la Base de Datos
+     * @return un booleano que en caso de que la inserción del producto se haya realizado correctamente será true y en caso
+     *         de presentar algún problema o excepción false
+     */
     public boolean crearProducto(Producto nuevoProducto){
         String queryInsert;
         try {
@@ -36,6 +44,15 @@ public class GestionProducto {
         }
     }
 
+    /**
+     * @summary Método encargado de la modificación de un produto en cualquiera de sus atributos (exceptuando aquellos que
+     *          se generen de manera automática como el ID del producto)
+     * @param productoModificar: Se recibe como parametro el objeto a buscar y modificar en la Base de Datos
+     * @param tituloAnt: Recibe el titulo del producto antes de modificaciones esto para que si hay un cambio en este
+     *                 atributo no afecte la busqueda del producto
+     * @return un booleano que en caso de que la modificación del producto se haya realizado correctamente será true y en
+     *         caso de presentar algún problema o excepción false
+     */
     public boolean modificarProducto (Producto productoModificar, String tituloAnt){
         String insert;
         try {
@@ -61,6 +78,13 @@ public class GestionProducto {
         }
     }
 
+    /**
+     * @summary Método encargado de eliminar un elemento del aplicativo, para ello se realiza una modificación a través de
+     *          la cual se cambia su estado a eliminado
+     * @param productoEliminar Es el producto a eliminar del aplicativo
+     * @return un booleano que indica que la eliminación y por defecto modificación del producto se hizo correctamente,
+     *         su valor será true si fue así y en caso de presentar algún problema o excepción false
+     */
     public boolean eliminarProducto (Producto productoEliminar) {
         try {
             productoEliminar.setEstadoProductoID(6);
@@ -74,20 +98,24 @@ public class GestionProducto {
         }
     }
 
-    public boolean buscarProducto (String productoBuscar) {
+    /**
+     * @summary Metodo encargado de realizar una busqueda de todos aquellos productos que contengan en su titulo la palabra
+     *          indicada como parametro y retornar el arreglo de estos productos
+     * @param productoBuscar Es el titulo a buscar en la base de datos del aplicativo
+     * @return un ArrayList de tipo Producto el cual contiene todos aquellos productos de la BD los cuales contengan la
+     *         palabra que se envió como parametro de la busqueda
+     */
+    public ArrayList<Producto> buscarProducto (String productoBuscar) {
         ArrayList <Producto> productos = null;
         try {
             productos = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE TITULO LIKE '%" + productoBuscar + "%'"));
-            for (Producto producto : productos){
-                System.out.println(producto.toString());
-            }
-            return true;
+            return productos;
         } catch (SQLException e) {
             System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
-            return false;
+            return productos;
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            return false;
+            return productos;
         }
     }
 }
