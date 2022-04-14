@@ -62,10 +62,10 @@ public class Main {
 
         System.out.println("Iniciado.");
         ArrayList <Producto> desplegar = new ArrayList<>();
-        desplegar = gestion.buscarProducto("airpods");
+        desplegar = gestion.buscarProducto("");
         System.out.println("[!] Llamada al armado del FXML sobre pantalla principal.");
         try {
-            controladorDespliegue.desplegarProductos("/Principal.fxml", desplegar, 5, 5);
+            controladorDespliegue.desplegarProductos("/Principal", desplegar, 20, 114);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -20,6 +20,7 @@ public class ControladorPropiedades {
             properties.setProperty("ultimoUser", "");
             properties.setProperty("correo_adm", "safezonemoderacion@gmail.com");
             properties.setProperty("password_adm", "f4488fecb9caa22ed1fd12cb25d9d6611d6a6c4604ecd398bacaf286d4b3e4e3");
+            properties.setProperty("resourcesPath", "src/main/resources/org/example/");
 
             properties.store(outputStream, "Configuración aplicación SafeZone");
 
