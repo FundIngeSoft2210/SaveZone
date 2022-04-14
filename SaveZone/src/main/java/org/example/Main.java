@@ -7,6 +7,7 @@ import org.example.Entidades.Producto;
 import org.example.Entidades.Usuarios.Usuario;
 import org.example.Gestion.GestionProductos.GestionProducto;
 import org.example.Gestion.GestionUsuario;
+import org.example.controllerView.ControladorDespliegueProductos;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,7 +28,7 @@ public class Main {
         }
     }
 
-    public static void main (String[] args) { // Prueba de conexión BD
+    public static void mainAnterior (String[] args) { // Prueba de conexión BD
 
         ControladorBD controladorBD = new ControladorBD();
         GestionUsuario gestionUsuario = new GestionUsuario();
@@ -53,6 +54,23 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
 
+    public static void main (String[] args) {
+        GestionProducto gestion = new GestionProducto();
+        ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
+
+        System.out.println("Iniciado.");
+        ArrayList <Producto> desplegar = new ArrayList<>();
+        desplegar = gestion.buscarProducto("airpods");
+        System.out.println("[!] Llamada al armado del FXML sobre pantalla principal.");
+        try {
+            controladorDespliegue.desplegarProductos("/Principal.fxml", desplegar, 5, 5);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        // Función de armado fxml
+        Launcher.main(args);
+        System.out.println("[!] Despliegue finalizado.");
     }
 }
