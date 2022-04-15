@@ -12,13 +12,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.example.Entidades.Producto;
+import org.example.Entidades.Usuarios.Usuario;
 import org.example.Gestion.GestionProductos.GestionProducto;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class controllerPaginaInicio {
-
+    private Usuario usuario;
     @FXML
     private Button Boton_Ayuda;
 
@@ -234,5 +235,8 @@ public class controllerPaginaInicio {
 
     }
 
+    void ultimoUser (Usuario user){
+        usuario = user;
+    }
 }
 

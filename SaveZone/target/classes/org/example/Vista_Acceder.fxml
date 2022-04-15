@@ -29,11 +29,11 @@
                   <Font name="System Italic" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="21.0" layoutY="79.0" text="Correo:" />
-            <Label layoutX="21.0" layoutY="127.0" text="Contreseña:" />
+            <Label layoutX="21.0" layoutY="79.0" text="Usuario:" />
+            <Label layoutX="21.0" layoutY="127.0" text="Contraseña:" />
             <Button fx:id="Button_entrar" layoutX="28.0" layoutY="184.0" mnemonicParsing="false" onAction="#Entrar" style="-fx-background-color: #3fdfd4;" text="Entrar" textFill="#edf7f0" />
             <PasswordField fx:id="contraseña" layoutX="53.0" layoutY="144.0" prefHeight="25.0" prefWidth="165.0" promptText="********" />
-            <TextField fx:id="correoCuenta" layoutX="51.0" layoutY="99.0" prefHeight="25.0" prefWidth="165.0" promptText="ro@outlook.com" />
+            <TextField fx:id="correoCuenta" layoutX="51.0" layoutY="99.0" prefHeight="25.0" prefWidth="165.0" promptText="u-suario" />
             <Button fx:id="olvidarContraseña" layoutX="98.0" layoutY="184.0" mnemonicParsing="false" onAction="#olvidoContraseña" text="¿Olvidaste tu contraseña?" />
          </children>
       </Pane>
