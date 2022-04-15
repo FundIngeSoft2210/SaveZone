@@ -95,6 +95,13 @@
 
 
 
+
+
+
+
+
+
+
 <!--DESPL-->
  <AnchorPane layoutX="20" layoutY="114" prefHeight="201.0" prefWidth="222.0" style="-fx-background-color: white;">
                <children>
@@ -107,7 +114,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label layoutX="56.0" layoutY="153.0" text="AirPods Pro" />
+                  <Label layoutX="56.0" layoutY="153.0" text="Shampoo" />
                </children>
             </AnchorPane>
 <!--DESPL_FINAL-->
