@@ -14,6 +14,7 @@ public class ControladorDespliegueProductos {
 
         String resourcesPath = controladorPropiedades.getPropiedad("resourcesPath");
         String path = resourcesPath + archivo + ".fxml", pathCopia = resourcesPath + archivo + "Buffer" + ".fxml", etiquetaProducto = null;
+        System.out.println("[!] Llamada al armado del FXML sobre " + path);
 
         File file = new File (path);
         File fileCopia = new File (pathCopia);
@@ -95,5 +96,68 @@ public class ControladorDespliegueProductos {
 
         if (!fileBuffer.delete())
             throw new Exception("[!] Error al eliminar el buffer del FXML.");
+    }
+
+    public void desplegarMisProductos(String archivo, ArrayList<Producto> productosDesplegar, Integer y_inicial) throws Exception {
+        ControladorPropiedades controladorPropiedades = new ControladorPropiedades();
+        Integer y_actual = y_inicial;
+
+        String resourcesPath = controladorPropiedades.getPropiedad("resourcesPath");
+        String path = resourcesPath + archivo + ".fxml", pathCopia = resourcesPath + archivo + "Buffer" + ".fxml", etiquetaProducto = null;
+        System.out.println("[!] Llamada al armado del FXML sobre " + path);
+
+        File file = new File (path);
+        File fileCopia = new File (pathCopia);
+
+        if (!file.exists())
+            throw new FileNotFoundException("[!] No se pudo encontrar el archivo " + archivo + ".fxml en la ruta especificada (despliegueProductos).");
+
+        BufferedReader in = new BufferedReader(new FileReader (file.getAbsoluteFile()));
+        BufferedWriter bw = new BufferedWriter(new FileWriter(fileCopia.getAbsoluteFile(), false));
+
+        String fileLine = in.readLine();
+
+        while (!fileLine.contains("<!--DESPL-->")) {
+            bw.write(fileLine + "\n");
+            fileLine = in.readLine();
+            if (fileLine == null)
+                throw new FileNotFoundException("[!] No se pudo encontrar el indicador de despliegue en el archivo " + archivo + ".fxml en la ruta especificada (despliegueProductos).");
+        }
+
+        bw.write("\n<!--DESPL-->\n");
+
+        // Etiqueta quemada del producto XML.
+
+        for (Producto producto : productosDesplegar) {
+            etiquetaProducto = "<AnchorPane layoutX=\"311.0\" layoutY=\"" + y_actual + "\" prefHeight=\"102.0\" prefWidth=\"351.0\" style=\"-fx-background-color: white;\">\n" +
+                    "               <children>\n" +
+                    "                  <Button fx:id=\"Producto\" layoutX=\"2.0\" layoutY=\"9.0\" mnemonicParsing=\"false\" onAction=\"#VerDetallesProducto\" prefHeight=\"62.0\" prefWidth=\"328.0\" style=\"-fx-background-color: white;\" />\n" +
+                    "                  <Label fx:id=\"NombreProducto\" layoutX=\"132.0\" layoutY=\"31.0\" text=\"" + producto.getTitulo() + "\" />\n" +
+                    "                  <ImageView fx:id=\"ImagenProducto\" fitHeight=\"50.0\" fitWidth=\"106.0\" layoutX=\"14.0\" layoutY=\"22.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\n" +
+                    "                     <image>\n" +
+                    "                        <Image url=\"@1.PNG\" />\n" +
+                    "                     </image>\n" +
+                    "                  </ImageView>\n" +
+                    "                  <Button fx:id=\"Button_ModificarProducto\" layoutX=\"133.0\" layoutY=\"64.0\" mnemonicParsing=\"false\" onAction=\"#ModificarProducto\" style=\"-fx-background-color: #3fdfd4;\" text=\"Modificar\" />\n" +
+                    "                  <Button fx:id=\"Boton_eliminarProducto\" layoutX=\"226.0\" layoutY=\"64.0\" mnemonicParsing=\"false\" onAction=\"#EliminarProducto\" style=\"-fx-background-color: #3fdfd4;\" text=\"Eliminar\" />\n" +
+                    "               </children>\n" +
+                    "            </AnchorPane>";
+
+            y_actual += 115;
+            bw.write(etiquetaProducto);
+        }
+
+        bw.write("\n<!--DESPL_FINAL-->\n"); // Indicador de despliegue
+
+        while (!in.readLine().contains("<!--DESPL_FINAL-->"));
+
+        while ((fileLine = in.readLine()) != null) {
+            bw.write(fileLine + "\n");
+        }
+
+        in.close();
+        bw.close();
+
+        copiarBufferOriginal(file.getAbsolutePath(), fileCopia.getAbsolutePath());
     }
 }
