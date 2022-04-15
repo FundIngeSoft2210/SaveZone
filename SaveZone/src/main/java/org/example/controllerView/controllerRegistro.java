@@ -1,7 +1,9 @@
 package org.example.controllerView;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -11,19 +13,26 @@ import org.example.Entidades.Usuarios.Usuario;
 import org.example.Gestion.GestionUsuario;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Date;
 import java.time.Instant;
 import java.time.*;
 import java.time.ZoneId;
+import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class controllerRegistro {
+public class controllerRegistro implements Initializable {
     @FXML
     private TextField Apellido;
+    @FXML
+    private ComboBox<String> Ciudad;
+
+    @FXML
+    private ComboBox<String> Departamento;
 
     @FXML
     private Button Button_Cancelar;
@@ -166,6 +175,24 @@ public class controllerRegistro {
             alert.setContentText("Algún dato no fue ingresado correctamente o su número/correo ya está registrado en el sistema. Intente de nuevo");
             alert.showAndWait();
         }
+    }
+
+
+
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        /*
+        Departamento.setItems(FXCollections.observableArrayList("Amazonas", "Antioquia", "Arauca", "Atlántico", "Bolívar", "Boyacá", "Caldas", "Caquetá",
+                "Casanare", "Cauca", "Cesar", "Chocó", "Caldas", "Córdoba", "Cundinamarca", "Guainía", "Huila", "La Guajira","Magdalena", "Meta",
+                "Nariño", "Norte de Santander", "Putumayo", "Quindío", "Risaralda", "San Andrés y Providencia", "Santander", "Sucre",
+                "Tolima", "Valle del Cauca", "Vaupés", "Vichada" ));
+        Ciudad.setItems(FXCollections.observableArrayList("Leticia", "Medellín", "Arauca", "Barranquilla", "Cartagena de Indias", "Tunja", "Manizales", "Florencia",
+                "Yopal", "Popayán", "Valledupar", "Quibdó", "Montería", "Bogotá", "Inírida", "San José del Guaviare", "Neiva", "Rioacha","Santa Marta", "Villavicencio",
+                "San Juan de Pasto", "San José de Cúcuta", "Mocoa", "Armenía", "Pereira", "San Andrés", "Bucaramanga", "Sincelejo",
+                "Ibagué", "Cali", "Mitú", "Puerto Carreño" ));
+       */
     }
 }
 

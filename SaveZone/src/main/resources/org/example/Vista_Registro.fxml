@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -11,14 +12,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="969.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerRegistro">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="1015.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerRegistro">
    <children>
-      <ImageView fitHeight="585.0" fitWidth="969.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="570.0" fitWidth="1066.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@3.png" />
          </image>
       </ImageView>
-      <Pane layoutX="339.0" layoutY="17.0" prefHeight="512.0" prefWidth="250.0" style="-fx-background-color: white;">
+      <Pane layoutX="256.0" layoutY="37.0" prefHeight="428.0" prefWidth="503.0" style="-fx-background-color: white;">
          <children>
             <ImageView fitHeight="32.0" fitWidth="127.0" layoutX="116.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -30,24 +31,28 @@
                   <Font name="System Italic" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="153.0" text="Correo:" />
-            <Label layoutX="18.0" layoutY="411.0" text="Contraseña:" />
-            <PasswordField fx:id="contraseña" layoutX="41.0" layoutY="440.0" prefHeight="25.0" prefWidth="165.0" promptText="********" />
-            <TextField fx:id="correoCuenta" layoutX="48.0" layoutY="177.0" prefHeight="25.0" prefWidth="165.0" promptText="ro@outlook.com" />
-            <Label layoutX="15.0" layoutY="57.0" text="Nombre" />
-            <TextField fx:id="Apellido" layoutX="51.0" layoutY="128.0" prefHeight="25.0" prefWidth="165.0" promptText="Gaona Salamanca" />
+            <Label layoutX="20.0" layoutY="111.0" text="Correo:" />
+            <Label layoutX="291.0" layoutY="272.0" text="Contraseña:" />
+            <PasswordField fx:id="contraseña" layoutX="310.0" layoutY="298.0" prefHeight="25.0" prefWidth="165.0" promptText="********" />
+            <TextField fx:id="correoCuenta" layoutX="50.0" layoutY="133.0" prefHeight="25.0" prefWidth="165.0" promptText="ro@outlook.com" />
+            <Label layoutX="20.0" layoutY="57.0" text="Nombre" />
+            <TextField fx:id="Apellido" layoutX="307.0" layoutY="77.0" prefHeight="25.0" prefWidth="165.0" promptText="Gaona Salamanca" />
             <TextField fx:id="Nombre" layoutX="50.0" layoutY="77.0" prefHeight="25.0" prefWidth="165.0" promptText="Natalia" />
-            <Label layoutX="15.0" layoutY="102.0" text="Apellidos" />
-            <Button fx:id="Button_Registrarse" layoutX="24.0" layoutY="476.0" mnemonicParsing="false" onAction="#Registro" style="-fx-background-color: #3fdfd4;" text="Registrarse" textFill="#edf7f0" />
-            <Button fx:id="Button_Cancelar" layoutX="151.0" layoutY="476.0" mnemonicParsing="false" onAction="#Cancelar" style="-fx-background-color: #3fdfd4;" text="Cancelar" textFill="#edf7f0" />
-            <Label layoutX="13.0" layoutY="254.0" text="Telefono:" />
-            <TextField fx:id="telefonoCuenta" layoutX="48.0" layoutY="276.0" prefHeight="25.0" prefWidth="165.0" promptText="2638837182" />
-            <Label layoutX="14.0" layoutY="305.0" text="Dirección:" />
-            <TextField fx:id="direccionCuenta" layoutX="48.0" layoutY="322.0" prefHeight="25.0" prefWidth="165.0" promptText="Cr 128#146-49" />
-            <DatePicker fx:id="fechaDeNacimientoCuenta" layoutX="44.0" layoutY="378.0" />
-            <Label layoutX="14.0" layoutY="356.0" text="Fecha De Nacimiento:" />
-            <TextField fx:id="nombreUser" layoutX="51.0" layoutY="229.0" prefHeight="25.0" prefWidth="165.0" promptText="na_ro156" />
-            <Label layoutX="17.0" layoutY="202.0" text="Nombre de Usuario:" />
+            <Label layoutX="282.0" layoutY="57.0" text="Apellidos" />
+            <Button fx:id="Button_Registrarse" layoutX="177.0" layoutY="364.0" mnemonicParsing="false" onAction="#Registro" style="-fx-background-color: #3fdfd4;" text="Registrarse" textFill="#edf7f0" />
+            <Button fx:id="Button_Cancelar" layoutX="300.0" layoutY="364.0" mnemonicParsing="false" onAction="#Cancelar" style="-fx-background-color: #3fdfd4;" text="Cancelar" textFill="#edf7f0" />
+            <Label layoutX="20.0" layoutY="168.0" text="Telefono:" />
+            <TextField fx:id="telefonoCuenta" layoutX="50.0" layoutY="185.0" prefHeight="25.0" prefWidth="165.0" promptText="2638837182" />
+            <Label layoutX="284.0" layoutY="168.0" text="Dirección:" />
+            <TextField fx:id="direccionCuenta" layoutX="307.0" layoutY="185.0" prefHeight="25.0" prefWidth="165.0" promptText="Cr 128#146-49" />
+            <DatePicker fx:id="fechaDeNacimientoCuenta" layoutX="49.0" layoutY="299.0" prefHeight="25.0" prefWidth="165.0" />
+            <Label layoutX="21.0" layoutY="272.0" text="Fecha De Nacimiento:" />
+            <TextField fx:id="nombreUser" layoutX="307.0" layoutY="130.0" prefHeight="25.0" prefWidth="165.0" promptText="na_ro156" />
+            <Label layoutX="282.0" layoutY="111.0" text="Nombre de Usuario:" />
+            <Label layoutX="21.0" layoutY="218.0" text="Departamento:" />
+            <ComboBox fx:id="Departamento" layoutX="49.0" layoutY="235.0" prefHeight="25.0" prefWidth="165.0" promptText="-Seleccione-" />
+            <Label layoutX="282.0" layoutY="218.0" text="Ciudad:" />
+            <ComboBox fx:id="Ciudad" layoutX="310.0" layoutY="235.0" prefHeight="25.0" prefWidth="165.0" promptText="-Seleccione-" />
          </children>
       </Pane>
    </children>
