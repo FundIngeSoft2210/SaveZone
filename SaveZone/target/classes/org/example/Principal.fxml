@@ -106,8 +106,6 @@
 
 
 
-
-
 <!--DESPL-->
  <AnchorPane layoutX="20" layoutY="114" prefHeight="201.0" prefWidth="222.0" style="-fx-background-color: white;">
                <children>
@@ -120,7 +118,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label layoutX="56.0" layoutY="153.0" text="Tapabocas desechables 10u" />
+                  <Label layoutX="56.0" layoutY="153.0" text="Tapabocas desechables 10 unidades por caja" />
                </children>
             </AnchorPane> <AnchorPane layoutX="255" layoutY="114" prefHeight="201.0" prefWidth="222.0" style="-fx-background-color: white;">
                <children>
@@ -133,7 +131,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label layoutX="56.0" layoutY="153.0" text="Shampoo" />
+                  <Label layoutX="56.0" layoutY="153.0" text="Flores" />
                </children>
             </AnchorPane> <AnchorPane layoutX="490" layoutY="114" prefHeight="201.0" prefWidth="222.0" style="-fx-background-color: white;">
                <children>
@@ -146,7 +144,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label layoutX="56.0" layoutY="153.0" text="Talcos" />
+                  <Label layoutX="56.0" layoutY="153.0" text="Flores" />
                </children>
             </AnchorPane> <AnchorPane layoutX="20" layoutY="324" prefHeight="201.0" prefWidth="222.0" style="-fx-background-color: white;">
                <children>
@@ -159,7 +157,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label layoutX="56.0" layoutY="153.0" text="AirPods Pro" />
+                  <Label layoutX="56.0" layoutY="153.0" text="Flores rojas" />
                </children>
             </AnchorPane>
 <!--DESPL_FINAL-->

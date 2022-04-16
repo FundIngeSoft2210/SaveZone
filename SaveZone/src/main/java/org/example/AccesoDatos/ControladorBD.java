@@ -1,5 +1,7 @@
 package org.example.AccesoDatos;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.example.Entidades.Categoria;
 import org.example.Entidades.Producto;
 import org.example.Entidades.Usuarios.Administrador;
@@ -73,6 +75,30 @@ public class ControladorBD {
             usuarios.add(nuevoUsuario);
         } while (resultSet.next());
         return usuarios;
+    }
+
+    public ObservableList<String> obtenerDeptos (ResultSet rs) throws SQLException{
+        ObservableList<String> deptos= FXCollections.observableArrayList();
+        if (rs == null) return null;
+
+        do{
+            String depto=null;
+            depto = rs.getString(1);
+            deptos.add(depto);
+        } while(rs.next());
+        return deptos;
+    }
+
+    public ObservableList<String> obtenerCiudades (ResultSet rs) throws SQLException{
+        ObservableList<String> ciudades= FXCollections.observableArrayList();
+        if (rs == null) return null;
+
+        do{
+            String ciudad=null;
+            ciudad = rs.getString(1);
+            ciudades.add(ciudad);
+        } while(rs.next());
+        return ciudades;
     }
 
     public ArrayList<Producto> obtenerProductosConsulta (ResultSet resultSet) throws SQLException, ClassNotFoundException {
