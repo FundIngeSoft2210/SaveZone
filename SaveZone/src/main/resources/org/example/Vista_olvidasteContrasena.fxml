@@ -9,7 +9,8 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="342.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerRecuperarContraseña">
+<?import javafx.scene.control.TextField?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="342.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerRecuperarContrasena">
    <children>
       <ImageView fitHeight="342.0" fitWidth="614.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -23,14 +24,14 @@
                   <Image url="@4.png" />
                </image>
             </ImageView>
-            <Label layoutX="24.0" layoutY="46.0" text="¿olvidaste tu contraseña? ">
+            <Label layoutX="24.0" layoutY="46.0" text="¿Olvidaste tu contraseña? ">
                <font>
                   <Font name="System Italic" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="21.0" layoutY="79.0" text="Tu Correo:" />
+            <Label layoutX="21.0" layoutY="79.0" text="Tu Correo o nombre de usuario:" />
             <Button fx:id="Button_RecuperarContraseña" layoutX="19.0" layoutY="135.0" mnemonicParsing="false" onAction="#RecuperarContraseña" style="-fx-background-color: #3fdfd4;" text="Recuperar contraseña" textFill="#edf7f0" />
-            <PasswordField layoutX="19.0" layoutY="99.0" prefHeight="25.0" prefWidth="165.0" promptText="ro@outlook.com" />
+            <TextField fx:id="txtCorreoOUser" layoutX="19.0" layoutY="99.0" prefHeight="25.0" prefWidth="165.0" promptText="ro@outlook.com o ro-234" />
             <Button fx:id="Button_Cancelar" layoutX="170.0" layoutY="135.0" mnemonicParsing="false" onAction="#Cancelar" style="-fx-background-color: #3fdfd4;" text="Cancelar" textFill="#edf7f0" />
          </children>
       </Pane>

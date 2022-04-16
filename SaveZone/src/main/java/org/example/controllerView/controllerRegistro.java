@@ -175,7 +175,6 @@ public class controllerRegistro implements Initializable {
             alert.setContentText("El numero ingresado no es válido");
             alert.showAndWait();
         } catch (Exception e){
-            System.out.println(e);
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setTitle("ERROR");

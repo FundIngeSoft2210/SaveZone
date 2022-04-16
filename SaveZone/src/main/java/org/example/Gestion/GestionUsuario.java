@@ -73,7 +73,7 @@ public class GestionUsuario {
         }
     }
 
-    public boolean recuperarContrasena(String nombreUsuario, String correo) { // Recuperar por usuario o por correo
+    public boolean recuperarContrasena(String usernameOCorreo) { // Recuperar por usuario o por correo
         ArrayList<Usuario> usuarios = null;
         ControladorPropiedades controladorPropiedades = new ControladorPropiedades();
         Properties props = System.getProperties();
@@ -81,7 +81,7 @@ public class GestionUsuario {
         try {
             usuarios = controladorBD.obtenerUsuariosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM USUARIO"));
             for (Usuario usuario : usuarios) {
-                if (usuario.getUsuario().equals(nombreUsuario) || usuario.getCorreo().equals(correo)) {
+                if (usuario.getUsuario().equals(usernameOCorreo) || usuario.getCorreo().equals(usernameOCorreo)) {
                     props.put("mail.smtp.host", "smtp.gmail.com");
                     props.put("mail.smtp.user", correoSafeZoneAdm);
                     props.put("mail.smtp.clave", "");
@@ -92,7 +92,7 @@ public class GestionUsuario {
                     Session session = Session.getDefaultInstance(props);
                     MimeMessage message = new MimeMessage(session);
                     message.setFrom(new InternetAddress(controladorPropiedades.getPropiedad("correo_adm")));
-                    message.addRecipient(Message.RecipientType.TO, new InternetAddress(correo));   //Se podrían añadir varios de la misma manera
+                    message.addRecipient(Message.RecipientType.TO, new InternetAddress(usuario.getCorreo()));   //Se podrían añadir varios de la misma manera
                     message.setSubject("Recuperación de contraseña - Administración de SafeZone.");
                     message.setText("La contraseña de tu cuenta es " + usuario.getContrasena());
                     Transport transport = session.getTransport("smtp");
@@ -100,7 +100,6 @@ public class GestionUsuario {
                     transport.connect("smtp.gmail.com", correoSafeZoneAdm, controladorPropiedades.getPropiedad("password_adm"));
                     transport.sendMessage(message, message.getAllRecipients());
                     transport.close();
-                    System.out.println("[!] Correo de recuperación de contraseña enviado a " + correo + ".");
                     return true;
                 }
             }
