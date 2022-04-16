@@ -60,7 +60,6 @@ public class controllerAyuda {
         ControladorRutas.launchConQuePodemosAyudarte();
         Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
         myStage.close();
-
     }
 
     @FXML
@@ -74,8 +73,10 @@ public class controllerAyuda {
     }
 
     @FXML
-    void Cancelar(ActionEvent event) throws IOException{
-
+    void Cancelar(ActionEvent event) throws Exception {
+        ControladorRutas.launchPantallaPrincipal();
+        Stage myStage = (Stage) this.Button_Cancelar.getScene().getWindow();
+        myStage.close();
     }
 
     @FXML
@@ -84,8 +85,10 @@ public class controllerAyuda {
     }
 
     @FXML
-    void Enviar(ActionEvent event) throws IOException{
-
+    void Enviar(ActionEvent event) throws Exception {
+        ControladorRutas.launchPantallaPrincipal();
+        Stage myStage = (Stage) this.Button_Enviar.getScene().getWindow();
+        myStage.close();
     }
 
     @FXML
@@ -93,7 +96,6 @@ public class controllerAyuda {
         ControladorRutas.launchHistorial();
         Stage myStage = (Stage) this.Boton_Historial.getScene().getWindow();
         myStage.close();
-
     }
 
     @FXML
@@ -123,7 +125,6 @@ public class controllerAyuda {
         ControladorRutas.launchPantallaPrincipal();
         Stage myStage = (Stage) this.RegresarAlInicio.getScene().getWindow();
         myStage.close();
-
     }
 
 }

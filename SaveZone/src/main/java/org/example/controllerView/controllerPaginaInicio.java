@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class controllerPaginaInicio {
-    private Usuario usuario;
+
     @FXML
     private Button Boton_Ayuda;
 
@@ -80,7 +80,6 @@ public class controllerPaginaInicio {
         ControladorRutas.launchHistorial();
         Stage myStage = (Stage) this.Boton_Historial.getScene().getWindow();
         myStage.close();
-
     }
 
     @FXML
@@ -95,7 +94,6 @@ public class controllerPaginaInicio {
         ControladorRutas.launchMisProductos();
         Stage myStage = (Stage) this.Boton_VerMisProductos.getScene().getWindow();
         myStage.close();
-
     }
 
     @FXML
@@ -103,29 +101,13 @@ public class controllerPaginaInicio {
         ControladorRutas.launchAnadirProductos();
         Stage myStage = (Stage) this.Boton_vender.getScene().getWindow();
         myStage.close();
-
     }
 
     @FXML
-    void VerDetallesProducto(ActionEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../comprarProducto.fxml"));
-        Parent root = loader.load();
-        controllerProductoAComprar controllerProductoAComprar = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Comprar Producto");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
-
+    void VerDetallesProducto(ActionEvent event) throws Exception {
+        ControladorRutas.launchDetallesProducto();
         Stage myStage = (Stage) this.Producto.getScene().getWindow();
         myStage.close();
-
     }
 
     @FXML
@@ -133,11 +115,6 @@ public class controllerPaginaInicio {
         ControladorRutas.launchPantallaPrincipal();
         Stage myStage = (Stage) this.RegresarAlInicio.getScene().getWindow();
         myStage.close();
-
-    }
-
-    void ultimoUser (Usuario user){
-        usuario = user;
     }
 }
 

@@ -81,8 +81,10 @@ public class controllerAnadirProducto {
     @FXML
     private Button subir_Producto;
     @FXML
-    void AnadirProducto(ActionEvent event) throws IOException{
-
+    void AnadirProducto(ActionEvent event) throws Exception {
+        ControladorRutas.launchMisProductos();
+        Stage myStage = (Stage) this.Boton_VerMisProductos.getScene().getWindow();
+        myStage.close();
     }
 
     @FXML
@@ -103,8 +105,10 @@ public class controllerAnadirProducto {
     }
 
     @FXML
-    void Cancelar(ActionEvent event) throws IOException{
-
+    void Cancelar(ActionEvent event) throws Exception {
+        ControladorRutas.launchMisProductos();
+        Stage myStage = (Stage) this.Boton_VerMisProductos.getScene().getWindow();
+        myStage.close();
     }
 
     @FXML
@@ -115,10 +119,8 @@ public class controllerAnadirProducto {
     @FXML
     void Historial(ActionEvent event) throws Exception {
         ControladorRutas.launchHistorial();
-
         Stage myStage = (Stage) this.Boton_Historial.getScene().getWindow();
         myStage.close();
-
     }
 
     @FXML
@@ -152,7 +154,5 @@ public class controllerAnadirProducto {
         ControladorRutas.launchPantallaPrincipal();
         Stage myStage = (Stage) this.RegresarAlInicio.getScene().getWindow();
         myStage.close();
-
     }
-
 }

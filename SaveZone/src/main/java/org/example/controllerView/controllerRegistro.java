@@ -61,22 +61,8 @@ public class controllerRegistro implements Initializable {
     @FXML
     private TextField telefonoCuenta;
     @FXML
-    void Cancelar(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../vista_inicio.fxml"));
-        Parent root = loader.load();
-        GuiControler guiControler = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Acceder");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
-
+    void Cancelar(ActionEvent event) throws Exception {
+        ControladorRutas.launchPantallaInicio();
         Stage myStage = (Stage) this.Button_Cancelar.getScene().getWindow();
         myStage.close();
     }
@@ -140,22 +126,8 @@ public class controllerRegistro implements Initializable {
                 alert.setContentText("Estimado cliente su registro se realizó correctamente, ");
                 alert.showAndWait();
 
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../vista_inicio.fxml"));
-                Parent root = loader.load();
-                GuiControler guiControler = loader.getController();
-                Scene scene = new Scene(root);
-                Stage stage = new Stage();
-                stage.setScene(scene);
-                scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
-                stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
-                stage.setTitle("Acceder");
-                stage.setScene(scene);
-                stage.setMaximized(false);
-                stage.setResizable(false);
-                stage.show();
-                stage.show();
-
-                Stage myStage = (Stage) this.Button_Cancelar.getScene().getWindow();
+                ControladorRutas.launchPantallaInicio();
+                Stage myStage = (Stage) this.Button_Registrarse.getScene().getWindow();
                 myStage.close();
             } else {
                 throw new Exception();

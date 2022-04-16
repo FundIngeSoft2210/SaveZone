@@ -47,21 +47,8 @@ public class controllerAcceder {
             }
             Usuario user = gestionUsuario.autenticarUsuario(usuario, contrasena);
             if (user != null){
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../Principal.fxml"));
-                Parent root = loader.load();
-                controllerPaginaInicio controllerPaginaInicio = loader.getController();
-                controllerPaginaInicio.ultimoUser(user);
-                Scene scene = new Scene(root);
-                Stage stage = new Stage();
-                stage.setScene(scene);
-                scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
-                stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
-                stage.setTitle("Página Inicio");
-                stage.setScene(scene);
-                stage.setMaximized(false);
-                stage.setResizable(false);
-                stage.show();
-                stage.show();
+                ControladorRutas.ultimoUser(user);
+                ControladorRutas.launchPantallaPrincipal();
                 Stage myStage = (Stage) this.Button_entrar.getScene().getWindow();
                 myStage.close();
             } else {
@@ -77,25 +64,10 @@ public class controllerAcceder {
     }
 
     @FXML
-    void olvidoContraseña(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Vista_olvidasteContrasena.fxml"));
-        Parent root = loader.load();
-        controllerRecuperarContrasena controllerRecuperarContrasena = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Recuperar Contraseña");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
-
-        Stage myStage = (Stage) this.olvidarContraseña.getScene().getWindow();
+    void olvidoContraseña(ActionEvent event) throws Exception {
+        ControladorRutas.launchOlvidasteContra();
+        Stage myStage = (Stage) this.Button_entrar.getScene().getWindow();
         myStage.close();
-
     }
 
 }

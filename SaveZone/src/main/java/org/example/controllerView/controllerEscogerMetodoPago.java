@@ -82,25 +82,10 @@ public class controllerEscogerMetodoPago {
     private Button visa;
 
     @FXML
-    void Ayuda(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../ConQuePodemosAyudarte.fxml"));
-        Parent root = loader.load();
-        controllerAyuda controllerAyuda = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Ayuda");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
-
+    void Ayuda(ActionEvent event) throws Exception {
+        ControladorRutas.launchConQuePodemosAyudarte();
         Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
         myStage.close();
-
     }
 
     @FXML
@@ -119,202 +104,65 @@ public class controllerEscogerMetodoPago {
     }
 
     @FXML
-    void PagarPorCodensa(ActionEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../PagoCredito.fxml"));
-        Parent root = loader.load();
-        controllerTarjetaCredito controllerTarjetaCredito = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Tarjeta Crédito");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
-
-        Stage myStage = (Stage) this.Codensa.getScene().getWindow();
+    void PagarPorCodensa(ActionEvent event) throws Exception {
+        ControladorRutas.launchMetodoCodensa();
+        Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
         myStage.close();
-
-
     }
 
     @FXML
-    void PagarPorMC(ActionEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../PagoCredito.fxml"));
-        Parent root = loader.load();
-        controllerTarjetaCredito controllerTarjetaCredito = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Tarjeta Crédito");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
-
-        Stage myStage = (Stage) this.visa.getScene().getWindow();
+    void PagarPorMC(ActionEvent event) throws Exception{
+        ControladorRutas.launchMetodoMC();
+        Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
         myStage.close();
-
     }
 
     @FXML
-    void PagarPorVisa(ActionEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../PagoCredito.fxml"));
-        Parent root = loader.load();
-        controllerTarjetaCredito controllerTarjetaCredito = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Tarjeta Crédito");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
-
-        Stage myStage = (Stage) this.visa.getScene().getWindow();
+    void PagarPorVisa(ActionEvent event) throws Exception{
+        ControladorRutas.launchMetodoVisa();
+        Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
         myStage.close();
-
     }
 
     @FXML
-    void PagoPSE(ActionEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../PagoPSE.fxml"));
-        Parent root = loader.load();
-        controllerPagoPSE controllerPagoPSE = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Pago PSE");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
-
-        Stage myStage = (Stage) this.PSE.getScene().getWindow();
+    void PagoPSE(ActionEvent event) throws Exception{
+        ControladorRutas.launchMetodoPSE();
+        Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
         myStage.close();
-
     }
-    @FXML
-    void Historial(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Historial.fxml"));
-        Parent root = loader.load();
-        controllerHistorial controllerHistorial = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Historiales");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
 
+    @FXML
+    void Historial(ActionEvent event) throws Exception {
+        ControladorRutas.launchHistorial();
         Stage myStage = (Stage) this.Boton_Historial.getScene().getWindow();
         myStage.close();
-
     }
 
-
     @FXML
-    void Populares(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../ProductosPopulares.fxml"));
-        Parent root = loader.load();
-        controllerPopulares controllerPopulares = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Productos Populares");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
-
+    void Populares(ActionEvent event) throws Exception {
+        ControladorRutas.launchProductosPopulares();
         Stage myStage = (Stage) this.Boton_VerMisProductos.getScene().getWindow();
         myStage.close();
     }
 
     @FXML
-    void Productos(ActionEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../MisProductos.fxml"));
-        Parent root = loader.load();
-        controllerMisProductos controllerMisProductos = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Ver mis Productos");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
-
+    void Productos(ActionEvent event) throws Exception {
+        ControladorRutas.launchMisProductos();
         Stage myStage = (Stage) this.Boton_VerMisProductos.getScene().getWindow();
         myStage.close();
-
     }
 
-
     @FXML
-    void VenderProductos(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../anadirProducto.fxml"));
-        Parent root = loader.load();
-        controllerAnadirProducto controllerVender = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
-        stage.setTitle("VenderTuProducto");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
-
+    void VenderProductos(ActionEvent event) throws Exception {
+        ControladorRutas.launchAnadirProductos();
         Stage myStage = (Stage) this.Boton_vender.getScene().getWindow();
         myStage.close();
-
     }
 
     @FXML
-    void VolverInicio(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Principal.fxml"));
-        Parent root = loader.load();
-        controllerPaginaInicio controllerPaginaInicio = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Página Inicio");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
-
+    void VolverInicio(ActionEvent event) throws Exception {
+        ControladorRutas.launchPantallaPrincipal();
         Stage myStage = (Stage) this.RegresarAlInicio.getScene().getWindow();
         myStage.close();
-
     }
-
 }

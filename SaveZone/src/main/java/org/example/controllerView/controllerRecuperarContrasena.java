@@ -20,30 +20,17 @@ public class controllerRecuperarContrasena {
     private Button Button_RecuperarContraseña;
 
     @FXML
-    void Cancelar(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Vista_Acceder.fxml"));
-        Parent root = loader.load();
-        controllerAcceder controllerAcceder = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(getClass().getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Acceder");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
-
+    void Cancelar(ActionEvent event) throws Exception {
+        ControladorRutas.launchVista_Acceder();
         Stage myStage = (Stage) this.Button_Cancelar.getScene().getWindow();
         myStage.close();
-
     }
 
     @FXML
-    void RecuperarContraseña(ActionEvent event) {
-
+    void RecuperarContraseña(ActionEvent event) throws Exception {
+        ControladorRutas.launchVista_Acceder();
+        Stage myStage = (Stage) this.Button_RecuperarContraseña.getScene().getWindow();
+        myStage.close();
     }
 
 }
