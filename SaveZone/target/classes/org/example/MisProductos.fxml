@@ -46,14 +46,15 @@
 
 
 
+
 <!--DESPL-->
 <AnchorPane layoutX="311.0" layoutY="114" prefHeight="102.0" prefWidth="351.0" style="-fx-background-color: white;">
                <children>
                   <Button fx:id="Producto" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="62.0" prefWidth="328.0" style="-fx-background-color: white;" />
-                  <Label fx:id="NombreProducto" layoutX="132.0" layoutY="31.0" text="Tapabocas desechables 10 unidades por caja" />
+                  <Label fx:id="NombreProducto" layoutX="132.0" layoutY="31.0" text="Tapabocas" />
                   <ImageView fx:id="ImagenProducto" fitHeight="50.0" fitWidth="106.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@1.PNG" />
+                              <Image url="@1producto.png" />
                      </image>
                   </ImageView>
                   <Button fx:id="Button_ModificarProducto" layoutX="133.0" layoutY="64.0" mnemonicParsing="false" onAction="#ModificarProducto" style="-fx-background-color: #3fdfd4;" text="Modificar" />
@@ -62,10 +63,10 @@
             </AnchorPane><AnchorPane layoutX="311.0" layoutY="229" prefHeight="102.0" prefWidth="351.0" style="-fx-background-color: white;">
                <children>
                   <Button fx:id="Producto" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="62.0" prefWidth="328.0" style="-fx-background-color: white;" />
-                  <Label fx:id="NombreProducto" layoutX="132.0" layoutY="31.0" text="Flores" />
+                  <Label fx:id="NombreProducto" layoutX="132.0" layoutY="31.0" text="Ron viejo de caldas" />
                   <ImageView fx:id="ImagenProducto" fitHeight="50.0" fitWidth="106.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@1.PNG" />
+                              <Image url="@2producto.png" />
                      </image>
                   </ImageView>
                   <Button fx:id="Button_ModificarProducto" layoutX="133.0" layoutY="64.0" mnemonicParsing="false" onAction="#ModificarProducto" style="-fx-background-color: #3fdfd4;" text="Modificar" />
@@ -74,10 +75,10 @@
             </AnchorPane><AnchorPane layoutX="311.0" layoutY="344" prefHeight="102.0" prefWidth="351.0" style="-fx-background-color: white;">
                <children>
                   <Button fx:id="Producto" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="62.0" prefWidth="328.0" style="-fx-background-color: white;" />
-                  <Label fx:id="NombreProducto" layoutX="132.0" layoutY="31.0" text="Flores" />
+                  <Label fx:id="NombreProducto" layoutX="132.0" layoutY="31.0" text="Manguera" />
                   <ImageView fx:id="ImagenProducto" fitHeight="50.0" fitWidth="106.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@1.PNG" />
+                              <Image url="@3producto.png" />
                      </image>
                   </ImageView>
                   <Button fx:id="Button_ModificarProducto" layoutX="133.0" layoutY="64.0" mnemonicParsing="false" onAction="#ModificarProducto" style="-fx-background-color: #3fdfd4;" text="Modificar" />
@@ -86,10 +87,22 @@
             </AnchorPane><AnchorPane layoutX="311.0" layoutY="459" prefHeight="102.0" prefWidth="351.0" style="-fx-background-color: white;">
                <children>
                   <Button fx:id="Producto" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="62.0" prefWidth="328.0" style="-fx-background-color: white;" />
-                  <Label fx:id="NombreProducto" layoutX="132.0" layoutY="31.0" text="Flores rojas" />
+                  <Label fx:id="NombreProducto" layoutX="132.0" layoutY="31.0" text="Parlante Sony" />
                   <ImageView fx:id="ImagenProducto" fitHeight="50.0" fitWidth="106.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@1.PNG" />
+                              <Image url="@4producto.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="Button_ModificarProducto" layoutX="133.0" layoutY="64.0" mnemonicParsing="false" onAction="#ModificarProducto" style="-fx-background-color: #3fdfd4;" text="Modificar" />
+                  <Button fx:id="Boton_eliminarProducto" layoutX="226.0" layoutY="64.0" mnemonicParsing="false" onAction="#EliminarProducto" style="-fx-background-color: #3fdfd4;" text="Eliminar" />
+               </children>
+            </AnchorPane><AnchorPane layoutX="311.0" layoutY="574" prefHeight="102.0" prefWidth="351.0" style="-fx-background-color: white;">
+               <children>
+                  <Button fx:id="Producto" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="62.0" prefWidth="328.0" style="-fx-background-color: white;" />
+                  <Label fx:id="NombreProducto" layoutX="132.0" layoutY="31.0" text="Computador Lenovo Ideapad 500" />
+                  <ImageView fx:id="ImagenProducto" fitHeight="50.0" fitWidth="106.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                              <Image url="@5producto.png" />
                      </image>
                   </ImageView>
                   <Button fx:id="Button_ModificarProducto" layoutX="133.0" layoutY="64.0" mnemonicParsing="false" onAction="#ModificarProducto" style="-fx-background-color: #3fdfd4;" text="Modificar" />

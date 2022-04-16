@@ -7,8 +7,10 @@ import org.example.Entidades.Producto;
 import org.example.Entidades.Usuarios.Administrador;
 import org.example.Entidades.Usuarios.Usuario;
 
+import java.nio.charset.StandardCharsets;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Base64;
 
 public class ControladorBD {
 
@@ -103,6 +105,7 @@ public class ControladorBD {
 
     public ArrayList<Producto> obtenerProductosConsulta (ResultSet resultSet) throws SQLException, ClassNotFoundException {
         ArrayList<Producto> productos = new ArrayList<Producto>();
+        byte[] imgdata = null;
 
         if (resultSet == null) return null;
 
@@ -123,6 +126,17 @@ public class ControladorBD {
             nuevoProducto.setEstadoProductoID(resultSet.getInt(13));
             nuevoProducto.setCiudadID(resultSet.getInt(14));
             nuevoProducto.setCategoria(obtenerCategoriaConsulta(ejecutarConsulta("SELECT * FROM CATEGORIA WHERE ID = " + resultSet.getInt(15))).get(0));
+
+            try {
+                System.out.println("");
+                imgdata = Base64.getDecoder().decode(ejecutarConsulta("SELECT * FROM IMAGENES WHERE PRODUCTOID = " + nuevoProducto.getIdProducto() + " AND PRINCIPAL = 1").getBytes(3));
+            } catch (Exception e) {
+                imgdata = Base64.getDecoder().decode(ejecutarConsulta("SELECT * FROM IMAGENES WHERE ISNULL(PRODUCTOID)").getString(3).getBytes(StandardCharsets.UTF_8));
+            } finally {
+                System.out.println("");
+                nuevoProducto.setImgdata(imgdata);
+            }
+
             productos.add(nuevoProducto);
         } while (resultSet.next());
         return productos;
