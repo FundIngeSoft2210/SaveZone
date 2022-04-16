@@ -6,12 +6,31 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import org.example.Entidades.Producto;
 import org.example.Entidades.Usuarios.Usuario;
 import org.example.Gestion.GestionProductos.GestionProducto;
 
 public class ControladorRutas {
 
-    private static Usuario usuario;
+    protected static Usuario usuario = null;
+    protected static Producto producto = null;
+
+    public static Producto getProducto() {
+        return producto;
+    }
+
+    public static void setProducto(Producto producto) {
+        ControladorRutas.producto = producto;
+    }
+
+    public static Usuario getUsuario() {
+        return usuario;
+    }
+
+    public static void setUsuario(Usuario usuario) {
+        ControladorRutas.usuario = usuario;
+    }
+
     public static void ultimoUser (Usuario user){
         usuario = user;
     }

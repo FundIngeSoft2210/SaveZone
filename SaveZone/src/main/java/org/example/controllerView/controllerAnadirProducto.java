@@ -9,11 +9,22 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.example.AccesoDatos.ControladorBD;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.sql.SQLException;
+import java.util.Base64;
 
 public class controllerAnadirProducto {
+
+    final ControladorBD controladorBD = new ControladorBD();
+    final ControladorDespliegueProductos controladorDespliegueProductos = new ControladorDespliegueProductos();
+    private String encoded;
 
     @FXML
     private TextField Alto;
@@ -138,12 +149,21 @@ public class controllerAnadirProducto {
     }
 
     @FXML
-    void SubirImagenProducto(ActionEvent event) throws IOException{
-
+    void SubirImagenProducto(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
+        FileChooser.ExtensionFilter imageFilter
+                = new FileChooser.ExtensionFilter("Imágenes png",  "*.png");
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(imageFilter);
+        Stage myStage = (Stage) this.Boton_VerMisProductos.getScene().getWindow();
+        File selectedFile = fileChooser.showOpenDialog(myStage);
+        encoded = Base64.getEncoder().encodeToString(Files.readAllBytes(selectedFile.toPath()));
+        // refresh y poner la img en pantalla...
     }
 
     @FXML
     void VenderProductos(ActionEvent event) throws Exception {
+        // insert del producto en bd...
+        controladorBD.ejecutarInsert("INSERT INTO `safezone_db`.`IMAGENES` (`ProductoID`, `Base64`, `Principal`) VALUES ('" + ControladorRutas.getProducto().getIdProducto() + "', '" + encoded + "', b'1')");
         ControladorRutas.launchAnadirProductos();
         Stage myStage = (Stage) this.Boton_vender.getScene().getWindow();
         myStage.close();
