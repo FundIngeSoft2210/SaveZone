@@ -135,6 +135,12 @@ CREATE TABLE safezone_db.Usuario (
   CiudadID          int(10) NOT NULL, 
   TipoUsuarioID     int(10) NOT NULL, 
   PRIMARY KEY (ID));
+  
+  CREATE TABLE Imagenes (
+  ID         int(11) NOT NULL AUTO_INCREMENT, 
+  ProductoID int(10) NOT NULL, 
+  Base64     varchar(700) NOT NULL UNIQUE, 
+  PRIMARY KEY (ID));
 
   
 -- Foreigns
@@ -155,6 +161,7 @@ ALTER TABLE safezone_db.Pedido ADD CONSTRAINT FKPedido97630 FOREIGN KEY (Product
 ALTER TABLE safezone_db.Pedido ADD CONSTRAINT FKPedido62546 FOREIGN KEY (CompradorID) REFERENCES Usuario (ID);
 ALTER TABLE safezone_db.Producto ADD CONSTRAINT FKProducto155724 FOREIGN KEY (EstadoProductoID) REFERENCES EstadoProducto (ID);
 ALTER TABLE safezone_db.Tarjeta ADD CONSTRAINT FKTarjeta490215 FOREIGN KEY (UsuarioID) REFERENCES Usuario (ID);
+ALTER TABLE Imagenes ADD CONSTRAINT FKImagenes432275 FOREIGN KEY (ProductoID) REFERENCES Producto (ID);
 
 -- Llenado de tablas de referencia
 
