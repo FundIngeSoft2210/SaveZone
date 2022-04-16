@@ -1,5 +1,7 @@
 package org.example.controllerView;
+import com.mysql.cj.protocol.Resultset;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,15 +11,18 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import org.example.AccesoDatos.ControladorBD;
 import org.example.Entidades.Usuarios.Usuario;
 import org.example.Gestion.GestionUsuario;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.time.Instant;
 import java.time.*;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -68,11 +73,40 @@ public class controllerRegistro implements Initializable {
     }
 
     @FXML
+    void selDepto(ActionEvent event) throws Exception {
+        Integer idDepto;
+        String deptoSel;
+        ObservableList<String> listaCiudades;
+        Resultset rs;
+        ControladorBD controladorBD = new ControladorBD();
+        deptoSel=this.Departamento.getSelectionModel().getSelectedItem();
+        idDepto = Integer.parseInt(controladorBD.ejecutarConsulta("SELECT * FROM DEPARTAMENTO WHERE " +
+                "NOMBRE = '" + deptoSel + "'").getString(1));
+        try {
+            listaCiudades = controladorBD.obtenerCiudades(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM " +
+                    "CIUDAD WHERE DEPARTAMENTOID = " + idDepto +""));
+            Ciudad.setItems(listaCiudades);
+        } catch (SQLException e) {
+            System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
     void Registro(ActionEvent event)  throws IOException {
         GestionUsuario gestionUsuario = new GestionUsuario();
         try {
-            String nombre, apellidos, correo, nombreUsuario, telefono, direccion, contrasena;
+            String nombre, apellidos, correo, nombreUsuario, telefono, direccion, contrasena, ciudadSel;
             LocalDate fechaNac;
+            Integer idCiudad;
+            ControladorBD controladorBD = new ControladorBD();
+            ciudadSel = this.Ciudad.getSelectionModel().getSelectedItem();
+            idCiudad = controladorBD.ejecutarConsulta("SELECT * FROM CIUDAD WHERE " +
+                    "NOMBRE = '" + ciudadSel + "'").getInt(1);
+            if (ciudadSel.isEmpty() || ciudadSel == null){
+                throw new Exception("ciudad");
+            }
 
             nombre = this.Nombre.getText();
             if (nombre == null || nombre.isEmpty()){
@@ -116,7 +150,7 @@ public class controllerRegistro implements Initializable {
             Instant instant = Instant.from(fechaNac.atStartOfDay(ZoneId.systemDefault()));
             java.util.Date date = Date.from(instant);
             Usuario user = new Usuario(nombre, apellidos, nombreUsuario, contrasena, correo, date,
-                    telefono, direccion, 1);
+                    telefono, direccion, idCiudad);
             Boolean creado = gestionUsuario.crearUsuario(user);
 
             if (creado) {
@@ -141,6 +175,7 @@ public class controllerRegistro implements Initializable {
             alert.setContentText("El numero ingresado no es válido");
             alert.showAndWait();
         } catch (Exception e){
+            System.out.println(e);
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setTitle("ERROR");
@@ -155,16 +190,17 @@ public class controllerRegistro implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        /*
-        Departamento.setItems(FXCollections.observableArrayList("Amazonas", "Antioquia", "Arauca", "Atlántico", "Bolívar", "Boyacá", "Caldas", "Caquetá",
-                "Casanare", "Cauca", "Cesar", "Chocó", "Caldas", "Córdoba", "Cundinamarca", "Guainía", "Huila", "La Guajira","Magdalena", "Meta",
-                "Nariño", "Norte de Santander", "Putumayo", "Quindío", "Risaralda", "San Andrés y Providencia", "Santander", "Sucre",
-                "Tolima", "Valle del Cauca", "Vaupés", "Vichada" ));
-        Ciudad.setItems(FXCollections.observableArrayList("Leticia", "Medellín", "Arauca", "Barranquilla", "Cartagena de Indias", "Tunja", "Manizales", "Florencia",
-                "Yopal", "Popayán", "Valledupar", "Quibdó", "Montería", "Bogotá", "Inírida", "San José del Guaviare", "Neiva", "Rioacha","Santa Marta", "Villavicencio",
-                "San Juan de Pasto", "San José de Cúcuta", "Mocoa", "Armenía", "Pereira", "San Andrés", "Bucaramanga", "Sincelejo",
-                "Ibagué", "Cali", "Mitú", "Puerto Carreño" ));
-       */
+        ControladorBD controladorBD = new ControladorBD();
+        Resultset rs;
+        ObservableList<String> listaDeptos;
+        try {
+            listaDeptos = controladorBD.obtenerDeptos(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM DEPARTAMENTO"));
+            Departamento.setItems(listaDeptos);
+        } catch (SQLException e) {
+            System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
 

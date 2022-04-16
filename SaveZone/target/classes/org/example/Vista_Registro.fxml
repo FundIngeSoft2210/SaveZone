@@ -50,7 +50,7 @@
             <TextField fx:id="nombreUser" layoutX="307.0" layoutY="130.0" prefHeight="25.0" prefWidth="165.0" promptText="na_ro156" />
             <Label layoutX="282.0" layoutY="111.0" text="Nombre de Usuario:" />
             <Label layoutX="21.0" layoutY="218.0" text="Departamento:" />
-            <ComboBox fx:id="Departamento" layoutX="49.0" layoutY="235.0" prefHeight="25.0" prefWidth="165.0" promptText="-Seleccione-" />
+            <ComboBox fx:id="Departamento" layoutX="49.0" layoutY="235.0" onAction="#selDepto" prefHeight="25.0" prefWidth="165.0" promptText="-Seleccione-" />
             <Label layoutX="282.0" layoutY="218.0" text="Ciudad:" />
             <ComboBox fx:id="Ciudad" layoutX="310.0" layoutY="235.0" prefHeight="25.0" prefWidth="165.0" promptText="-Seleccione-" />
          </children>
