@@ -18,6 +18,7 @@ public class Producto {
     private Integer ciudadID;
     private Integer estadoProductoID;
     private Categoria categoria;
+    private byte[] imgdata;
 
     /**
      * @summary Método creador de un producto a partir de información ingresada por el usuario
@@ -34,6 +35,7 @@ public class Producto {
      * @param color: Color del producto
      * @param ciudadID: Ciudad a la que pertenece el producto
      * @param categoria: Categoria a la que pertenece el producto
+     * @param imgdatq: Datos en base64 de la imagen del producto.
      */
     public Producto(Usuario vendedor, String titulo, Integer cantidad, String descripcion,
                     Float peso, Integer valor, Integer porcentajeDesc, Float alto, Float largo,
@@ -164,6 +166,14 @@ public class Producto {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public byte[]  getImgdata() {
+        return imgdata;
+    }
+
+    public void setImgdata(byte[] imgdata) {
+        this.imgdata = imgdata;
     }
 
     @Override
