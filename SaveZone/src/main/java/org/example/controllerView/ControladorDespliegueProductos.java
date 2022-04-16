@@ -1,7 +1,6 @@
 package org.example.controllerView;
 
 import javafx.fxml.FXML;
-import org.apache.commons.codec.binary.Base64;
 import org.example.AccesoDatos.ControladorPropiedades;
 import org.example.Entidades.Producto;
 
