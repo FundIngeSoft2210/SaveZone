@@ -168,4 +168,6 @@ public class ControladorDespliegueProductos {
         stream.write(base64Img);
         stream.close();
     }
+
+
 }

@@ -17,7 +17,7 @@ public class Producto {
     private String color;
     private Integer ciudadID;
     private Integer estadoProductoID;
-    private Categoria categoria;
+    private Integer categoria;
     private byte[] imgdata;
 
     /**
@@ -39,7 +39,7 @@ public class Producto {
      */
     public Producto(Usuario vendedor, String titulo, Integer cantidad, String descripcion,
                     Float peso, Integer valor, Integer porcentajeDesc, Float alto, Float largo,
-                    Float ancho, String color, Integer ciudadID, Categoria categoria) {
+                    Float ancho, String color, Integer ciudadID, Integer categoria) {
         this.vendedor = vendedor;
         this.titulo = titulo;
         this.cantidad = cantidad;
@@ -160,11 +160,11 @@ public class Producto {
         this.estadoProductoID = estadoProductoID;
     }
 
-    public Categoria getCategoria() {
+    public Integer getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(Categoria categoria) {
+    public void setCategoria(Integer categoria) {
         this.categoria = categoria;
     }
 

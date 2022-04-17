@@ -1,8 +1,11 @@
 package org.example.controllerView;
 
+import com.mysql.cj.protocol.Resultset;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -10,10 +13,14 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import org.example.AccesoDatos.ControladorBD;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class controllerHistorial {
+public class controllerHistorial implements Initializable {
 
     @FXML
     private Button Boton_Ayuda;
@@ -25,7 +32,7 @@ public class controllerHistorial {
     private Button Boton_VerMisProductos;
 
     @FXML
-    private ComboBox<?> Boton_categorias;
+    private ComboBox<String> Boton_categorias;
 
     @FXML
     private Button Boton_populares;
@@ -122,6 +129,20 @@ public class controllerHistorial {
         ControladorRutas.launchPantallaPrincipal();
         Stage myStage = (Stage) this.RegresarAlInicio.getScene().getWindow();
         myStage.close();
+    }
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ControladorBD controladorBD = new ControladorBD();
+        Resultset rs;
+        ObservableList<String> listaCatego;
+        try {
+            listaCatego = controladorBD.obtenerDeptos(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM CATEGORIA"));
+            Boton_categorias.setItems(listaCatego);
+        } catch (SQLException e) {
+            System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 }

@@ -125,7 +125,7 @@ public class ControladorBD {
             nuevoProducto.setColor(resultSet.getString(12));
             nuevoProducto.setEstadoProductoID(resultSet.getInt(13));
             nuevoProducto.setCiudadID(resultSet.getInt(14));
-            nuevoProducto.setCategoria(obtenerCategoriaConsulta(ejecutarConsulta("SELECT * FROM CATEGORIA WHERE ID = " + resultSet.getInt(15))).get(0));
+            nuevoProducto.setCategoria(resultSet.getInt(15));
 
             try {
                 System.out.println("");
