@@ -23,6 +23,8 @@ public class controllerModificarProducto {
 
     @FXML
     private Button Boton_VerMisProductos;
+    @FXML
+    private Button Boton_favoritos;
 
     @FXML
     private ComboBox<?> Boton_categorias;
@@ -148,5 +150,12 @@ public class controllerModificarProducto {
         ControladorRutas.launchPantallaPrincipal();
         Stage myStage = (Stage) this.RegresarAlInicio.getScene().getWindow();
         myStage.close();
+    }
+    @FXML
+    void Favoritos(ActionEvent event) throws Exception {
+        ControladorRutas.launchFavoritos();
+        Stage myStage = (Stage) this.Boton_favoritos.getScene().getWindow();
+        myStage.close();
+
     }
 }

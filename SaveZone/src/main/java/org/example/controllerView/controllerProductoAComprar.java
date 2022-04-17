@@ -43,6 +43,12 @@ public class controllerProductoAComprar implements Initializable {
     private Button Boton_vender;
 
     @FXML
+    private Button Button_AnadirAFavoritos;
+
+    @FXML
+    private Button Boton_favoritos;
+
+    @FXML
     private Button Button_uscar;
 
     @FXML
@@ -159,4 +165,19 @@ public class controllerProductoAComprar implements Initializable {
             System.out.println(e.getMessage());
         }
     }
+    @FXML
+    void Favoritos(ActionEvent event) throws Exception {
+        ControladorRutas.launchFavoritos();
+        Stage myStage = (Stage) this.Boton_favoritos.getScene().getWindow();
+        myStage.close();
+
+    }
+
+    @FXML
+    void AnadirAFavoritos(ActionEvent event) throws Exception{
+        ControladorRutas.launchFavoritos();
+        Stage myStage = (Stage) this.Button_AnadirAFavoritos.getScene().getWindow();
+        myStage.close();
+    }
+
 }

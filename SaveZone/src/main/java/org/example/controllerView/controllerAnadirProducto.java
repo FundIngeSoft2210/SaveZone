@@ -59,6 +59,8 @@ public class controllerAnadirProducto implements Initializable {
 
     @FXML
     private Button Boton_populares;
+    @FXML
+    private Button Boton_favoritos;
 
     @FXML
     private Button Boton_vender;
@@ -290,5 +292,12 @@ public class controllerAnadirProducto implements Initializable {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+    @FXML
+    void Favoritos(ActionEvent event) throws Exception {
+        ControladorRutas.launchFavoritos();
+        Stage myStage = (Stage) this.Boton_favoritos.getScene().getWindow();
+        myStage.close();
+
     }
 }
