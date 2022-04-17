@@ -34,6 +34,10 @@ public class controllerPaginaInicio implements Initializable {
     private Button Boton_Historial;
 
     @FXML
+    private Button Boton_Favoritos;
+
+
+    @FXML
     private Button Boton_VerMisProductos;
 
     @FXML
@@ -137,6 +141,14 @@ public class controllerPaginaInicio implements Initializable {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    @FXML
+    void Favoritos(ActionEvent event) throws Exception {
+        ControladorRutas.launchFavoritos();
+        Stage myStage = (Stage) this.Boton_Favoritos.getScene().getWindow();
+        myStage.close();
+
     }
 }
 

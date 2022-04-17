@@ -27,6 +27,8 @@ public class controllerHistorial implements Initializable {
 
     @FXML
     private Button Boton_Historial;
+    @FXML
+    private Button Boton_favoritos;
 
     @FXML
     private Button Boton_VerMisProductos;
@@ -143,6 +145,13 @@ public class controllerHistorial implements Initializable {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+    @FXML
+    void Favoritos(ActionEvent event) throws Exception {
+        ControladorRutas.launchFavoritos();
+        Stage myStage = (Stage) this.Boton_favoritos.getScene().getWindow();
+        myStage.close();
+
     }
 
 }

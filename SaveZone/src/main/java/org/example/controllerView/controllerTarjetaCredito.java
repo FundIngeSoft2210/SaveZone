@@ -25,6 +25,9 @@ public class controllerTarjetaCredito {
     private Button Boton_Historial;
 
     @FXML
+    private Button Boton_Favoritos;
+
+    @FXML
     private Button Boton_VerMisProductos;
 
     @FXML
@@ -170,5 +173,13 @@ public class controllerTarjetaCredito {
         ControladorRutas.launchPantallaPrincipal();
         Stage myStage = (Stage) this.RegresarAlInicio.getScene().getWindow();
         myStage.close();
+    }
+
+    @FXML
+    void Favoritos(ActionEvent event) throws Exception {
+        ControladorRutas.launchFavoritos();
+        Stage myStage = (Stage) this.Boton_Favoritos.getScene().getWindow();
+        myStage.close();
+
     }
 }

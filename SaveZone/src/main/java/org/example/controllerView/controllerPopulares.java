@@ -34,6 +34,9 @@ public class controllerPopulares implements Initializable {
     private Button Boton_VerMisProductos;
 
     @FXML
+    private Button Boton_Favoritos;
+
+    @FXML
     private ComboBox<String> Boton_categorias;
 
     @FXML
@@ -138,5 +141,12 @@ public class controllerPopulares implements Initializable {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+    @FXML
+    void Favoritos(ActionEvent event) throws Exception {
+        ControladorRutas.launchFavoritos();
+        Stage myStage = (Stage) this.Boton_Favoritos.getScene().getWindow();
+        myStage.close();
+
     }
 }

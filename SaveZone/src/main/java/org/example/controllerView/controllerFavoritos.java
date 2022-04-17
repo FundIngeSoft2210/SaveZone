@@ -2,22 +2,18 @@ package org.example.controllerView;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+public class controllerFavoritos {
 
-public class controllerVendedorProducto {
     @FXML
     private Button Boton_Ayuda;
+
+    @FXML
+    private Button Boton_Favoritos;
 
     @FXML
     private Button Boton_Historial;
@@ -29,10 +25,7 @@ public class controllerVendedorProducto {
     private ComboBox<?> Boton_categorias;
 
     @FXML
-    private Button Boton_populares;
-
-    @FXML
-    private Button Boton_Favoritos;
+    private Button Boton_favoritos;
 
     @FXML
     private Button Boton_vender;
@@ -44,47 +37,14 @@ public class controllerVendedorProducto {
     private TextField Nombre1;
 
     @FXML
-    private Label Precio;
-
-    @FXML
     private Button RegresarAlInicio;
-
-    @FXML
-    private Label alto;
-
-    @FXML
-    private Label ancho;
-
-    @FXML
-    private Button botonEliminar;
-
-    @FXML
-    private Button botonModificar;
-
-    @FXML
-    private Label cant;
-
-    @FXML
-    private TextArea comentarios;
-
-    @FXML
-    private TextArea descripcion;
-
-    @FXML
-    private Label nombreProducto;
-
-    @FXML
-    private Label peso;
-
-    @FXML
-    private Label porcentajeDescuento;
-
 
     @FXML
     void Ayuda(ActionEvent event) throws Exception {
         ControladorRutas.launchConQuePodemosAyudarte();
         Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
         myStage.close();
+
     }
 
     @FXML
@@ -101,6 +61,14 @@ public class controllerVendedorProducto {
     void Categorias(ActionEvent event) {
 
     }
+
+    @FXML
+    void Favoritos(ActionEvent event) throws Exception {
+        ControladorRutas.launchFavoritos();
+        Stage myStage = (Stage) this.Boton_Favoritos.getScene().getWindow();
+        myStage.close();
+    }
+
     @FXML
     void Historial(ActionEvent event) throws Exception {
         ControladorRutas.launchHistorial();
@@ -136,24 +104,4 @@ public class controllerVendedorProducto {
         myStage.close();
     }
 
-    @FXML
-    void ModificarProducto(ActionEvent event) throws Exception {
-        ControladorRutas.launchModificarProducto();
-        Stage myStage = (Stage) this.botonModificar.getScene().getWindow();
-        myStage.close();
-    }
-
-    @FXML
-    void EliminarProducto(ActionEvent event) throws Exception {
-        ControladorRutas.launchEliminarProducto();
-        Stage myStage = (Stage) this.botonEliminar.getScene().getWindow();
-        myStage.close();
-    }
-    @FXML
-    void Favoritos(ActionEvent event) throws Exception {
-        ControladorRutas.launchFavoritos();
-        Stage myStage = (Stage) this.Boton_Favoritos.getScene().getWindow();
-        myStage.close();
-
-    }
 }

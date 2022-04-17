@@ -416,4 +416,20 @@ public class ControladorRutas {
         stage.show();
         stage.show();
     }
+    public static void launchFavoritos() throws Exception {
+        FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../Favoritos.fxml"));
+        Parent root = loader.load();
+        controllerFavoritos controllerFavoritos = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Tus Favoritos");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
+    }
 }

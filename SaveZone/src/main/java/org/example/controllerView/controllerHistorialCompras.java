@@ -32,6 +32,8 @@ public class controllerHistorialCompras implements Initializable {
 
     @FXML
     private Button Boton_VerMisProductos;
+    @FXML
+    private Button Boton_favoritos;
 
     @FXML
     private ComboBox<String> Boton_categorias;
@@ -137,6 +139,13 @@ public class controllerHistorialCompras implements Initializable {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+    @FXML
+    void Favoritos(ActionEvent event) throws Exception {
+        ControladorRutas.launchFavoritos();
+        Stage myStage = (Stage) this.Boton_favoritos.getScene().getWindow();
+        myStage.close();
+
     }
 
 }

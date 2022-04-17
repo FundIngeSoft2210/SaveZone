@@ -18,6 +18,8 @@ public class controllerEliminarProducto {
 
     @FXML
     private Button Boton_Ayuda;
+    @FXML
+    private Button Boton_favoritos;
 
     @FXML
     private Button Boton_Historial;
@@ -125,5 +127,12 @@ public class controllerEliminarProducto {
         ControladorRutas.launchPantallaPrincipal();
         Stage myStage = (Stage) this.RegresarAlInicio.getScene().getWindow();
         myStage.close();
+    }
+    @FXML
+    void Favoritos(ActionEvent event) throws Exception {
+        ControladorRutas.launchFavoritos();
+        Stage myStage = (Stage) this.Boton_favoritos.getScene().getWindow();
+        myStage.close();
+
     }
 }
