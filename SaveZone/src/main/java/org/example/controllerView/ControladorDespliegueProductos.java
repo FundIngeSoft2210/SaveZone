@@ -41,7 +41,7 @@ public class ControladorDespliegueProductos {
             base64ToLocal(producto.getImgdata(), producto.getIdProducto() + "producto");
             etiquetaProducto = " <AnchorPane layoutX=\"" + x_actual + "\" layoutY=\"" + y_actual + "\" prefHeight=\"201.0\" prefWidth=\"222.0\" style=\"-fx-background-color: white;\">\n" +
                     "               <children>\n" +
-                    "                  <Button fx:id=\"Producto\" layoutX=\"3.0\" layoutY=\"8.0\" mnemonicParsing=\"false\" onAction=\"#VerDetallesProducto\" prefHeight=\"182.0\" prefWidth=\"215.0\" style=\"-fx-background-color: white;\">\n" +
+                    "                  <Button fx:id=\"" + producto.getIdProducto() + "\" layoutX=\"3.0\" layoutY=\"8.0\" mnemonicParsing=\"false\" onAction=\"#VerDetallesProducto\" prefHeight=\"182.0\" prefWidth=\"215.0\" style=\"-fx-background-color: white;\">\n" +
                     "                     <graphic>\n" +
                     "                        <ImageView fx:id=\"ImagenProducto\" fitHeight=\"88.0\" fitWidth=\"192.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\n" +
                     "                           <image>\n" +
@@ -106,6 +106,7 @@ public class ControladorDespliegueProductos {
         String path = resourcesPath + archivo + ".fxml", pathCopia = resourcesPath + archivo + "Buffer" + ".fxml", etiquetaProducto = null;
         System.out.println("[!] Llamada al armado del FXML sobre " + path);
 
+
         File file = new File (path);
         File fileCopia = new File (pathCopia);
 
@@ -132,7 +133,7 @@ public class ControladorDespliegueProductos {
             base64ToLocal(producto.getImgdata(), producto.getIdProducto() + "producto");
             etiquetaProducto = "<AnchorPane layoutX=\"311.0\" layoutY=\"" + y_actual + "\" prefHeight=\"102.0\" prefWidth=\"351.0\" style=\"-fx-background-color: white;\">\n" +
                     "               <children>\n" +
-                    "                  <Button fx:id=\"Producto\" layoutX=\"2.0\" layoutY=\"9.0\" mnemonicParsing=\"false\" onAction=\"#VerDetallesProducto\" prefHeight=\"62.0\" prefWidth=\"328.0\" style=\"-fx-background-color: white;\" />\n" +
+                    "                  <Button fx:id=\"" + producto.getIdProducto() + "\" layoutX=\"2.0\" layoutY=\"9.0\" mnemonicParsing=\"false\" onAction=\"#VerDetallesProducto\" prefHeight=\"62.0\" prefWidth=\"328.0\" style=\"-fx-background-color: white;\" />\n" +
                     "                  <Label fx:id=\"NombreProducto\" layoutX=\"132.0\" layoutY=\"31.0\" text=\"" + producto.getTitulo() + "\" />\n" +
                     "                  <ImageView fx:id=\"ImagenProducto\" fitHeight=\"50.0\" fitWidth=\"106.0\" layoutX=\"14.0\" layoutY=\"22.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\n" +
                     "                     <image>\n" +

@@ -12,18 +12,88 @@
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerMisProductos">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="941.0" style="-fx-background-color: #f4f1f1;">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="1061.0" style="-fx-background-color: #f4f1f1;">
          <children>
-            <AnchorPane prefHeight="61.0" prefWidth="942.0" style="-fx-background-color: white;">
+
+<!--DESPL-->
+<AnchorPane layoutX="311.0" layoutY="114" prefHeight="102.0" prefWidth="351.0" style="-fx-background-color: white;">
+               <children>
+                  <Button fx:id="1" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="62.0" prefWidth="328.0" style="-fx-background-color: white;" />
+                  <Label fx:id="NombreProducto" layoutX="132.0" layoutY="31.0" text="Tapabocas" />
+                  <ImageView fx:id="ImagenProducto" fitHeight="50.0" fitWidth="106.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                              <Image url="@1producto.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="Button_ModificarProducto" layoutX="133.0" layoutY="64.0" mnemonicParsing="false" onAction="#ModificarProducto" style="-fx-background-color: #3fdfd4;" text="Modificar" />
+                  <Button fx:id="Boton_eliminarProducto" layoutX="226.0" layoutY="64.0" mnemonicParsing="false" onAction="#EliminarProducto" style="-fx-background-color: #3fdfd4;" text="Eliminar" />
+               </children>
+            </AnchorPane><AnchorPane layoutX="311.0" layoutY="229" prefHeight="102.0" prefWidth="351.0" style="-fx-background-color: white;">
+               <children>
+                  <Button fx:id="2" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="62.0" prefWidth="328.0" style="-fx-background-color: white;" />
+                  <Label fx:id="NombreProducto" layoutX="132.0" layoutY="31.0" text="Ron viejo de caldas" />
+                  <ImageView fx:id="ImagenProducto" fitHeight="50.0" fitWidth="106.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                              <Image url="@2producto.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="Button_ModificarProducto" layoutX="133.0" layoutY="64.0" mnemonicParsing="false" onAction="#ModificarProducto" style="-fx-background-color: #3fdfd4;" text="Modificar" />
+                  <Button fx:id="Boton_eliminarProducto" layoutX="226.0" layoutY="64.0" mnemonicParsing="false" onAction="#EliminarProducto" style="-fx-background-color: #3fdfd4;" text="Eliminar" />
+               </children>
+            </AnchorPane><AnchorPane layoutX="311.0" layoutY="344" prefHeight="102.0" prefWidth="351.0" style="-fx-background-color: white;">
+               <children>
+                  <Button fx:id="3" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="62.0" prefWidth="328.0" style="-fx-background-color: white;" />
+                  <Label fx:id="NombreProducto" layoutX="132.0" layoutY="31.0" text="Manguera" />
+                  <ImageView fx:id="ImagenProducto" fitHeight="50.0" fitWidth="106.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                              <Image url="@3producto.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="Button_ModificarProducto" layoutX="133.0" layoutY="64.0" mnemonicParsing="false" onAction="#ModificarProducto" style="-fx-background-color: #3fdfd4;" text="Modificar" />
+                  <Button fx:id="Boton_eliminarProducto" layoutX="226.0" layoutY="64.0" mnemonicParsing="false" onAction="#EliminarProducto" style="-fx-background-color: #3fdfd4;" text="Eliminar" />
+               </children>
+            </AnchorPane><AnchorPane layoutX="311.0" layoutY="459" prefHeight="102.0" prefWidth="351.0" style="-fx-background-color: white;">
+               <children>
+                  <Button fx:id="4" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="62.0" prefWidth="328.0" style="-fx-background-color: white;" />
+                  <Label fx:id="NombreProducto" layoutX="132.0" layoutY="31.0" text="Parlante Sony" />
+                  <ImageView fx:id="ImagenProducto" fitHeight="50.0" fitWidth="106.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                              <Image url="@4producto.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="Button_ModificarProducto" layoutX="133.0" layoutY="64.0" mnemonicParsing="false" onAction="#ModificarProducto" style="-fx-background-color: #3fdfd4;" text="Modificar" />
+                  <Button fx:id="Boton_eliminarProducto" layoutX="226.0" layoutY="64.0" mnemonicParsing="false" onAction="#EliminarProducto" style="-fx-background-color: #3fdfd4;" text="Eliminar" />
+               </children>
+            </AnchorPane><AnchorPane layoutX="311.0" layoutY="574" prefHeight="102.0" prefWidth="351.0" style="-fx-background-color: white;">
+               <children>
+                  <Button fx:id="5" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="62.0" prefWidth="328.0" style="-fx-background-color: white;" />
+                  <Label fx:id="NombreProducto" layoutX="132.0" layoutY="31.0" text="Computador Lenovo Ideapad 500" />
+                  <ImageView fx:id="ImagenProducto" fitHeight="50.0" fitWidth="106.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                              <Image url="@5producto.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="Button_ModificarProducto" layoutX="133.0" layoutY="64.0" mnemonicParsing="false" onAction="#ModificarProducto" style="-fx-background-color: #3fdfd4;" text="Modificar" />
+                  <Button fx:id="Boton_eliminarProducto" layoutX="226.0" layoutY="64.0" mnemonicParsing="false" onAction="#EliminarProducto" style="-fx-background-color: #3fdfd4;" text="Eliminar" />
+               </children>
+            </AnchorPane>
+<!--DESPL_FINAL-->
+            <Label layoutX="413.0" layoutY="71.0" text="Tus Productos">
+               <font>
+                  <Font name="System Bold Italic" size="31.0" />
+               </font>
+            </Label>
+            <Button fx:id="Button_AnadirProductos" layoutX="452.0" layoutY="375.0" mnemonicParsing="false" onAction="#anadirProductos" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: #3fdfd4;" text="Añadir Producto" />
+            <AnchorPane layoutX="1.0" layoutY="-1.0" prefHeight="62.0" prefWidth="1058.0" style="-fx-background-color: white;">
                <children>
                   <Button fx:id="Boton_vender" layoutX="429.0" layoutY="13.0" mnemonicParsing="false" onAction="#VenderProductos" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Vender" />
-                  <Button fx:id="Boton_populares" layoutX="278.0" layoutY="13.0" mnemonicParsing="false" onAction="#Populares" style="-fx-background-color: #3fdfd4;" text="Populares" />
+                  <Button fx:id="Boton_favoritos" layoutX="278.0" layoutY="13.0" mnemonicParsing="false" onAction="#Populares" style="-fx-background-color: #3fdfd4;" text="Populares" />
                   <ComboBox fx:id="Boton_categorias" layoutX="152.0" layoutY="13.0" onAction="#Categorias" prefHeight="26.0" prefWidth="116.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;" />
-                  <TextField fx:id="Nombre1" layoutX="749.0" layoutY="12.0" onAction="#Buscar" prefHeight="26.0" prefWidth="178.0" promptText="             Search" style="-fx-background-color: #f4f1f1;" />
+                  <TextField fx:id="Nombre1" layoutX="855.0" layoutY="13.0" onAction="#Buscar" prefHeight="26.0" prefWidth="178.0" promptText="             Search" style="-fx-background-color: #f4f1f1;" />
                   <Button fx:id="Boton_Historial" layoutX="356.0" layoutY="13.0" mnemonicParsing="false" onAction="#Historial" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Historial" />
                   <Button fx:id="Boton_Ayuda" layoutX="502.0" layoutY="13.0" mnemonicParsing="false" onAction="#Ayuda" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Ayuda" />
                   <Button fx:id="Boton_VerMisProductos" layoutX="577.0" layoutY="13.0" mnemonicParsing="false" onAction="#Productos" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: #3fdfd4;" text="Mis productos" />
-                  <Button fx:id="Button_uscar" layoutX="715.0" layoutY="12.0" mnemonicParsing="false" onAction="#BuscarProductos" prefHeight="18.0" prefWidth="26.0" style="-fx-background-color: #f4f1f1;">
+                  <Button fx:id="Button_uscar" layoutX="823.0" layoutY="13.0" mnemonicParsing="false" onAction="#BuscarProductos" prefHeight="18.0" prefWidth="26.0" style="-fx-background-color: #f4f1f1;">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -41,29 +111,9 @@
                         </ImageView>
                      </graphic>
                   </Button>
+                  <Button fx:id="Boton_Favoritos" layoutX="707.0" layoutY="13.0" mnemonicParsing="false" onAction="#Favoritos" prefHeight="26.0" prefWidth="99.0" style="-fx-background-color: #3fdfd4;" text="Favoritos" />
                </children>
             </AnchorPane>
-            <!--DESPL-->
-            <AnchorPane layoutX="311.0" layoutY="132.0" prefHeight="102.0" prefWidth="351.0" style="-fx-background-color: white;">
-               <children>
-                  <Button fx:id="Producto" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="62.0" prefWidth="328.0" style="-fx-background-color: white;" />
-                  <Label fx:id="NombreProducto" layoutX="132.0" layoutY="31.0" text=" Cámara Samsung" />
-                  <ImageView fx:id="ImagenProducto" fitHeight="50.0" fitWidth="106.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@1.PNG" />
-                     </image>
-                  </ImageView>
-                  <Button fx:id="Button_ModificarProducto" layoutX="133.0" layoutY="64.0" mnemonicParsing="false" onAction="#ModificarProducto" style="-fx-background-color: #3fdfd4;" text="Modificar" />
-                  <Button fx:id="Boton_eliminarProducto" layoutX="226.0" layoutY="64.0" mnemonicParsing="false" onAction="#EliminarProducto" style="-fx-background-color: #3fdfd4;" text="Eliminar" />
-               </children>
-            </AnchorPane>
-            <!--DESPL_FINAL-->
-            <Label layoutX="369.0" layoutY="74.0" text="Tus Productos">
-               <font>
-                  <Font name="System Bold Italic" size="31.0" />
-               </font>
-            </Label>
-            <Button fx:id="Button_AnadirProductos" layoutX="408.0" layoutY="378.0" mnemonicParsing="false" onAction="#anadirProductos" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: #3fdfd4;" text="Añadir Producto" />
          </children>
       </AnchorPane>
    </children>

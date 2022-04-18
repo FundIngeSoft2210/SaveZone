@@ -124,7 +124,7 @@ public class controllerAyuda implements Initializable {
 
     @FXML
     void VenderProductos(ActionEvent event) throws Exception {
-        ControladorRutas.launchAnadirProductos();
+        ControladorRutas.launchAnadirProducto();
         Stage myStage = (Stage) this.Boton_vender.getScene().getWindow();
         myStage.close();
 

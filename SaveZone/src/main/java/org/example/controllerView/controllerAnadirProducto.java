@@ -191,7 +191,6 @@ public class controllerAnadirProducto implements Initializable {
         } catch(IOException ex){
             Logger.getLogger(GuiControler.class.getName()).log(Level.SEVERE, null, ex);
         }catch (Exception e){
-            System.out.println(e);
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setTitle("ERROR");
@@ -266,7 +265,7 @@ public class controllerAnadirProducto implements Initializable {
     void VenderProductos(ActionEvent event) throws Exception {
         // insert del producto en bd...
         controladorBD.ejecutarInsert("INSERT INTO `safezone_db`.`IMAGENES` (`ProductoID`, `Base64`, `Principal`) VALUES ('" + ControladorRutas.getProducto().getIdProducto() + "', '" + encoded + "', b'1')");
-        ControladorRutas.launchAnadirProductos();
+        ControladorRutas.launchAnadirProducto();
         Stage myStage = (Stage) this.Boton_vender.getScene().getWindow();
         myStage.close();
 
