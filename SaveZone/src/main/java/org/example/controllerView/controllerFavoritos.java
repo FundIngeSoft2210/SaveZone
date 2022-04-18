@@ -108,6 +108,14 @@ public class controllerFavoritos implements Initializable {
     }
 
     @FXML
+    void VerDetallesProducto(ActionEvent event) throws Exception {
+        Button temp = (Button) event.getSource();
+        ControladorRutas.launchDetallesProducto(Integer.parseInt(temp.getId()));
+        Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
+        myStage.close();
+    }
+
+    @FXML
     void Productos(ActionEvent event) throws Exception {
         ControladorRutas.launchMisProductos();
         Stage myStage = (Stage) this.Boton_VerMisProductos.getScene().getWindow();

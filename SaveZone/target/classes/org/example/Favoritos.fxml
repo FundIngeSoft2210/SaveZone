@@ -11,6 +11,24 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="1060.0" style="-fx-background-color: #f4f1f1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerFavoritos">
    <children>
+
+
+<!--DESPL-->
+ <AnchorPane layoutX="20" layoutY="114" prefHeight="201.0" prefWidth="222.0" style="-fx-background-color: white;">
+               <children>
+                  <Button fx:id="3" layoutX="3.0" layoutY="8.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;">
+                     <graphic>
+                        <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@3producto.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label layoutX="56.0" layoutY="153.0" text="Manguera" />
+               </children>
+            </AnchorPane>
+<!--DESPL_FINAL-->
       <Label layoutX="20.0" layoutY="68.0" text="Favoritos:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
@@ -44,51 +62,6 @@
                </graphic>
             </Button>
             <Button fx:id="Boton_Favoritos" layoutX="707.0" layoutY="13.0" mnemonicParsing="false" onAction="#Favoritos" prefHeight="26.0" prefWidth="99.0" style="-fx-background-color: #3fdfd4;" text="Favoritos" />
-
-
-
-<!--DESPL-->
- <AnchorPane layoutX="20" layoutY="114" prefHeight="201.0" prefWidth="222.0" style="-fx-background-color: white;">
-               <children>
-                  <Button fx:id="1" layoutX="3.0" layoutY="8.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;">
-                     <graphic>
-                        <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@1producto.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Label layoutX="56.0" layoutY="153.0" text="Tapabocas" />
-               </children>
-            </AnchorPane> <AnchorPane layoutX="255" layoutY="114" prefHeight="201.0" prefWidth="222.0" style="-fx-background-color: white;">
-               <children>
-                  <Button fx:id="3" layoutX="3.0" layoutY="8.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;">
-                     <graphic>
-                        <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@3producto.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Label layoutX="56.0" layoutY="153.0" text="Manguera" />
-               </children>
-            </AnchorPane> <AnchorPane layoutX="490" layoutY="114" prefHeight="201.0" prefWidth="222.0" style="-fx-background-color: white;">
-               <children>
-                  <Button fx:id="2" layoutX="3.0" layoutY="8.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;">
-                     <graphic>
-                        <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@2producto.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Label layoutX="56.0" layoutY="153.0" text="Ron viejo de caldas" />
-               </children>
-            </AnchorPane>
-<!--DESPL_FINAL-->
          </children>
       </AnchorPane>
    </children>
