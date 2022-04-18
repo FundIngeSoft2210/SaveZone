@@ -5,11 +5,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.example.AccesoDatos.ControladorBD;
 import org.example.Entidades.Producto;
@@ -57,6 +55,9 @@ public class controllerEliminarProducto {
     private Label NombreProducto;
 
     @FXML
+    private ImageView imagenProducto;
+
+    @FXML
     private Button RegresarAlInicio;
 
     @FXML
@@ -88,6 +89,20 @@ public class controllerEliminarProducto {
     }
 
     @FXML
+    void setProducto(Producto producto) throws IOException{
+        /**controladorDespliegueProductos.base64ToLocal(producto.getImgdata(), producto.getIdProducto()+"producto.png");
+         Image image = new Image(controladorPropiedades.getPropiedad("resourcesPath") + "/" + producto.getIdProducto() + "producto.png");
+         System.out.println(image.getUrl());
+         ImageIO.read()
+         Image image  = ImageIO.read(producto.getImgdata()); // Opening again as an Image
+
+         imagenProducto.setImage();*/
+        NombreProducto.setText(producto.getTitulo());
+        ValorProducto.setText(String.valueOf(producto.getValor()));
+        ControladorRutas.setProducto(producto);
+    }
+
+    @FXML
     void Categorias(ActionEvent event) throws Exception {
         String categoria = (String) this.Boton_categorias.getSelectionModel().getSelectedItem();
         Integer categoriaId = Integer.parseInt(controladorBD.ejecutarConsulta("SELECT * FROM CATEGORIA WHERE " +
@@ -103,9 +118,22 @@ public class controllerEliminarProducto {
 
     @FXML
     void EliminarProducto(ActionEvent event) throws Exception {
-        ControladorRutas.launchMisProductos();
-        Stage myStage = (Stage) this.Boton_VerMisProductos.getScene().getWindow();
-        myStage.close();
+        try{
+            controladorBD.ejecutarInsert("UPDATE PRODUCTO set EstadoProductoID = 6 WHERE ID = "+ControladorRutas.getProducto().getIdProducto());
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText(null);
+            alert.setTitle("CONFIRMACIÓN");
+            alert.setContentText("Estimado usuario el producto fue eliminado");
+            alert.showAndWait();
+
+            ControladorRutas.launchMisProductos();
+            Stage myStage = (Stage) this.Boton_VerMisProductos.getScene().getWindow();
+            myStage.close();
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
     }
 
     @FXML
@@ -153,4 +181,6 @@ public class controllerEliminarProducto {
         myStage.close();
 
     }
+
+
 }
