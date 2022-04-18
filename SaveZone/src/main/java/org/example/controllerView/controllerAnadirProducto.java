@@ -174,8 +174,10 @@ public class controllerAnadirProducto implements Initializable {
                     "NOMBRE = '" + categoriaSel + "'").getString(1)) ;
 
             Producto producto = new Producto(vendedor, nombre_Producto, cantidad,Descripcion, peso, valor, porcentaje_Descuento, alto, largo, ancho , color ,ciudadID, categoriaID );
-
             Boolean creado = gestionProducto.crearProducto(producto);
+            producto.setIdProducto(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE TITULO = '" + producto.getTitulo() + "' AND VENDEDORID = " + producto.getVendedor().getId()).getInt("ID"));
+            controladorBD.ejecutarInsert("INSERT INTO `safezone_db`.`IMAGENES` (`ProductoID`, `Base64`, `Principal`) VALUES ('" + producto.getIdProducto() + "', '" + encoded + "', b'1')");
+
 
             if(creado){
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -193,6 +195,7 @@ public class controllerAnadirProducto implements Initializable {
         } catch(IOException ex){
             Logger.getLogger(GuiControler.class.getName()).log(Level.SEVERE, null, ex);
         }catch (Exception e){
+            e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setTitle("ERROR");
@@ -275,7 +278,6 @@ public class controllerAnadirProducto implements Initializable {
     @FXML
     void VenderProductos(ActionEvent event) throws Exception {
         // insert del producto en bd...
-        controladorBD.ejecutarInsert("INSERT INTO `safezone_db`.`IMAGENES` (`ProductoID`, `Base64`, `Principal`) VALUES ('" + ControladorRutas.getProducto().getIdProducto() + "', '" + encoded + "', b'1')");
         ControladorRutas.launchAnadirProducto();
         Stage myStage = (Stage) this.Boton_vender.getScene().getWindow();
         myStage.close();
