@@ -209,11 +209,10 @@ public class controllerProductoAComprar implements Initializable {
         Integer usuarioId = ControladorRutas.getUsuario().getId();
         ArrayList<Producto> productosFav = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE ID IN (SELECT PRODUCTOID FROM PRODUCTOFAVORITO WHERE USUARIOID = "+usuarioId+")"));
         ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        controladorDespliegue.desplegarProductos("/Principal", productosFav, 20, 114);
+        controladorDespliegue.desplegarProductos("/Favoritos", productosFav, 20, 114);
         ControladorRutas.launchFavoritos();
         Stage myStage = (Stage) this.Boton_favoritos.getScene().getWindow();
         myStage.close();
-
     }
 
     @FXML
@@ -230,6 +229,10 @@ public class controllerProductoAComprar implements Initializable {
             alert.setTitle("CONFIRMACIÓN");
             alert.setContentText("Estimado usuario el producto se agrego a favoritos ");
             alert.showAndWait();
+
+            ArrayList<Producto> productosFav = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE ID IN (SELECT PRODUCTOID FROM PRODUCTOFAVORITO WHERE USUARIOID = "+usuarioId+")"));
+            ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
+            controladorDespliegue.desplegarProductos("/Favoritos", productosFav, 20, 114);
 
             ControladorRutas.launchFavoritos();
             Stage myStage = (Stage) this.Button_AnadirAFavoritos.getScene().getWindow();

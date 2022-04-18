@@ -166,10 +166,13 @@ public class controllerPaginaInicio implements Initializable {
 
     @FXML
     void Favoritos(ActionEvent event) throws Exception {
+        Integer usuarioId = ControladorRutas.getUsuario().getId();
+        ArrayList<Producto> productosFav = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE ID IN (SELECT PRODUCTOID FROM PRODUCTOFAVORITO WHERE USUARIOID = "+usuarioId+")"));
+        ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
+        controladorDespliegue.desplegarProductos("/Favoritos", productosFav, 20, 114);
         ControladorRutas.launchFavoritos();
         Stage myStage = (Stage) this.Boton_Favoritos.getScene().getWindow();
         myStage.close();
-
     }
 }
 

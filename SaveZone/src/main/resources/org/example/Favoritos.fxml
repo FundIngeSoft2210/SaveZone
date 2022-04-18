@@ -44,6 +44,8 @@
                </graphic>
             </Button>
             <Button fx:id="Boton_Favoritos" layoutX="707.0" layoutY="13.0" mnemonicParsing="false" onAction="#Favoritos" prefHeight="26.0" prefWidth="99.0" style="-fx-background-color: #3fdfd4;" text="Favoritos" />
+            <!--DESPL-->
+            <!--DESPL_FINAL-->
          </children>
       </AnchorPane>
    </children>
