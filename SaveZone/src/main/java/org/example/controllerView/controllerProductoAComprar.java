@@ -8,11 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -210,6 +206,10 @@ public class controllerProductoAComprar implements Initializable {
     }
     @FXML
     void Favoritos(ActionEvent event) throws Exception {
+        Integer usuarioId = ControladorRutas.getUsuario().getId();
+        ArrayList<Producto> productosFav = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE ID IN (SELECT PRODUCTOID FROM PRODUCTOFAVORITO WHERE USUARIOID = "+usuarioId+")"));
+        ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
+        controladorDespliegue.desplegarProductos("/Principal", productosFav, 20, 114);
         ControladorRutas.launchFavoritos();
         Stage myStage = (Stage) this.Boton_favoritos.getScene().getWindow();
         myStage.close();
@@ -218,9 +218,25 @@ public class controllerProductoAComprar implements Initializable {
 
     @FXML
     void AnadirAFavoritos(ActionEvent event) throws Exception{
-        ControladorRutas.launchFavoritos();
-        Stage myStage = (Stage) this.Button_AnadirAFavoritos.getScene().getWindow();
-        myStage.close();
+        try {
+            Integer usuarioId, productoId;
+            usuarioId = ControladorRutas.getUsuario().getId();
+            productoId = ControladorRutas.getProducto().getIdProducto();
+            String queryInsert = "INSERT INTO `safezone_db`.`productofavorito` (`UsuarioID`, `ProductoID`) VALUES " +
+                    "(" + usuarioId + ", " + productoId+ ")";
+            controladorBD.ejecutarInsert(queryInsert);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText(null);
+            alert.setTitle("CONFIRMACIÓN");
+            alert.setContentText("Estimado usuario el producto se agrego a favoritos ");
+            alert.showAndWait();
+
+            ControladorRutas.launchFavoritos();
+            Stage myStage = (Stage) this.Button_AnadirAFavoritos.getScene().getWindow();
+            myStage.close();
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
 }
