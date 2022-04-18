@@ -145,7 +145,8 @@ public class controllerVendedorProducto {
 
     @FXML
     void EliminarProducto(ActionEvent event) throws Exception {
-        ControladorRutas.launchEliminarProducto();
+        Button temp = (Button) event.getSource();
+        ControladorRutas.launchEliminarProducto(Integer.parseInt(temp.getId()));
         Stage myStage = (Stage) this.botonEliminar.getScene().getWindow();
         myStage.close();
     }

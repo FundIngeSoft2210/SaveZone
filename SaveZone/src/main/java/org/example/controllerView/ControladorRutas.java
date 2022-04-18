@@ -12,6 +12,8 @@ import org.example.Entidades.Producto;
 import org.example.Entidades.Usuarios.Usuario;
 import org.example.Gestion.GestionProductos.GestionProducto;
 
+import java.util.ArrayList;
+
 public class ControladorRutas {
 
     protected static Usuario usuario = null;
@@ -119,7 +121,8 @@ public class ControladorRutas {
             }
             GestionProducto gestion = new GestionProducto();
             ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-            controladorDespliegue.desplegarMisProductos("/MisProductos", gestion.buscarProducto(""), 114);
+            ArrayList<Producto> productos = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE VendedorID = "+ControladorRutas.getUsuario().getId()));
+            controladorDespliegue.desplegarMisProductos("/MisProductos",productos , 114);
 
             FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../MisProductos.fxml"));
             Parent root = loader.load();
@@ -192,10 +195,12 @@ public class ControladorRutas {
 
     }
 
-    public static void launchEliminarProducto() throws Exception{
+    public static void launchEliminarProducto(Integer id) throws Exception{
+        producto = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE ID = "+id)).get(0);
         FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../eliminarProducto.fxml"));
         Parent root = loader.load();
         controllerEliminarProducto controllerEliminarProducto = loader.getController();
+        controllerEliminarProducto.setProducto(producto);
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);

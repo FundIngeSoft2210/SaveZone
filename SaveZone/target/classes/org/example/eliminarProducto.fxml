@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="1060.0" style="-fx-background-color: #f4f1f1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerEliminarProducto">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="1060.0" style="-fx-background-color: #f4f1f1;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerEliminarProducto">
    <children>
       <Text layoutX="413.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eliminar Producto">
          <font>
@@ -44,7 +44,7 @@
       </Label>
       <AnchorPane layoutX="339.0" layoutY="159.0" prefHeight="112.0" prefWidth="218.0" style="-fx-background-color: white;">
          <children>
-            <ImageView fitHeight="87.0" fitWidth="203.0" layoutX="7.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imagenProducto" fitHeight="87.0" fitWidth="203.0" layoutX="7.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@1.PNG" />
                </image>

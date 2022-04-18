@@ -188,6 +188,7 @@ public class controllerProductoAComprar implements Initializable {
         peso.setText(String.valueOf(producto.getPeso()));
         alto.setText(String.valueOf(producto.getAlto()));
         descripcion.setText(producto.getDescripcion());
+        ControladorRutas.setProducto(producto);
     }
 
     @Override

@@ -38,6 +38,7 @@ public class ControladorDespliegueProductos {
         // Etiqueta quemada del producto XML.
 
         for (Producto producto : productosDesplegar) {
+            if(producto.getEstadoProductoID()==6)continue;
             base64ToLocal(producto.getImgdata(), producto.getIdProducto() + "producto");
             etiquetaProducto = " <AnchorPane layoutX=\"" + x_actual + "\" layoutY=\"" + y_actual + "\" prefHeight=\"201.0\" prefWidth=\"222.0\" style=\"-fx-background-color: white;\">\n" +
                     "               <children>\n" +
@@ -130,6 +131,7 @@ public class ControladorDespliegueProductos {
         // Etiqueta quemada del producto XML.
 
         for (Producto producto : productosDesplegar) {
+            if(producto.getEstadoProductoID()==6)continue;
             base64ToLocal(producto.getImgdata(), producto.getIdProducto() + "producto");
             etiquetaProducto = "<AnchorPane layoutX=\"311.0\" layoutY=\"" + y_actual + "\" prefHeight=\"102.0\" prefWidth=\"351.0\" style=\"-fx-background-color: white;\">\n" +
                     "               <children>\n" +
@@ -140,8 +142,8 @@ public class ControladorDespliegueProductos {
                     "                              <Image url=\"@" + producto.getIdProducto() + "producto.png\" />\n" +
                     "                     </image>\n" +
                     "                  </ImageView>\n" +
-                    "                  <Button fx:id=\"Button_ModificarProducto\" layoutX=\"133.0\" layoutY=\"64.0\" mnemonicParsing=\"false\" onAction=\"#ModificarProducto\" style=\"-fx-background-color: #3fdfd4;\" text=\"Modificar\" />\n" +
-                    "                  <Button fx:id=\"Boton_eliminarProducto\" layoutX=\"226.0\" layoutY=\"64.0\" mnemonicParsing=\"false\" onAction=\"#EliminarProducto\" style=\"-fx-background-color: #3fdfd4;\" text=\"Eliminar\" />\n" +
+                    "                  <Button fx:id=\"" + producto.getIdProducto() + "\" layoutX=\"133.0\" layoutY=\"64.0\" mnemonicParsing=\"false\" onAction=\"#ModificarProducto\" style=\"-fx-background-color: #3fdfd4;\" text=\"Modificar\" />\n" +
+                    "                  <Button fx:id=\"" + producto.getIdProducto() + "\" layoutX=\"226.0\" layoutY=\"64.0\" mnemonicParsing=\"false\" onAction=\"#EliminarProducto\" style=\"-fx-background-color: #3fdfd4;\" text=\"Eliminar\" />\n" +
                     "               </children>\n" +
                     "            </AnchorPane>";
 
