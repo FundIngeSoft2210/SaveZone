@@ -464,6 +464,9 @@ public class ControladorRutas {
     }
     public static void launchFavoritos() throws Exception {
         try {
+            if (usuario == null) {
+                throw new Exception();
+            }
             FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../Favoritos.fxml"));
             Parent root = loader.load();
             controllerFavoritos controllerFavoritos = loader.getController();
