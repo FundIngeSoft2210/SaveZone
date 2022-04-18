@@ -281,7 +281,6 @@ public class controllerAnadirProducto implements Initializable {
         ControladorRutas.launchAnadirProducto();
         Stage myStage = (Stage) this.Boton_vender.getScene().getWindow();
         myStage.close();
-
     }
     @FXML
     void VolverInicio(ActionEvent event) throws Exception {

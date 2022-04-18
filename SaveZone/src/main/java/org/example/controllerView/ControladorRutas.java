@@ -177,10 +177,13 @@ public class ControladorRutas {
         }
     }
 
-    public static void launchModificarProducto() throws Exception{
+    public static void launchModificarProducto(Integer id) throws Exception{
+        producto = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE ID = "+id)).get(0);
+
         FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../modificarProducto.fxml"));
         Parent root = loader.load();
         controllerModificarProducto controllerModificarProducto = loader.getController();
+        controllerModificarProducto.setProducto(producto);
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);

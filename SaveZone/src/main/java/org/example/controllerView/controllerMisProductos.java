@@ -156,8 +156,9 @@ public class controllerMisProductos implements Initializable {
 
     @FXML
     void ModificarProducto(ActionEvent event) throws Exception {
-        ControladorRutas.launchModificarProducto();
-        Stage myStage = (Stage) this.Button_ModificarProducto.getScene().getWindow();
+        Button temp = (Button) event.getSource();
+        ControladorRutas.launchModificarProducto(Integer.parseInt(temp.getId()));
+        Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
         myStage.close();
     }
 

@@ -1,10 +1,14 @@
 package org.example.controllerView;
 
+import com.mysql.cj.protocol.Resultset;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -12,11 +16,15 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.example.AccesoDatos.ControladorBD;
 import org.example.Entidades.Producto;
+import org.example.Gestion.GestionProductos.GestionProducto;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class controllerModificarProducto {
+public class controllerModificarProducto implements Initializable {
     ControladorBD controladorBD = new ControladorBD();
 
     @FXML
@@ -31,7 +39,7 @@ public class controllerModificarProducto {
     private Button Boton_favoritos;
 
     @FXML
-    private ComboBox<?> Boton_categorias;
+    private ComboBox<String> Boton_categorias;
 
     @FXML
     private Button Boton_populares;
@@ -55,7 +63,7 @@ public class controllerModificarProducto {
     private TextField Cambiar_Precio;
 
     @FXML
-    private ComboBox<?> Cambiar_categoria;
+    private ComboBox<String> Cambiar_categoria;
 
     @FXML
     private TextField Nombre1;
@@ -89,9 +97,40 @@ public class controllerModificarProducto {
 
     @FXML
     void AceptarModificarProducto(ActionEvent event) throws Exception {
-        ControladorRutas.launchMisProductos();
-        Stage myStage = (Stage) this.Boton_VerMisProductos.getScene().getWindow();
-        myStage.close();
+        try{
+            GestionProducto gestionProducto = new GestionProducto();
+            Producto p = new Producto();
+            p.setCantidad(Integer.parseInt(NuevaCantidad.getText()));
+            p.setTitulo(Nuevo_Nombre_Producto.getText());
+            p.setDescripcion(Nueva_Descripcion_Producto.getText());
+            p.setPeso(Float.parseFloat(NuevoPeso.getText()));
+            p.setAlto(Float.parseFloat(NuevoAlto.getText()));
+            p.setLargo(Float.parseFloat(NuevoLargo.getText()));
+            p.setAncho(Float.parseFloat(NuevoAncho.getText()));
+            p.setValor(Integer.parseInt(Cambiar_Precio.getText()));
+            p.setPorcentajeDesc(Integer.parseInt(Nuevo_Porcentaje_Descuento.getText()));
+            p.setVendedor(ControladorRutas.getUsuario());
+            p.setCiudadID(ControladorRutas.getProducto().getCiudadID());
+            p.setEstadoProductoID(ControladorRutas.getProducto().getEstadoProductoID());
+            controladorBD.ejecutarInsert("UPDATE `safezone_db`.`producto` SET TITULO = " +
+                    "'" + p.getTitulo() + "', CANTIDAD = " + p.getCantidad() + ", DESCRIPCION = '" + p.getDescripcion() +
+                    "', PESO = " + p.getPeso() + ", VALOR = " + p.getValor() + ", PORCENTAJEDESCUENTO = " +
+                    p.getPorcentajeDesc() + ", ALTO = " + p.getAlto() + ", LARGO = " + p.getLargo() + ", ANCHO = " + p.getAncho()
+                    + ", COLOR = '" + p.getColor() + "', CIUDADID = " + p.getCiudadID() + ", ESTADOPRODUCTOID = " + p.getEstadoProductoID() +
+                    " WHERE TITULO = '" + ControladorRutas.getProducto().getTitulo() + "' AND VENDEDORID = " + p.getVendedor().getId());
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText(null);
+            alert.setTitle("CONFIRMACIÓN");
+            alert.setContentText("Estimado usuario el producto fue Actualizado");
+            alert.showAndWait();
+            ControladorRutas.launchMisProductos();
+            Stage myStage = (Stage) this.Boton_VerMisProductos.getScene().getWindow();
+            myStage.close();
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
     }
 
     @FXML
@@ -126,6 +165,28 @@ public class controllerModificarProducto {
     @FXML
     void NuevaImagen(ActionEvent event) {
 
+    }
+
+    @FXML
+    void setProducto(Producto producto) throws IOException{
+        /**controladorDespliegueProductos.base64ToLocal(producto.getImgdata(), producto.getIdProducto()+"producto.png");
+         Image image = new Image(controladorPropiedades.getPropiedad("resourcesPath") + "/" + producto.getIdProducto() + "producto.png");
+         System.out.println(image.getUrl());
+         ImageIO.read()
+         Image image  = ImageIO.read(producto.getImgdata()); // Opening again as an Image
+
+         imagenProducto.setImage();*/
+        Nuevo_Nombre_Producto.setText(producto.getTitulo());
+        Cambiar_categoria.getSelectionModel().select(producto.getCategoria());
+        Cambiar_Precio.setText(String.valueOf(producto.getValor()));
+        Nuevo_Porcentaje_Descuento.setText(String.valueOf(producto.getPorcentajeDesc()));
+        NuevoPeso.setText(String.valueOf(producto.getPeso()));
+        NuevoAlto.setText(String.valueOf(producto.getAlto()));
+        NuevoAncho.setText(String.valueOf(producto.getAncho()));
+        NuevoLargo.setText(String.valueOf(producto.getLargo()));
+        NuevaCantidad.setText(String.valueOf(producto.getCantidad()));
+        Nueva_Descripcion_Producto.setText(producto.getDescripcion());
+        ControladorRutas.setProducto(producto);
     }
 
     @FXML
@@ -165,5 +226,22 @@ public class controllerModificarProducto {
         Stage myStage = (Stage) this.Boton_favoritos.getScene().getWindow();
         myStage.close();
 
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        ControladorBD controladorBD = new ControladorBD();
+        Resultset rs;
+        ObservableList<String> listaCatego;
+        try {
+            listaCatego = controladorBD.obtenerDeptos(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM CATEGORIA"));
+            Boton_categorias.setItems(listaCatego);
+            Cambiar_categoria.setItems(listaCatego);
+        } catch (SQLException e) {
+            System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

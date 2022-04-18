@@ -138,7 +138,8 @@ public class controllerVendedorProducto {
 
     @FXML
     void ModificarProducto(ActionEvent event) throws Exception {
-        ControladorRutas.launchModificarProducto();
+        Button temp = (Button) event.getSource();
+        ControladorRutas.launchModificarProducto(Integer.parseInt(temp.getId()));
         Stage myStage = (Stage) this.botonModificar.getScene().getWindow();
         myStage.close();
     }
