@@ -45,37 +45,8 @@
 
 <VBox prefHeight="478.0" prefWidth="969.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerPago">
   <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="946.0" style="-fx-background-color: #f4f1f1;">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="1058.0" style="-fx-background-color: #f4f1f1;">
          <children>
-            <AnchorPane prefHeight="63.0" prefWidth="966.0" style="-fx-background-color: white;">
-               <children>
-                  <Button fx:id="Boton_vender" layoutX="429.0" layoutY="13.0" mnemonicParsing="false" onAction="#VenderProductos" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Vender" />
-                  <Button fx:id="Boton_populares" layoutX="278.0" layoutY="13.0" mnemonicParsing="false" onAction="#Populares" style="-fx-background-color: #3fdfd4;" text="Populares" />
-                  <ComboBox fx:id="Boton_categorias" layoutX="162.0" layoutY="13.0" onAction="#Categorias" prefHeight="26.0" prefWidth="106.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;" />
-                  <TextField fx:id="Nombre1" layoutX="749.0" layoutY="12.0" onAction="#Buscar" prefHeight="26.0" prefWidth="178.0" promptText="             Search" style="-fx-background-color: #f4f1f1;" />
-                  <Button fx:id="Boton_Historial" layoutX="356.0" layoutY="13.0" mnemonicParsing="false" onAction="#Historial" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Historial" />
-                  <Button fx:id="Boton_Ayuda" layoutX="502.0" layoutY="13.0" mnemonicParsing="false" onAction="#Ayuda" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Ayuda" />
-                  <Button fx:id="Boton_VerMisProductos" layoutX="577.0" layoutY="13.0" mnemonicParsing="false" onAction="#Productos" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: #3fdfd4;" text="Mis productos" />
-                  <Button fx:id="Button_uscar" layoutX="715.0" layoutY="12.0" mnemonicParsing="false" onAction="#BuscarProductos" prefHeight="18.0" prefWidth="26.0" style="-fx-background-color: #f4f1f1;">
-                     <graphic>
-                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@LUPA.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button fx:id="RegresarAlInicio" layoutX="13.0" layoutY="5.0" mnemonicParsing="false" onAction="#VolverInicio" prefHeight="50.0" prefWidth="116.0" style="-fx-background-color: white;">
-                     <graphic>
-                        <ImageView fitHeight="42.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@4.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-               </children>
-            </AnchorPane>
             <AnchorPane layoutX="62.0" layoutY="115.0" prefHeight="200.0" prefWidth="200.0" />
             <AnchorPane layoutX="75.0" layoutY="78.0" prefHeight="412.0" prefWidth="318.0" style="-fx-background-color: #3fdfd4;">
                <children>
@@ -100,7 +71,7 @@
                   <TextField fx:id="Apartamento" layoutX="60.0" layoutY="375.0" prefHeight="25.0" prefWidth="165.0" promptText="Torre 3, Apto 703" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="569.0" layoutY="90.0" prefHeight="200.0" prefWidth="200.0">
+            <AnchorPane layoutX="640.0" layoutY="90.0" prefHeight="200.0" prefWidth="200.0">
                <children>
                   <Label layoutX="10.0" layoutY="71.0">
                      <font>
@@ -119,8 +90,38 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <Button fx:id="Boton_confirmar" layoutX="587.0" layoutY="388.0" mnemonicParsing="false" onAction="#ConfirmarDatos" prefHeight="39.0" prefWidth="106.0" style="-fx-background-color: #3fdfd4;" text="Confirmar" />
-            <Button fx:id="Boton_cancelar" layoutX="739.0" layoutY="388.0" mnemonicParsing="false" onAction="#Cancelar" prefHeight="39.0" prefWidth="92.0" text="Cancelar" />
+            <Button fx:id="Boton_confirmar" layoutX="640.0" layoutY="388.0" mnemonicParsing="false" onAction="#ConfirmarDatos" prefHeight="39.0" prefWidth="106.0" style="-fx-background-color: #3fdfd4;" text="Confirmar" />
+            <Button fx:id="Boton_cancelar" layoutX="801.0" layoutY="388.0" mnemonicParsing="false" onAction="#Cancelar" prefHeight="39.0" prefWidth="92.0" text="Cancelar" />
+            <AnchorPane prefHeight="62.0" prefWidth="1058.0" style="-fx-background-color: white;">
+               <children>
+                  <Button fx:id="Boton_vender" layoutX="429.0" layoutY="13.0" mnemonicParsing="false" onAction="#VenderProductos" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Vender" />
+                  <Button fx:id="Boton_favoritos" layoutX="278.0" layoutY="13.0" mnemonicParsing="false" onAction="#Populares" style="-fx-background-color: #3fdfd4;" text="Populares" />
+                  <ComboBox fx:id="Boton_categorias" layoutX="152.0" layoutY="13.0" onAction="#Categorias" prefHeight="26.0" prefWidth="116.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;" />
+                  <TextField fx:id="Nombre1" layoutX="855.0" layoutY="13.0" onAction="#Buscar" prefHeight="26.0" prefWidth="178.0" promptText="             Search" style="-fx-background-color: #f4f1f1;" />
+                  <Button fx:id="Boton_Historial" layoutX="356.0" layoutY="13.0" mnemonicParsing="false" onAction="#Historial" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Historial" />
+                  <Button fx:id="Boton_Ayuda" layoutX="502.0" layoutY="13.0" mnemonicParsing="false" onAction="#Ayuda" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Ayuda" />
+                  <Button fx:id="Boton_VerMisProductos" layoutX="577.0" layoutY="13.0" mnemonicParsing="false" onAction="#Productos" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: #3fdfd4;" text="Mis productos" />
+                  <Button fx:id="Button_uscar" layoutX="823.0" layoutY="13.0" mnemonicParsing="false" onAction="#BuscarProductos" prefHeight="18.0" prefWidth="26.0" style="-fx-background-color: #f4f1f1;">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@LUPA.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="RegresarAlInicio" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#VolverInicio" prefHeight="50.0" prefWidth="116.0" style="-fx-background-color: white;">
+                     <graphic>
+                        <ImageView fitHeight="42.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@4.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Boton_Favoritos" layoutX="707.0" layoutY="13.0" mnemonicParsing="false" onAction="#Favoritos" prefHeight="26.0" prefWidth="99.0" style="-fx-background-color: #3fdfd4;" text="Favoritos" />
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
   </children>

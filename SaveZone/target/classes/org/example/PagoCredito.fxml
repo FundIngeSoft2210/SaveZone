@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="965.0" style="-fx-background-color: #f4f1f1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerTarjetaCredito">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="1061.0" style="-fx-background-color: #f4f1f1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerTarjetaCredito">
    <children>
       <AnchorPane layoutX="47.0" layoutY="85.0" prefHeight="414.0" prefWidth="373.0" style="-fx-background-color: #3fdfd4;">
          <children>
@@ -162,16 +162,16 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <AnchorPane layoutX="-3.0" prefHeight="63.0" prefWidth="965.0" style="-fx-background-color: white;">
+      <AnchorPane layoutX="2.0" layoutY="1.0" prefHeight="62.0" prefWidth="1058.0" style="-fx-background-color: white;">
          <children>
             <Button fx:id="Boton_vender" layoutX="429.0" layoutY="13.0" mnemonicParsing="false" onAction="#VenderProductos" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Vender" />
-            <Button fx:id="Boton_populares" layoutX="278.0" layoutY="13.0" mnemonicParsing="false" onAction="#Populares" style="-fx-background-color: #3fdfd4;" text="Populares" />
-            <ComboBox fx:id="Boton_categorias" layoutX="162.0" layoutY="13.0" onAction="#Categorias" prefHeight="26.0" prefWidth="106.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;" />
-            <TextField fx:id="Nombre14" layoutX="749.0" layoutY="12.0" onAction="#Buscar" prefHeight="26.0" prefWidth="178.0" promptText="             Search" style="-fx-background-color: #f4f1f1;" />
+            <Button fx:id="Boton_favoritos" layoutX="278.0" layoutY="13.0" mnemonicParsing="false" onAction="#Populares" style="-fx-background-color: #3fdfd4;" text="Populares" />
+            <ComboBox fx:id="Boton_categorias" layoutX="152.0" layoutY="13.0" onAction="#Categorias" prefHeight="26.0" prefWidth="116.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;" />
+            <TextField fx:id="Nombre1" layoutX="855.0" layoutY="13.0" onAction="#Buscar" prefHeight="26.0" prefWidth="178.0" promptText="             Search" style="-fx-background-color: #f4f1f1;" />
             <Button fx:id="Boton_Historial" layoutX="356.0" layoutY="13.0" mnemonicParsing="false" onAction="#Historial" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Historial" />
             <Button fx:id="Boton_Ayuda" layoutX="502.0" layoutY="13.0" mnemonicParsing="false" onAction="#Ayuda" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Ayuda" />
             <Button fx:id="Boton_VerMisProductos" layoutX="577.0" layoutY="13.0" mnemonicParsing="false" onAction="#Productos" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: #3fdfd4;" text="Mis productos" />
-            <Button fx:id="Button_uscar" layoutX="715.0" layoutY="12.0" mnemonicParsing="false" onAction="#BuscarProductos" prefHeight="18.0" prefWidth="26.0" style="-fx-background-color: #f4f1f1;">
+            <Button fx:id="Button_uscar" layoutX="823.0" layoutY="13.0" mnemonicParsing="false" onAction="#BuscarProductos" prefHeight="18.0" prefWidth="26.0" style="-fx-background-color: #f4f1f1;">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -180,7 +180,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="RegresarAlInicio" layoutX="13.0" layoutY="5.0" mnemonicParsing="false" onAction="#VolverInicio" prefHeight="50.0" prefWidth="116.0" style="-fx-background-color: white;">
+            <Button fx:id="RegresarAlInicio" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#VolverInicio" prefHeight="50.0" prefWidth="116.0" style="-fx-background-color: white;">
                <graphic>
                   <ImageView fitHeight="42.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -189,6 +189,7 @@
                   </ImageView>
                </graphic>
             </Button>
+            <Button fx:id="Boton_Favoritos" layoutX="707.0" layoutY="13.0" mnemonicParsing="false" onAction="#Favoritos" prefHeight="26.0" prefWidth="99.0" style="-fx-background-color: #3fdfd4;" text="Favoritos" />
          </children>
       </AnchorPane>
    </children>

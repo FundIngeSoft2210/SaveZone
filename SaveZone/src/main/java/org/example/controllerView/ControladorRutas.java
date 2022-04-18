@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.example.Entidades.Producto;
@@ -108,41 +109,65 @@ public class ControladorRutas {
     }
 
     public static void launchMisProductos() throws Exception {
-        GestionProducto gestion = new GestionProducto();
-        ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        controladorDespliegue.desplegarMisProductos("/MisProductos", gestion.buscarProducto(""), 114);
+        try {
+            if (usuario == null) {
+                throw new Exception();
+            }
+            GestionProducto gestion = new GestionProducto();
+            ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
+            controladorDespliegue.desplegarMisProductos("/MisProductos", gestion.buscarProducto(""), 114);
 
-        FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../MisProductos.fxml"));
-        Parent root = loader.load();
-        controllerMisProductos controllerMisProductos = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Ver mis Productos");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
+            FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../MisProductos.fxml"));
+            Parent root = loader.load();
+            controllerMisProductos controllerMisProductos = loader.getController();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
+            stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
+            stage.setTitle("Ver mis Productos");
+            stage.setScene(scene);
+            stage.setMaximized(false);
+            stage.setResizable(false);
+            stage.show();
+            stage.show();
+        } catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("ERROR");
+            alert.setContentText("Debes estar registrado en el sistema para acceder a esta función");
+            alert.showAndWait();
+            launchPantallaPrincipal();
+        }
     }
 
     public static void launchAnadirProducto() throws Exception {
-        FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../anadirProducto.fxml"));
-        Parent root = loader.load();
-        controllerAnadirProducto controllerVender = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Vender Tu Producto");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
+        try {
+            if (usuario == null) {
+                throw new Exception();
+            }
+            FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../anadirProducto.fxml"));
+            Parent root = loader.load();
+            controllerAnadirProducto controllerVender = loader.getController();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
+            stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
+            stage.setTitle("Vender Tu Producto");
+            stage.setScene(scene);
+            stage.setMaximized(false);
+            stage.setResizable(false);
+            stage.show();
+            stage.show();
+        } catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("ERROR");
+            alert.setContentText("Debes estar registrado en el sistema para acceder a esta función");
+            alert.showAndWait();
+            launchPantallaPrincipal();
+        }
     }
 
     public static void launchModificarProducto() throws Exception{
@@ -160,6 +185,7 @@ public class ControladorRutas {
         stage.setResizable(false);
         stage.show();
         stage.show();
+
     }
 
     public static void launchEliminarProducto() throws Exception{
@@ -196,55 +222,62 @@ public class ControladorRutas {
         stage.show();
     }
 
-    public static void launchAnadirProductos() throws Exception {
-        FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../anadirProducto.fxml"));
-        Parent root = loader.load();
-        controllerAnadirProducto controllerVender = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("VenderTuProducto");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
-    }
-
     public static void launchHistorial() throws Exception {
-        FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../Historial.fxml"));
-        Parent root = loader.load();
-        controllerHistorial controllerHistorial = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Historiales");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
+        try {
+            if (usuario == null) {
+                throw new Exception();
+            }
+            FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../Historial.fxml"));
+            Parent root = loader.load();
+            controllerHistorial controllerHistorial = loader.getController();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
+            stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
+            stage.setTitle("Historiales");
+            stage.setScene(scene);
+            stage.setMaximized(false);
+            stage.setResizable(false);
+            stage.show();
+            stage.show();
+        } catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("ERROR");
+            alert.setContentText("Debes estar registrado en el sistema para acceder a esta función");
+            alert.showAndWait();
+            launchPantallaPrincipal();
+        }
     }
 
     public static void launchConQuePodemosAyudarte() throws Exception {
-        FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../ConQuePodemosAyudarte.fxml"));
-        Parent root = loader.load();
-        controllerAyuda controllerAyuda = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Ayuda");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
+        try {
+            if (usuario == null) {
+                throw new Exception();
+            }
+            FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../ConQuePodemosAyudarte.fxml"));
+            Parent root = loader.load();
+            controllerAyuda controllerAyuda = loader.getController();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
+            stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
+            stage.setTitle("Ayuda");
+            stage.setScene(scene);
+            stage.setMaximized(false);
+            stage.setResizable(false);
+            stage.show();
+            stage.show();
+        } catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("ERROR");
+            alert.setContentText("Debes estar registrado en el sistema para acceder a esta función");
+            alert.showAndWait();
+            launchPantallaPrincipal();
+        }
     }
 
     public static void launchOlvidasteContra() throws Exception {
@@ -282,20 +315,32 @@ public class ControladorRutas {
     }
 
     public static void launchComprar() throws Exception{
-        FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../Paso1.fxml"));
-        Parent root = loader.load();
-        controllerPago controllerPago = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Pago Paso 1");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
+        try {
+            if (usuario == null) {
+                throw new Exception();
+            }
+            FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../Paso1.fxml"));
+            Parent root = loader.load();
+            controllerPago controllerPago = loader.getController();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
+            stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
+            stage.setTitle("Pago Paso 1");
+            stage.setScene(scene);
+            stage.setMaximized(false);
+            stage.setResizable(false);
+            stage.show();
+            stage.show();
+        } catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("ERROR");
+            alert.setContentText("Debes estar registrado en el sistema para acceder a esta función");
+            alert.showAndWait();
+            launchPantallaPrincipal();
+        }
     }
 
     public static void launchMetodoPago() throws Exception{
@@ -384,6 +429,7 @@ public class ControladorRutas {
     }
 
     public static void launchHistorialCompras() throws Exception {
+
         FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../HistorialCompras.fxml"));
         Parent root = loader.load();
         controllerHistorialCompras controllerHistorialCompras = loader.getController();
@@ -417,19 +463,28 @@ public class ControladorRutas {
         stage.show();
     }
     public static void launchFavoritos() throws Exception {
-        FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../Favoritos.fxml"));
-        Parent root = loader.load();
-        controllerFavoritos controllerFavoritos = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
-        stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Tus Favoritos");
-        stage.setScene(scene);
-        stage.setMaximized(false);
-        stage.setResizable(false);
-        stage.show();
-        stage.show();
+        try {
+            FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../Favoritos.fxml"));
+            Parent root = loader.load();
+            controllerFavoritos controllerFavoritos = loader.getController();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
+            stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
+            stage.setTitle("Tus Favoritos");
+            stage.setScene(scene);
+            stage.setMaximized(false);
+            stage.setResizable(false);
+            stage.show();
+            stage.show();
+        } catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("ERROR");
+            alert.setContentText("Debes estar registrado en el sistema para acceder a esta función");
+            alert.showAndWait();
+            launchPantallaPrincipal();
+        }
     }
 }

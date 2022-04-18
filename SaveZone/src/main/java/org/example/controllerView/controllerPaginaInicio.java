@@ -109,7 +109,7 @@ public class controllerPaginaInicio implements Initializable {
 
     @FXML
     void VenderProductos(ActionEvent event) throws Exception {
-        ControladorRutas.launchAnadirProductos();
+        ControladorRutas.launchAnadirProducto();
         Stage myStage = (Stage) this.Boton_vender.getScene().getWindow();
         myStage.close();
     }
@@ -117,7 +117,7 @@ public class controllerPaginaInicio implements Initializable {
     @FXML
     void VerDetallesProducto(ActionEvent event) throws Exception {
         ControladorRutas.launchDetallesProducto();
-        Stage myStage = (Stage) this.Producto.getScene().getWindow();
+        Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
         myStage.close();
     }
 
