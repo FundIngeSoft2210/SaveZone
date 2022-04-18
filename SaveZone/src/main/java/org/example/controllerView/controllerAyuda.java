@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -77,13 +78,34 @@ public class controllerAyuda implements Initializable {
     }
 
     @FXML
-    void Buscar(ActionEvent event) throws IOException{
-
+    void Buscar(ActionEvent event) throws Exception {
+        BuscarProductos(event);
     }
 
     @FXML
-    void BuscarProductos(ActionEvent event) throws IOException{
-
+    void BuscarProductos(ActionEvent event) throws Exception {
+        ControladorDespliegueProductos controladorDespliegueProductos = new ControladorDespliegueProductos();
+        GestionProducto gestionProducto = new GestionProducto();
+        ArrayList <Producto> productos = gestionProducto.buscarProducto(Nombre1.getText());
+        if (productos == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("Error de búsqueda");
+            alert.setContentText("No existen productos con los parámetros de busqueda solicitados.");
+            alert.showAndWait();
+            return;
+        } else if (Nombre1.getText().equals("")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("Error de búsqueda");
+            alert.setContentText("Ingrese algo en el campo de busqueda.");
+            alert.showAndWait();
+            return;
+        }
+        controladorDespliegueProductos.desplegarProductos("/Principal",productos, 20, 114);
+        ControladorRutas.launchPantallaPrincipal(true);
+        Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
+        myStage.close();
     }
 
     @FXML

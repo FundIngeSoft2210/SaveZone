@@ -46,6 +46,7 @@
   <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="1059.0" style="-fx-background-color: #f4f1f1;">
          <children>
+            <!--DESPL-->
             <AnchorPane layoutX="20.0" layoutY="114.0" prefHeight="201.0" prefWidth="222.0" style="-fx-background-color: white;">
                <children>
                   <Button fx:id="Producto" layoutX="3.0" layoutY="8.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;">
@@ -60,6 +61,7 @@
                   <Label fx:id="productoVendidos" layoutX="56.0" layoutY="153.0" text=" Cámara Samsung" />
                </children>
             </AnchorPane>
+            <!--DESPL_FINAL-->
             <Label layoutX="20.0" layoutY="68.0" text="Productos Vendidos:">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
