@@ -10,10 +10,14 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import org.example.AccesoDatos.ControladorBD;
+import org.example.Entidades.Producto;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class controllerModificarProducto {
+    ControladorBD controladorBD = new ControladorBD();
 
     @FXML
     private Button Boton_Ayuda;
@@ -153,6 +157,10 @@ public class controllerModificarProducto {
     }
     @FXML
     void Favoritos(ActionEvent event) throws Exception {
+        Integer usuarioId = ControladorRutas.getUsuario().getId();
+        ArrayList<Producto> productosFav = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE ID IN (SELECT PRODUCTOID FROM PRODUCTOFAVORITO WHERE USUARIOID = "+usuarioId+")"));
+        ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
+        controladorDespliegue.desplegarProductos("/Principal", productosFav, 20, 114);
         ControladorRutas.launchFavoritos();
         Stage myStage = (Stage) this.Boton_favoritos.getScene().getWindow();
         myStage.close();

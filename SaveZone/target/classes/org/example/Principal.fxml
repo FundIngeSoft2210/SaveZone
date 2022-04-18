@@ -153,6 +153,41 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--DESPL-->
  <AnchorPane layoutX="20" layoutY="114" prefHeight="201.0" prefWidth="222.0" style="-fx-background-color: white;">
                <children>
@@ -169,19 +204,6 @@
                </children>
             </AnchorPane> <AnchorPane layoutX="255" layoutY="114" prefHeight="201.0" prefWidth="222.0" style="-fx-background-color: white;">
                <children>
-                  <Button fx:id="2" layoutX="3.0" layoutY="8.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;">
-                     <graphic>
-                        <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@2producto.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Label layoutX="56.0" layoutY="153.0" text="Ron viejo de caldas" />
-               </children>
-            </AnchorPane> <AnchorPane layoutX="490" layoutY="114" prefHeight="201.0" prefWidth="222.0" style="-fx-background-color: white;">
-               <children>
                   <Button fx:id="3" layoutX="3.0" layoutY="8.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;">
                      <graphic>
                         <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
@@ -193,44 +215,18 @@
                   </Button>
                   <Label layoutX="56.0" layoutY="153.0" text="Manguera" />
                </children>
-            </AnchorPane> <AnchorPane layoutX="20" layoutY="324" prefHeight="201.0" prefWidth="222.0" style="-fx-background-color: white;">
+            </AnchorPane> <AnchorPane layoutX="490" layoutY="114" prefHeight="201.0" prefWidth="222.0" style="-fx-background-color: white;">
                <children>
-                  <Button fx:id="4" layoutX="3.0" layoutY="8.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;">
+                  <Button fx:id="2" layoutX="3.0" layoutY="8.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;">
                      <graphic>
                         <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@4producto.png" />
+                              <Image url="@2producto.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label layoutX="56.0" layoutY="153.0" text="Parlante Sony" />
-               </children>
-            </AnchorPane> <AnchorPane layoutX="255" layoutY="324" prefHeight="201.0" prefWidth="222.0" style="-fx-background-color: white;">
-               <children>
-                  <Button fx:id="5" layoutX="3.0" layoutY="8.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;">
-                     <graphic>
-                        <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@5producto.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Label layoutX="56.0" layoutY="153.0" text="Computador Lenovo Ideapad 500" />
-               </children>
-            </AnchorPane> <AnchorPane layoutX="490" layoutY="324" prefHeight="201.0" prefWidth="222.0" style="-fx-background-color: white;">
-               <children>
-                  <Button fx:id="6" layoutX="3.0" layoutY="8.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;">
-                     <graphic>
-                        <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@6producto.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Label layoutX="56.0" layoutY="153.0" text="Mesa de noche" />
+                  <Label layoutX="56.0" layoutY="153.0" text="Ron viejo de caldas" />
                </children>
             </AnchorPane>
 <!--DESPL_FINAL-->
