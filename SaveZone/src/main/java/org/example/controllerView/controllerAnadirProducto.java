@@ -28,6 +28,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -112,6 +113,7 @@ public class controllerAnadirProducto implements Initializable {
     @FXML
     void AnadirProducto(ActionEvent event) throws IOException {
         GestionProducto gestionProducto = new GestionProducto();
+        ControladorBD controladorBD = new ControladorBD();
         try{
             String nombre_Producto, Descripcion,color, categoriaSel;
             Integer cantidad, valor, porcentaje_Descuento , ciudadID, categoriaID;
@@ -167,12 +169,12 @@ public class controllerAnadirProducto implements Initializable {
             if (categoriaSel == null || categoriaSel.isEmpty() ){
                 throw new Exception("categoriaSel");
             }
-            System.out.println(categoriaSel);
+
             categoriaID = Integer.parseInt(controladorBD.ejecutarConsulta("SELECT * FROM CATEGORIA WHERE " +
                     "NOMBRE = '" + categoriaSel + "'").getString(1)) ;
-            System.out.println(categoriaID);
+
             Producto producto = new Producto(vendedor, nombre_Producto, cantidad,Descripcion, peso, valor, porcentaje_Descuento, alto, largo, ancho , color ,ciudadID, categoriaID );
-            System.out.println(producto);
+
             Boolean creado = gestionProducto.crearProducto(producto);
 
             if(creado){
@@ -224,7 +226,16 @@ public class controllerAnadirProducto implements Initializable {
     }
 
     @FXML
-    void Categorias(ActionEvent event) throws IOException{
+    void Categorias(ActionEvent event) throws Exception {
+        String categoria = this.Boton_categorias.getSelectionModel().getSelectedItem();
+        Integer categoriaId = Integer.parseInt(controladorBD.ejecutarConsulta("SELECT * FROM CATEGORIA WHERE " +
+                "NOMBRE = '" + categoria + "'").getString(1)) ;
+        ArrayList<Producto> productos = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE CategoriaID = "+categoriaId));
+        ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
+        controladorDespliegue.desplegarProductos("/Principal", productos, 20, 114);
+        ControladorRutas.launchPantallaPrincipal();
+        Stage myStage = (Stage) this.Boton_categorias.getScene().getWindow();
+        myStage.close();
 
     }
 

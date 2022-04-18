@@ -163,7 +163,7 @@ public class ControladorDespliegueProductos {
         copiarBufferOriginal(file.getAbsolutePath(), fileCopia.getAbsolutePath());
     }
 
-    private static void base64ToLocal(byte[] base64Img, String nombre) throws IOException {
+    public void base64ToLocal(byte[] base64Img, String nombre) throws IOException {
         ControladorPropiedades controladorPropiedades = new ControladorPropiedades();
         OutputStream stream = new FileOutputStream(controladorPropiedades.getPropiedad("resourcesPath") + "/" + nombre + ".png");
         stream.write(base64Img);

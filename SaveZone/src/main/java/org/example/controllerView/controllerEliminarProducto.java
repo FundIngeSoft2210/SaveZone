@@ -11,10 +11,15 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import org.example.AccesoDatos.ControladorBD;
+import org.example.Entidades.Producto;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class controllerEliminarProducto {
+
+    ControladorBD controladorBD = new ControladorBD();
 
     @FXML
     private Button Boton_Ayuda;
@@ -83,7 +88,16 @@ public class controllerEliminarProducto {
     }
 
     @FXML
-    void Categorias(ActionEvent event) {
+    void Categorias(ActionEvent event) throws Exception {
+        String categoria = (String) this.Boton_categorias.getSelectionModel().getSelectedItem();
+        Integer categoriaId = Integer.parseInt(controladorBD.ejecutarConsulta("SELECT * FROM CATEGORIA WHERE " +
+                "NOMBRE = '" + categoria + "'").getString(1)) ;
+        ArrayList<Producto> productos = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE CategoriaID = "+categoriaId));
+        ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
+        controladorDespliegue.desplegarProductos("/Principal", productos, 20, 114);
+        ControladorRutas.launchPantallaPrincipal();
+        Stage myStage = (Stage) this.Boton_categorias.getScene().getWindow();
+        myStage.close();
 
     }
 

@@ -14,18 +14,27 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.example.AccesoDatos.ControladorBD;
+import org.example.AccesoDatos.ControladorPropiedades;
 import org.example.Entidades.Producto;
 
+import javax.imageio.ImageIO;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Base64;
 import java.util.ResourceBundle;
 
 public class controllerProductoAComprar implements Initializable {
 
     Producto p;
+
+    ControladorDespliegueProductos controladorDespliegueProductos = new ControladorDespliegueProductos();
+    ControladorPropiedades controladorPropiedades = new ControladorPropiedades();
+    ControladorBD controladorBD = new ControladorBD();
 
     @FXML
     private Button Boton_Ayuda;
@@ -91,6 +100,9 @@ public class controllerProductoAComprar implements Initializable {
     private Label porcentajeDescuento;
 
     @FXML
+    private ImageView imagenProducto;
+
+    @FXML
     void Ayuda(ActionEvent event) throws Exception {
         ControladorRutas.launchConQuePodemosAyudarte();
         Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
@@ -108,7 +120,16 @@ public class controllerProductoAComprar implements Initializable {
     }
 
     @FXML
-    void Categorias(ActionEvent event) throws IOException{
+    void Categorias(ActionEvent event) throws Exception {
+        String categoria = this.Boton_categorias.getSelectionModel().getSelectedItem();
+        Integer categoriaId = Integer.parseInt(controladorBD.ejecutarConsulta("SELECT * FROM CATEGORIA WHERE " +
+                "NOMBRE = '" + categoria + "'").getString(1)) ;
+        ArrayList<Producto> productos = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE CategoriaID = "+categoriaId));
+        ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
+        controladorDespliegue.desplegarProductos("/Principal", productos, 20, 114);
+        ControladorRutas.launchPantallaPrincipal();
+        Stage myStage = (Stage) this.Boton_categorias.getScene().getWindow();
+        myStage.close();
 
     }
 
@@ -155,7 +176,14 @@ public class controllerProductoAComprar implements Initializable {
     }
 
     @FXML
-    void setProducto(Producto producto){
+    void setProducto(Producto producto) throws IOException {
+        /**controladorDespliegueProductos.base64ToLocal(producto.getImgdata(), producto.getIdProducto()+"producto.png");
+        Image image = new Image(controladorPropiedades.getPropiedad("resourcesPath") + "/" + producto.getIdProducto() + "producto.png");
+        System.out.println(image.getUrl());
+        ImageIO.read()
+        Image image  = ImageIO.read(producto.getImgdata()); // Opening again as an Image
+
+        imagenProducto.setImage();*/
         nombreProducto.setText(producto.getTitulo());
         Precio.setText(String.valueOf(producto.getValor()));
         porcentajeDescuento.setText(String.valueOf(producto.getPorcentajeDesc()));

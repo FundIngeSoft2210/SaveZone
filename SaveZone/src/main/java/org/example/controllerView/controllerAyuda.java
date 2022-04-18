@@ -14,14 +14,18 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.example.AccesoDatos.ControladorBD;
+import org.example.Entidades.Producto;
 import org.example.Gestion.GestionProductos.GestionProducto;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class controllerAyuda implements Initializable {
+
+    ControladorBD controladorBD = new ControladorBD();
 
     @FXML
     private Button Boton_Ayuda;
@@ -90,7 +94,16 @@ public class controllerAyuda implements Initializable {
     }
 
     @FXML
-    void Categorias(ActionEvent event) throws IOException{
+    void Categorias(ActionEvent event) throws Exception {
+        String categoria = this.Boton_categorias.getSelectionModel().getSelectedItem();
+        Integer categoriaId = Integer.parseInt(controladorBD.ejecutarConsulta("SELECT * FROM CATEGORIA WHERE " +
+                "NOMBRE = '" + categoria + "'").getString(1)) ;
+        ArrayList<Producto> productos = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE CategoriaID = "+categoriaId));
+        ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
+        controladorDespliegue.desplegarProductos("/Principal", productos, 20, 114);
+        ControladorRutas.launchPantallaPrincipal();
+        Stage myStage = (Stage) this.Boton_categorias.getScene().getWindow();
+        myStage.close();
 
     }
 
