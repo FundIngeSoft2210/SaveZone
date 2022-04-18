@@ -158,7 +158,7 @@ public class controllerHistorialCompras implements Initializable {
         Integer usuarioId = ControladorRutas.getUsuario().getId();
         ArrayList<Producto> productosFav = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE ID IN (SELECT PRODUCTOID FROM PRODUCTOFAVORITO WHERE USUARIOID = "+usuarioId+")"));
         ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        controladorDespliegue.desplegarProductos("/Principal", productosFav, 20, 114);
+        controladorDespliegue.desplegarProductos("/Favoritos", productosFav, 20, 114);
         ControladorRutas.launchFavoritos();
         Stage myStage = (Stage) this.Boton_favoritos.getScene().getWindow();
         myStage.close();
