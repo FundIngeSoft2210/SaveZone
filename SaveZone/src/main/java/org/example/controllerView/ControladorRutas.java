@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import org.example.AccesoDatos.ControladorBD;
 import org.example.Entidades.Producto;
 import org.example.Entidades.Usuarios.Usuario;
 import org.example.Gestion.GestionProductos.GestionProducto;
@@ -15,6 +16,9 @@ public class ControladorRutas {
 
     protected static Usuario usuario = null;
     protected static Producto producto = null;
+    protected static ControladorBD controladorBD = new ControladorBD();
+
+
 
     public static Producto getProducto() {
         return producto;
@@ -297,10 +301,12 @@ public class ControladorRutas {
         stage.show();
     }
 
-    public static void launchDetallesProducto() throws Exception {
+    public static void launchDetallesProducto(Integer id) throws Exception {
+        producto = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE ID = "+id)).get(0);
         FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../comprarProducto.fxml"));
         Parent root = loader.load();
         controllerProductoAComprar controllerProductoAComprar = loader.getController();
+        controllerProductoAComprar.setProducto(producto);
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);

@@ -16,6 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.example.AccesoDatos.ControladorBD;
+import org.example.Entidades.Producto;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,6 +24,8 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class controllerProductoAComprar implements Initializable {
+
+    Producto p;
 
     @FXML
     private Button Boton_Ayuda;
@@ -149,6 +152,18 @@ public class controllerProductoAComprar implements Initializable {
         ControladorRutas.launchPantallaPrincipal();
         Stage myStage = (Stage) this.RegresarAlInicio.getScene().getWindow();
         myStage.close();
+    }
+
+    @FXML
+    void setProducto(Producto producto){
+        nombreProducto.setText(producto.getTitulo());
+        Precio.setText(String.valueOf(producto.getValor()));
+        porcentajeDescuento.setText(String.valueOf(producto.getPorcentajeDesc()));
+        cant.setText(String.valueOf(producto.getCantidad()));
+        ancho.setText(String.valueOf(producto.getAncho()));
+        peso.setText(String.valueOf(producto.getPeso()));
+        alto.setText(String.valueOf(producto.getAlto()));
+        descripcion.setText(producto.getDescripcion());
     }
 
     @Override
