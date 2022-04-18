@@ -6,19 +6,24 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollBar;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.example.AccesoDatos.ControladorBD;
 import org.example.Entidades.Producto;
 import org.example.Entidades.Usuarios.Usuario;
 import org.example.Gestion.GestionProductos.GestionProducto;
 
+import javax.sound.sampled.Control;
+import javax.swing.event.ChangeListener;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -27,8 +32,13 @@ import java.util.ResourceBundle;
 
 public class controllerPaginaInicio implements Initializable {
 
+    ControladorBD controladorBD = new ControladorBD();
+
     @FXML
     private Button Boton_Ayuda;
+
+    @FXML
+    private ScrollBar scroll;
 
     @FXML
     private Button Boton_Historial;
@@ -82,8 +92,16 @@ public class controllerPaginaInicio implements Initializable {
     }
 
     @FXML
-    void Categorias(ActionEvent event) throws IOException{
-
+    void Categorias(ActionEvent event) throws Exception {
+        String categoria = this.Boton_categorias.getSelectionModel().getSelectedItem();
+        Integer categoriaId = Integer.parseInt(controladorBD.ejecutarConsulta("SELECT * FROM CATEGORIA WHERE " +
+                "NOMBRE = '" + categoria + "'").getString(1)) ;
+        ArrayList<Producto> productos = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE CategoriaID = "+categoriaId));
+        ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
+        controladorDespliegue.desplegarProductos("/Principal", productos, 20, 114);
+        ControladorRutas.launchPantallaPrincipal();
+        Stage myStage = (Stage) this.Boton_categorias.getScene().getWindow();
+        myStage.close();
     }
 
     @FXML
@@ -131,6 +149,8 @@ public class controllerPaginaInicio implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        scroll.setMin(0);
+        scroll.setMax(2000);
         ControladorBD controladorBD = new ControladorBD();
         Resultset rs;
         ObservableList<String> listaCatego;
