@@ -97,8 +97,9 @@ public class controllerPago {
 
     @FXML
     void Cancelar(ActionEvent event) throws Exception {
-        ControladorRutas.launchDetallesProducto();
-        Stage myStage = (Stage) this.Boton_cancelar.getScene().getWindow();
+        Button temp = (Button) event.getSource();
+        ControladorRutas.launchDetallesProducto(Integer.parseInt(temp.getId()));
+        Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
         myStage.close();
     }
 
