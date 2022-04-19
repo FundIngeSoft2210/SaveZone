@@ -114,7 +114,7 @@ public class controllerPagoPSE {
             alert.showAndWait();
             return;
         }
-        controladorDespliegueProductos.desplegarProductos("/Principal",productos, 20, 114);
+        controladorDespliegueProductos.desplegarProductos("/Principal",productos);
         ControladorRutas.launchPantallaPrincipal(true);
         Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
         myStage.close();

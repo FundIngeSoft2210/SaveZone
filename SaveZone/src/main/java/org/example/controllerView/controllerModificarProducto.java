@@ -18,8 +18,11 @@ import org.example.AccesoDatos.ControladorBD;
 import org.example.Entidades.Producto;
 import org.example.Gestion.GestionProductos.GestionProducto;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -165,7 +168,7 @@ public class controllerModificarProducto implements Initializable {
             alert.showAndWait();
             return;
         }
-        controladorDespliegueProductos.desplegarProductos("/Principal",productos, 20, 114);
+        controladorDespliegueProductos.desplegarProductos("/Principal",productos);
         ControladorRutas.launchPantallaPrincipal(true);
         Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
         myStage.close();
@@ -190,13 +193,12 @@ public class controllerModificarProducto implements Initializable {
 
     @FXML
     void setProducto(Producto producto) throws IOException{
-        /**controladorDespliegueProductos.base64ToLocal(producto.getImgdata(), producto.getIdProducto()+"producto.png");
-         Image image = new Image(controladorPropiedades.getPropiedad("resourcesPath") + "/" + producto.getIdProducto() + "producto.png");
-         System.out.println(image.getUrl());
-         ImageIO.read()
-         Image image  = ImageIO.read(producto.getImgdata()); // Opening again as an Image
+        String path = ControladorRutas.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+        String decodedPath = URLDecoder.decode(path + "/org/example/" + producto.getIdProducto() + "producto.png", "UTF-8");
+        InputStream stream = new FileInputStream(decodedPath);
+        Image image = new Image(stream);
+        //imagenProducto.setImage(image);
 
-         imagenProducto.setImage();*/
         Nuevo_Nombre_Producto.setText(producto.getTitulo());
         Cambiar_categoria.getSelectionModel().select(producto.getCategoria());
         Cambiar_Precio.setText(String.valueOf(producto.getValor()));
@@ -242,7 +244,7 @@ public class controllerModificarProducto implements Initializable {
         Integer usuarioId = ControladorRutas.getUsuario().getId();
         ArrayList<Producto> productosFav = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE ID IN (SELECT PRODUCTOID FROM PRODUCTOFAVORITO WHERE USUARIOID = "+usuarioId+")"));
         ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        controladorDespliegue.desplegarProductos("/Favoritos", productosFav, 20, 114);
+        controladorDespliegue.desplegarProductos("/Favoritos", productosFav);
         ControladorRutas.launchFavoritos();
         Stage myStage = (Stage) this.Boton_favoritos.getScene().getWindow();
         myStage.close();

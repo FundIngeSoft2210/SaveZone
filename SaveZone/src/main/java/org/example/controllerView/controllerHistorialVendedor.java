@@ -96,7 +96,7 @@ public class controllerHistorialVendedor implements Initializable {
             alert.showAndWait();
             return;
         }
-        controladorDespliegueProductos.desplegarProductos("/Principal",productos, 20, 114);
+        controladorDespliegueProductos.desplegarProductos("/Principal",productos);
         ControladorRutas.launchPantallaPrincipal(true);
         Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
         myStage.close();
@@ -109,7 +109,7 @@ public class controllerHistorialVendedor implements Initializable {
                 "NOMBRE = '" + categoria + "'").getString(1)) ;
         ArrayList<org.example.Entidades.Producto> productos = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE CategoriaID = "+categoriaId));
         ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        controladorDespliegue.desplegarProductos("/Principal", productos, 20, 114);
+        controladorDespliegue.desplegarProductos("/Principal", productos);
         ControladorRutas.launchPantallaPrincipal(true);
         Stage myStage = (Stage) this.Boton_categorias.getScene().getWindow();
         myStage.close();
@@ -178,7 +178,7 @@ public class controllerHistorialVendedor implements Initializable {
         Integer usuarioId = ControladorRutas.getUsuario().getId();
         ArrayList<Producto> productosFav = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE ID IN (SELECT PRODUCTOID FROM PRODUCTOFAVORITO WHERE USUARIOID = "+usuarioId+")"));
         ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        controladorDespliegue.desplegarProductos("/Favoritos", productosFav, 20, 114);
+        controladorDespliegue.desplegarProductos("/Favoritos", productosFav);
         ControladorRutas.launchFavoritos();
         Stage myStage = (Stage) this.Boton_favoritos.getScene().getWindow();
         myStage.close();

@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.example.AccesoDatos.ControladorBD;
@@ -72,6 +73,12 @@ public class controllerPaginaInicio implements Initializable {
     private Button Producto;
 
     @FXML
+    private AnchorPane AnchorPanePrincipal;
+
+    @FXML
+    private ScrollPane ScrollPanePrincipal;
+
+    @FXML
     void Ayuda(ActionEvent event) throws Exception {
         ControladorRutas.launchConQuePodemosAyudarte();
         Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
@@ -103,7 +110,7 @@ public class controllerPaginaInicio implements Initializable {
             alert.showAndWait();
             return;
         }
-        controladorDespliegueProductos.desplegarProductos("/Principal",productos, 20, 114);
+        controladorDespliegueProductos.desplegarProductos("/Principal",productos);
         ControladorRutas.launchPantallaPrincipal(true);
         Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
         myStage.close();
@@ -116,7 +123,7 @@ public class controllerPaginaInicio implements Initializable {
                 "NOMBRE = '" + categoria + "'").getString(1)) ;
         ArrayList<Producto> productos = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE CategoriaID = "+categoriaId));
         ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        controladorDespliegue.desplegarProductos("/Principal", productos, 20, 114);
+        controladorDespliegue.desplegarProductos("/Principal", productos);
         ControladorRutas.launchPantallaPrincipal(true);
         Stage myStage = (Stage) this.Boton_categorias.getScene().getWindow();
         myStage.close();
@@ -167,8 +174,6 @@ public class controllerPaginaInicio implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        scroll.setMin(0);
-        scroll.setMax(2000);
         ControladorBD controladorBD = new ControladorBD();
         Resultset rs;
         ObservableList<String> listaCatego;
@@ -187,7 +192,7 @@ public class controllerPaginaInicio implements Initializable {
         Integer usuarioId = ControladorRutas.getUsuario().getId();
         ArrayList<Producto> productosFav = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE ID IN (SELECT PRODUCTOID FROM PRODUCTOFAVORITO WHERE USUARIOID = "+usuarioId+")"));
         ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        controladorDespliegue.desplegarProductos("/Favoritos", productosFav, 20, 114);
+        controladorDespliegue.desplegarProductos("/Favoritos", productosFav);
         ControladorRutas.launchFavoritos();
         Stage myStage = (Stage) this.Boton_Favoritos.getScene().getWindow();
         myStage.close();
