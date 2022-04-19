@@ -6,25 +6,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="766.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.GuiControler">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="766.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.GuiControler">
    <children>
       <ImageView fitHeight="492.0" fitWidth="767.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@inicio.PNG" />
          </image>
       </ImageView>
-      <Button fx:id="boton_crearCuenta" layoutX="16.0" layoutY="266.0" mnemonicParsing="false" onAction="#CrearCuenta" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: white;" text="Crear Cuenta" textFill="#3fdfd4" textOverrun="CENTER_ELLIPSIS">
+      <Button fx:id="boton_crearCuenta" layoutX="16.0" layoutY="266.0" mnemonicParsing="false" onAction="#CrearCuenta" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: white;" text="Crear cuenta" textFill="#3fdfd4" textOverrun="CENTER_ELLIPSIS">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="boton_Invitado" layoutX="283.0" layoutY="266.0" mnemonicParsing="false" onAction="#EntrarComoInvitado" prefHeight="38.0" prefWidth="138.0" style="-fx-background-color: white;" text="Entra como invitado" textFill="#3fdfd4" textOverrun="CENTER_ELLIPSIS">
+      <Button fx:id="boton_Invitado" layoutX="283.0" layoutY="266.0" mnemonicParsing="false" onAction="#EntrarComoInvitado" prefHeight="38.0" prefWidth="138.0" style="-fx-background-color: white;" text="Entrar como invitado" textFill="#3fdfd4" textOverrun="CENTER_ELLIPSIS">
          <font>
-            <Font name="System Bold Italic" size="12.0" />
+            <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="boton_IniciarSesion" layoutX="146.0" layoutY="266.0" mnemonicParsing="false" onAction="#IniciarSesion" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: white;" text="Iniciar Sesión" textFill="#3fdfd4" textOverrun="CENTER_ELLIPSIS">
+      <Button fx:id="boton_IniciarSesion" layoutX="146.0" layoutY="266.0" mnemonicParsing="false" onAction="#IniciarSesion" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: white;" text="Iniciar sesión" textFill="#3fdfd4" textOverrun="CENTER_ELLIPSIS">
          <font>
-            <Font name="System Bold Italic" size="12.0" />
+            <Font name="System Bold" size="12.0" />
          </font>
       </Button>
    </children>

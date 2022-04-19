@@ -81,7 +81,7 @@ public class ControladorRutas {
     public static void launchPantallaPrincipal() throws Exception {
         GestionProducto gestion = new GestionProducto();
         ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        controladorDespliegue.desplegarProductos("/Principal", gestion.buscarProducto(""), 20, 114);
+        controladorDespliegue.desplegarProductos("/Principal", gestion.buscarProducto(""));
 
         FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../Principal.fxml"));
         Parent root = loader.load();
@@ -239,7 +239,7 @@ public class ControladorRutas {
     public static void launchProductosPopulares() throws Exception {
         GestionProducto gestion = new GestionProducto();
         ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        controladorDespliegue.desplegarProductos("/ProductosPopulares", gestion.buscarProducto(""), 20, 114);
+        controladorDespliegue.desplegarProductos("/ProductosPopulares", gestion.buscarProducto(""));
 
         FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../ProductosPopulares.fxml"));
         Parent root = loader.load();
@@ -469,7 +469,7 @@ public class ControladorRutas {
     public static void launchHistorialCompras() throws Exception {
         GestionProducto gestion = new GestionProducto();
         ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        controladorDespliegue.desplegarProductos("/HistorialCompras", gestion.buscarProducto(""), 20, 114);
+        controladorDespliegue.desplegarProductos("/HistorialCompras", gestion.buscarProducto(""));
 
         FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../HistorialCompras.fxml"));
         Parent root = loader.load();
@@ -490,7 +490,7 @@ public class ControladorRutas {
     public static void launchHistorialVentas() throws Exception {
         GestionProducto gestion = new GestionProducto();
         ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        controladorDespliegue.desplegarProductos("/HistorialVendido", gestion.buscarProducto(""), 20, 114);
+        controladorDespliegue.desplegarProductos("/HistorialVendido", gestion.buscarProducto(""));
 
         FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../HistorialVendido.fxml"));
         Parent root = loader.load();

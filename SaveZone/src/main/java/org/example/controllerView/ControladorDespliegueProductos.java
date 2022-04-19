@@ -8,8 +8,8 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class ControladorDespliegueProductos {
-    public void desplegarProductos(String archivo, ArrayList<Producto> productosDesplegar, Integer x_inicial, Integer y_inicial) throws Exception {
-        Integer x_actual = x_inicial, y_actual = y_inicial;
+    public void desplegarProductos(String archivo, ArrayList<Producto> productosDesplegar) throws Exception {
+        Integer x_actual = 0, y_actual = 0;
         ControladorPropiedades controladorPropiedades = new ControladorPropiedades();
         String resourcesPath = controladorPropiedades.getPropiedad("resourcesPath");
         String path = resourcesPath + archivo + ".fxml", pathCopia = resourcesPath + archivo + "Buffer" + ".fxml", etiquetaProducto = null;
@@ -40,7 +40,20 @@ public class ControladorDespliegueProductos {
         for (Producto producto : productosDesplegar) {
             if(producto.getEstadoProductoID()==6)continue;
             base64ToLocal(producto.getImgdata(), producto.getIdProducto() + "producto");
-            etiquetaProducto = " <AnchorPane layoutX=\"" + x_actual + "\" layoutY=\"" + y_actual + "\" prefHeight=\"201.0\" prefWidth=\"222.0\" style=\"-fx-background-color: white;\">\n" +
+            etiquetaProducto = "<children>\n" +
+                    " <Button fx:id=\"" + producto.getIdProducto() + "\" alignment=\"CENTER\" contentDisplay=\"TOP\" ellipsisString=\"\" layoutX=\"" + x_actual + "\" layoutY=\"" + y_actual + "\" mnemonicParsing=\"false\" onAction=\"#VerDetallesProducto\" prefHeight=\"182.0\" prefWidth=\"215.0\" style=\"-fx-background-color: white;\" text=\"" + producto.getTitulo() + "\" textAlignment=\"CENTER\" textOverrun=\"LEADING_WORD_ELLIPSIS\" wrapText=\"true\">\n" +
+                    "                           <graphic>\n" +
+                    "                              <ImageView fx:id=\"ImagenProducto\" fitHeight=\"88.0\" fitWidth=\"192.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\n" +
+                    "                                 <image>\n" +
+                    "                                    <Image url=\"@" + producto.getIdProducto() + "producto.png\" />\n" +
+                    "                                 </image>\n" +
+                    "                              </ImageView>\n" +
+                    "                           </graphic>\n" +
+                    "                        </Button>\n" +
+                    "                     </children>";
+
+
+            /**etiquetaProducto = " <AnchorPane layoutX=\"" + x_actual + "\" layoutY=\"" + y_actual + "\" prefHeight=\"201.0\" prefWidth=\"222.0\" style=\"-fx-background-color: white;\">\n" +
                     "               <children>\n" +
                     "                  <Button fx:id=\"" + producto.getIdProducto() + "\" layoutX=\"3.0\" layoutY=\"8.0\" mnemonicParsing=\"false\" onAction=\"#VerDetallesProducto\" prefHeight=\"182.0\" prefWidth=\"215.0\" style=\"-fx-background-color: white;\">\n" +
                     "                     <graphic>\n" +
@@ -51,15 +64,15 @@ public class ControladorDespliegueProductos {
                     "                        </ImageView>\n" +
                     "                     </graphic>\n" +
                     "                  </Button>\n" +
-                    "                  <Label layoutX=\"56.0\" layoutY=\"153.0\" text=\"" + producto.getTitulo() + "\" />\n" +
+                    "                  <Label layoutX=\"63.0\" layoutY=\"153.0\" text=\"" + producto.getTitulo() + "\" textAlignment=\"CENTER\"/>\n" +
                     "               </children>\n" +
                     "            </AnchorPane>";
-
+            */
             x_actual += 235;
 
             if (x_actual > 235 * 3) {
-                y_actual += 210;
-                x_actual = x_inicial;
+                y_actual += 150;
+                x_actual = 0;
             }
 
             bw.write(etiquetaProducto);
@@ -100,6 +113,7 @@ public class ControladorDespliegueProductos {
     }
 
     public void desplegarMisProductos(String archivo, ArrayList<Producto> productosDesplegar, Integer y_inicial) throws Exception {
+        y_inicial = 0;
         ControladorPropiedades controladorPropiedades = new ControladorPropiedades();
         Integer y_actual = y_inicial;
 
@@ -133,7 +147,23 @@ public class ControladorDespliegueProductos {
         for (Producto producto : productosDesplegar) {
             if(producto.getEstadoProductoID()==6)continue;
             base64ToLocal(producto.getImgdata(), producto.getIdProducto() + "producto");
-            etiquetaProducto = "<AnchorPane layoutX=\"311.0\" layoutY=\"" + y_actual + "\" prefHeight=\"102.0\" prefWidth=\"351.0\" style=\"-fx-background-color: white;\">\n" +
+
+            etiquetaProducto = "<children>\n" +
+                    "                  <Button fx:id=\"" + producto.getIdProducto() + "\" alignment=\"CENTER\" contentDisplay=\"TOP\" ellipsisString=\"\" graphicTextGap=\"10.0\" layoutX=\"73.0\" layoutY=\"" + y_actual + "11.0\" mnemonicParsing=\"false\" onAction=\"#VerDetallesProducto\" prefHeight=\"80.0\" prefWidth=\"116.0\" style=\"-fx-background-color: white;\" text=\"" + producto.getTitulo() + "\">\n" +
+                    "                           <graphic>\n" +
+                    "                              <ImageView fx:id=\"ImagenProducto\" fitHeight=\"50.0\" fitWidth=\"106.0\" nodeOrientation=\"INHERIT\" pickOnBounds=\"true\" preserveRatio=\"true\">\n" +
+                    "                                 <image>\n" +
+                    "                              <Image url=\"@" + producto.getIdProducto() + "producto.png\" />\n" +
+                    "                                 </image>\n" +
+                    "                              </ImageView>\n" +
+                    "                           </graphic>\n" +
+                    "                        </Button>\n" +
+                    "                  <Button fx:id=\"" + producto.getIdProducto() + "\" layoutX=\"212.0\" layoutY=\"" + y_actual + 23 + "\" mnemonicParsing=\"false\" onAction=\"#ModificarProducto\" style=\"-fx-background-color: #3fdfd4;\" text=\"Modificar\" />\n" +
+                    "                  <Button fx:id=\"" + producto.getIdProducto() + "\" layoutX=\"212.0\" layoutY=\"" + y_actual + 54 + "\" mnemonicParsing=\"false\" onAction=\"#EliminarProducto\" prefHeight=\"25.0\" prefWidth=\"67.0\" style=\"-fx-background-color: #3fdfd4;\" text=\"Eliminar\" />\n" +
+                    "                     </children>\n" +
+                    "                     ";
+
+            /**etiquetaProducto = "<AnchorPane layoutX=\"311.0\" layoutY=\"" + y_actual + "\" prefHeight=\"102.0\" prefWidth=\"351.0\" style=\"-fx-background-color: white;\">\n" +
                     "               <children>\n" +
                     "                  <Button fx:id=\"" + producto.getIdProducto() + "\" layoutX=\"2.0\" layoutY=\"9.0\" mnemonicParsing=\"false\" onAction=\"#VerDetallesProducto\" prefHeight=\"62.0\" prefWidth=\"328.0\" style=\"-fx-background-color: white;\" />\n" +
                     "                  <Label fx:id=\"NombreProducto\" layoutX=\"132.0\" layoutY=\"31.0\" text=\"" + producto.getTitulo() + "\" />\n" +
@@ -145,9 +175,9 @@ public class ControladorDespliegueProductos {
                     "                  <Button fx:id=\"" + producto.getIdProducto() + "\" layoutX=\"133.0\" layoutY=\"64.0\" mnemonicParsing=\"false\" onAction=\"#ModificarProducto\" style=\"-fx-background-color: #3fdfd4;\" text=\"Modificar\" />\n" +
                     "                  <Button fx:id=\"" + producto.getIdProducto() + "\" layoutX=\"226.0\" layoutY=\"64.0\" mnemonicParsing=\"false\" onAction=\"#EliminarProducto\" style=\"-fx-background-color: #3fdfd4;\" text=\"Eliminar\" />\n" +
                     "               </children>\n" +
-                    "            </AnchorPane>";
+                    "            </AnchorPane>"; */
 
-            y_actual += 115;
+            y_actual += 1;
             bw.write(etiquetaProducto);
         }
 

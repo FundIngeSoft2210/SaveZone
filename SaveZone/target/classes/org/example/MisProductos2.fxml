@@ -15,12 +15,13 @@
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="1061.0" style="-fx-background-color: #f4f1f1;">
          <children>
+            <!--DESPL_FINAL-->
             <Label layoutX="443.0" layoutY="72.0" text="Tus Productos">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
-            <Button fx:id="Button_AnadirProductos" layoutX="458.0" layoutY="390.0" mnemonicParsing="false" onAction="#anadirProductos" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: #3fdfd4;" text="Añadir Producto" />
+            <Button fx:id="Button_AnadirProductos" layoutX="454.0" layoutY="390.0" mnemonicParsing="false" onAction="#anadirProductos" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: #3fdfd4;" text="Añadir Producto" />
             <AnchorPane layoutX="1.0" layoutY="-1.0" prefHeight="62.0" prefWidth="1058.0" style="-fx-background-color: white;">
                <children>
                   <Button fx:id="Boton_vender" layoutX="429.0" layoutY="13.0" mnemonicParsing="false" onAction="#VenderProductos" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Vender" />
@@ -53,17 +54,21 @@
             </AnchorPane>
             <ScrollPane layoutX="355.0" layoutY="113.0" prefHeight="266.0" prefWidth="351.0">
                <content>
-                  <AnchorPane prefHeight="263.0" prefWidth="348.0" style="-fx-background-color: white;">
-
-
-
-
-
-
-
-<!--DESPL-->
-
-<!--DESPL_FINAL-->
+                  <!--DESPL-->
+                  <AnchorPane prefHeight="102.0" prefWidth="348.0" style="-fx-background-color: white;">
+                     <children>
+                        <Button fx:id="Producto" alignment="CENTER" contentDisplay="TOP" ellipsisString="" graphicTextGap="10.0" layoutX="73.0" layoutY="11.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="80.0" prefWidth="116.0" style="-fx-background-color: white;" text="Camara Samsung">
+                           <graphic>
+                              <ImageView fx:id="ImagenProducto" fitHeight="50.0" fitWidth="106.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@1.PNG" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="Button_ModificarProducto" layoutX="212.0" layoutY="23.0" mnemonicParsing="false" onAction="#ModificarProducto" style="-fx-background-color: #3fdfd4;" text="Modificar" />
+                        <Button fx:id="Boton_eliminarProducto" layoutX="212.0" layoutY="54.0" mnemonicParsing="false" onAction="#EliminarProducto" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #3fdfd4;" text="Eliminar" />
+                     </children>
                   </AnchorPane>
                </content>
             </ScrollPane>

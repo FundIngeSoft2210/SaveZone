@@ -18,8 +18,11 @@ import org.example.Entidades.Producto;
 import org.example.Gestion.GestionProductos.GestionProducto;
 
 import javax.imageio.ImageIO;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Base64;
@@ -94,6 +97,9 @@ public class controllerProductoAComprar implements Initializable {
     private Label peso;
 
     @FXML
+    private Label color;
+
+    @FXML
     private Label porcentajeDescuento;
 
     @FXML
@@ -131,7 +137,7 @@ public class controllerProductoAComprar implements Initializable {
             alert.showAndWait();
             return;
         }
-        controladorDespliegueProductos.desplegarProductos("/Principal",productos, 20, 114);
+        controladorDespliegueProductos.desplegarProductos("/Principal",productos);
         ControladorRutas.launchPantallaPrincipal(true);
         Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
         myStage.close();
@@ -144,7 +150,7 @@ public class controllerProductoAComprar implements Initializable {
                 "NOMBRE = '" + categoria + "'").getString(1)) ;
         ArrayList<Producto> productos = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE CategoriaID = "+categoriaId));
         ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        controladorDespliegue.desplegarProductos("/Principal", productos, 20, 114);
+        controladorDespliegue.desplegarProductos("/Principal", productos);
         ControladorRutas.launchPantallaPrincipal();
         Stage myStage = (Stage) this.Boton_categorias.getScene().getWindow();
         myStage.close();
@@ -195,20 +201,23 @@ public class controllerProductoAComprar implements Initializable {
 
     @FXML
     void setProducto(Producto producto) throws IOException {
-        /**controladorDespliegueProductos.base64ToLocal(producto.getImgdata(), producto.getIdProducto()+"producto.png");
-        Image image = new Image(controladorPropiedades.getPropiedad("resourcesPath") + "/" + producto.getIdProducto() + "producto.png");
-        System.out.println(image.getUrl());
-        ImageIO.read()
-        Image image  = ImageIO.read(producto.getImgdata()); // Opening again as an Image
+        String path = ControladorRutas.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+        String decodedPath = URLDecoder.decode(path + "/org/example/" + producto.getIdProducto() + "producto.png", "UTF-8");
+        InputStream stream = new FileInputStream(decodedPath);
+        Image image = new Image(stream);
+        imagenProducto.setImage(image);
 
-        imagenProducto.setImage();*/
         nombreProducto.setText(producto.getTitulo());
-        Precio.setText(String.valueOf(producto.getValor()));
-        porcentajeDescuento.setText(String.valueOf(producto.getPorcentajeDesc()));
-        cant.setText(String.valueOf(producto.getCantidad()));
-        ancho.setText(String.valueOf(producto.getAncho()));
-        peso.setText(String.valueOf(producto.getPeso()));
-        alto.setText(String.valueOf(producto.getAlto()));
+        Precio.setText("$" + String.valueOf(producto.getValor()));
+        if (producto.getPorcentajeDesc() > 0)
+            porcentajeDescuento.setText(String.valueOf(producto.getPorcentajeDesc()) + "% OFF");
+        else
+            porcentajeDescuento.setVisible(false);
+        cant.setText("Quedan " + String.valueOf(producto.getCantidad()) + " unidades en stock.");
+        ancho.setText(String.valueOf(producto.getAncho()) + " cm");
+        peso.setText(String.valueOf(producto.getPeso()) + " cm");
+        alto.setText(String.valueOf(producto.getAlto()) + " cm");
+        color.setText(producto.getColor());
         descripcion.setText(producto.getDescripcion());
         ControladorRutas.setProducto(producto);
     }
@@ -232,7 +241,7 @@ public class controllerProductoAComprar implements Initializable {
         Integer usuarioId = ControladorRutas.getUsuario().getId();
         ArrayList<Producto> productosFav = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE ID IN (SELECT PRODUCTOID FROM PRODUCTOFAVORITO WHERE USUARIOID = "+usuarioId+")"));
         ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        controladorDespliegue.desplegarProductos("/Favoritos", productosFav, 20, 114);
+        controladorDespliegue.desplegarProductos("/Favoritos", productosFav);
         ControladorRutas.launchFavoritos();
         Stage myStage = (Stage) this.Boton_favoritos.getScene().getWindow();
         myStage.close();
@@ -255,10 +264,10 @@ public class controllerProductoAComprar implements Initializable {
 
             ArrayList<Producto> productosFav = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE ID IN (SELECT PRODUCTOID FROM PRODUCTOFAVORITO WHERE USUARIOID = "+usuarioId+")"));
             ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-            controladorDespliegue.desplegarProductos("/Favoritos", productosFav, 20, 114);
+            controladorDespliegue.desplegarProductos("/Favoritos", productosFav);
 
             ControladorRutas.launchFavoritos();
-            Stage myStage = (Stage) this.Button_AnadirAFavoritos.getScene().getWindow();
+            Stage myStage = (Stage) this.Button_uscar.getScene().getWindow();
             myStage.close();
         }catch(Exception e){
             System.out.println(e.getMessage());
