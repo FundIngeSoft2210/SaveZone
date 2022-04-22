@@ -16,6 +16,12 @@ import java.util.Properties;
 public class GestionUsuario {
     private ControladorBD controladorBD = new ControladorBD();
 
+    /**
+     * @summary Método encargado de realizar la creación de un nuevo usuario que se recibe por parametro
+     *          y realizar el insert de este con todos sus datos en la Base de Datos del aplicativo
+     * @param nuevoUsuario: Se recibe el usuario a crear con todos sus datos capturados
+     * @return un booleano el cual indica si la inserción del usuario se pudo hacer correctamente
+     */
     public boolean crearUsuario (Usuario nuevoUsuario) {
         String queryInsert = null;
         try {
@@ -38,6 +44,11 @@ public class GestionUsuario {
         }
     }
 
+    /**
+     * @summary Método encargado de realizar la modificación a cualquier atributo de un usuario realizando su debido UPDATE en la Base de Datos
+     * @param usuarioModificar: Es un objeto de tipo usuario que contiene al usuario deseado con sus datos ya modificados
+     * @return un booleano el cual indica si el UPDATE en la base de datos se pudo realizar correctamente
+     */
     public boolean modificarUsuario (Usuario usuarioModificar) {
         String insert = null;
         try {
@@ -57,6 +68,13 @@ public class GestionUsuario {
         }
     }
 
+    /**
+     * @summary Método encargado de recibir un Usuario por parametro, para posteriormente realizar la buqueda y eliminación de este en la Base de Datos
+     *          del aplicativo
+     * @param usuarioEliminar: Se recibe el usuario a buscar y eliminar de la Base de Datos
+     * @return un booleano el cual nos indica false en caso de que se genere cualquier tipo de excepción al momento de realizar el delete en la Base de
+     *         Datos
+     */
     public boolean eliminarUsuario (Usuario usuarioEliminar) {
         String delete;
         try {
@@ -73,6 +91,13 @@ public class GestionUsuario {
         }
     }
 
+    /**
+     * @summary Metodo encargado de enviar la contraseña de un usuario a su correo, recibiendo bien sea su nombre de usuario o su correo electrónico
+     *          buscandolo en la Base de Datos y enviando la contraseña al correo registrado
+     * @param usernameOCorreo: Es un String que contiene el nombre de Usuario o Correo Electrónico de la cuenta a recuperar
+     * @return un booleano el cual nos indica si dicho correo electrónico o nombre de usuario está registrado en el sistema y en caso de que esto se
+     *         cumpla que el envío de la contraseña al correo electrónico se realice correctamente
+     */
     public boolean recuperarContrasena(String usernameOCorreo) { // Recuperar por usuario o por correo
         ArrayList<Usuario> usuarios = null;
         ControladorPropiedades controladorPropiedades = new ControladorPropiedades();
@@ -113,6 +138,16 @@ public class GestionUsuario {
         }
     }
 
+    /**
+     * @summary método encargado de autorizar el ingreso de un usuario registrado al aplicativo, esto lo validará a partir de el nombre de usuario y la
+     *          contraseña ingresada por el usuario, posteriormente buscará ese nombre de usuario en la Base de Datos y validará si la contraseña
+     *          coincide con la registrada
+     * @param nombreUsuario: String el cual contiene el nombre de usuario ingresado por el cliente del aplicativo
+     * @param contrasena: String que contiene la contraseña a validar en el sistema según el usuario registrado
+     * @return un objeto de Tipo Usuario el cuál en caso de que el ingreso se realice correctamente contendrá todos los atributos del usuario que
+     *         ingresó al sistema, en caso de que el ingreso no sea posible este objeto será null y nos permitirá informarle al usuario que algo
+     *         ocurrió al validarse en el sistema
+     */
     public Usuario autenticarUsuario (String nombreUsuario, String contrasena) {
         ArrayList<Usuario> usuarios = null;
         ControladorPropiedades controladorPropiedades = new ControladorPropiedades();
