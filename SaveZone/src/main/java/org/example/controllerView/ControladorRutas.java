@@ -81,7 +81,7 @@ public class ControladorRutas {
     public static void launchPantallaPrincipal() throws Exception {
         GestionProducto gestion = new GestionProducto();
         ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        controladorDespliegue.desplegarProductos("/Principal", gestion.buscarProducto(""));
+        controladorDespliegue.desplegarProductos("Principal", gestion.buscarProducto(""));
 
         FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../Principal.fxml"));
         Parent root = loader.load();
@@ -535,5 +535,117 @@ public class ControladorRutas {
             alert.showAndWait();
             launchPantallaPrincipal();
         }
+    }
+    public static void launchVista_Perfil() throws Exception {
+        FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../perfil.fxml"));
+        Parent root = loader.load();
+        controllerPerfil controllerPerfil = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Perfil");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
+    }
+    public static void launchPagRecomendados() throws Exception {
+        FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../PagRecomendados.fxml"));
+        Parent root = loader.load();
+        controllerRecomendado controllerRecomendado = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Productos Recomendados");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
+    }
+    public static void launchMasVendido() throws Exception {
+        FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../pagMasVendidos.fxml"));
+        Parent root = loader.load();
+        controllerMasVendido controllerMasVendido = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Productos Más Vendidos");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
+    }
+    public static void launchLlenarDatosEnvio() throws Exception {
+        FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../Seguimiento1.fxml"));
+        Parent root = loader.load();
+        controllerSeguimientoLlenarDatos controllerSeguimientoLlenarDatos = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Llenar Datos Envío");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
+    }
+    public static void launchEnRuta() throws Exception {
+        FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../Seguimiento2.fxml"));
+        Parent root = loader.load();
+        controllerSeguimientoRastreo controllerSeguimientoRastreo = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Rastrear Envío");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
+    }
+    public static void launchEntregado() throws Exception {
+        FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../Seguimiento3.fxml"));
+        Parent root = loader.load();
+        controllerSeguimientoEntregado controllerSeguimientoEntregado = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Envío Entregado");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
+    }
+    public static void launchCalificacion() throws Exception {
+        FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../calificarCompra.fxml"));
+        Parent root = loader.load();
+        controllerCalificarCompra controllerCalificarCompra = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Calificar Compra");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
     }
 }

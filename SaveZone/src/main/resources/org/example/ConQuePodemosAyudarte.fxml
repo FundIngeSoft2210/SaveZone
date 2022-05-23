@@ -6,50 +6,61 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="1059.0" style="-fx-background-color: #f4f1f1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerAyuda">
+<VBox prefHeight="638.0" prefWidth="967.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerAyuda">
    <children>
-      <Text layoutX="43.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Con qué podemos ayudarte?">
-         <font>
-            <Font name="System Bold Italic" size="29.0" />
-         </font>
-      </Text>
-      <TextField fx:id="DescripcionDelProblema" alignment="TOP_LEFT" layoutX="43.0" layoutY="165.0" prefHeight="162.0" prefWidth="513.0" promptText="Describe tu problema:" style="-fx-background-color: #efecec;" />
-      <ComboBox fx:id="TemasDeAyuda" layoutX="43.0" layoutY="127.0" prefHeight="29.0" prefWidth="208.0" promptText="Tema con qué ayudarte" style="-fx-background-color: #efecec;" />
-      <Button fx:id="Button_Enviar" layoutX="43.0" layoutY="344.0" mnemonicParsing="false" onAction="#Enviar" prefHeight="30.0" prefWidth="74.0" style="-fx-background-color: #3fdfd4;" text="Enviar" textFill="#edf7f0" />
-      <Button fx:id="Button_Cancelar" layoutX="135.0" layoutY="344.0" mnemonicParsing="false" onAction="#Cancelar" prefHeight="30.0" prefWidth="74.0" style="-fx-background-color: #3fdfd4;" text="Cancelar" textFill="#edf7f0" />
-      <Button fx:id="Button_uscar" layoutX="746.0" layoutY="14.0" mnemonicParsing="false" onAction="#BuscarProductos" prefHeight="18.0" prefWidth="26.0" style="-fx-background-color: #f4f1f1;" />
-      <AnchorPane layoutX="-1.0" prefHeight="62.0" prefWidth="1058.0" style="-fx-background-color: white;">
+      <AnchorPane style="-fx-background-color: white;">
          <children>
-            <Button fx:id="Boton_vender" layoutX="429.0" layoutY="13.0" mnemonicParsing="false" onAction="#VenderProductos" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Vender" />
-            <Button fx:id="Boton_favoritos" layoutX="278.0" layoutY="13.0" mnemonicParsing="false" onAction="#Populares" style="-fx-background-color: #3fdfd4;" text="Populares" />
-            <ComboBox fx:id="Boton_categorias" layoutX="152.0" layoutY="13.0" onAction="#Categorias" prefHeight="26.0" prefWidth="116.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;" />
-            <TextField fx:id="Nombre1" layoutX="855.0" layoutY="13.0" onAction="#Buscar" prefHeight="26.0" prefWidth="178.0" promptText="             Search" style="-fx-background-color: #f4f1f1;" />
-            <Button fx:id="Boton_Historial" layoutX="356.0" layoutY="13.0" mnemonicParsing="false" onAction="#Historial" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Historial" />
-            <Button fx:id="Boton_Ayuda" layoutX="502.0" layoutY="13.0" mnemonicParsing="false" onAction="#Ayuda" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Ayuda" />
-            <Button fx:id="Boton_VerMisProductos" layoutX="577.0" layoutY="13.0" mnemonicParsing="false" onAction="#Productos" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: #3fdfd4;" text="Mis productos" />
-            <Button fx:id="Button_uscar1" layoutX="823.0" layoutY="13.0" mnemonicParsing="false" onAction="#BuscarProductos" prefHeight="18.0" prefWidth="26.0" style="-fx-background-color: #f4f1f1;">
+            <Button fx:id="Boton_populares" layoutX="272.0" layoutY="17.0" mnemonicParsing="false" onAction="#Populares" style="-fx-background-color: #3fdfd4;" text="Populares" />
+            <ComboBox fx:id="Boton_categorias" layoutX="146.0" layoutY="17.0" onAction="#Categorias" prefHeight="26.0" prefWidth="116.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;" />
+            <TextField fx:id="Nombre1" layoutX="800.0" layoutY="17.0" onAction="#Buscar" prefHeight="26.0" prefWidth="167.0" promptText="             Search" style="-fx-background-color: #f4f1f1;" />
+            <Button fx:id="Boton_Historial" layoutX="354.0" layoutY="17.0" mnemonicParsing="false" onAction="#Historial" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Historial" />
+            <Button fx:id="Boton_Ayuda" layoutX="428.0" layoutY="18.0" mnemonicParsing="false" onAction="#Ayuda" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Ayuda" />
+            <Button fx:id="Boton_VerMisProductos" layoutX="496.0" layoutY="17.0" mnemonicParsing="false" onAction="#Productos" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: #3fdfd4;" text="Mis productos" />
+            <Button fx:id="Button_uscar" layoutX="778.0" layoutY="16.0" mnemonicParsing="false" onAction="#BuscarProductos" prefHeight="18.0" prefWidth="26.0" style="-fx-background-color: #f4f1f1;" />
+            <Button fx:id="RegresarAlInicio" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#VolverInicio" prefHeight="50.0" prefWidth="116.0" style="-fx-background-color: white;" />
+            <Button fx:id="Boton_Favoritos" layoutX="622.0" layoutY="17.0" mnemonicParsing="false" onAction="#Favoritos" prefHeight="26.0" prefWidth="99.0" style="-fx-background-color: #3fdfd4;" text="Favoritos" />
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="781.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@LUPA.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="42.0" fitWidth="111.0" layoutX="17.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@4.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="ButtonPerfil" layoutX="728.0" layoutY="8.0" mnemonicParsing="false" onAction="#irAPerfil" prefHeight="42.0" prefWidth="26.0" style="-fx-background-color: white;">
                <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="33.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@LUPA.png" />
+                        <Image url="@persona.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="RegresarAlInicio" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#VolverInicio" prefHeight="50.0" prefWidth="116.0" style="-fx-background-color: white;">
-               <graphic>
-                  <ImageView fitHeight="42.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@4.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="Boton_Favoritos" layoutX="707.0" layoutY="13.0" mnemonicParsing="false" onAction="#Favoritos" prefHeight="26.0" prefWidth="99.0" style="-fx-background-color: #3fdfd4;" text="Favoritos" />
+         </children>
+      </AnchorPane>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #f4f1f1;" />
+      <AnchorPane prefHeight="586.0" prefWidth="967.0" style="-fx-background-color: #f4f1f1;">
+         <children>
+            <AnchorPane layoutX="29.0" layoutY="52.0" prefHeight="455.0" prefWidth="908.0" style="-fx-background-color: white;">
+               <children>
+                  <Text layoutX="256.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Con qué podemos ayudarte?">
+                     <font>
+                        <Font name="System Bold Italic" size="29.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="DescripcionDelProblema" alignment="TOP_LEFT" layoutX="243.0" layoutY="146.0" prefHeight="162.0" prefWidth="513.0" promptText="Describe tu problema:" style="-fx-background-color: #efecec;" />
+                  <ComboBox fx:id="TemasDeAyuda" layoutX="350.0" layoutY="101.0" prefHeight="29.0" prefWidth="208.0" promptText="Tema con qué ayudarte" style="-fx-background-color: #efecec;" />
+                  <Button fx:id="Button_Enviar" layoutX="357.0" layoutY="360.0" mnemonicParsing="false" onAction="#Enviar" prefHeight="30.0" prefWidth="74.0" style="-fx-background-color: #3fdfd4;" text="Enviar" textFill="#edf7f0" />
+                  <Button fx:id="Button_Cancelar" layoutX="510.0" layoutY="360.0" mnemonicParsing="false" onAction="#Cancelar" prefHeight="30.0" prefWidth="74.0" text="Cancelar" />
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </children>
-</AnchorPane>
+</VBox>

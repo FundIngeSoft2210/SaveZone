@@ -2,37 +2,36 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.control.TextField?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="342.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerRecuperarContrasena">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="784.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerRecuperarContrasena">
    <children>
-      <ImageView fitHeight="342.0" fitWidth="614.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="516.0" fitWidth="791.0" layoutX="-7.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@3.png" />
          </image>
       </ImageView>
-      <Pane layoutX="193.0" layoutY="59.0" prefHeight="223.0" prefWidth="241.0" style="-fx-background-color: white;">
+      <Pane layoutX="244.0" layoutY="105.0" prefHeight="234.0" prefWidth="296.0" style="-fx-background-color: white;">
          <children>
-            <ImageView fitHeight="32.0" fitWidth="127.0" layoutX="102.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="32.0" fitWidth="127.0" layoutX="95.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@4.png" />
                </image>
             </ImageView>
-            <Label layoutX="24.0" layoutY="46.0" text="¿Olvidaste tu contraseña? ">
+            <Label layoutX="53.0" layoutY="46.0" text="¿Olvidaste tu contraseña? ">
                <font>
                   <Font name="System Italic" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="21.0" layoutY="79.0" text="Tu Correo o nombre de usuario:" />
-            <Button fx:id="Button_RecuperarContraseña" layoutX="19.0" layoutY="135.0" mnemonicParsing="false" onAction="#RecuperarContraseña" style="-fx-background-color: #3fdfd4;" text="Recuperar contraseña" textFill="#edf7f0" />
-            <TextField fx:id="txtCorreoOUser" layoutX="19.0" layoutY="99.0" prefHeight="25.0" prefWidth="165.0" promptText="ro@outlook.com o ro-234" />
-            <Button fx:id="Button_Cancelar" layoutX="170.0" layoutY="135.0" mnemonicParsing="false" onAction="#Cancelar" style="-fx-background-color: #3fdfd4;" text="Cancelar" textFill="#edf7f0" />
+            <Label layoutX="63.0" layoutY="92.0" text="Tu Correo o nombre de usuario:" />
+            <Button fx:id="Button_RecuperarContraseña" layoutX="30.0" layoutY="172.0" mnemonicParsing="false" onAction="#RecuperarContraseña" style="-fx-background-color: #3fdfd4;" text="Recuperar contraseña" textFill="#edf7f0" />
+            <TextField fx:id="txtCorreoOUser" layoutX="66.0" layoutY="115.0" prefHeight="25.0" prefWidth="165.0" promptText="ro@outlook.com o ro-234" />
+            <Button fx:id="Button_Cancelar" layoutX="200.0" layoutY="172.0" mnemonicParsing="false" onAction="#Cancelar" style="-fx-background-color: #3fdfd4;" text="Cancelar" textFill="#edf7f0" />
          </children>
       </Pane>
    </children>

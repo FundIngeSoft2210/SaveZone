@@ -19,7 +19,7 @@ import org.example.AccesoDatos.ControladorBD;
 import org.example.Entidades.Producto;
 import org.example.Entidades.Usuarios.Usuario;
 import org.example.Gestion.GestionProductos.GestionProducto;
-
+import javafx.scene.input.MouseEvent;
 import javax.sound.sampled.Control;
 import javax.swing.event.ChangeListener;
 import java.io.IOException;
@@ -31,19 +31,14 @@ import java.util.ResourceBundle;
 public class controllerPaginaInicio implements Initializable {
 
     ControladorBD controladorBD = new ControladorBD();
-
     @FXML
     private Button Boton_Ayuda;
 
     @FXML
-    private ScrollBar scroll;
+    private Button Boton_Favoritos;
 
     @FXML
     private Button Boton_Historial;
-
-    @FXML
-    private Button Boton_Favoritos;
-
 
     @FXML
     private Button Boton_VerMisProductos;
@@ -55,16 +50,16 @@ public class controllerPaginaInicio implements Initializable {
     private Button Boton_populares;
 
     @FXML
-    private Button Boton_vender;
+    private Button ButtonPerfil;
 
     @FXML
     private Button Button_uscar;
 
     @FXML
-    private Button RegresarAlInicio;
+    private ImageView ImagenProducto;
 
     @FXML
-    private ImageView ImagenProducto;
+    private ImageView ImagenProducto3;
 
     @FXML
     private TextField Nombre1;
@@ -73,10 +68,27 @@ public class controllerPaginaInicio implements Initializable {
     private Button Producto;
 
     @FXML
-    private AnchorPane AnchorPanePrincipal;
+    private Button Producto1;
 
     @FXML
-    private ScrollPane ScrollPanePrincipal;
+    private Button RegresarAlInicio;
+
+    @FXML
+    private Button boton_pag_principal;
+
+    @FXML
+    private ImageView imagenproducto2;
+
+    @FXML
+    private Button masVendidos;
+
+    @FXML
+    private Button producto3;
+
+    @FXML
+    private Button recomendados;
+
+
 
     @FXML
     void Ayuda(ActionEvent event) throws Exception {
@@ -123,9 +135,28 @@ public class controllerPaginaInicio implements Initializable {
                 "NOMBRE = '" + categoria + "'").getString(1)) ;
         ArrayList<Producto> productos = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE CategoriaID = "+categoriaId));
         ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        controladorDespliegue.desplegarProductos("/Principal", productos);
+        try {
+            controladorDespliegue.desplegarProductos("/Principal", productos);
+        } catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("LO SENTIMOS");
+            alert.setContentText("No hay productos disponibles de esta categoria");
+            alert.showAndWait();
+        }
         ControladorRutas.launchPantallaPrincipal(true);
         Stage myStage = (Stage) this.Boton_categorias.getScene().getWindow();
+        myStage.close();
+    }
+
+    @FXML
+    void Favoritos(ActionEvent event) throws Exception {
+        Integer usuarioId = ControladorRutas.getUsuario().getId();
+        ArrayList<Producto> productosFav = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE ID IN (SELECT PRODUCTOID FROM PRODUCTOFAVORITO WHERE USUARIOID = "+usuarioId+")"));
+        ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
+        controladorDespliegue.desplegarProductos("/Favoritos", productosFav);
+        ControladorRutas.launchFavoritos();
+        Stage myStage = (Stage) this.Boton_Favoritos.getScene().getWindow();
         myStage.close();
     }
 
@@ -139,7 +170,7 @@ public class controllerPaginaInicio implements Initializable {
     @FXML
     void Populares(ActionEvent event) throws Exception {
         ControladorRutas.launchProductosPopulares();
-        Stage myStage = (Stage) this.Boton_VerMisProductos.getScene().getWindow();
+        Stage myStage = (Stage) this.Boton_populares.getScene().getWindow();
         myStage.close();
     }
 
@@ -147,13 +178,6 @@ public class controllerPaginaInicio implements Initializable {
     void Productos(ActionEvent event) throws Exception {
         ControladorRutas.launchMisProductos();
         Stage myStage = (Stage) this.Boton_VerMisProductos.getScene().getWindow();
-        myStage.close();
-    }
-
-    @FXML
-    void VenderProductos(ActionEvent event) throws Exception {
-        ControladorRutas.launchAnadirProducto();
-        Stage myStage = (Stage) this.Boton_vender.getScene().getWindow();
         myStage.close();
     }
 
@@ -172,6 +196,28 @@ public class controllerPaginaInicio implements Initializable {
         myStage.close();
     }
 
+    @FXML
+    void pagMasVendidoa(ActionEvent event) throws Exception{
+        ControladorRutas.launchMasVendido();
+        Stage myStage = (Stage) this.masVendidos.getScene().getWindow();
+        myStage.close();
+
+    }
+
+    @FXML
+    void pagPrincipal(ActionEvent event) throws Exception{
+        ControladorRutas.launchPantallaPrincipal();
+        Stage myStage = (Stage) this.RegresarAlInicio.getScene().getWindow();
+        myStage.close();
+    }
+
+    @FXML
+    void pagRecomendados(ActionEvent event) throws Exception{
+        ControladorRutas.launchPagRecomendados();
+        Stage myStage = (Stage) this.recomendados.getScene().getWindow();
+        myStage.close();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ControladorBD controladorBD = new ControladorBD();
@@ -186,16 +232,22 @@ public class controllerPaginaInicio implements Initializable {
             System.out.println(e.getMessage());
         }
     }
+    @FXML
+    void irAPerfil(ActionEvent event) throws Exception {
+        ControladorRutas.launchVista_Perfil();
+        Stage myStage = (Stage) this.ButtonPerfil.getScene().getWindow();
+        myStage.close();
+
+    }
+
 
     @FXML
-    void Favoritos(ActionEvent event) throws Exception {
-        Integer usuarioId = ControladorRutas.getUsuario().getId();
-        ArrayList<Producto> productosFav = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE ID IN (SELECT PRODUCTOID FROM PRODUCTOFAVORITO WHERE USUARIOID = "+usuarioId+")"));
-        ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        controladorDespliegue.desplegarProductos("/Favoritos", productosFav);
-        ControladorRutas.launchFavoritos();
-        Stage myStage = (Stage) this.Boton_Favoritos.getScene().getWindow();
+    void verDetallesProducto(ActionEvent event) throws Exception {
+        Button temp = (Button) event.getSource();
+        ControladorRutas.launchDetallesProducto(Integer.parseInt(temp.getId()));
+        Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
         myStage.close();
     }
+
 }
 
