@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<fx:root type="VBox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerCalificarCompra">
+   <children>
+      <AnchorPane style="-fx-background-color: white;">
+         <children>
+            <Button fx:id="Boton_populares" layoutX="272.0" layoutY="17.0" mnemonicParsing="false" onAction="#Populares" style="-fx-background-color: #3fdfd4;" text="Populares" />
+            <ComboBox fx:id="Boton_categorias" layoutX="146.0" layoutY="17.0" onAction="#Categorias" prefHeight="26.0" prefWidth="116.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;" />
+            <TextField fx:id="Nombre1" layoutX="800.0" layoutY="17.0" onAction="#Buscar" prefHeight="26.0" prefWidth="167.0" promptText="             Search" style="-fx-background-color: #f4f1f1;" />
+            <Button fx:id="Boton_Historial" layoutX="354.0" layoutY="17.0" mnemonicParsing="false" onAction="#Historial" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Historial" />
+            <Button fx:id="Boton_Ayuda" layoutX="428.0" layoutY="18.0" mnemonicParsing="false" onAction="#Ayuda" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Ayuda" />
+            <Button fx:id="Boton_VerMisProductos" layoutX="499.0" layoutY="17.0" mnemonicParsing="false" onAction="#Productos" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: #3fdfd4;" text="Mis productos" />
+            <Button fx:id="Button_uscar" layoutX="778.0" layoutY="17.0" mnemonicParsing="false" onAction="#BuscarProductos" prefHeight="18.0" prefWidth="26.0" style="-fx-background-color: #f4f1f1;" />
+            <Button fx:id="RegresarAlInicio" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#VolverInicio" prefHeight="50.0" prefWidth="116.0" style="-fx-background-color: white;" />
+            <Button fx:id="Boton_Favoritos" layoutX="623.0" layoutY="17.0" mnemonicParsing="false" onAction="#Favoritos" prefHeight="26.0" prefWidth="99.0" style="-fx-background-color: #3fdfd4;" text="Favoritos" />
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="781.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@LUPA.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="42.0" fitWidth="111.0" layoutX="17.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@4.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="ButtonPerfil" layoutX="727.0" layoutY="10.0" mnemonicParsing="false" onAction="#irAPerfil" prefHeight="42.0" prefWidth="26.0" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@persona.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #f4f1f1;">
+         <children>
+            <ScrollPane layoutX="29.0" layoutY="55.0" prefHeight="473.0" prefWidth="942.0">
+               <content>
+                  <AnchorPane prefHeight="1138.0" prefWidth="840.0" style="-fx-background-color: f4f4f4;">
+                     <children>
+                        <Circle fill="#3bd0d3" layoutX="158.0" layoutY="49.0" radius="21.0" stroke="#b5c1cc" strokeType="INSIDE" />
+                        <Circle fill="#3bd0d3" layoutX="783.0" layoutY="50.0" radius="21.0" stroke="#b5c1cc" strokeType="INSIDE" />
+                        <Circle fill="#3bd0d3" layoutX="470.0" layoutY="49.0" radius="21.0" stroke="#b5c1cc" strokeType="INSIDE" />
+                        <Line endX="129.0" endY="1.9073486328125E-5" layoutX="320.0" layoutY="49.0" startX="-141.0" startY="1.9073486328125E-5" stroke="#3bd0d3" />
+                        <Line endX="129.0" endY="1.9073486328125E-5" layoutX="632.0" layoutY="48.0" startX="-141.0" startY="1.9073486328125E-5" stroke="#3bd0d3" />
+                        <Label layoutX="152.0" layoutY="34.0" prefHeight="17.0" prefWidth="11.0" text="1" textFill="WHITE">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="464.0" layoutY="34.0" prefHeight="17.0" prefWidth="11.0" text="2" textFill="WHITE">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="777.0" layoutY="34.0" prefHeight="17.0" prefWidth="11.0" text="3" textFill="WHITE">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="135.0" layoutY="71.0" text="Recibido" />
+                        <Label layoutX="451.0" layoutY="71.0" text="En ruta" />
+                        <Label layoutX="755.0" layoutY="71.0" text="Entregado" />
+                        <Label layoutX="727.0" layoutY="105.0" text="Guia ">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="numGuia" layoutX="768.0" layoutY="105.0" text="#756482">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane layoutX="84.0" layoutY="169.0" prefHeight="930.0" prefWidth="730.0" style="-fx-background-color: fffafa;">
+                           <children>
+                              <Label layoutX="26.0" layoutY="27.0" text="Su paquete ha sido entregado" textFill="#3bd0d3">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="-59.399993896484375" endY="-1.52587890625E-5" layoutX="127.0" layoutY="54.0" startX="-100.0" stroke="#3bd0d3" />
+                              <Label layoutX="207.0" layoutY="149.0" text="¿El proceso de compra fue el esperado?">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="56.0" fitWidth="132.0" layoutX="297.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@1.PNG" />
+                                 </image>
+                              </ImageView>
+                              <CheckBox layoutX="271.0" layoutY="208.0" mnemonicParsing="false" text="SI" />
+                              <CheckBox layoutX="415.0" layoutY="208.0" mnemonicParsing="false" text="NO" />
+                              <Label layoutX="173.0" layoutY="279.0" text="¿El vendedor tuvo un trato adecuado con usted?">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <CheckBox layoutX="270.0" layoutY="337.0" mnemonicParsing="false" text="SI" />
+                              <CheckBox layoutX="415.0" layoutY="337.0" mnemonicParsing="false" text="NO" />
+                              <Label layoutX="209.0" layoutY="377.0" text="¿El producto tiene la calidad esperada?">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <CheckBox layoutX="270.0" layoutY="434.0" mnemonicParsing="false" text="SI" />
+                              <CheckBox layoutX="415.0" layoutY="425.0" mnemonicParsing="false" text="NO" />
+                              <Label layoutX="219.0" layoutY="475.0" text="¿El producto es igual al de las fotos?">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <CheckBox layoutX="271.0" layoutY="524.0" mnemonicParsing="false" text="SI" />
+                              <CheckBox layoutX="415.0" layoutY="524.0" mnemonicParsing="false" text="NO" />
+                              <Label layoutX="253.0" layoutY="575.0" text="califique su compra de 1 a 5">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <CheckBox layoutX="102.0" layoutY="653.0" mnemonicParsing="false" text="1">
+                                 <graphic>
+                                    <ImageView fitHeight="36.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@estrella.jpeg" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </CheckBox>
+                              <CheckBox layoutX="207.0" layoutY="653.0" mnemonicParsing="false" text="2">
+                                 <graphic>
+                                    <ImageView fitHeight="36.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@estrella.jpeg" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </CheckBox>
+                              <CheckBox layoutX="322.0" layoutY="653.0" mnemonicParsing="false" text="3">
+                                 <graphic>
+                                    <ImageView fitHeight="36.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@estrella.jpeg" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </CheckBox>
+                              <CheckBox layoutX="435.0" layoutY="653.0" mnemonicParsing="false" text="4">
+                                 <graphic>
+                                    <ImageView fitHeight="36.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@estrella.jpeg" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </CheckBox>
+                              <CheckBox layoutX="539.0" layoutY="653.0" mnemonicParsing="false" text="5">
+                                 <graphic>
+                                    <ImageView fitHeight="36.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@estrella.jpeg" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </CheckBox>
+                              <TextArea layoutX="102.0" layoutY="709.0" prefHeight="200.0" prefWidth="200.0" text="Comentarios:" />
+                              <Button fx:id="botonEnviar" layoutX="444.0" layoutY="796.0" mnemonicParsing="false" onAction="#enviarCalificacion" style="-fx-background-color: #3bd0d3;" text="Enviar calificación" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+      
+            <!--DESPL_FINAL-->
+                  </AnchorPane>
+               </content></ScrollPane>
+            <Label layoutX="416.0" prefHeight="50.0" prefWidth="167.0" text="Calificar Compra">
+               <font>
+                  <Font name="Arial Bold Italic" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</fx:root>

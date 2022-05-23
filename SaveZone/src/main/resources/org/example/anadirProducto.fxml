@@ -1,78 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerAnadirProducto">
+<fx:root type="VBox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerAnadirProducto">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="1058.0" style="-fx-background-color: #f4f1f1;">
+      <AnchorPane style="-fx-background-color: white;">
          <children>
-            <AnchorPane prefHeight="62.0" prefWidth="1058.0" style="-fx-background-color: white;">
-               <children>
-                  <Button fx:id="Boton_vender" layoutX="429.0" layoutY="13.0" mnemonicParsing="false" onAction="#VenderProductos" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Vender" />
-                  <Button fx:id="Boton_favoritos" layoutX="278.0" layoutY="13.0" mnemonicParsing="false" onAction="#Populares" style="-fx-background-color: #3fdfd4;" text="Populares" />
-                  <ComboBox fx:id="Boton_categorias" layoutX="152.0" layoutY="13.0" onAction="#Categorias" prefHeight="26.0" prefWidth="116.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;" />
-                  <TextField fx:id="Nombre1" layoutX="855.0" layoutY="13.0" onAction="#Buscar" prefHeight="26.0" prefWidth="178.0" promptText="             Search" style="-fx-background-color: #f4f1f1;" />
-                  <Button fx:id="Boton_Historial" layoutX="356.0" layoutY="13.0" mnemonicParsing="false" onAction="#Historial" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Historial" />
-                  <Button fx:id="Boton_Ayuda" layoutX="502.0" layoutY="13.0" mnemonicParsing="false" onAction="#Ayuda" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Ayuda" />
-                  <Button fx:id="Boton_VerMisProductos" layoutX="577.0" layoutY="13.0" mnemonicParsing="false" onAction="#Productos" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: #3fdfd4;" text="Mis productos" />
-                  <Button fx:id="Button_uscar" layoutX="823.0" layoutY="13.0" mnemonicParsing="false" onAction="#BuscarProductos" prefHeight="18.0" prefWidth="26.0" style="-fx-background-color: #f4f1f1;">
-                     <graphic>
-                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@LUPA.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button fx:id="RegresarAlInicio" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#VolverInicio" prefHeight="50.0" prefWidth="116.0" style="-fx-background-color: white;">
-                     <graphic>
-                        <ImageView fitHeight="42.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@4.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button fx:id="Boton_Favoritos" layoutX="707.0" layoutY="13.0" mnemonicParsing="false" onAction="#Favoritos" prefHeight="26.0" prefWidth="99.0" style="-fx-background-color: #3fdfd4;" text="Favoritos" />
-               </children>
-            </AnchorPane>
-            <TextField fx:id="Descripcion_Producto" alignment="TOP_LEFT" layoutX="550.0" layoutY="417.0" prefHeight="139.0" prefWidth="342.0" promptText="Descripción" style="-fx-background-color: #efecec;" />
-            <ComboBox fx:id="Categoria" layoutX="221.0" layoutY="367.0" prefHeight="29.0" prefWidth="208.0" promptText="Categoría" style="-fx-background-color: #efecec;" />
-            <Button fx:id="Button_Anadir" layoutX="345.0" layoutY="570.0" mnemonicParsing="false" onAction="#AnadirProducto" prefHeight="36.0" prefWidth="132.0" style="-fx-background-color: #1f55a6;" text="Agregar Producto" textFill="#edf7f0">
-               <font>
-                  <Font size="13.0" />
-               </font>
+            <Button fx:id="Boton_populares" layoutX="272.0" layoutY="17.0" mnemonicParsing="false" onAction="#Populares" style="-fx-background-color: #3fdfd4;" text="Populares" />
+            <ComboBox fx:id="Boton_categorias" layoutX="146.0" layoutY="17.0" onAction="#Categorias" prefHeight="26.0" prefWidth="116.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;" />
+            <TextField fx:id="Nombre1" layoutX="800.0" layoutY="17.0" onAction="#Buscar" prefHeight="26.0" prefWidth="167.0" promptText="             Search" style="-fx-background-color: #f4f1f1;" />
+            <Button fx:id="Boton_Historial" layoutX="354.0" layoutY="17.0" mnemonicParsing="false" onAction="#Historial" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Historial" />
+            <Button fx:id="Boton_Ayuda" layoutX="428.0" layoutY="18.0" mnemonicParsing="false" onAction="#Ayuda" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Ayuda" />
+            <Button fx:id="Boton_VerMisProductos" layoutX="499.0" layoutY="17.0" mnemonicParsing="false" onAction="#Productos" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: #3fdfd4;" text="Mis productos" />
+            <Button fx:id="Button_uscar" layoutX="778.0" layoutY="17.0" mnemonicParsing="false" onAction="#BuscarProductos" prefHeight="18.0" prefWidth="26.0" style="-fx-background-color: #f4f1f1;" />
+            <Button fx:id="RegresarAlInicio" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#VolverInicio" prefHeight="50.0" prefWidth="116.0" style="-fx-background-color: white;" />
+            <Button fx:id="Boton_Favoritos" layoutX="624.0" layoutY="17.0" mnemonicParsing="false" onAction="#Favoritos" prefHeight="26.0" prefWidth="99.0" style="-fx-background-color: #3fdfd4;" text="Favoritos" />
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="781.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@LUPA.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="42.0" fitWidth="111.0" layoutX="17.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@4.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="ButtonPerfil" layoutX="728.0" layoutY="10.0" mnemonicParsing="false" onAction="#irAPerfil" prefHeight="42.0" prefWidth="26.0" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@persona.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button fx:id="Button_Cancelar" layoutX="550.0" layoutY="570.0" mnemonicParsing="false" onAction="#Cancelar" prefHeight="36.0" prefWidth="99.0" text="Cancelar">
+         </children>
+      </AnchorPane>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #f4f1f1;">
+         <children>
+            <ScrollPane layoutX="29.0" layoutY="55.0" prefHeight="486.0" prefWidth="941.0">
+               <content>
+                  <AnchorPane prefHeight="518.0" prefWidth="939.0" style="-fx-background-color: white;">
+                     <children>
+                        <Button fx:id="subir_Producto" layoutX="224.0" layoutY="206.0" mnemonicParsing="false" onAction="#SubirImagenProducto" prefHeight="17.0" prefWidth="111.0" style="-fx-background-color: #3fdfd4;" text="Subir imagen" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="180.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+                        <TextField fx:id="Nombre_Producto" layoutX="504.0" layoutY="58.0" prefHeight="17.0" prefWidth="130.0" promptText="Au" style="-fx-background-color: #efecec;" />
+                        <ComboBox fx:id="Categoria" layoutX="505.0" layoutY="298.0" prefHeight="30.0" prefWidth="132.0" promptText="Categoría" style="-fx-background-color: #efecec;" />
+                        <TextField fx:id="Precio" alignment="TOP_LEFT" layoutX="507.0" layoutY="174.0" prefHeight="26.0" prefWidth="131.0" promptText="Precio $" style="-fx-background-color: #efecec;" />
+                        <TextField fx:id="Porcentaje_Descuento" alignment="TOP_LEFT" layoutX="507.0" layoutY="234.0" prefHeight="26.0" prefWidth="130.0" promptText="Porcentaje Descuento" style="-fx-background-color: #efecec;" />
+                        <TextField fx:id="Peso" alignment="TOP_LEFT" layoutX="731.0" layoutY="237.0" prefHeight="26.0" prefWidth="130.0" promptText="Peso (50 kg)" style="-fx-background-color: #efecec;" />
+                        <TextField fx:id="Alto" alignment="TOP_LEFT" layoutX="731.0" layoutY="297.0" prefHeight="26.0" prefWidth="131.0" promptText="Alto (150 cm)" style="-fx-background-color: #efecec;" />
+                        <TextField fx:id="Ancho" alignment="TOP_LEFT" layoutX="729.0" layoutY="114.0" prefHeight="26.0" prefWidth="130.0" promptText="Ancho (150 cm)" style="-fx-background-color: #efecec;" />
+                        <TextField fx:id="Largo" alignment="TOP_LEFT" layoutX="732.0" layoutY="175.0" prefHeight="26.0" prefWidth="130.0" promptText="Largo (150 cm)" style="-fx-background-color: #efecec;" />
+                        <TextField fx:id="Color" alignment="TOP_LEFT" layoutX="733.0" layoutY="57.0" prefHeight="26.0" prefWidth="128.0" promptText="Color" style="-fx-background-color: #efecec;" />
+                        <TextField fx:id="Cantidad" alignment="TOP_LEFT" layoutX="507.0" layoutY="116.0" prefHeight="26.0" prefWidth="132.0" promptText="Cantidad" style="-fx-background-color: #efecec;" />
+                        <TextField fx:id="Descripcion_Producto" alignment="TOP_LEFT" layoutX="109.0" layoutY="298.0" prefHeight="139.0" prefWidth="342.0" promptText="Descripción" style="-fx-background-color: #efecec;" />
+                        <Button fx:id="Button_Anadir" layoutX="589.0" layoutY="424.0" mnemonicParsing="false" onAction="#AnadirProducto" style="-fx-background-color: #3fdfd4;" text="Añadir producto" />
+                        <Button fx:id="Button_Cancelar" layoutX="712.0" layoutY="424.0" mnemonicParsing="false" onAction="#Cancelar" text="Cancelar" />
+                        <Text layoutX="503.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Producto:" />
+                        <Text layoutX="730.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Color:" />
+                        <Text layoutX="504.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad:" />
+                        <Text layoutX="726.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ancho:" />
+                        <Text layoutX="728.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Largo:" />
+                        <Text layoutX="506.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:" />
+                        <Text layoutX="729.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alto:" />
+                        <Text layoutX="506.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categoría:" />
+                        <Text layoutX="729.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Peso:" />
+                        <Text layoutX="504.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Porcentaje:" />
+                        <ComboBox fx:id="Estado" layoutX="507.0" layoutY="368.0" prefHeight="30.0" prefWidth="127.0" promptText="Estado" style="-fx-background-color: #efecec;" />
+                        <Text layoutX="507.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado:" />
+                     </children>
+      
+      <!--DESPL_FINAL-->
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+            <Label layoutX="415.0" layoutY="4.0" prefHeight="50.0" prefWidth="167.0" text="Añadir producto">
                <font>
-                  <Font size="13.0" />
-               </font>
-            </Button>
-            <TextField fx:id="Precio" alignment="TOP_LEFT" layoutX="221.0" layoutY="411.0" prefHeight="26.0" prefWidth="168.0" promptText="Precio $" style="-fx-background-color: #efecec;" />
-            <TextField fx:id="Color" alignment="TOP_LEFT" layoutX="550.0" layoutY="320.0" prefHeight="36.0" prefWidth="190.0" promptText="Color" style="-fx-background-color: #efecec;" />
-            <Button fx:id="subir_Producto" layoutX="267.0" layoutY="280.0" mnemonicParsing="false" onAction="#SubirImagenProducto" prefHeight="31.0" prefWidth="156.0" text="Subir imagen" />
-            <TextField fx:id="Peso" alignment="TOP_LEFT" layoutX="550.0" layoutY="129.0" prefHeight="36.0" prefWidth="99.0" promptText="Peso (50 kg)" style="-fx-background-color: #efecec;" />
-            <TextField fx:id="Alto" alignment="TOP_LEFT" layoutX="550.0" layoutY="181.0" prefHeight="36.0" prefWidth="99.0" promptText="Alto (150 cm)" style="-fx-background-color: #efecec;" />
-            <TextField fx:id="Porcentaje_Descuento" alignment="TOP_LEFT" layoutX="221.0" layoutY="451.0" prefHeight="36.0" prefWidth="190.0" promptText="Porcentaje Descuento" style="-fx-background-color: #efecec;" />
-            <TextField fx:id="Ancho" alignment="TOP_LEFT" layoutX="550.0" layoutY="231.0" prefHeight="36.0" prefWidth="99.0" promptText="Ancho (150 cm)" style="-fx-background-color: #efecec;" />
-            <TextField fx:id="Largo" alignment="TOP_LEFT" layoutX="550.0" layoutY="277.0" prefHeight="36.0" prefWidth="99.0" promptText="Largo (150 cm)" style="-fx-background-color: #efecec;" />
-            <TextField fx:id="Cantidad" alignment="TOP_LEFT" layoutX="550.0" layoutY="364.0" prefHeight="36.0" prefWidth="190.0" promptText="Cantidad" style="-fx-background-color: #efecec;" />
-            <Label layoutX="389.0" layoutY="80.0" text="Añadir Producto">
-               <font>
-                  <Font name="System Bold Italic" size="21.0" />
+                  <Font name="Arial Bold Italic" size="20.0" />
                </font>
             </Label>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="245.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true" />
-            <TextField fx:id="Nombre_Producto" layoutX="221.0" layoutY="326.0" prefHeight="26.0" prefWidth="190.0" promptText="Nombre Producto" style="-fx-background-color: #efecec;" />
          </children>
       </AnchorPane>
    </children>
-</VBox>
+</fx:root>
