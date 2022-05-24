@@ -1,6 +1,7 @@
 package org.example.controllerView;
 
 import com.mysql.cj.protocol.Resultset;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -58,7 +59,7 @@ public class controllerProductoAComprar implements Initializable {
     private Button Button_AnadirAFavoritos;
 
     @FXML
-    private Button Boton_favoritos;
+    private Button Boton_Favoritos;
 
     @FXML
     private Button Button_uscar;
@@ -104,6 +105,9 @@ public class controllerProductoAComprar implements Initializable {
 
     @FXML
     private ImageView imagenProducto;
+
+    @FXML
+    private ComboBox<String> Boton_Perfil;
 
     @FXML
     void Ayuda(ActionEvent event) throws Exception {
@@ -222,11 +226,52 @@ public class controllerProductoAComprar implements Initializable {
         ControladorRutas.setProducto(producto);
     }
 
-    @Override
+    @FXML
+    void Perfil(ActionEvent event) throws Exception {
+        String opcion = this.Boton_Perfil.getSelectionModel().getSelectedItem();
+        if (opcion.equalsIgnoreCase("Perfil")){
+            irAPerfil(event);
+        }
+    }
+
+    @FXML
+    void irAPerfil(ActionEvent event) throws Exception {
+        ControladorRutas.launchVista_Perfil();
+        Stage myStage = (Stage) this.Boton_Historial.getScene().getWindow();
+        myStage.close();
+    }
+
+    @FXML
+    void compararConOtroProducto(ActionEvent event) throws Exception {
+
+    }
+
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ControladorBD controladorBD = new ControladorBD();
         Resultset rs;
         ObservableList<String> listaCatego;
+        ObservableList<String> listaPerfil = FXCollections.observableArrayList();
+        if (ControladorRutas.getUsuario() == null){
+            this.Boton_Ayuda.setDisable(true);
+            this.Boton_Favoritos.setDisable(true);
+            this.Boton_VerMisProductos.setDisable(true);
+            this.Boton_Historial.setDisable(true);
+            this.botonComprar.setDisable(true);
+            this.Button_AnadirAFavoritos.setDisable(true);
+            this.Boton_Ayuda.setVisible(false);
+            this.Boton_Favoritos.setVisible(false);
+            this.Boton_VerMisProductos.setVisible(false);
+            this.Boton_Historial.setVisible(false);
+            this.botonComprar.setVisible(false);
+            this.Button_AnadirAFavoritos.setVisible(false);
+            listaPerfil.add("Log in");
+            listaPerfil.add("Sign up");
+            Boton_Perfil.setItems(listaPerfil);
+        } else {
+            listaPerfil.add("Log out");
+            listaPerfil.add("Perfil");
+            Boton_Perfil.setItems(listaPerfil);
+        }
         try {
             listaCatego = controladorBD.obtenerDeptos(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM CATEGORIA"));
             Boton_categorias.setItems(listaCatego);
@@ -236,6 +281,7 @@ public class controllerProductoAComprar implements Initializable {
             System.out.println(e.getMessage());
         }
     }
+
     @FXML
     void Favoritos(ActionEvent event) throws Exception {
         Integer usuarioId = ControladorRutas.getUsuario().getId();
@@ -243,7 +289,7 @@ public class controllerProductoAComprar implements Initializable {
         ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
         controladorDespliegue.desplegarProductos("/Favoritos", productosFav);
         ControladorRutas.launchFavoritos();
-        Stage myStage = (Stage) this.Boton_favoritos.getScene().getWindow();
+        Stage myStage = (Stage) this.Boton_Favoritos.getScene().getWindow();
         myStage.close();
     }
 
