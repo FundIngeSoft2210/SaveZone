@@ -1,6 +1,7 @@
 package org.example.controllerView;
 
 import com.mysql.cj.protocol.Resultset;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -61,6 +62,9 @@ public class controllerHistorial implements Initializable {
 
     @FXML
     private Button RegresarAlInicio;
+
+    @FXML
+    private ComboBox<String> Boton_Perfil;
 
     @FXML
     void Ayuda(ActionEvent event) throws Exception {
@@ -170,6 +174,10 @@ public class controllerHistorial implements Initializable {
         ControladorBD controladorBD = new ControladorBD();
         Resultset rs;
         ObservableList<String> listaCatego;
+        ObservableList<String> listaPerfil = FXCollections.observableArrayList();
+        listaPerfil.add("Log out");
+        listaPerfil.add("Perfil");
+        Boton_Perfil.setItems(listaPerfil);
         try {
             listaCatego = controladorBD.obtenerDeptos(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM CATEGORIA"));
             Boton_categorias.setItems(listaCatego);
@@ -179,6 +187,22 @@ public class controllerHistorial implements Initializable {
             System.out.println(e.getMessage());
         }
     }
+
+    @FXML
+    void irAPerfil(ActionEvent event) throws Exception {
+        ControladorRutas.launchVista_Perfil();
+        Stage myStage = (Stage) this.Boton_Historial.getScene().getWindow();
+        myStage.close();
+    }
+
+    @FXML
+    void Perfil(ActionEvent event) throws Exception {
+        String opcion = this.Boton_Perfil.getSelectionModel().getSelectedItem();
+        if (opcion.equalsIgnoreCase("Perfil")){
+            irAPerfil(event);
+        }
+    }
+
     @FXML
     void Favoritos(ActionEvent event) throws Exception {
         Integer usuarioId = ControladorRutas.getUsuario().getId();
