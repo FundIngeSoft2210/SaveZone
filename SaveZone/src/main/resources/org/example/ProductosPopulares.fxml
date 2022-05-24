@@ -66,15 +66,12 @@
                   <Image url="@4.png" />
                </image>
             </ImageView>
-            <Button fx:id="ButtonPerfil" layoutX="724.0" layoutY="9.0" mnemonicParsing="false" onAction="#irAPerfil" prefHeight="42.0" prefWidth="26.0" style="-fx-background-color: white;">
-               <graphic>
-                  <ImageView fitHeight="33.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@persona.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
+            <ComboBox fx:id="Boton_Perfil" layoutX="727.0" layoutY="18.0" onAction="#Perfil" prefHeight="26.0" prefWidth="50.0" style="-fx-background-color: #3fdfd4;" />
+            <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="727.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@persona.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #f4f1f1;">

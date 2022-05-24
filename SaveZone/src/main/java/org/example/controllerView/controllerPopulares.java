@@ -1,6 +1,7 @@
 package org.example.controllerView;
 
 import com.mysql.cj.protocol.Resultset;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -64,6 +65,9 @@ public class controllerPopulares implements Initializable {
 
     @FXML
     private Button ButtonPerfil;
+
+    @FXML
+    private ComboBox<String> Boton_Perfil;
 
     @FXML
     void Ayuda(ActionEvent event) throws Exception {
@@ -155,11 +159,36 @@ public class controllerPopulares implements Initializable {
         myStage.close();
     }
 
-    @Override
+    @FXML
+    void Perfil(ActionEvent event) throws Exception {
+        String opcion = this.Boton_Perfil.getSelectionModel().getSelectedItem();
+        if (opcion.equalsIgnoreCase("Perfil")){
+            irAPerfil(event);
+        }
+    }
+
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ControladorBD controladorBD = new ControladorBD();
         Resultset rs;
         ObservableList<String> listaCatego;
+        ObservableList<String> listaPerfil = FXCollections.observableArrayList();
+        if (ControladorRutas.getUsuario() == null){
+            this.Boton_Ayuda.setDisable(true);
+            this.Boton_Favoritos.setDisable(true);
+            this.Boton_VerMisProductos.setDisable(true);
+            this.Boton_Historial.setDisable(true);
+            this.Boton_Ayuda.setVisible(false);
+            this.Boton_Favoritos.setVisible(false);
+            this.Boton_VerMisProductos.setVisible(false);
+            this.Boton_Historial.setVisible(false);
+            listaPerfil.add("Log in");
+            listaPerfil.add("Sign up");
+            Boton_Perfil.setItems(listaPerfil);
+        } else {
+            listaPerfil.add("Log out");
+            listaPerfil.add("Perfil");
+            Boton_Perfil.setItems(listaPerfil);
+        }
         try {
             listaCatego = controladorBD.obtenerDeptos(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM CATEGORIA"));
             Boton_categorias.setItems(listaCatego);
@@ -169,6 +198,7 @@ public class controllerPopulares implements Initializable {
             System.out.println(e.getMessage());
         }
     }
+
     @FXML
     void Favoritos(ActionEvent event) throws Exception {
         Integer usuarioId = ControladorRutas.getUsuario().getId();
@@ -180,6 +210,7 @@ public class controllerPopulares implements Initializable {
         myStage.close();
 
     }
+
     @FXML
     void irAPerfil(ActionEvent event) throws Exception {
         ControladorRutas.launchVista_Perfil();
