@@ -61,8 +61,7 @@
                         <Font name="Arial Bold Italic" size="20.0" />
                      </font>
                   </Label>
-                  <Button fx:id="Aceptar" layoutX="294.0" layoutY="332.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="149.0" style="-fx-background-color: #3fdfd4;" text="Aceptar" />
-                  <Button fx:id="Cancelar" layoutX="488.0" layoutY="332.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="149.0" text="Cancelar" />
+                  <Button fx:id="Aceptar" layoutX="402.0" layoutY="334.0" mnemonicParsing="false" onAction="#VolverInicio" prefHeight="36.0" prefWidth="149.0" style="-fx-background-color: #3fdfd4;" text="Aceptar" />
                </children>
             </AnchorPane>
          </children>

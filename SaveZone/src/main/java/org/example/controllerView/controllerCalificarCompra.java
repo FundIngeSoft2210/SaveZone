@@ -146,10 +146,10 @@ public class controllerCalificarCompra {
     @FXML
     void irAPerfil(ActionEvent event) throws Exception {
         ControladorRutas.launchVista_Perfil();
-        Stage myStage = (Stage) this.ButtonPerfil.getScene().getWindow();
+        Stage myStage = (Stage) this.Boton_Historial.getScene().getWindow();
         myStage.close();
-
     }
+
     @FXML
     void enviarCalificacion(ActionEvent event) {
 
