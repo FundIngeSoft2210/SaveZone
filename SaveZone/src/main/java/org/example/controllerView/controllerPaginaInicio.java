@@ -89,7 +89,6 @@ public class controllerPaginaInicio implements Initializable {
     private Button recomendados;
 
 
-
     @FXML
     void Ayuda(ActionEvent event) throws Exception {
         ControladorRutas.launchConQuePodemosAyudarte();
@@ -151,13 +150,15 @@ public class controllerPaginaInicio implements Initializable {
 
     @FXML
     void Favoritos(ActionEvent event) throws Exception {
-        Integer usuarioId = ControladorRutas.getUsuario().getId();
-        ArrayList<Producto> productosFav = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE ID IN (SELECT PRODUCTOID FROM PRODUCTOFAVORITO WHERE USUARIOID = "+usuarioId+")"));
-        ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        controladorDespliegue.desplegarProductos("/Favoritos", productosFav);
-        ControladorRutas.launchFavoritos();
-        Stage myStage = (Stage) this.Boton_Favoritos.getScene().getWindow();
-        myStage.close();
+        if (ControladorRutas.getUsuario() != null) {
+            Integer usuarioId = ControladorRutas.getUsuario().getId();
+            ArrayList<Producto> productosFav = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE ID IN (SELECT PRODUCTOID FROM PRODUCTOFAVORITO WHERE USUARIOID = " + usuarioId + ")"));
+            ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
+            controladorDespliegue.desplegarProductos("/Favoritos", productosFav);
+            ControladorRutas.launchFavoritos();
+            Stage myStage = (Stage) this.Boton_Favoritos.getScene().getWindow();
+            myStage.close();
+        }
     }
 
     @FXML
@@ -223,6 +224,16 @@ public class controllerPaginaInicio implements Initializable {
         ControladorBD controladorBD = new ControladorBD();
         Resultset rs;
         ObservableList<String> listaCatego;
+        if (ControladorRutas.getUsuario() == null){
+            this.Boton_Ayuda.setDisable(true);
+            this.Boton_Favoritos.setDisable(true);
+            this.Boton_VerMisProductos.setDisable(true);
+            this.Boton_Historial.setDisable(true);
+            this.Boton_Ayuda.setVisible(false);
+            this.Boton_Favoritos.setVisible(false);
+            this.Boton_VerMisProductos.setVisible(false);
+            this.Boton_Historial.setVisible(false);
+        }
         try {
             listaCatego = controladorBD.obtenerDeptos(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM CATEGORIA"));
             Boton_categorias.setItems(listaCatego);

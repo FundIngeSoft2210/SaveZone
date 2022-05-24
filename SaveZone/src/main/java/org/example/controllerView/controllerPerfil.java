@@ -1,7 +1,10 @@
 package org.example.controllerView;
 
+import com.mysql.cj.protocol.Resultset;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -11,9 +14,12 @@ import org.example.AccesoDatos.ControladorBD;
 import org.example.Entidades.Producto;
 import org.example.Gestion.GestionProductos.GestionProducto;
 
+import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class controllerPerfil {
+public class controllerPerfil implements Initializable {
     ControladorBD controladorBD = new ControladorBD();
 
     @FXML
@@ -171,5 +177,29 @@ public class controllerPerfil {
 
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ControladorBD controladorBD = new ControladorBD();
+        Resultset rs;
+        ObservableList<String> listaCatego;
+        if (ControladorRutas.getUsuario() == null){
+            this.Boton_Ayuda.setDisable(true);
+            this.Boton_Favoritos.setDisable(true);
+            this.Boton_VerMisProductos.setDisable(true);
+            this.Boton_Historial.setDisable(true);
+            this.Boton_Ayuda.setVisible(false);
+            this.Boton_Favoritos.setVisible(false);
+            this.Boton_VerMisProductos.setVisible(false);
+            this.Boton_Historial.setVisible(false);
+        }
+        try {
+            listaCatego = controladorBD.obtenerDeptos(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM CATEGORIA"));
+            Boton_categorias.setItems(listaCatego);
+        } catch (SQLException e) {
+            System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
 

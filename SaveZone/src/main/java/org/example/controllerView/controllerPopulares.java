@@ -43,8 +43,6 @@ public class controllerPopulares implements Initializable {
     @FXML
     private Button Boton_populares;
 
-    @FXML
-    private Button Boton_vender;
 
     @FXML
     private Button Button_uscar;
@@ -64,6 +62,8 @@ public class controllerPopulares implements Initializable {
     @FXML
     private Button RegresarAlInicio;
 
+    @FXML
+    private Button ButtonPerfil;
 
     @FXML
     void Ayuda(ActionEvent event) throws Exception {
@@ -138,12 +138,7 @@ public class controllerPopulares implements Initializable {
         myStage.close();
     }
 
-    @FXML
-    void VenderProductos(ActionEvent event) throws Exception {
-        ControladorRutas.launchAnadirProducto();
-        Stage myStage = (Stage) this.Boton_vender.getScene().getWindow();
-        myStage.close();
-    }
+
 
     @FXML
     void VerDetallesProducto(ActionEvent event) throws Exception {
@@ -182,6 +177,13 @@ public class controllerPopulares implements Initializable {
         controladorDespliegue.desplegarProductos("/Favoritos", productosFav);
         ControladorRutas.launchFavoritos();
         Stage myStage = (Stage) this.Boton_Favoritos.getScene().getWindow();
+        myStage.close();
+
+    }
+    @FXML
+    void irAPerfil(ActionEvent event) throws Exception {
+        ControladorRutas.launchVista_Perfil();
+        Stage myStage = (Stage) this.ButtonPerfil.getScene().getWindow();
         myStage.close();
 
     }

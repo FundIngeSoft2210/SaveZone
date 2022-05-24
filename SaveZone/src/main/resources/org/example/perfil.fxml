@@ -43,7 +43,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root type="VBox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerPerfil">
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerPerfil">
    <children>
       <AnchorPane style="-fx-background-color: white;">
          <children>
@@ -83,7 +83,7 @@
                <content>
                   <AnchorPane prefHeight="812.0" prefWidth="939.0" style="-fx-background-color: f4f4f4;">
                      <children>
-                        <AnchorPane layoutX="104.0" layoutY="49.0" prefHeight="744.0" prefWidth="730.0" style="-fx-background-color: fffafa;">
+                        <AnchorPane layoutX="119.0" layoutY="47.0" prefHeight="744.0" prefWidth="730.0" style="-fx-background-color: fffafa;">
                            <children>
                               <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="290.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -158,4 +158,4 @@
          </children>
       </AnchorPane>
    </children>
-</fx:root>
+</VBox>

@@ -135,9 +135,6 @@ public class ControladorRutas {
 
     public static void launchMisProductos() throws Exception {
         try {
-            if (usuario == null) {
-                throw new Exception();
-            }
             GestionProducto gestion = new GestionProducto();
             ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
             ArrayList<Producto> productos = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE VendedorID = "+ControladorRutas.getUsuario().getId()));
@@ -161,17 +158,13 @@ public class ControladorRutas {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setTitle("ERROR");
-            alert.setContentText("Debes estar registrado en el sistema para acceder a esta función");
+            alert.setContentText(String.valueOf(e));
             alert.showAndWait();
-            launchPantallaPrincipal();
         }
     }
 
     public static void launchAnadirProducto() throws Exception {
         try {
-            if (usuario == null) {
-                throw new Exception();
-            }
             FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../anadirProducto.fxml"));
             Parent root = loader.load();
             controllerAnadirProducto controllerVender = loader.getController();
@@ -190,9 +183,8 @@ public class ControladorRutas {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setTitle("ERROR");
-            alert.setContentText("Debes estar registrado en el sistema para acceder a esta función");
+            alert.setContentText(String.valueOf(e));
             alert.showAndWait();
-            launchPantallaPrincipal();
         }
     }
 
@@ -259,10 +251,6 @@ public class ControladorRutas {
 
     public static void launchHistorial() throws Exception {
         try {
-            if (usuario == null) {
-                throw new Exception();
-            }
-
             FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../Historial.fxml"));
             Parent root = loader.load();
             controllerHistorial controllerHistorial = loader.getController();
@@ -281,17 +269,13 @@ public class ControladorRutas {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setTitle("ERROR");
-            alert.setContentText("Debes estar registrado en el sistema para acceder a esta función");
+            alert.setContentText(String.valueOf(e));
             alert.showAndWait();
-            launchPantallaPrincipal();
         }
     }
 
     public static void launchConQuePodemosAyudarte() throws Exception {
         try {
-            if (usuario == null) {
-                throw new Exception();
-            }
             FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../ConQuePodemosAyudarte.fxml"));
             Parent root = loader.load();
             controllerAyuda controllerAyuda = loader.getController();
@@ -310,9 +294,8 @@ public class ControladorRutas {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setTitle("ERROR");
-            alert.setContentText("Debes estar registrado en el sistema para acceder a esta función");
+            alert.setContentText(String.valueOf(e));
             alert.showAndWait();
-            launchPantallaPrincipal();
         }
     }
 
@@ -354,9 +337,6 @@ public class ControladorRutas {
 
     public static void launchComprar() throws Exception{
         try {
-            if (usuario == null) {
-                throw new Exception();
-            }
             FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../Paso1.fxml"));
             Parent root = loader.load();
             controllerPago controllerPago = loader.getController();
@@ -375,9 +355,8 @@ public class ControladorRutas {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setTitle("ERROR");
-            alert.setContentText("Debes estar registrado en el sistema para acceder a esta función");
+            alert.setContentText(String.valueOf(e));
             alert.showAndWait();
-            launchPantallaPrincipal();
         }
     }
 
@@ -509,9 +488,6 @@ public class ControladorRutas {
     }
     public static void launchFavoritos() throws Exception {
         try {
-            if (usuario == null) {
-                throw new Exception();
-            }
             FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../Favoritos.fxml"));
             Parent root = loader.load();
             controllerFavoritos controllerFavoritos = loader.getController();
@@ -531,9 +507,9 @@ public class ControladorRutas {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setTitle("ERROR");
-            alert.setContentText("Debes estar registrado en el sistema para acceder a esta función");
+            alert.setContentText(String.valueOf(e));
             alert.showAndWait();
-            launchPantallaPrincipal();
+
         }
     }
     public static void launchVista_Perfil() throws Exception {

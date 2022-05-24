@@ -43,7 +43,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root type="VBox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerRecomendado">
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerRecomendado">
    <children>
       <AnchorPane style="-fx-background-color: white;">
          <children>
@@ -148,4 +148,4 @@
          </children>
       </AnchorPane>
    </children>
-</fx:root>
+</VBox>
