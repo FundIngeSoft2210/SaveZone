@@ -4,6 +4,7 @@ import com.mysql.cj.protocol.Resultset;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -20,7 +21,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class controllerMasVendido {
+public class controllerMasVendido implements Initializable {
     ControladorBD controladorBD = new ControladorBD();
 
     @FXML
@@ -125,7 +126,15 @@ public class controllerMasVendido {
                 "NOMBRE = '" + categoria + "'").getString(1)) ;
         ArrayList<Producto> productos = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE CategoriaID = "+categoriaId));
         ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        controladorDespliegue.desplegarProductos("/Principal", productos);
+        try {
+            controladorDespliegue.desplegarProductos("/Principal", productos);
+        } catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("LO SENTIMOS");
+            alert.setContentText("No hay productos disponibles de esta categoria");
+            alert.showAndWait();
+        }
         ControladorRutas.launchPantallaPrincipal(true);
         Stage myStage = (Stage) this.Boton_categorias.getScene().getWindow();
         myStage.close();
@@ -219,4 +228,28 @@ public class controllerMasVendido {
         myStage.close();
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ControladorBD controladorBD = new ControladorBD();
+        Resultset rs;
+        ObservableList<String> listaCatego;
+        if (ControladorRutas.getUsuario() == null){
+            this.Boton_Ayuda.setDisable(true);
+            this.Boton_Favoritos.setDisable(true);
+            this.Boton_VerMisProductos.setDisable(true);
+            this.Boton_Historial.setDisable(true);
+            this.Boton_Ayuda.setVisible(false);
+            this.Boton_Favoritos.setVisible(false);
+            this.Boton_VerMisProductos.setVisible(false);
+            this.Boton_Historial.setVisible(false);
+        }
+        try {
+            listaCatego = controladorBD.obtenerDeptos(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM CATEGORIA"));
+            Boton_categorias.setItems(listaCatego);
+        } catch (SQLException e) {
+            System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
