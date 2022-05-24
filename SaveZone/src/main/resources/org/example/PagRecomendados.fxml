@@ -79,7 +79,7 @@
             <ScrollPane layoutX="29.0" layoutY="55.0">
                <content>
                   <AnchorPane prefHeight="396.0" prefWidth="939.0" style="-fx-background-color: white;">
-      <!--DESPL-->
+                  <!--DESPL-->
       
                      <children>
                         <Button fx:id="Producto" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="3.0" layoutY="8.0" mnemonicParsing="false" onAction="#VerDetallesProducto" style="-fx-background-color: white;" text="Cámara" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
@@ -111,7 +111,7 @@
                         </Button>
                      </children>
       
-      <!--DESPL_FINAL-->
+               <!--DESPL_FINAL-->
                   </AnchorPane>
                </content>
             </ScrollPane>

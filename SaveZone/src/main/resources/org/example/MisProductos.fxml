@@ -43,7 +43,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root type="VBox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerMisProductos">
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerMisProductos">
    <children>
       <AnchorPane style="-fx-background-color: white;">
          <children>
@@ -82,6 +82,7 @@
             <ScrollPane layoutX="29.0" layoutY="55.0" prefHeight="486.0" prefWidth="941.0">
                <content>
                   <AnchorPane prefHeight="518.0" prefWidth="939.0" style="-fx-background-color: white;">
+                     <!--DESPL-->
                      <children>
                         <Button fx:id="Button_AnadirProductos" layoutX="444.0" layoutY="435.0" mnemonicParsing="false" onAction="#anadirProductos" style="-fx-background-color: #3fdfd4;" text="Añadir producto" />
                         <AnchorPane layoutX="322.0" layoutY="30.0" prefHeight="161.0" prefWidth="321.0" style="-fx-background-color: #f4f1f1;">
@@ -113,4 +114,4 @@
          </children>
       </AnchorPane>
    </children>
-</fx:root>
+</VBox>

@@ -529,6 +529,10 @@ public class ControladorRutas {
         stage.show();
     }
     public static void launchPagRecomendados() throws Exception {
+        GestionProducto gestion = new GestionProducto();
+        ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
+        controladorDespliegue.desplegarProductos("PagRecomendados", gestion.buscarProducto(""));
+
         FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../PagRecomendados.fxml"));
         Parent root = loader.load();
         controllerRecomendado controllerRecomendado = loader.getController();
@@ -545,6 +549,10 @@ public class ControladorRutas {
         stage.show();
     }
     public static void launchMasVendido() throws Exception {
+        GestionProducto gestion = new GestionProducto();
+        ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
+        controladorDespliegue.desplegarProductos("pagMasVendidos", gestion.buscarProducto(""));
+
         FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../pagMasVendidos.fxml"));
         Parent root = loader.load();
         controllerMasVendido controllerMasVendido = loader.getController();
