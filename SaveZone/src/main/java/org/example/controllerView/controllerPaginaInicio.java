@@ -262,13 +262,13 @@ public class controllerPaginaInicio implements Initializable {
             System.out.println(e.getMessage());
         }
     }
+
     @FXML
     void irAPerfil(ActionEvent event) throws Exception {
         ControladorRutas.launchVista_Perfil();
         Stage myStage = (Stage) this.Boton_Historial.getScene().getWindow();
         myStage.close();
     }
-
 
     @FXML
     void verDetallesProducto(ActionEvent event) throws Exception {

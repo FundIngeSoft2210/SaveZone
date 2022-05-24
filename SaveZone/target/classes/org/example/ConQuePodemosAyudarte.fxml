@@ -14,6 +14,7 @@
    <children>
       <AnchorPane style="-fx-background-color: white;">
          <children>
+            <ComboBox fx:id="Boton_Perfil" layoutX="723.0" layoutY="18.0" onAction="#Perfil" prefHeight="25.0" prefWidth="49.0" style="-fx-background-color: #3fdfd4;" />
             <Button fx:id="Boton_populares" layoutX="272.0" layoutY="17.0" mnemonicParsing="false" onAction="#Populares" style="-fx-background-color: #3fdfd4;" text="Populares" />
             <ComboBox fx:id="Boton_categorias" layoutX="146.0" layoutY="17.0" onAction="#Categorias" prefHeight="26.0" prefWidth="116.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;" />
             <TextField fx:id="Nombre1" layoutX="800.0" layoutY="17.0" onAction="#Buscar" prefHeight="26.0" prefWidth="167.0" promptText="             Search" style="-fx-background-color: #f4f1f1;" />
@@ -33,15 +34,11 @@
                   <Image url="@4.png" />
                </image>
             </ImageView>
-            <Button fx:id="ButtonPerfil" layoutX="728.0" layoutY="8.0" mnemonicParsing="false" onAction="#irAPerfil" prefHeight="42.0" prefWidth="26.0" style="-fx-background-color: white;">
-               <graphic>
-                  <ImageView fitHeight="33.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@persona.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
+            <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="723.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@persona.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #f4f1f1;" />
