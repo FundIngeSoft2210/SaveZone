@@ -42,6 +42,7 @@ public class ControladorRutas {
         usuario = user;
     }
 
+
     public static void launchPantallaInicio() throws Exception {
         FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../vista_inicio.fxml"));
         Parent root = loader.load();

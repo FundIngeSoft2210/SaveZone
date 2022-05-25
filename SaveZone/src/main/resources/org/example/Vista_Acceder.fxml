@@ -37,5 +37,6 @@
             <Button fx:id="olvidarContraseña" layoutX="105.0" layoutY="240.0" mnemonicParsing="false" onAction="#olvidoContraseña" text="¿Olvidaste tu contraseña?" />
          </children>
       </Pane>
+      <Button fx:id="Boton_Regresar" layoutX="15.0" layoutY="14.0" mnemonicParsing="false" onAction="#Regresar" style="-fx-background-color: #000000;" text="Regresar" textFill="WHITE" />
    </children>
 </AnchorPane>

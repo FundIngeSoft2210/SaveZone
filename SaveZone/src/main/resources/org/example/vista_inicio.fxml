@@ -18,7 +18,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="boton_Invitado" layoutX="283.0" layoutY="266.0" mnemonicParsing="false" onAction="#EntrarComoInvitado" prefHeight="38.0" prefWidth="138.0" style="-fx-background-color: white;" text="Entrar como invitado" textFill="#3fdfd4" textOverrun="CENTER_ELLIPSIS">
+      <Button fx:id="boton_Invitado" layoutX="275.0" layoutY="266.0" mnemonicParsing="false" onAction="#EntrarComoInvitado" prefHeight="38.0" prefWidth="138.0" style="-fx-background-color: white;" text="Entrar como invitado" textFill="#3fdfd4" textOverrun="CENTER_ELLIPSIS">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>

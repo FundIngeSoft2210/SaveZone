@@ -69,7 +69,7 @@ public class controllerAyuda implements Initializable {
     private TextField Nombre1;
 
     @FXML
-    private ComboBox<?> TemasDeAyuda;
+    private ComboBox<String> TemasDeAyuda;
 
     @FXML
     private ComboBox<String> Boton_Perfil;
@@ -196,6 +196,12 @@ public class controllerAyuda implements Initializable {
         ControladorBD controladorBD = new ControladorBD();
         Resultset rs;
         ObservableList<String> listaCatego;
+        ObservableList<String> temaAyuda = FXCollections.observableArrayList();
+        temaAyuda.add("Compra");
+        temaAyuda.add("Venta");
+        temaAyuda.add("Error en Aplicativo");
+        temaAyuda.add("Información de Cuenta");
+        TemasDeAyuda.setItems(temaAyuda);
         try {
             listaCatego = controladorBD.obtenerDeptos(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM CATEGORIA"));
             Boton_categorias.setItems(listaCatego);
