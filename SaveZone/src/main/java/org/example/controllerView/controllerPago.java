@@ -1,8 +1,12 @@
 package org.example.controllerView;
 
+import com.mysql.cj.protocol.Resultset;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -11,13 +15,17 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import org.example.AccesoDatos.ControladorBD;
 import org.example.Entidades.Producto;
 import org.example.Gestion.GestionProductos.GestionProducto;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class controllerPago {
+public class controllerPago implements Initializable {
 
     @FXML
     private TextField Apartamento;
@@ -41,7 +49,7 @@ public class controllerPago {
     private Button Boton_cancelar;
 
     @FXML
-    private ComboBox<?> Boton_categorias;
+    private ComboBox<String> Boton_categorias;
 
     @FXML
     private Button Boton_confirmar;
@@ -68,7 +76,7 @@ public class controllerPago {
     private TextField Nombre1;
 
     @FXML
-    private ComboBox<?> Pais;
+    private ComboBox<String> Pais;
 
     @FXML
     private Button RegresarAlInicio;
@@ -81,6 +89,56 @@ public class controllerPago {
 
     @FXML
     private TextField telefonoCuenta;
+
+    @FXML
+    private ComboBox<String> Boton_Perfil;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ControladorBD controladorBD = new ControladorBD();
+        Resultset rs;
+        ObservableList<String> listaCatego;
+        ObservableList<String> listaPerfil = FXCollections.observableArrayList();
+        listaPerfil.add("Log out");
+        listaPerfil.add("Perfil");
+        Boton_Perfil.setItems(listaPerfil);
+        try {
+            listaCatego = controladorBD.obtenerDeptos(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM CATEGORIA"));
+            Boton_categorias.setItems(listaCatego);
+        } catch (SQLException e) {
+            System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    void Perfil(ActionEvent event) throws Exception {
+        String opcion = this.Boton_Perfil.getSelectionModel().getSelectedItem();
+        if (opcion.equalsIgnoreCase("Perfil")){
+            irAPerfil(event);
+        } else if (opcion.equalsIgnoreCase("Log in")){
+            ControladorRutas.launchVista_Acceder();
+            Stage myStage = (Stage) this.Boton_Perfil.getScene().getWindow();
+            myStage.close();
+        } else if (opcion.equalsIgnoreCase("Sign up")){
+            ControladorRutas.launchVista_Registro();
+            Stage myStage = (Stage) this.Boton_Perfil.getScene().getWindow();
+            myStage.close();
+        } else if (opcion.equalsIgnoreCase("Log out")){
+            ControladorRutas.usuario = null;
+            ControladorRutas.launchPantallaInicio();
+            Stage myStage = (Stage) this.Boton_Perfil.getScene().getWindow();
+            myStage.close();
+        }
+    }
+
+    @FXML
+    void irAPerfil(ActionEvent event) throws Exception {
+        ControladorRutas.launchVista_Perfil();
+        Stage myStage = (Stage) this.Boton_Historial.getScene().getWindow();
+        myStage.close();
+    }
 
     @FXML
     void Ayuda(ActionEvent event) throws Exception {

@@ -47,19 +47,19 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<fx:root type="VBox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerCalificarCompra">
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerCalificarCompra">
    <children>
       <AnchorPane style="-fx-background-color: white;">
          <children>
             <Button fx:id="Boton_populares" layoutX="272.0" layoutY="17.0" mnemonicParsing="false" onAction="#Populares" style="-fx-background-color: #3fdfd4;" text="Populares" />
             <ComboBox fx:id="Boton_categorias" layoutX="146.0" layoutY="17.0" onAction="#Categorias" prefHeight="26.0" prefWidth="116.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;" />
             <TextField fx:id="Nombre1" layoutX="800.0" layoutY="17.0" onAction="#Buscar" prefHeight="26.0" prefWidth="167.0" promptText="             Search" style="-fx-background-color: #f4f1f1;" />
-            <Button fx:id="Boton_Historial" layoutX="354.0" layoutY="17.0" mnemonicParsing="false" onAction="#Historial" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Historial" />
-            <Button fx:id="Boton_Ayuda" layoutX="428.0" layoutY="18.0" mnemonicParsing="false" onAction="#Ayuda" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Ayuda" />
-            <Button fx:id="Boton_VerMisProductos" layoutX="499.0" layoutY="17.0" mnemonicParsing="false" onAction="#Productos" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: #3fdfd4;" text="Mis productos" />
+            <Button fx:id="Boton_Historial" layoutX="349.0" layoutY="17.0" mnemonicParsing="false" onAction="#Historial" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Historial" />
+            <Button fx:id="Boton_Ayuda" layoutX="419.0" layoutY="17.0" mnemonicParsing="false" onAction="#Ayuda" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Ayuda" />
+            <Button fx:id="Boton_VerMisProductos" layoutX="490.0" layoutY="17.0" mnemonicParsing="false" onAction="#Productos" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: #3fdfd4;" text="Mis productos" />
             <Button fx:id="Button_uscar" layoutX="778.0" layoutY="17.0" mnemonicParsing="false" onAction="#BuscarProductos" prefHeight="18.0" prefWidth="26.0" style="-fx-background-color: #f4f1f1;" />
             <Button fx:id="RegresarAlInicio" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#VolverInicio" prefHeight="50.0" prefWidth="116.0" style="-fx-background-color: white;" />
-            <Button fx:id="Boton_Favoritos" layoutX="623.0" layoutY="17.0" mnemonicParsing="false" onAction="#Favoritos" prefHeight="26.0" prefWidth="99.0" style="-fx-background-color: #3fdfd4;" text="Favoritos" />
+            <Button fx:id="Boton_Favoritos" layoutX="615.0" layoutY="17.0" mnemonicParsing="false" onAction="#Favoritos" prefHeight="26.0" prefWidth="99.0" style="-fx-background-color: #3fdfd4;" text="Favoritos" />
             <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="781.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@LUPA.png" />
@@ -70,15 +70,12 @@
                   <Image url="@4.png" />
                </image>
             </ImageView>
-            <Button fx:id="ButtonPerfil" layoutX="727.0" layoutY="10.0" mnemonicParsing="false" onAction="#irAPerfil" prefHeight="42.0" prefWidth="26.0" style="-fx-background-color: white;">
-               <graphic>
-                  <ImageView fitHeight="33.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@persona.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
+            <ComboBox fx:id="Boton_Perfil" layoutX="721.0" layoutY="18.0" onAction="#Perfil" prefHeight="25.0" prefWidth="44.0" style="-fx-background-color: #3fdfd4;" />
+            <ImageView fitHeight="25.0" fitWidth="26.0" layoutX="721.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@persona.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #f4f1f1;">
@@ -228,4 +225,4 @@
          </children>
       </AnchorPane>
    </children>
-</fx:root>
+</VBox>
