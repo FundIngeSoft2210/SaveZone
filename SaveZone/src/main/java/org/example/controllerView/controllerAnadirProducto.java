@@ -1,6 +1,7 @@
 package org.example.controllerView;
 
 import com.mysql.cj.protocol.Resultset;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -80,6 +81,12 @@ public class controllerAnadirProducto implements Initializable {
 
     @FXML
     private ComboBox<String> Categoria;
+
+    @FXML
+    private ComboBox<String> Estado;
+
+    @FXML
+    private ComboBox<String> Boton_Perfil;
 
     @FXML
     private TextField Descripcion_Producto;
@@ -315,16 +322,54 @@ public class controllerAnadirProducto implements Initializable {
         ControladorBD controladorBD = new ControladorBD();
         Resultset rs;
         ObservableList<String> listaCatego;
+        ObservableList<String> listaPerfil = FXCollections.observableArrayList();
+        ObservableList<String> listaEstados = FXCollections.observableArrayList();
+        listaEstados.add("Agotado");
+        listaEstados.add("Oculto");
+        listaEstados.add("En venta");
+        Estado.setItems(listaEstados);
+        listaPerfil.add("Log out");
+        listaPerfil.add("Perfil");
+        Boton_Perfil.setItems(listaPerfil);
         try {
             listaCatego = controladorBD.obtenerDeptos(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM CATEGORIA"));
-            Categoria.setItems(listaCatego);
             Boton_categorias.setItems(listaCatego);
+            Categoria.setItems(listaCatego);
         } catch (SQLException e) {
             System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
+
+    @FXML
+    void Perfil(ActionEvent event) throws Exception {
+        String opcion = this.Boton_Perfil.getSelectionModel().getSelectedItem();
+        if (opcion.equalsIgnoreCase("Perfil")){
+            irAPerfil(event);
+        } else if (opcion.equalsIgnoreCase("Log in")){
+            ControladorRutas.launchVista_Acceder();
+            Stage myStage = (Stage) this.Boton_Perfil.getScene().getWindow();
+            myStage.close();
+        } else if (opcion.equalsIgnoreCase("Sign up")){
+            ControladorRutas.launchVista_Registro();
+            Stage myStage = (Stage) this.Boton_Perfil.getScene().getWindow();
+            myStage.close();
+        } else if (opcion.equalsIgnoreCase("Log out")){
+            ControladorRutas.usuario = null;
+            ControladorRutas.launchPantallaInicio();
+            Stage myStage = (Stage) this.Boton_Perfil.getScene().getWindow();
+            myStage.close();
+        }
+    }
+
+    @FXML
+    void irAPerfil(ActionEvent event) throws Exception {
+        ControladorRutas.launchVista_Perfil();
+        Stage myStage = (Stage) this.Boton_Historial.getScene().getWindow();
+        myStage.close();
+    }
+
     @FXML
     void Favoritos(ActionEvent event) throws Exception {
         Integer usuarioId = ControladorRutas.getUsuario().getId();

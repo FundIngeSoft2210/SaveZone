@@ -1,16 +1,23 @@
 package org.example.controllerView;
 
+import com.mysql.cj.protocol.Resultset;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import org.example.AccesoDatos.ControladorBD;
 import org.example.Entidades.Producto;
 import org.example.Gestion.GestionProductos.GestionProducto;
 
+import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class controllerSeguimientoLlenarDatos {
+public class controllerSeguimientoLlenarDatos implements Initializable {
 
     ControladorBD controladorBD = new ControladorBD();
 
@@ -79,6 +86,9 @@ public class controllerSeguimientoLlenarDatos {
 
     @FXML
     private Label tipo;
+
+    @FXML
+    private ComboBox<String> Boton_Perfil;
 
     @FXML
     void Ayuda(ActionEvent event) throws Exception {
@@ -174,6 +184,46 @@ public class controllerSeguimientoLlenarDatos {
         ControladorRutas.launchPantallaPrincipal();
         Stage myStage = (Stage) this.RegresarAlInicio.getScene().getWindow();
         myStage.close();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ControladorBD controladorBD = new ControladorBD();
+        Resultset rs;
+        ObservableList<String> listaCatego;
+        ObservableList<String> listaPerfil = FXCollections.observableArrayList();
+        listaPerfil.add("Log out");
+        listaPerfil.add("Perfil");
+        Boton_Perfil.setItems(listaPerfil);
+        try {
+            listaCatego = controladorBD.obtenerDeptos(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM CATEGORIA"));
+            Boton_categorias.setItems(listaCatego);
+        } catch (SQLException e) {
+            System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    void Perfil(ActionEvent event) throws Exception {
+        String opcion = this.Boton_Perfil.getSelectionModel().getSelectedItem();
+        if (opcion.equalsIgnoreCase("Perfil")){
+            irAPerfil(event);
+        } else if (opcion.equalsIgnoreCase("Log in")){
+            ControladorRutas.launchVista_Acceder();
+            Stage myStage = (Stage) this.Boton_Perfil.getScene().getWindow();
+            myStage.close();
+        } else if (opcion.equalsIgnoreCase("Sign up")){
+            ControladorRutas.launchVista_Registro();
+            Stage myStage = (Stage) this.Boton_Perfil.getScene().getWindow();
+            myStage.close();
+        } else if (opcion.equalsIgnoreCase("Log out")){
+            ControladorRutas.usuario = null;
+            ControladorRutas.launchPantallaInicio();
+            Stage myStage = (Stage) this.Boton_Perfil.getScene().getWindow();
+            myStage.close();
+        }
     }
 
     @FXML
