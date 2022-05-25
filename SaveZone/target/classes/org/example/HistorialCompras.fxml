@@ -79,24 +79,60 @@
             <ScrollPane layoutX="29.0" layoutY="55.0" prefHeight="486.0" prefWidth="941.0">
                <content>
                   <AnchorPane prefHeight="518.0" prefWidth="939.0" style="-fx-background-color: white;">
-                     <children>
-                        <AnchorPane layoutX="32.0" layoutY="14.0" prefHeight="262.0" prefWidth="247.0" style="-fx-background-color: #f4f1f1;">
-                           <children>
-                              <Button fx:id="produto" alignment="BOTTOM_LEFT" contentDisplay="TOP" layoutX="28.0" layoutY="14.0" mnemonicParsing="false" onAction="#VerDetallesProducto" text="Airpods">
-                                 <graphic>
-                                    <ImageView fitHeight="176.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@8888.jpeg" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button fx:id="Button_rastrearCompra" layoutX="72.0" layoutY="229.0" mnemonicParsing="false" onAction="#rastrearCompra" style="-fx-background-color: #3fdfd4;" text="Rastrear Compra" />
-                           </children>
-                        </AnchorPane>
+
+<!--DESPL-->
+<children>
+ <Button fx:id="12" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="0" layoutY="0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;" text="Gorra negra" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                           <graphic>
+                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@12producto.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children><children>
+ <Button fx:id="13" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="235" layoutY="0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;" text="BMW 240i" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                           <graphic>
+                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@13producto.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children><children>
+ <Button fx:id="14" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="470" layoutY="0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;" text="Maleta Nike" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                           <graphic>
+                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@14producto.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children><children>
+ <Button fx:id="15" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="705" layoutY="0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;" text="Moto Adidas" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                           <graphic>
+                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@15producto.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children><children>
+ <Button fx:id="16" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="0" layoutY="150" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;" text="Perfume" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                           <graphic>
+                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@16producto.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
                      </children>
-      
-      <!--DESPL_FINAL-->
+<!--DESPL_FINAL-->
                   </AnchorPane>
                </content>
             </ScrollPane>

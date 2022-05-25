@@ -79,6 +79,7 @@
             <ScrollPane layoutX="29.0" layoutY="55.0" prefHeight="486.0" prefWidth="941.0">
                <content>
                   <AnchorPane prefHeight="518.0" prefWidth="939.0" style="-fx-background-color: white;">
+                     <!--DESPL-->
                      <children>
                         <AnchorPane layoutX="23.0" layoutY="21.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f1f4f4;">
                            <children>
@@ -94,6 +95,7 @@
                            </children>
                         </AnchorPane>
                      </children>
+                     <!--DESPL_FINAL-->
                   </AnchorPane>
                </content>
             </ScrollPane>
