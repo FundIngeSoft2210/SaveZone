@@ -79,29 +79,27 @@
             <ScrollPane layoutX="29.0" layoutY="55.0" prefHeight="486.0" prefWidth="941.0">
                <content>
                   <AnchorPane prefHeight="518.0" prefWidth="939.0" style="-fx-background-color: white;">
-
-
-
-
-
-
-
-<!--DESPL-->
-<children>
-                  <Button fx:id="3" alignment="CENTER" contentDisplay="TOP" ellipsisString="" graphicTextGap="10.0" layoutX="73.0" layoutY="011.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="80.0" prefWidth="116.0" style="-fx-background-color: white;" text="Manguera">
-                           <graphic>
-                              <ImageView fx:id="ImagenProducto" fitHeight="50.0" fitWidth="106.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                              <Image url="@3producto.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                  <Button fx:id="3" layoutX="212.0" layoutY="023" mnemonicParsing="false" onAction="#ModificarProducto" style="-fx-background-color: #3fdfd4;" text="Modificar" />
-                  <Button fx:id="3" layoutX="212.0" layoutY="054" mnemonicParsing="false" onAction="#EliminarProducto" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #3fdfd4;" text="Eliminar" />
+                     <!--DESPL-->
+                     <children>
+                        <Button fx:id="Button_AnadirProductos" layoutX="444.0" layoutY="435.0" mnemonicParsing="false" onAction="#anadirProductos" style="-fx-background-color: #3fdfd4;" text="Añadir producto" />
+                        <AnchorPane layoutX="322.0" layoutY="30.0" prefHeight="161.0" prefWidth="321.0" style="-fx-background-color: #f4f1f1;">
+                           <children>
+                              <Button fx:id="produto" alignment="BOTTOM_LEFT" contentDisplay="TOP" layoutX="14.0" layoutY="27.0" mnemonicParsing="false" onAction="#VerDetallesProducto" text="Airpods">
+                                 <graphic>
+                                    <ImageView fitHeight="176.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@1.PNG" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="Button_ModificarProducto" layoutX="241.0" layoutY="55.0" mnemonicParsing="false" onAction="#ModificarProducto" style="-fx-background-color: #3fdfd4;" text="Modificar" />
+                              <Button fx:id="Boton_eliminarProducto" layoutX="240.0" layoutY="94.0" mnemonicParsing="false" onAction="#EliminarProducto" prefHeight="26.0" prefWidth="69.0" text="Eliminar" />
+                           </children>
+                        </AnchorPane>
                      </children>
-                     
-<!--DESPL_FINAL-->
+      
+      <!--DESPL_FINAL-->
                   </AnchorPane>
                </content>
             </ScrollPane>
