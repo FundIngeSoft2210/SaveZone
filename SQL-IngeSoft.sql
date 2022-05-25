@@ -1336,6 +1336,9 @@ INSERT INTO `safezone_db`.`estadoproducto` (`Nombre`, `Disponible`) VALUES ('Ocu
 INSERT INTO `safezone_db`.`estadoproducto` (`Nombre`, `Disponible`) VALUES ('En promoción', b'1');
 INSERT INTO `safezone_db`.`estadoproducto` (`ID`, `Nombre`, `Disponible`) VALUES ('6', 'Eliminado', b'0');
 
+INSERT INTO `safezone_db`.`estadopedido` (`Nombre`, `Descripcion`) VALUES ('Iniciado', 'Pedido creado.');
+INSERT INTO `safezone_db`.`estadopedido` (`Nombre`, `Descripcion`) VALUES ('Entregado', 'Pedido entregado al usuario');
+
 INSERT INTO `safezone_db`.`categoria` (`Nombre`, `Descripcion`) VALUES ('Otros','Productos sin categoria');
 INSERT INTO `safezone_db`.`categoria` (`Nombre`, `Descripcion`) VALUES ('Supermercado','Supermercado');
 INSERT INTO `safezone_db`.`categoria` (`Nombre`, `Descripcion`) VALUES ('Tecnología','Tecnología');
