@@ -81,6 +81,11 @@
                   <AnchorPane prefHeight="518.0" prefWidth="939.0" style="-fx-background-color: white;">
 
 
+
+
+
+
+
 <!--DESPL-->
 <children>
                   <Button fx:id="12" alignment="CENTER" contentDisplay="TOP" ellipsisString="" graphicTextGap="10.0" layoutX="73.0" layoutY="011.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="80.0" prefWidth="116.0" style="-fx-background-color: white;" text="Gorra negra">

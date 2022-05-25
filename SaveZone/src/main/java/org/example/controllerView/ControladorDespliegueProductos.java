@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class ControladorDespliegueProductos {
     public void desplegarProductos(String archivo, ArrayList<Producto> productosDesplegar) throws Exception {
-        Integer x_actual = 0, y_actual = 0;
+        Integer x_actual = 20, y_actual = 20;
         ControladorPropiedades controladorPropiedades = new ControladorPropiedades();
         String resourcesPath = controladorPropiedades.getPropiedad("resourcesPath");
         String path = resourcesPath + archivo + ".fxml", pathCopia = resourcesPath + archivo + "Buffer" + ".fxml", etiquetaProducto = null;
@@ -41,7 +41,7 @@ public class ControladorDespliegueProductos {
             if(producto.getEstadoProductoID()==6)continue;
             base64ToLocal(producto.getImgdata(), producto.getIdProducto() + "producto");
             etiquetaProducto = "<children>\n" +
-                    " <Button fx:id=\"" + producto.getIdProducto() + "\" alignment=\"CENTER\" contentDisplay=\"TOP\" ellipsisString=\"\" layoutX=\"" + x_actual + "\" layoutY=\"" + y_actual + "\" mnemonicParsing=\"false\" onAction=\"#VerDetallesProducto\" prefHeight=\"182.0\" prefWidth=\"215.0\" style=\"-fx-background-color: white;\" text=\"" + producto.getTitulo() + "\" textAlignment=\"CENTER\" textOverrun=\"LEADING_WORD_ELLIPSIS\" wrapText=\"true\">\n" +
+                    " <Button fx:id=\"" + producto.getIdProducto() + "\" alignment=\"CENTER\" contentDisplay=\"TOP\" ellipsisString=\"\" layoutX=\"" + x_actual + "\" layoutY=\"" + y_actual + "\" mnemonicParsing=\"false\" onAction=\"#VerDetallesProducto\" prefHeight=\"182.0\" prefWidth=\"182.0\" text=\"" + producto.getTitulo() + "\" textAlignment=\"CENTER\" textOverrun=\"LEADING_WORD_ELLIPSIS\" wrapText=\"true\" styleClass=\"productos_despliegue\">\n" +
                     "                           <graphic>\n" +
                     "                              <ImageView fx:id=\"ImagenProducto\" fitHeight=\"88.0\" fitWidth=\"192.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\n" +
                     "                                 <image>\n" +
@@ -70,9 +70,9 @@ public class ControladorDespliegueProductos {
             */
             x_actual += 235;
 
-            if (x_actual > 235 * 3) {
-                y_actual += 150;
-                x_actual = 0;
+            if (x_actual > 235 * 4) {
+                y_actual += 200;
+                x_actual = 20;
             }
 
             bw.write(etiquetaProducto);
