@@ -322,7 +322,7 @@ public class ControladorRutas {
         GestionProducto gestion = new GestionProducto();
         ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
         //ArrayList <Producto> productosRelacionados = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE CATEGORIAID = " + producto.getCategoria()));
-        controladorDespliegue.desplegarProductos("comprarProducto", gestion.buscarProducto(""));
+        //controladorDespliegue.desplegarProductos("comprarProducto", gestion.buscarProducto(""));
 
         FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../comprarProducto.fxml"));
         Parent root = loader.load();
