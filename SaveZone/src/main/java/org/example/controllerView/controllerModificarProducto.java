@@ -1,6 +1,7 @@
 package org.example.controllerView;
 
 import com.mysql.cj.protocol.Resultset;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -99,6 +100,12 @@ public class controllerModificarProducto implements Initializable {
     private Button RegresarAlInicio;
 
     @FXML
+    private ComboBox<String> Boton_Perfil;
+
+    @FXML
+    private ComboBox<String> Cambiar_Estado;
+
+    @FXML
     void AceptarModificarProducto(ActionEvent event) throws Exception {
         try{
             GestionProducto gestionProducto = new GestionProducto();
@@ -146,6 +153,13 @@ public class controllerModificarProducto implements Initializable {
     @FXML
     void Buscar(ActionEvent event) throws Exception {
         BuscarProductos(event);
+    }
+
+    @FXML
+    void Cancelar(ActionEvent event) throws Exception {
+        ControladorRutas.launchMisProductos();
+        Stage myStage = (Stage) this.Boton_VerMisProductos.getScene().getWindow();
+        myStage.close();
     }
 
     @FXML
@@ -257,6 +271,15 @@ public class controllerModificarProducto implements Initializable {
         ControladorBD controladorBD = new ControladorBD();
         Resultset rs;
         ObservableList<String> listaCatego;
+        ObservableList<String> listaPerfil = FXCollections.observableArrayList();
+        ObservableList<String> listaEstados = FXCollections.observableArrayList();
+        listaEstados.add("Agotado");
+        listaEstados.add("Oculto");
+        listaEstados.add("En venta");
+        Cambiar_Estado.setItems(listaEstados);
+        listaPerfil.add("Log out");
+        listaPerfil.add("Perfil");
+        Boton_Perfil.setItems(listaPerfil);
         try {
             listaCatego = controladorBD.obtenerDeptos(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM CATEGORIA"));
             Boton_categorias.setItems(listaCatego);
@@ -266,5 +289,20 @@ public class controllerModificarProducto implements Initializable {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    @FXML
+    void Perfil(ActionEvent event) throws Exception {
+        String opcion = this.Boton_Perfil.getSelectionModel().getSelectedItem();
+        if (opcion.equalsIgnoreCase("Perfil")){
+            irAPerfil(event);
+        }
+    }
+
+    @FXML
+    void irAPerfil(ActionEvent event) throws Exception {
+        ControladorRutas.launchVista_Perfil();
+        Stage myStage = (Stage) this.Boton_Historial.getScene().getWindow();
+        myStage.close();
     }
 }

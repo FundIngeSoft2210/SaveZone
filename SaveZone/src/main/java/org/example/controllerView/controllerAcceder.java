@@ -13,6 +13,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.example.Entidades.Usuarios.Usuario;
 import org.example.Gestion.GestionUsuario;
+import org.example.Launcher;
 
 import java.util.Optional;
 import java.io.IOException;
@@ -30,6 +31,16 @@ public class controllerAcceder {
 
     @FXML
     private Button olvidarContraseña;
+
+    @FXML
+    private Button Boton_Regresar;
+
+    @FXML
+    void Regresar(ActionEvent event) throws Exception {
+        ControladorRutas.launchPantallaInicio();
+        Stage myStage = (Stage) this.Button_entrar.getScene().getWindow();
+        myStage.close();
+    }
 
     @FXML
     void Entrar(ActionEvent event) throws IOException {

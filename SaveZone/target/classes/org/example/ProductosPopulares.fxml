@@ -82,9 +82,6 @@
                      <children>
                         <AnchorPane layoutX="23.0" layoutY="21.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f1f4f4;">
 
-
-
-
 <!--DESPL-->
 <children>
  <Button fx:id="1" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="0" layoutY="0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;" text="Tapabocas" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
