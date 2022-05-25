@@ -82,9 +82,11 @@
 
 
 
+
+
 <!--DESPL-->
 <children>
- <Button fx:id="12" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="0" layoutY="0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;" text="Gorra negra" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+ <Button fx:id="12" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="20" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Gorra negra" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
                            <graphic>
                               <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -94,7 +96,7 @@
                            </graphic>
                         </Button>
                      </children><children>
- <Button fx:id="13" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="235" layoutY="0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;" text="BMW 240i" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+ <Button fx:id="13" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="255" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="BMW 240i" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
                            <graphic>
                               <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -104,7 +106,7 @@
                            </graphic>
                         </Button>
                      </children><children>
- <Button fx:id="14" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="470" layoutY="0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;" text="Maleta Nike" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+ <Button fx:id="14" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="490" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Maleta Nike" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
                            <graphic>
                               <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -114,7 +116,7 @@
                            </graphic>
                         </Button>
                      </children><children>
- <Button fx:id="15" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="705" layoutY="0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;" text="Moto Adidas" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+ <Button fx:id="15" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="725" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Moto Adidas" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
                            <graphic>
                               <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -124,7 +126,7 @@
                            </graphic>
                         </Button>
                      </children><children>
- <Button fx:id="16" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="0" layoutY="150" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: white;" text="Perfume" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+ <Button fx:id="16" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="20" layoutY="220" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Perfume" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
                            <graphic>
                               <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
