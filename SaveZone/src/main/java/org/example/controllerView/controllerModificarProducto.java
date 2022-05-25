@@ -296,6 +296,19 @@ public class controllerModificarProducto implements Initializable {
         String opcion = this.Boton_Perfil.getSelectionModel().getSelectedItem();
         if (opcion.equalsIgnoreCase("Perfil")){
             irAPerfil(event);
+        } else if (opcion.equalsIgnoreCase("Log in")){
+            ControladorRutas.launchVista_Acceder();
+            Stage myStage = (Stage) this.Boton_Perfil.getScene().getWindow();
+            myStage.close();
+        } else if (opcion.equalsIgnoreCase("Sign up")){
+            ControladorRutas.launchVista_Registro();
+            Stage myStage = (Stage) this.Boton_Perfil.getScene().getWindow();
+            myStage.close();
+        } else if (opcion.equalsIgnoreCase("Log out")){
+            ControladorRutas.usuario = null;
+            ControladorRutas.launchPantallaInicio();
+            Stage myStage = (Stage) this.Boton_Perfil.getScene().getWindow();
+            myStage.close();
         }
     }
 
