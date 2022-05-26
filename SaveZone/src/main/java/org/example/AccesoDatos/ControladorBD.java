@@ -142,6 +142,8 @@ public class ControladorBD {
         return productos;
     }
 
+
+
     public ArrayList<Categoria> obtenerCategoriaConsulta (ResultSet resultSet) throws  SQLException, ClassNotFoundException {
         ArrayList<Categoria> categorias = new ArrayList<Categoria>();
 

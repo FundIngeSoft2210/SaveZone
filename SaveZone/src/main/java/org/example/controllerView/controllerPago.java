@@ -108,6 +108,8 @@ public class controllerPago implements Initializable {
         listaPerfil.add("Log out");
         listaPerfil.add("Perfil");
         Boton_Perfil.setItems(listaPerfil);
+        Button_Nombre_Producto.setText(ControladorRutas.getProducto().getTitulo());
+        Button_Valor_Producto.setText(String.valueOf(ControladorRutas.getProducto().getValor()));
         try {
             listaCatego = controladorBD.obtenerDeptos(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM CATEGORIA"));
             Boton_categorias.setItems(listaCatego);
