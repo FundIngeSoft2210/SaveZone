@@ -68,8 +68,8 @@ public class controllerAcceder {
         } catch (Exception e){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
-            alert.setTitle("ERROR");
-            alert.setContentText("Los datos ingresados no son validos.");
+            alert.setTitle("Error.");
+            alert.setContentText("Ocurrió un error con el inicio de sesión. Descripción del error: " + e.getMessage());
             alert.showAndWait();
         }
     }
