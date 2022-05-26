@@ -14,12 +14,12 @@
    <children>
       <AnchorPane style="-fx-background-color: white;">
          <children>
-            <Button fx:id="Boton_populares" layoutX="272.0" layoutY="17.0" mnemonicParsing="false" onAction="#Populares" style="-fx-background-color: #3fdfd4;" text="Populares" />
-            <ComboBox fx:id="Boton_categorias" layoutX="146.0" layoutY="17.0" onAction="#Categorias" prefHeight="26.0" prefWidth="116.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;" />
-            <Button fx:id="Boton_Historial" layoutX="354.0" layoutY="17.0" mnemonicParsing="false" onAction="#Historial" prefHeight="30.0" prefWidth="74.0" style="-fx-background-color: #3fdfd4;" text="Historial" />
-            <Button fx:id="Boton_Ayuda" layoutX="444.0" layoutY="17.0" mnemonicParsing="false" onAction="#Ayuda" prefHeight="29.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Ayuda" />
-            <Button fx:id="Boton_VerMisProductos" layoutX="516.0" layoutY="17.0" mnemonicParsing="false" onAction="#Productos" prefHeight="30.0" prefWidth="116.0" style="-fx-background-color: #3fdfd4;" text="Mis productos" />
-            <Button fx:id="Button_uscar" layoutX="763.0" layoutY="19.0" mnemonicParsing="false" onAction="#BuscarProductos" prefHeight="18.0" prefWidth="26.0" style="-fx-background-color: #f4f1f1;">
+            <Button fx:id="Boton_populares" layoutX="272.0" layoutY="17.0" mnemonicParsing="false" onAction="#Populares" style="-fx-background-color: #3fdfd4;" text="Populares" styleClass="boton_principal" stylesheets="@styles.css" />
+            <ComboBox fx:id="Boton_categorias" layoutX="146.0" layoutY="17.0" onAction="#Categorias" prefHeight="26.0" prefWidth="116.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;"  styleClass="boton_principal" stylesheets="@styles.css"/>
+            <Button fx:id="Boton_Historial" layoutX="354.0" layoutY="17.0" mnemonicParsing="false" onAction="#Historial" prefHeight="30.0" prefWidth="74.0" style="-fx-background-color: #3fdfd4;" text="Historial"  styleClass="boton_principal" stylesheets="@styles.css"/>
+            <Button fx:id="Boton_Ayuda" layoutX="444.0" layoutY="17.0" mnemonicParsing="false" onAction="#Ayuda" prefHeight="29.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Ayuda"  styleClass="boton_principal" stylesheets="@styles.css"/>
+            <Button fx:id="Boton_VerMisProductos" layoutX="516.0" layoutY="17.0" mnemonicParsing="false" onAction="#Productos" prefHeight="30.0" prefWidth="116.0" style="-fx-background-color: #3fdfd4;" text="Mis productos"  styleClass="boton_principal" stylesheets="@styles.css"/>
+            <Button fx:id="Button_uscar" layoutX="763.0" layoutY="19.0" mnemonicParsing="false" onAction="#BuscarProductos" prefHeight="18.0" prefWidth="26.0" style="-fx-background-color: #f4f1f1;" styleClass="boton_principal" stylesheets="@styles.css">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
