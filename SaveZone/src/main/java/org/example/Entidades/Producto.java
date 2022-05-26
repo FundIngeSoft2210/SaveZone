@@ -19,6 +19,7 @@ public class Producto {
     private Integer estadoProductoID;
     private Integer categoria;
     private byte[] imgdata;
+    private Integer IDpedido;
 
     /**
      * @summary Método creador de un producto a partir de información ingresada por el usuario
@@ -58,6 +59,14 @@ public class Producto {
 
     public Producto() {
 
+    }
+
+    public Integer getIDpedido() {
+        return IDpedido;
+    }
+
+    public void setIDpedido(Integer IDpedido) {
+        this.IDpedido = IDpedido;
     }
 
     public Integer getIdProducto() {return idProducto; }

@@ -14,6 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.example.AccesoDatos.ControladorBD;
+import org.example.Entidades.Pedido;
 import org.example.Entidades.Producto;
 import org.example.Gestion.GestionProductos.GestionProducto;
 
@@ -150,7 +151,20 @@ public class controllerHistorialCompras implements Initializable {
     @FXML
     void VerDetallesProducto(ActionEvent event) throws Exception {
         Button temp = (Button) event.getSource();
-        ControladorRutas.launchDetallesProducto(Integer.parseInt(temp.getId()));
+        System.out.println("pedido: " + temp.getId());
+        Pedido pedido = new Pedido();
+        ControladorRutas.setPedido(pedido);
+        ControladorRutas.getPedido().setId(Integer.parseInt(temp.getId()));
+
+        if(controladorBD.ejecutarConsulta("SELECT ped.EstadoPedidoID FROM pedido ped where ped.ID="+temp.getId()).getInt(1)==1){
+            ControladorRutas.launchLlenarDatosEnvio();
+        }
+        else if(controladorBD.ejecutarConsulta("SELECT ped.EstadoPedidoID FROM pedido ped where ped.ID="+temp.getId()).getInt(1)==2){
+            ControladorRutas.launchEntregado();
+        }else{
+            ControladorRutas.launchEnRuta();
+        }
+
         Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
         myStage.close();
     }

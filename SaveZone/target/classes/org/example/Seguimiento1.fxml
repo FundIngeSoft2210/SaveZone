@@ -34,7 +34,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
@@ -46,7 +45,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerSeguimientoLlenarDatos">
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerSeguimientoLlenarDatos">
    <children>
       <AnchorPane style="-fx-background-color: white;">
          <children>
@@ -111,13 +110,12 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <AnchorPane layoutX="109.0" layoutY="152.0" prefHeight="654.0" prefWidth="730.0" style="-fx-background-color: fffafa;">
+                        <AnchorPane layoutX="109.0" layoutY="152.0" prefHeight="699.0" prefWidth="730.0" style="-fx-background-color: fffafa;">
                            <children>
-                              <Label fx:id="ciudadRecogida" layoutX="33.0" layoutY="65.0" text="Ciudad de recogida" />
-                              <Label fx:id="ciudadDestino" layoutX="441.0" layoutY="65.0" text="Ciudad de destino" />
+                              <Label fx:id="ciudadRecogida" layoutX="33.0" layoutY="65.0" text="Direccion de recogida" />
+                              <Label fx:id="ciudadDestino" layoutX="375.0" layoutY="66.0" text="Direccion de destino" />
                               <Line endX="573.4000244140625" layoutX="127.0" layoutY="94.0" startX="-100.0" />
                               <Label fx:id="fechaEntrega" layoutX="28.0" layoutY="104.0" text="Fecha de entrega" />
-                              <Label fx:id="HoraEntrega" layoutX="442.0" layoutY="126.0" text="Hora de entrega" />
                               <Line endX="573.4000244140625" layoutX="128.0" layoutY="155.0" startX="-100.0" />
                               <Label layoutX="26.0" layoutY="27.0" text="Remitente / Origen" textFill="#3bd0d3">
                                  <font>
@@ -128,17 +126,11 @@
                               <Label fx:id="nombreContacto" layoutX="32.0" layoutY="181.0" text="Nombre contacto" />
                               <Label fx:id="direccion" layoutX="440.0" layoutY="181.0" text="Dirección" />
                               <Line endX="573.4000244140625" layoutX="126.0" layoutY="210.0" startX="-100.0" />
-                              <Label fx:id="cant" layoutX="33.0" layoutY="242.0" text="Cantidad de envios" />
-                              <Label fx:id="tipo" layoutX="277.0" layoutY="242.0" text="Tipo de producto" />
+                              <Label fx:id="tipo" layoutX="65.0" layoutY="241.0" text="Tipo de producto" />
                               <Line endX="573.4000244140625" layoutX="127.0" layoutY="271.0" startX="-100.0" />
                               <Label fx:id="peso" layoutX="440.0" layoutY="242.0" text="Peso total (kg)" />
-                              <Label fx:id="remitente" layoutX="33.0" layoutY="294.0" text="Remitente" />
-                              <Label fx:id="ciudadRecogida" layoutX="38.0" layoutY="365.0" text="Ciudad de recogida" />
-                              <Label fx:id="ciudadDestino" layoutX="446.0" layoutY="365.0" text="Ciudad de destino" />
+                              <Label fx:id="ciudadDestinoText" layoutX="151.0" layoutY="372.0" text="Ciudad de destino" />
                               <Line endX="573.4000244140625" layoutX="132.0" layoutY="394.0" startX="-100.0" />
-                              <Label fx:id="fechaEntrega" layoutX="38.0" layoutY="401.0" text="Fecha de entrega" />
-                              <Label fx:id="HoraEntrega" layoutX="447.0" layoutY="426.0" text="Hora de entrega" />
-                              <Line endX="573.4000244140625" layoutX="133.0" layoutY="455.0" startX="-100.0" />
                               <Label layoutX="31.0" layoutY="327.0" text="Destinatario / destino" textFill="#3bd0d3">
                                  <font>
                                     <Font size="18.0" />
@@ -146,10 +138,14 @@
                               </Label>
                               <Line endX="-59.399993896484375" endY="-1.52587890625E-5" layoutX="138.0" layoutY="354.0" startX="-100.0" stroke="#3bd0d3" />
                               <Label fx:id="nombreContacto" layoutX="37.0" layoutY="481.0" text="Nombre contacto" />
-                              <Label fx:id="direccion" layoutX="445.0" layoutY="481.0" text="Dirección" />
-                              <DatePicker layoutX="26.0" layoutY="122.0" />
-                              <DatePicker layoutX="38.0" layoutY="422.0" />
-                              <Button fx:id="botonSiguiente" layoutX="344.0" layoutY="583.0" mnemonicParsing="false" onAction="#irSiguiente" style="-fx-background-color: #3bd0d3;" text="Siguiente" />
+                              <Label fx:id="fechaEntregaText" layoutX="42.0" layoutY="125.0" prefHeight="18.0" prefWidth="90.0" text="28-05-2022" />
+                              <Label fx:id="CiudadOText" layoutX="151.0" layoutY="65.0" prefHeight="18.0" prefWidth="116.0" text="Label" />
+                              <Label fx:id="ciudadDText" layoutX="498.0" layoutY="66.0" prefHeight="18.0" prefWidth="222.0" text="Label" />
+                              <Label fx:id="direccionText" layoutX="500.0" layoutY="180.0" prefHeight="18.0" prefWidth="116.0" text="Label" />
+                              <Label fx:id="contactoText" layoutX="145.0" layoutY="180.0" prefHeight="18.0" prefWidth="116.0" />
+                              <Label fx:id="tipoProductoText" layoutX="197.0" layoutY="241.0" prefHeight="18.0" prefWidth="116.0" text="Label" />
+                              <Label fx:id="pesoText" layoutX="556.0" layoutY="242.0" prefHeight="18.0" prefWidth="116.0" text="Label" />
+                              <Label layoutX="65.0" layoutY="364.0" prefHeight="18.0" prefWidth="83.0" text="Direccion :" />
                            </children>
                         </AnchorPane>
                         <Label fx:id="numGuia" layoutX="768.0" layoutY="105.0" text="#756482">
@@ -163,7 +159,7 @@
                   </AnchorPane>
                </content>
             </ScrollPane>
-            <Label layoutX="416.0" prefHeight="50.0" prefWidth="167.0" text="Llene Sus Datos">
+            <Label layoutX="416.0" prefHeight="50.0" prefWidth="167.0" text="Pedido Iniciado">
                <font>
                   <Font name="Arial Bold Italic" size="20.0" />
                </font>

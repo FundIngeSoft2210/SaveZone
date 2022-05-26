@@ -106,38 +106,89 @@
             <ScrollPane layoutX="29.0" layoutY="55.0">
                <content>
                   <AnchorPane prefHeight="396.0" prefWidth="939.0" style="-fx-background-color: white;">
-      <!--DESPL-->
 
-                     <children>
-                        <Button fx:id="Producto" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="3.0" layoutY="8.0" mnemonicParsing="false" onAction="#VerDetallesProducto" style="-fx-background-color: white;" text="Cámara" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--DESPL-->
+<children>
+ <Button fx:id="2" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="20" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Iphone 13 pro" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
                            <graphic>
-                              <ImageView fx:id="ImagenProducto" fitHeight="190.0" fitWidth="741.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@1.PNG" />
+                                    <Image url="@2producto.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="Producto1" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="471.0" layoutY="8.0" mnemonicParsing="false" onAction="#VerDetallesProducto" style="-fx-background-color: white;" text="Cámara" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                     </children><children>
+ <Button fx:id="3" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="255" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Ron Caldas" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
                            <graphic>
-                              <ImageView fx:id="ImagenProducto3" fitHeight="190.0" fitWidth="741.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@1.PNG" />
+                                    <Image url="@3producto.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="producto3" contentDisplay="TOP" layoutX="14.0" layoutY="240.0" mnemonicParsing="false" onAction="#verDetallesProducto" text="Airpods" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                     </children><children>
+ <Button fx:id="4" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="490" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Cuchillo de cocina" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
                            <graphic>
-                              <ImageView fx:id="imagenproducto2" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@8888.jpeg" />
+                                    <Image url="@4producto.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children><children>
+ <Button fx:id="5" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="725" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Carrito de juguete" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
+                           <graphic>
+                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@5producto.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children><children>
+ <Button fx:id="8" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="20" layoutY="220" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Aguardiente" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
+                           <graphic>
+                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@8producto.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </Button>
                      </children>
-      <!--DESPL_FINAL-->
+<!--DESPL_FINAL-->
                   </AnchorPane>
                </content>
             </ScrollPane>
