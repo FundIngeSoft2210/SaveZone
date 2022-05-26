@@ -1338,6 +1338,7 @@ INSERT INTO `safezone_db`.`estadoproducto` (`ID`, `Nombre`, `Disponible`) VALUES
 
 INSERT INTO `safezone_db`.`estadopedido` (`Nombre`, `Descripcion`) VALUES ('Iniciado', 'Pedido creado.');
 INSERT INTO `safezone_db`.`estadopedido` (`Nombre`, `Descripcion`) VALUES ('Entregado', 'Pedido entregado al usuario');
+INSERT INTO `safezone_db`.`estadopedido` (`Nombre`, `Descripcion`) VALUES ('En tránsito', 'Pedido en camino al usuario');
 
 INSERT INTO `safezone_db`.`estadopago` (`Nombre`, `Descripcion`) VALUES ('No pagado', 'Dinero retenido');
 INSERT INTO `safezone_db`.`estadopago` (`Nombre`, `Descripcion`) VALUES ('Pagado', 'Pagado');
