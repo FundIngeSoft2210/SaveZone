@@ -32,18 +32,12 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerMisProductos">
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerMisProductos">
    <children>
       <AnchorPane style="-fx-background-color: white;">
          <children>
@@ -76,11 +70,12 @@
       </AnchorPane>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #f4f1f1;">
          <children>
+            <Button fx:id="Button_AnadirProductos" layoutX="610.0" layoutY="17.0" mnemonicParsing="false" onAction="#anadirProductos" style="-fx-background-color: #3fdfd4;" text="Añadir producto" />
             <ScrollPane layoutX="29.0" layoutY="55.0" prefHeight="486.0" prefWidth="941.0">
                <content>
-                  <AnchorPane prefHeight="518.0" prefWidth="939.0" style="-fx-background-color: white;">
-
-
+                  <AnchorPane prefHeight="395.0" prefWidth="939.0" style="-fx-background-color: white;">
+                     <children>
+                        <AnchorPane layoutX="322.0" layoutY="30.0" prefHeight="161.0" prefWidth="321.0" style="-fx-background-color: #f4f1f1;">
 
 <!--DESPL-->
 <children>
@@ -150,6 +145,10 @@
                      </children>
                      
 <!--DESPL_FINAL-->
+                        </AnchorPane>
+                     </children>
+
+
                   </AnchorPane>
                </content>
             </ScrollPane>
