@@ -8,6 +8,71 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class ControladorDespliegueProductos {
+    public void desplegarProductosComparacion(String archivo, ArrayList<Producto> productosDesplegar) throws Exception {
+        Integer x_actual = 50, y_actual = 350;
+        ControladorPropiedades controladorPropiedades = new ControladorPropiedades();
+        String resourcesPath = controladorPropiedades.getPropiedad("resourcesPath");
+        String path = resourcesPath + archivo + ".fxml", pathCopia = resourcesPath + archivo + "Buffer" + ".fxml", etiquetaProducto = null;
+        System.out.println("[!] Llamada al armado del FXML sobre " + path);
+
+        File file = new File (path);
+        File fileCopia = new File (pathCopia);
+
+        if (!file.exists())
+            throw new FileNotFoundException("[!] No se pudo encontrar el archivo " + archivo + ".fxml en la ruta especificada (despliegueProductos).");
+
+        BufferedReader in = new BufferedReader(new FileReader (file.getAbsoluteFile()));
+        BufferedWriter bw = new BufferedWriter(new FileWriter(fileCopia.getAbsoluteFile(), false));
+
+        String fileLine = in.readLine();
+
+        while (!fileLine.contains("<!--DESPL-->")) {
+            bw.write(fileLine + "\n");
+            fileLine = in.readLine();
+            if (fileLine == null)
+                throw new FileNotFoundException("[!] No se pudo encontrar el indicador de despliegue en el archivo " + archivo + ".fxml en la ruta especificada (despliegueProductos).");
+        }
+
+        bw.write("\n<!--DESPL-->\n");
+
+        // Etiqueta quemada del producto XML.
+
+        for (Producto producto : productosDesplegar) {
+            if(producto.getEstadoProductoID()==6)continue;
+            base64ToLocal(producto.getImgdata(), producto.getIdProducto() + "producto");
+            etiquetaProducto = " <Button fx:id=\"" + producto.getIdProducto() + "\" alignment=\"CENTER\" contentDisplay=\"TOP\" ellipsisString=\"\" layoutX=\"" + x_actual + "\" layoutY=\"" + y_actual + "\" mnemonicParsing=\"false\" onAction=\"#CompararProducto\" prefHeight=\"131.0\" prefWidth=\"116.0\" text=\"" + producto.getTitulo() + "\" textAlignment=\"CENTER\" textOverrun=\"LEADING_WORD_ELLIPSIS\" wrapText=\"true\" styleClass=\"productos_despliegue\">\n" +
+                    "                           <graphic>\n" +
+                    "                              <ImageView fx:id=\"ImagenProducto\" fitHeight=\"88.0\" fitWidth=\"192.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\n" +
+                    "                                 <image>\n" +
+                    "                                    <Image url=\"@" + producto.getIdProducto() + "producto.png\" />\n" +
+                    "                                 </image>\n" +
+                    "                              </ImageView>\n" +
+                    "                           </graphic>\n" +
+                    "                        </Button>\n";
+            x_actual += 185;
+
+            if (x_actual > 185 * 2) {
+                y_actual += 160;
+                x_actual = 50;
+            }
+
+            bw.write(etiquetaProducto);
+        }
+
+        bw.write("\n<!--DESPL_FINAL-->\n"); // Indicador de despliegue
+
+        while (!in.readLine().contains("<!--DESPL_FINAL-->"));
+
+        while ((fileLine = in.readLine()) != null) {
+            bw.write(fileLine + "\n");
+        }
+
+        in.close();
+        bw.close();
+
+        copiarBufferOriginal(file.getAbsolutePath(), fileCopia.getAbsolutePath());
+    }
+
     public void desplegarProductos(String archivo, ArrayList<Producto> productosDesplegar) throws Exception {
         Integer x_actual = 20, y_actual = 20;
         ControladorPropiedades controladorPropiedades = new ControladorPropiedades();

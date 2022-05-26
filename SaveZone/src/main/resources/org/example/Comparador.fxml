@@ -9,11 +9,12 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerComparador">
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerComparador">
    <children>
       <AnchorPane style="-fx-background-color: white;">
          <children>
@@ -51,139 +52,163 @@
          <children>
             <ScrollPane layoutX="29.0" layoutY="54.0" prefHeight="486.0" prefWidth="990.0">
                <content>
-                  <AnchorPane prefHeight="702.0" prefWidth="1020.0" style="-fx-background-color: white;">
+                  <AnchorPane prefHeight="702.0" prefWidth="977.0" style="-fx-background-color: white;">
                      <children>
-                        <Separator layoutX="483.0" orientation="VERTICAL" prefHeight="729.0" prefWidth="1.0" />
-                        <AnchorPane layoutX="58.0" layoutY="45.0" prefHeight="615.0" prefWidth="404.0" style="-fx-background-color: #f4f1f1;">
+                        <Label fx:id="versus" alignment="CENTER" contentDisplay="CENTER" layoutX="205.0" layoutY="228.0" text="Cámara Samsung vs Cámara Nikon" textAlignment="CENTER">
+                           <font>
+                              <Font name="Corbel Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="BOTTOM_CENTER" layoutX="506.0" layoutY="53.0" prefHeight="166.0" prefWidth="383.0">
                            <children>
-                              <Text layoutX="29.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Producto:">
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="30.0" layoutY="553.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Color:">
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="28.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad:">
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="29.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ancho:">
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="31.0" layoutY="520.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Largo:">
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="29.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:">
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="29.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alto:">
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="28.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Peso:">
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="29.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descuento:">
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Text>
-                              <Label fx:id="nombreProducto1" layoutX="161.0" layoutY="223.0" text="Producto" />
-                              <Label fx:id="porcentajeDescuento1" layoutX="159.0" layoutY="315.0" text="\%" />
-                              <Label fx:id="Precio1" layoutX="161.0" layoutY="271.0" text="\$" />
-                              <Label fx:id="cant1" layoutX="160.0" layoutY="359.0" text="#" />
-                              <Label fx:id="ancho1" layoutX="161.0" layoutY="398.0" text="#" />
-                              <Label fx:id="peso1" layoutX="161.0" layoutY="437.0" text="#" />
-                              <Label fx:id="alto1" layoutX="161.0" layoutY="473.0" text="#" />
-                              <Label fx:id="largo1" layoutX="160.0" layoutY="507.0" text="#" />
-                              <Label fx:id="color1" layoutX="160.0" layoutY="540.0" text="#" />
-                              <ImageView fx:id="imagen1" fitHeight="136.0" fitWidth="348.0" layoutX="40.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="imagen11" fitHeight="175.0" fitWidth="382.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../../../../../OneDrive%20-%20Pontificia%20Universidad%20Javeriana/Desktop/Nueva%20carpeta/SaveZone/SaveZone/src/main/resources/org/example/1.PNG" />
+                                    <Image url="@1.PNG" />
                                  </image>
                               </ImageView>
-                              <Button fx:id="botonSeleccionarP1" layoutX="227.0" layoutY="577.0" mnemonicParsing="false" onAction="#SeleccionarProducto" style="-fx-background-color: #3fdfd4;" text="Seleccionar" />
-                              <Button fx:id="CancelarP1" layoutX="316.0" layoutY="577.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
                            </children>
-                        </AnchorPane>
-                        <AnchorPane layoutX="510.0" layoutY="45.0" prefHeight="615.0" prefWidth="404.0" style="-fx-background-color: #f4f1f1;">
+                        </HBox>
+                        <Separator layoutX="475.0" orientation="VERTICAL" prefHeight="219.0" prefWidth="2.0" />
+                        <AnchorPane fx:id="anchorpane" layoutX="58.0" layoutY="45.0" prefHeight="615.0" prefWidth="404.0">
                            <children>
-                              <Text layoutX="29.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Producto:">
+                              <Text layoutX="393.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
                                  <font>
-                                    <Font size="13.0" />
+                                    <Font name="Dubai Light" size="18.0" />
                                  </font>
                               </Text>
-                              <Text layoutX="30.0" layoutY="553.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Color:">
+                              <Text layoutX="399.0" layoutY="560.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Color">
                                  <font>
-                                    <Font size="13.0" />
+                                    <Font name="Dubai Light" size="18.0" />
                                  </font>
                               </Text>
-                              <Text layoutX="28.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad:">
+                              <Text layoutX="389.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad">
                                  <font>
-                                    <Font size="13.0" />
+                                    <Font name="Dubai Light" size="18.0" />
                                  </font>
                               </Text>
-                              <Text layoutX="29.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ancho:">
+                              <Text layoutX="396.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ancho">
                                  <font>
-                                    <Font size="13.0" />
+                                    <Font name="Dubai Light" size="18.0" />
                                  </font>
                               </Text>
-                              <Text layoutX="31.0" layoutY="520.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Largo:">
+                              <Text layoutX="399.0" layoutY="526.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Largo">
                                  <font>
-                                    <Font size="13.0" />
+                                    <Font name="Dubai Light" size="18.0" />
                                  </font>
                               </Text>
-                              <Text layoutX="29.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:">
+                              <Text layoutX="397.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio">
                                  <font>
-                                    <Font size="13.0" />
+                                    <Font name="Dubai Light" size="18.0" />
                                  </font>
                               </Text>
-                              <Text layoutX="29.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alto:">
+                              <Text layoutX="402.0" layoutY="492.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alto">
                                  <font>
-                                    <Font size="13.0" />
+                                    <Font name="Dubai Light" size="18.0" />
                                  </font>
                               </Text>
-                              <Text layoutX="28.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Peso:">
+                              <Text layoutX="400.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Peso">
                                  <font>
-                                    <Font size="13.0" />
+                                    <Font name="Dubai Light" size="18.0" />
                                  </font>
                               </Text>
-                              <Text layoutX="29.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descuento:">
+                              <Text layoutX="386.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descuento">
                                  <font>
-                                    <Font size="13.0" />
+                                    <Font name="Dubai Light" size="18.0" />
                                  </font>
                               </Text>
-                              <Label fx:id="nombreProducto2" layoutX="161.0" layoutY="223.0" text="Producto" />
-                              <Label fx:id="porcentajeDescuento2" layoutX="159.0" layoutY="315.0" text="\%" />
-                              <Label fx:id="Precio2" layoutX="161.0" layoutY="271.0" text="\$" />
-                              <Label fx:id="cant2" layoutX="160.0" layoutY="359.0" text="#" />
-                              <Label fx:id="ancho2" layoutX="161.0" layoutY="398.0" text="#" />
-                              <Label fx:id="peso2" layoutX="161.0" layoutY="437.0" text="#" />
-                              <Label fx:id="alto2" layoutX="161.0" layoutY="473.0" text="#" />
-                              <Label fx:id="largo2" layoutX="160.0" layoutY="507.0" text="#" />
-                              <Label fx:id="color2" layoutX="160.0" layoutY="540.0" text="#" />
-                              <ImageView fx:id="imagen2" fitHeight="136.0" fitWidth="348.0" layoutX="40.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../../../../../../../OneDrive%20-%20Pontificia%20Universidad%20Javeriana/Desktop/Nueva%20carpeta/SaveZone/SaveZone/src/main/resources/org/example/1.PNG" />
-                                 </image>
-                              </ImageView>
-                              <Button fx:id="botonSeleccionarP2" layoutX="227.0" layoutY="577.0" mnemonicParsing="false" onAction="#SeleccionarProducto" style="-fx-background-color: #3fdfd4;" text="Seleccionar" />
-                              <Button fx:id="CancelarP2" layoutX="316.0" layoutY="577.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+                              <Label fx:id="porcentajeDescuento1" layoutX="191.0" layoutY="330.0" text="\%" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Dubai Regular" size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="Precio1" layoutX="192.0" layoutY="293.0" text="\$" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Dubai Regular" size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="cant1" layoutX="194.0" layoutY="367.0" text="#" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Dubai Regular" size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="ancho1" layoutX="194.0" layoutY="404.0" text="#" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Dubai Regular" size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="peso1" layoutX="194.0" layoutY="439.0" text="#" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Dubai Regular" size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="alto1" layoutX="194.0" layoutY="475.0" text="#" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Dubai Regular" size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="largo1" layoutX="194.0" layoutY="509.0" text="#" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Dubai Regular" size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="color1" layoutX="194.0" layoutY="542.0" text="#" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Dubai Regular" size="14.0" />
+                                 </font></Label>
+                              <HBox alignment="BOTTOM_CENTER" layoutX="6.0" layoutY="9.0" prefHeight="166.0" prefWidth="383.0">
+                                 <children>
+                                    <ImageView fx:id="imagen1" fitHeight="175.0" fitWidth="382.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@1.PNG" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <Label fx:id="nombreProducto1" layoutX="168.0" layoutY="-12.0" text="Producto">
+                                 <font>
+                                    <Font name="Dubai Regular" size="15.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
+                        <Label fx:id="porcentajeDescuento2" layoutX="691.0" layoutY="375.0" text="\%" textAlignment="CENTER">
+                           <font>
+                              <Font name="Dubai Regular" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="Precio2" layoutX="692.0" layoutY="338.0" text="\$" textAlignment="CENTER">
+                           <font>
+                              <Font name="Dubai Regular" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="cant2" layoutX="694.0" layoutY="412.0" text="#" textAlignment="CENTER">
+                           <font>
+                              <Font name="Dubai Regular" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="ancho2" layoutX="694.0" layoutY="449.0" text="#" textAlignment="CENTER">
+                           <font>
+                              <Font name="Dubai Regular" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="peso2" layoutX="694.0" layoutY="484.0" text="#">
+                           <font>
+                              <Font name="Dubai Regular" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="alto2" layoutX="694.0" layoutY="520.0" text="#">
+                           <font>
+                              <Font name="Dubai Regular" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="largo2" layoutX="694.0" layoutY="554.0" text="#">
+                           <font>
+                              <Font name="Dubai Regular" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="color2" layoutX="694.0" layoutY="587.0" text="#">
+                           <font>
+                              <Font name="Dubai Regular" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="nombreProducto2" layoutX="674.0" layoutY="31.0" text="Producto">
+                           <font>
+                              <Font name="Dubai Regular" size="15.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
                </content>
