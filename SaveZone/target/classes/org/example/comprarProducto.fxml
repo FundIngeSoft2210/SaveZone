@@ -168,7 +168,20 @@
                         <Separator layoutX="38.0" layoutY="284.0" prefHeight="6.0" prefWidth="386.0" />
                         <VBox layoutX="14.0" layoutY="328.0" prefHeight="141.0" prefWidth="125.0" />
 
+
+
+
+
 <!--DESPL-->
+ <Button fx:id="8" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="50" layoutY="350" mnemonicParsing="false" onAction="#CompararProducto" prefHeight="131.0" prefWidth="116.0" text="Aguardiente" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
+                           <graphic>
+                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@8producto.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
 
 <!--DESPL_FINAL-->
                      </children>
