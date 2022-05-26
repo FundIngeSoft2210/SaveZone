@@ -54,6 +54,9 @@ public class controllerPerfil implements Initializable {
     private Button Button_uscar;
 
     @FXML
+    private Button boton_moderar;
+
+    @FXML
     private TextField Nombre1;
 
     @FXML
@@ -201,8 +204,12 @@ public class controllerPerfil implements Initializable {
         myStage.close();
 
     }
-
-
+    @FXML
+    void moderar_contenido(ActionEvent event) throws Exception {
+        ControladorRutas.launchModeracion();
+        Stage myStage = (Stage) this.Boton_Favoritos.getScene().getWindow();
+        myStage.close();
+    }
 
     @FXML
     void cambiarContrasena(ActionEvent event) throws Exception {
@@ -237,6 +244,13 @@ public class controllerPerfil implements Initializable {
             listaPerfil.add("Sign up");
             Boton_Perfil.setItems(listaPerfil);
         } else {
+            try {
+                if (controladorBD.ejecutarConsulta("SELECT TIPOUSUARIOID FROM USUARIO WHERE ID = " + ControladorRutas.getUsuario().getId()).getInt(1) == 2)
+                    this.boton_moderar.setVisible(true);
+            } catch (SQLException | ClassNotFoundException throwables) {
+                throwables.printStackTrace();
+            }
+
             listaPerfil.add("Log out");
             listaPerfil.add("Perfil");
             Boton_Perfil.setItems(listaPerfil);
