@@ -7,3 +7,5 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 /SaveZone/safezone.properties
+/target/
+/SaveZone/target/
