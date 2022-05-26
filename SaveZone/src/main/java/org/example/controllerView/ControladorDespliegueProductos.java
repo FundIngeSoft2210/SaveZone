@@ -37,6 +37,10 @@ public class ControladorDespliegueProductos {
 
         // Etiqueta quemada del producto XML.
 
+        if (productosDesplegar == null) {
+            productosDesplegar = new ArrayList<Producto>();
+        }
+
         for (Producto producto : productosDesplegar) {
             if(producto.getEstadoProductoID()==6)continue;
             base64ToLocal(producto.getImgdata(), producto.getIdProducto() + "producto");

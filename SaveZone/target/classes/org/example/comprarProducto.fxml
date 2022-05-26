@@ -170,25 +170,15 @@
                         <VBox layoutX="14.0" layoutY="328.0" prefHeight="141.0" prefWidth="125.0" />
 
 
+
+
+
+
+
+
+
+
 <!--DESPL-->
- <Button fx:id="12" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="50" layoutY="350" mnemonicParsing="false" onAction="#CompararProducto" prefHeight="131.0" prefWidth="116.0" text="Gorra negra" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
-                           <graphic>
-                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@12producto.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
- <Button fx:id="16" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="235" layoutY="350" mnemonicParsing="false" onAction="#CompararProducto" prefHeight="131.0" prefWidth="116.0" text="Perfume" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
-                           <graphic>
-                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@16producto.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
 
 <!--DESPL_FINAL-->
                      </children>
