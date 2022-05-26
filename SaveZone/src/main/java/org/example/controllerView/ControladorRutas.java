@@ -8,6 +8,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.example.AccesoDatos.ControladorBD;
+import org.example.Entidades.Pedido;
 import org.example.Entidades.Producto;
 import org.example.Entidades.Usuarios.Usuario;
 import org.example.Gestion.GestionProductos.GestionProducto;
@@ -18,6 +19,7 @@ public class ControladorRutas {
 
     protected static Usuario usuario = null;
     protected static Producto producto = null;
+    protected static Pedido pedido = null;
     protected static ControladorBD controladorBD = new ControladorBD();
 
 
@@ -42,6 +44,13 @@ public class ControladorRutas {
         usuario = user;
     }
 
+    public static Pedido getPedido() {
+        return pedido;
+    }
+
+    public static void setPedido(Pedido pedido) {
+        ControladorRutas.pedido = pedido;
+    }
 
     public static void launchPantallaInicio() throws Exception {
         FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../vista_inicio.fxml"));

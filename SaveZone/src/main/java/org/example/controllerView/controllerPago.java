@@ -16,13 +16,19 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.example.AccesoDatos.ControladorBD;
+import org.example.Entidades.Pedido;
 import org.example.Entidades.Producto;
+import org.example.Gestion.GestionProductos.GestionPedido;
 import org.example.Gestion.GestionProductos.GestionProducto;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class controllerPago implements Initializable {
@@ -110,6 +116,37 @@ public class controllerPago implements Initializable {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    @FXML
+    void hacerPedido(ActionEvent event) throws Exception {
+        GestionPedido gestionPedido = new GestionPedido();
+        Random numeroAleatorio = new Random();
+        ControladorBD controladorBD = new ControladorBD();
+        String direccionO,direccionD,guiaRastreo;
+        Float pesoTotal,subTotal,total;
+        Integer productoId,compradorId,tarjetaId,estadoPedidoId,estadoPagoId,cantidad;
+
+        direccionO=controladorBD.ejecutarConsulta("Select direccion from producto p, usuario u where p.vendedorid=u.id").getString(1);
+        direccionD=this.direccionCuenta.getText()+this.Apartamento.getText();
+        guiaRastreo=String.valueOf(numeroAleatorio.nextInt(5000-1000+1)+1000);
+        pesoTotal=ControladorRutas.getProducto().getValor()+(float)(ControladorRutas.getProducto().getValor()*0.19);
+        subTotal=(float)(ControladorRutas.getProducto().getValor());
+        total=ControladorRutas.getProducto().getValor()+(float)(ControladorRutas.getProducto().getValor()*0.19);
+        productoId=ControladorRutas.getProducto().getIdProducto();
+        compradorId=ControladorRutas.getUsuario().getId();
+        tarjetaId=1;
+        estadoPagoId=1;
+        estadoPedidoId=1;
+        cantidad=1;
+
+
+        Pedido pedido = new Pedido(productoId,compradorId,tarjetaId,estadoPedidoId,estadoPagoId,direccionO,direccionD,guiaRastreo,pesoTotal,cantidad,subTotal,total);
+        gestionPedido.crearPedido(pedido);
+        ControladorRutas.setPedido(pedido);
+        ControladorRutas.launchMetodoPago();
+        Stage myStage = (Stage) this.Boton_confirmar.getScene().getWindow();
+        myStage.close();
     }
 
     @FXML
