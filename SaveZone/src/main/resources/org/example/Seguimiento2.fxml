@@ -45,7 +45,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerSeguimientoRastreo">
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerSeguimientoRastreo">
    <children>
       <AnchorPane style="-fx-background-color: white;">
          <children>
@@ -130,8 +130,6 @@
                               <Circle fill="#3bd0d3" layoutX="366.0" layoutY="328.0" radius="7.0" stroke="#3bd0d3" strokeType="INSIDE" />
                               <Circle fill="#3bd0d3" layoutX="365.0" layoutY="574.0" radius="7.0" stroke="#3bd0d3" strokeType="INSIDE" />
                               <Label fx:id="lugar" layoutX="390.0" layoutY="319.0" text="Duana" />
-                              <Button fx:id="boton_siguiente" layoutX="405.0" layoutY="606.0" mnemonicParsing="false" onAction="#IrSiguiente" style="-fx-background-color: #3bd0d3;" text="Siguiente" />
-                              <Button fx:id="boton_anterior" layoutX="279.0" layoutY="606.0" mnemonicParsing="false" onAction="#irAnterior" text="Anterior" />
                            </children>
                         </AnchorPane>
                         <Label fx:id="numGuia" layoutX="769.0" layoutY="105.0" text="#748739">
