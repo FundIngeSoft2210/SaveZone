@@ -33,6 +33,6 @@ jobs:
       if: always()
       with:
         name: Maven Tests
-        path: SaveZone/pom.xml
+        path: SaveZone/SaveZone/src/test/java/org/example/AppTest.java
         reporter: java-junit
         fail-on-error: true
