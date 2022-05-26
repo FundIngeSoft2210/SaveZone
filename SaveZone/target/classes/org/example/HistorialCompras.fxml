@@ -79,52 +79,6 @@
             <ScrollPane layoutX="29.0" layoutY="55.0" prefHeight="486.0" prefWidth="941.0">
                <content>
                   <AnchorPane prefHeight="518.0" prefWidth="939.0" style="-fx-background-color: white;">
-<<<<<<< HEAD
-
-
-
-<!--DESPL-->
-<children>
- <Button fx:id="2" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="20" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Iphone 13 pro" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
-                           <graphic>
-                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@2producto.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children><children>
- <Button fx:id="3" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="255" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Ron Caldas" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
-                           <graphic>
-                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@3producto.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children><children>
- <Button fx:id="4" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="490" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Cuchillo de cocina" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
-                           <graphic>
-                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@4producto.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children><children>
- <Button fx:id="5" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="725" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Carrito de juguete" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
-                           <graphic>
-                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@5producto.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-=======
                      <!--DESPL-->
                      <children>
                         <AnchorPane layoutX="32.0" layoutY="14.0" prefHeight="262.0" prefWidth="247.0" style="-fx-background-color: #f4f1f1;">
@@ -141,7 +95,6 @@
                               <Button fx:id="Button_rastrearCompra" layoutX="72.0" layoutY="229.0" mnemonicParsing="false" onAction="#rastrearCompra" style="-fx-background-color: #3fdfd4;" text="Rastrear Compra" />
                            </children>
                         </AnchorPane>
->>>>>>> 950054bed3b0cac2793dcb269c53006e927ae8ab
                      </children>
       
       <!--DESPL_FINAL-->
