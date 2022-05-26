@@ -196,6 +196,7 @@ public class controllerTarjetaCredito implements Initializable {
             int tarjetaId = gestionTarjeta.buscarTarjeta(numeroTarjeta);
             gestionPedido.actualizarPedido(ControladorRutas.getPedido().getId(),tarjetaId);
             if(creada){
+                agregarTarjeta.setDisable(true);
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setHeaderText(null);
                 alert.setTitle("CONFIRMACIÓN");
@@ -211,6 +212,7 @@ public class controllerTarjetaCredito implements Initializable {
         }else{
             ControladorRutas.getPedido().setTarjetaId(tarjetaExistente);
             gestionPedido.actualizarPedido(ControladorRutas.getPedido().getId(),tarjetaExistente);
+            agregarTarjeta.setDisable(true);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText(null);
             alert.setTitle("CONFIRMACIÓN");
@@ -308,8 +310,13 @@ public class controllerTarjetaCredito implements Initializable {
     }
 
     @FXML
-    void ConfirmarDatosParaCompra(ActionEvent event) {
+    void ConfirmarDatosParaCompra(ActionEvent event) throws Exception {
 
+        int cantidadProducto = ControladorRutas.getProducto().getCantidad()-1;
+        controladorBD.ejecutarInsert("UPDATE safezone_db.producto set Cantidad="+cantidadProducto);
+        ControladorRutas.launchPagoExitoso();
+        Stage myStage = (Stage) this.Boton_Historial.getScene().getWindow();
+        myStage.close();
     }
 
     @FXML
