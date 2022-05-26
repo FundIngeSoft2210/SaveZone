@@ -686,4 +686,20 @@ public class ControladorRutas {
         stage.show();
     }
 
+    public static void launchCambiarContrasena() throws Exception {
+        FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../cambiarContrasena.fxml"));
+        Parent root = loader.load();
+        controllerCambiarContrasena controllercambiarContrasena = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Cambiar Contraseña");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
+    }
 }

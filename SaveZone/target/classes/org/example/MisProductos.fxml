@@ -41,15 +41,15 @@
    <children>
       <AnchorPane style="-fx-background-color: white;">
          <children>
-            <Button fx:id="Boton_populares" layoutX="272.0" layoutY="17.0" mnemonicParsing="false" onAction="#Populares" style="-fx-background-color: #3fdfd4;" text="Populares" />
-            <ComboBox fx:id="Boton_categorias" layoutX="146.0" layoutY="17.0" onAction="#Categorias" prefHeight="26.0" prefWidth="116.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;" />
-            <TextField fx:id="Nombre1" layoutX="800.0" layoutY="17.0" onAction="#Buscar" prefHeight="26.0" prefWidth="167.0" promptText="             Search" style="-fx-background-color: #f4f1f1;" />
-            <Button fx:id="Boton_Historial" layoutX="354.0" layoutY="17.0" mnemonicParsing="false" onAction="#Historial" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Historial" />
-            <Button fx:id="Boton_Ayuda" layoutX="426.0" layoutY="17.0" mnemonicParsing="false" onAction="#Ayuda" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Ayuda" />
-            <Button fx:id="Boton_VerMisProductos" layoutX="495.0" layoutY="17.0" mnemonicParsing="false" onAction="#Productos" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: #3fdfd4;" text="Mis productos" />
-            <Button fx:id="Button_uscar" layoutX="778.0" layoutY="18.0" mnemonicParsing="false" onAction="#BuscarProductos" prefHeight="18.0" prefWidth="26.0" style="-fx-background-color: #f4f1f1;" />
-            <Button fx:id="RegresarAlInicio" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#VolverInicio" prefHeight="50.0" prefWidth="116.0" style="-fx-background-color: white;" />
-            <Button fx:id="Boton_Favoritos" layoutX="618.0" layoutY="17.0" mnemonicParsing="false" onAction="#Favoritos" prefHeight="26.0" prefWidth="99.0" style="-fx-background-color: #3fdfd4;" text="Favoritos" />
+            <Button fx:id="Boton_populares" layoutX="272.0" layoutY="17.0" mnemonicParsing="false" onAction="#Populares" style="-fx-background-color: #3fdfd4;" text="Populares" styleClass="boton_principal" stylesheets="@styles.css" />
+            <ComboBox fx:id="Boton_categorias" layoutX="146.0" layoutY="17.0" onAction="#Categorias" prefHeight="26.0" prefWidth="116.0" promptText="Categorías" style="-fx-background-color: #3fdfd4;"  styleClass="boton_principal" stylesheets="@styles.css"/>
+            <TextField fx:id="Nombre1" layoutX="800.0" layoutY="17.0" onAction="#Buscar" prefHeight="26.0" prefWidth="167.0" promptText="             Search" style="-fx-background-color: #f4f1f1;"  styleClass="boton_principal" stylesheets="@styles.css"/>
+            <Button fx:id="Boton_Historial" layoutX="354.0" layoutY="17.0" mnemonicParsing="false" onAction="#Historial" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Historial"  styleClass="boton_principal" stylesheets="@styles.css"/>
+            <Button fx:id="Boton_Ayuda" layoutX="426.0" layoutY="17.0" mnemonicParsing="false" onAction="#Ayuda" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #3fdfd4;" text="Ayuda" styleClass="boton_principal" stylesheets="@styles.css" />
+            <Button fx:id="Boton_VerMisProductos" layoutX="495.0" layoutY="17.0" mnemonicParsing="false" onAction="#Productos" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: #3fdfd4;" text="Mis productos"  styleClass="boton_principal" stylesheets="@styles.css"/>
+            <Button fx:id="Button_uscar" layoutX="778.0" layoutY="18.0" mnemonicParsing="false" onAction="#BuscarProductos" prefHeight="18.0" prefWidth="26.0" style="-fx-background-color: #f4f1f1;" styleClass="boton_principal" stylesheets="@styles.css" />
+            <Button fx:id="RegresarAlInicio" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#VolverInicio" prefHeight="50.0" prefWidth="116.0" style="-fx-background-color: white;"  styleClass="boton_principal" stylesheets="@styles.css"/>
+            <Button fx:id="Boton_Favoritos" layoutX="618.0" layoutY="17.0" mnemonicParsing="false" onAction="#Favoritos" prefHeight="26.0" prefWidth="99.0" style="-fx-background-color: #3fdfd4;" text="Favoritos" styleClass="boton_principal" stylesheets="@styles.css" />
             <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="781.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@LUPA.png" />
@@ -76,76 +76,21 @@
                   <AnchorPane prefHeight="395.0" prefWidth="939.0" style="-fx-background-color: white;">
                      <children>
                         <AnchorPane layoutX="322.0" layoutY="30.0" prefHeight="161.0" prefWidth="321.0" style="-fx-background-color: #f4f1f1;">
-
-
-<!--DESPL-->
-<children>
-                  <Button fx:id="2" alignment="CENTER" contentDisplay="TOP" ellipsisString="" graphicTextGap="10.0" layoutX="73.0" layoutY="011.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="80.0" prefWidth="116.0" style="-fx-background-color: white;" text="Iphone 13 pro">
-                           <graphic>
-                              <ImageView fx:id="ImagenProducto" fitHeight="50.0" fitWidth="106.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                              <Image url="@2producto.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                  <Button fx:id="2" layoutX="212.0" layoutY="023" mnemonicParsing="false" onAction="#ModificarProducto" style="-fx-background-color: #3fdfd4;" text="Modificar" />
-                  <Button fx:id="2" layoutX="212.0" layoutY="054" mnemonicParsing="false" onAction="#EliminarProducto" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #3fdfd4;" text="Eliminar" />
-                     </children>
-                     <children>
-                  <Button fx:id="3" alignment="CENTER" contentDisplay="TOP" ellipsisString="" graphicTextGap="10.0" layoutX="73.0" layoutY="111.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="80.0" prefWidth="116.0" style="-fx-background-color: white;" text="Ron Caldas">
-                           <graphic>
-                              <ImageView fx:id="ImagenProducto" fitHeight="50.0" fitWidth="106.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                              <Image url="@3producto.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                  <Button fx:id="3" layoutX="212.0" layoutY="123" mnemonicParsing="false" onAction="#ModificarProducto" style="-fx-background-color: #3fdfd4;" text="Modificar" />
-                  <Button fx:id="3" layoutX="212.0" layoutY="154" mnemonicParsing="false" onAction="#EliminarProducto" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #3fdfd4;" text="Eliminar" />
-                     </children>
-                     <children>
-                  <Button fx:id="4" alignment="CENTER" contentDisplay="TOP" ellipsisString="" graphicTextGap="10.0" layoutX="73.0" layoutY="211.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="80.0" prefWidth="116.0" style="-fx-background-color: white;" text="Cuchillo de cocina">
-                           <graphic>
-                              <ImageView fx:id="ImagenProducto" fitHeight="50.0" fitWidth="106.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                              <Image url="@4producto.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                  <Button fx:id="4" layoutX="212.0" layoutY="223" mnemonicParsing="false" onAction="#ModificarProducto" style="-fx-background-color: #3fdfd4;" text="Modificar" />
-                  <Button fx:id="4" layoutX="212.0" layoutY="254" mnemonicParsing="false" onAction="#EliminarProducto" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #3fdfd4;" text="Eliminar" />
-                     </children>
-                     <children>
-                  <Button fx:id="5" alignment="CENTER" contentDisplay="TOP" ellipsisString="" graphicTextGap="10.0" layoutX="73.0" layoutY="311.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="80.0" prefWidth="116.0" style="-fx-background-color: white;" text="Carrito de juguete">
-                           <graphic>
-                              <ImageView fx:id="ImagenProducto" fitHeight="50.0" fitWidth="106.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                              <Image url="@5producto.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                  <Button fx:id="5" layoutX="212.0" layoutY="323" mnemonicParsing="false" onAction="#ModificarProducto" style="-fx-background-color: #3fdfd4;" text="Modificar" />
-                  <Button fx:id="5" layoutX="212.0" layoutY="354" mnemonicParsing="false" onAction="#EliminarProducto" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #3fdfd4;" text="Eliminar" />
-                     </children>
-                     <children>
-                  <Button fx:id="8" alignment="CENTER" contentDisplay="TOP" ellipsisString="" graphicTextGap="10.0" layoutX="73.0" layoutY="411.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="80.0" prefWidth="116.0" style="-fx-background-color: white;" text="Aguardiente">
-                           <graphic>
-                              <ImageView fx:id="ImagenProducto" fitHeight="50.0" fitWidth="106.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                              <Image url="@8producto.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                  <Button fx:id="8" layoutX="212.0" layoutY="423" mnemonicParsing="false" onAction="#ModificarProducto" style="-fx-background-color: #3fdfd4;" text="Modificar" />
-                  <Button fx:id="8" layoutX="212.0" layoutY="454" mnemonicParsing="false" onAction="#EliminarProducto" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #3fdfd4;" text="Eliminar" />
-                     </children>
-                     
-<!--DESPL_FINAL-->
+                           <!--DESPL-->
+                           <children>
+                              <Button fx:id="produto" alignment="BOTTOM_LEFT" contentDisplay="TOP" layoutX="14.0" layoutY="27.0" mnemonicParsing="false" onAction="#VerDetallesProducto" text="Airpods">
+                                 <graphic>
+                                    <ImageView fitHeight="176.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@1.PNG" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="Button_ModificarProducto" layoutX="241.0" layoutY="55.0" mnemonicParsing="false" onAction="#ModificarProducto" style="-fx-background-color: #3fdfd4;" text="Modificar" />
+                              <Button fx:id="Boton_eliminarProducto" layoutX="240.0" layoutY="94.0" mnemonicParsing="false" onAction="#EliminarProducto" prefHeight="26.0" prefWidth="69.0" text="Eliminar" />
+                           </children>
+                           <!--DESPL_FINAL-->
                         </AnchorPane>
                      </children>
 

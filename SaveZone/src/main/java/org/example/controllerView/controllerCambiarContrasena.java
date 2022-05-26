@@ -17,7 +17,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class controllerPerfil implements Initializable {
+public class controllerCambiarContrasena implements Initializable {
     ControladorBD controladorBD = new ControladorBD();
 
     @FXML
@@ -63,24 +63,6 @@ public class controllerPerfil implements Initializable {
     private ComboBox<String> Boton_Perfil;
 
     @FXML
-    private Label lblUsuario;
-
-    @FXML
-    private Label lblTelefono;
-
-    @FXML
-    private Label lblDireccion;
-
-    @FXML
-    private Label lblApellido;
-
-    @FXML
-    private Label lblNombre;
-
-    @FXML
-    private Label lblCorreo;
-
-    @FXML
     void Ayuda(ActionEvent event) throws Exception {
         ControladorRutas.launchConQuePodemosAyudarte();
         Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
@@ -115,13 +97,6 @@ public class controllerPerfil implements Initializable {
         controladorDespliegueProductos.desplegarProductos("/Principal",productos);
         ControladorRutas.launchPantallaPrincipal(true);
         Stage myStage = (Stage) this.Boton_Ayuda.getScene().getWindow();
-        myStage.close();
-    }
-
-    @FXML
-    void Cancelar(ActionEvent event) throws Exception {
-        ControladorRutas.launchPantallaPrincipal();
-        Stage myStage = (Stage) this.ButtonCancelar.getScene().getWindow();
         myStage.close();
     }
 
@@ -202,13 +177,9 @@ public class controllerPerfil implements Initializable {
 
     }
 
-
-
     @FXML
-    void cambiarContrasena(ActionEvent event) throws Exception {
-        ControladorRutas.launchCambiarContrasena();
-        Stage myStage = (Stage) this.Boton_Favoritos.getScene().getWindow();
-        myStage.close();
+    void cambiarcontasenia(ActionEvent event) throws Exception {
+
     }
 
     @FXML
@@ -240,12 +211,6 @@ public class controllerPerfil implements Initializable {
             listaPerfil.add("Log out");
             listaPerfil.add("Perfil");
             Boton_Perfil.setItems(listaPerfil);
-            lblUsuario.setText(ControladorRutas.getUsuario().getUsuario());
-            lblApellido.setText(ControladorRutas.getUsuario().getApellido());
-            lblCorreo.setText(ControladorRutas.getUsuario().getCorreo());
-            lblDireccion.setText(ControladorRutas.getUsuario().getDireccion());
-            lblNombre.setText(ControladorRutas.getUsuario().getNombre());
-            lblTelefono.setText(ControladorRutas.getUsuario().getTelefono());
         }
         try {
             listaCatego = controladorBD.obtenerDeptos(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM CATEGORIA"));
@@ -257,4 +222,3 @@ public class controllerPerfil implements Initializable {
         }
     }
 }
-
