@@ -168,6 +168,9 @@
                         <Separator layoutX="38.0" layoutY="284.0" prefHeight="6.0" prefWidth="386.0" />
                         <VBox layoutX="14.0" layoutY="328.0" prefHeight="141.0" prefWidth="125.0" />
 
+<<<<<<< HEAD
+<!--DESPL-->
+=======
 
 
 
@@ -182,6 +185,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
+>>>>>>> 9c9d9961f292da193124e4bf9460bacc29420707
 
 <!--DESPL_FINAL-->
                      </children>

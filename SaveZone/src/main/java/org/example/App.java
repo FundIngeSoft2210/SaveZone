@@ -15,7 +15,7 @@ public class App extends Application
     private final static String ICON_NAME="logo.jpg";
     private final static String MAIN_FXML_NAME = "vista_inicio.fxml";
     private final static String STYLE_SHEET_NAME="styles.css";
-    private final static String WINDOW_NAME= "JavaFX and Maven";
+    private final static String WINDOW_NAME= "SafeZone | Compra y vende seguro";
 
     @Override
 

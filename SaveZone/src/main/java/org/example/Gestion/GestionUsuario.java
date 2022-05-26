@@ -169,4 +169,8 @@ public class GestionUsuario {
             return null;
         }
     }
+
+    public void otorgarAdministrador (Usuario usuario) throws SQLException, ClassNotFoundException {
+        controladorBD.ejecutarInsert("UPDATE USUARIO SET TIPOUSUARIOID = 2 WHERE ID = " + usuario.getId());
+    }
 }
