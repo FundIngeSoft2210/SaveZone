@@ -204,6 +204,14 @@ public class controllerProductoAComprar implements Initializable {
     }
 
     @FXML
+    void CompararProducto (ActionEvent event) throws Exception {
+        Button temp = (Button) event.getSource();
+        ControladorRutas.launchComparador(Integer.parseInt(temp.getId()));
+        Stage myStage = (Stage) this.RegresarAlInicio.getScene().getWindow();
+        myStage.close();
+    }
+
+    @FXML
     void setProducto(Producto producto) throws IOException {
         String path = ControladorRutas.class.getProtectionDomain().getCodeSource().getLocation().getPath();
         String decodedPath = URLDecoder.decode(path + "/org/example/" + producto.getIdProducto() + "producto.png", "UTF-8");

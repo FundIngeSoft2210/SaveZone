@@ -79,6 +79,7 @@
             <ScrollPane layoutX="29.0" layoutY="55.0" prefHeight="486.0" prefWidth="941.0">
                <content>
                   <AnchorPane prefHeight="518.0" prefWidth="939.0" style="-fx-background-color: white;">
+<<<<<<< HEAD
 
 
 
@@ -123,8 +124,27 @@
                               </ImageView>
                            </graphic>
                         </Button>
+=======
+                     <!--DESPL-->
+                     <children>
+                        <AnchorPane layoutX="32.0" layoutY="14.0" prefHeight="262.0" prefWidth="247.0" style="-fx-background-color: #f4f1f1;">
+                           <children>
+                              <Button fx:id="produto" alignment="BOTTOM_LEFT" contentDisplay="TOP" layoutX="28.0" layoutY="14.0" mnemonicParsing="false" onAction="#VerDetallesProducto" text="Airpods">
+                                 <graphic>
+                                    <ImageView fitHeight="176.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@8888.jpeg" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="Button_rastrearCompra" layoutX="72.0" layoutY="229.0" mnemonicParsing="false" onAction="#rastrearCompra" style="-fx-background-color: #3fdfd4;" text="Rastrear Compra" />
+                           </children>
+                        </AnchorPane>
+>>>>>>> 950054bed3b0cac2793dcb269c53006e927ae8ab
                      </children>
-<!--DESPL_FINAL-->
+      
+      <!--DESPL_FINAL-->
                   </AnchorPane>
                </content>
             </ScrollPane>

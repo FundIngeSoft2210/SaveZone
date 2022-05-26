@@ -19,10 +19,29 @@ public class ControladorRutas {
 
     protected static Usuario usuario = null;
     protected static Producto producto = null;
+
     protected static Pedido pedido = null;
+
+    protected static Producto productoComparacion = null;
+
     protected static ControladorBD controladorBD = new ControladorBD();
 
 
+    public static Producto getProductoComparacion() {
+        return productoComparacion;
+    }
+
+    public static void setProductoComparacion(Producto productoComparacion) {
+        ControladorRutas.productoComparacion = productoComparacion;
+    }
+
+    public static ControladorBD getControladorBD() {
+        return controladorBD;
+    }
+
+    public static void setControladorBD(ControladorBD controladorBD) {
+        ControladorRutas.controladorBD = controladorBD;
+    }
 
     public static Producto getProducto() {
         return producto;
@@ -328,10 +347,11 @@ public class ControladorRutas {
 
     public static void launchDetallesProducto(Integer id) throws Exception {
         producto = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE ID = "+id)).get(0);
+
         GestionProducto gestion = new GestionProducto();
         ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        //ArrayList <Producto> productosRelacionados = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE CATEGORIAID = " + producto.getCategoria()));
-        //controladorDespliegue.desplegarProductos("comprarProducto", gestion.buscarProducto(""));
+        ArrayList <Producto> productosRelacionados = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE CATEGORIAID = " + producto.getCategoria() + " AND ID != " + producto.getIdProducto()));
+        controladorDespliegue.desplegarProductosComparacion("comprarProducto", productosRelacionados);
 
         FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../comprarProducto.fxml"));
         Parent root = loader.load();
@@ -647,4 +667,23 @@ public class ControladorRutas {
         stage.show();
         stage.show();
     }
+    public static void launchComparador(Integer ProductoCompararID) throws Exception {
+        productoComparacion = controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT * FROM PRODUCTO WHERE ID = " + ProductoCompararID)).get(0);
+        FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../Comparador.fxml"));
+        Parent root = loader.load();
+        controllerComparador ControllerComparador = loader.getController();
+        ControllerComparador.setProductos(producto, productoComparacion);
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
+        stage.setTitle("Calificar Compra");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
+    }
+
 }
