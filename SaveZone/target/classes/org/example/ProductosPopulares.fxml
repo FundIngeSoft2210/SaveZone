@@ -81,6 +81,67 @@
                   <AnchorPane prefHeight="518.0" prefWidth="939.0" style="-fx-background-color: white;">
                      <children>
                         <AnchorPane layoutX="23.0" layoutY="21.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f1f4f4;">
+<<<<<<< HEAD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--DESPL-->
+<children>
+ <Button fx:id="2" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="20" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Iphone 13 pro" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
+                           <graphic>
+                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@2producto.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children><children>
+ <Button fx:id="3" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="255" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Ron Caldas" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
+                           <graphic>
+                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@3producto.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children><children>
+ <Button fx:id="4" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="490" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Cuchillo de cocina" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
+                           <graphic>
+                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@4producto.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children><children>
+ <Button fx:id="5" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="725" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Carrito de juguete" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
+                           <graphic>
+                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@5producto.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+<!--DESPL_FINAL-->
+=======
                            <!--DESPL-->
                            <children>
                               <Button fx:id="Producto" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="4.0" layoutY="9.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: #f4f1f1;" text="shampoo" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
@@ -94,6 +155,7 @@
                               </Button>
                            </children>
                            <!--DESPL_FINAL-->
+>>>>>>> 950054bed3b0cac2793dcb269c53006e927ae8ab
                         </AnchorPane>
                      </children>
                   </AnchorPane>

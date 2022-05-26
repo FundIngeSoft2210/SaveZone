@@ -43,8 +43,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerEscogerMetodoPago">
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerEscogerMetodoPago">
    <children>
       <AnchorPane style="-fx-background-color: white;">
          <children>
@@ -81,11 +82,11 @@
                <content>
                   <AnchorPane prefHeight="518.0" prefWidth="939.0" style="-fx-background-color: white;">
                      <children>
-                        <AnchorPane layoutX="595.0" layoutY="51.0" prefHeight="199.0" prefWidth="226.0" style="-fx-background-color: #3fdfd4;">
+                        <AnchorPane layoutX="595.0" layoutY="51.0" prefHeight="199.0" prefWidth="272.0" style="-fx-background-color: #3fdfd4;">
                            <children>
-                              <AnchorPane prefHeight="36.0" prefWidth="226.0" style="-fx-background-color: white;">
+                              <AnchorPane prefHeight="36.0" prefWidth="274.0" style="-fx-background-color: white;">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="9.0" text="Resumen de la compra">
+                                    <Label layoutX="63.0" layoutY="8.0" text="Resumen de la compra">
                                        <font>
                                           <Font name="System Bold Italic" size="14.0" />
                                        </font>
@@ -102,6 +103,9 @@
                               <Label fx:id="totalCompra" layoutX="172.0" layoutY="122.0" text="\$" />
                               <Label fx:id="iva" layoutX="172.0" layoutY="140.0" text="\$" />
                               <Label fx:id="total" layoutX="172.0" layoutY="158.0" text="\$" />
+                              <Label fx:id="subTotalText" layoutX="179.0" layoutY="121.0" prefHeight="18.0" prefWidth="90.0" />
+                              <Label fx:id="ivaText" layoutX="179.0" layoutY="139.0" prefHeight="18.0" prefWidth="90.0" />
+                              <Label fx:id="totalText" layoutX="179.0" layoutY="157.0" prefHeight="18.0" prefWidth="90.0" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -190,13 +194,15 @@
                         </AnchorPane>
                      </items>
                   </SplitPane>
-                  <Label fx:id="nombre" layoutX="59.0" layoutY="42.0" prefHeight="26.0" prefWidth="156.0" text="Natalia Gaona Salamanca" />
-                  <Label fx:id="correo" layoutX="58.0" layoutY="62.0" prefHeight="26.0" prefWidth="156.0" text="tatis.gaona1942@gmail.com" />
                   <ImageView fitHeight="36.0" fitWidth="31.0" layoutX="14.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@persona.png" />
                      </image>
                   </ImageView>
+                  <Text layoutX="58.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:" />
+                  <Text layoutX="58.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correo:" />
+                  <Label fx:id="nombreText" layoutX="115.0" layoutY="54.0" prefHeight="18.0" prefWidth="111.0" />
+                  <Label fx:id="correoText" layoutX="115.0" layoutY="77.0" prefHeight="18.0" prefWidth="111.0" />
                </children>
             </AnchorPane>
          </children>

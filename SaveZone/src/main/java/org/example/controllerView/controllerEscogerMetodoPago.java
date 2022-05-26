@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import org.example.AccesoDatos.ControladorBD;
 import org.example.Entidades.Producto;
 import org.example.Gestion.GestionProductos.GestionProducto;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.net.URL;
@@ -92,6 +93,21 @@ public class controllerEscogerMetodoPago implements Initializable {
 
     @FXML
     private Button visa;
+
+    @FXML
+    private Label subTotalText;
+
+    @FXML
+    private Label ivaText;
+
+    @FXML
+    private Label totalText;
+
+    @FXML
+    private Label nombreText;
+
+    @FXML
+    private Label correoText;
 
     @FXML
     private ComboBox<String> Boton_Perfil;
@@ -218,6 +234,11 @@ public class controllerEscogerMetodoPago implements Initializable {
         listaPerfil.add("Log out");
         listaPerfil.add("Perfil");
         Boton_Perfil.setItems(listaPerfil);
+        nombreText.setText(ControladorRutas.getUsuario().getNombre());
+        correoText.setText(ControladorRutas.getUsuario().getCorreo());
+        subTotalText.setText(String.valueOf(ControladorRutas.getPedido().getSubtotal()));
+        ivaText.setText(String.valueOf(ControladorRutas.getPedido().getSubtotal()*0.19));
+        totalText.setText(String.valueOf(ControladorRutas.getPedido().getTotal()));
         try {
             listaCatego = controladorBD.obtenerDeptos(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM CATEGORIA"));
             Boton_categorias.setItems(listaCatego);
@@ -255,4 +276,5 @@ public class controllerEscogerMetodoPago implements Initializable {
         Stage myStage = (Stage) this.Boton_Historial.getScene().getWindow();
         myStage.close();
     }
+
 }
