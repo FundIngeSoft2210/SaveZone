@@ -24,6 +24,19 @@ public class GestionPedido {
         }
     }
 
+    public boolean actualizarPedido(int pedidoId, int tarjetaId){
+        try{
+            controladorBD.ejecutarInsert("UPDATE safezone_db.pedido set TarjetaId="+tarjetaId+" where ID="+pedidoId);
+            return true;
+        }catch (SQLException e) {
+            System.out.println("[Error SQL en la sentencia " + e.getSQLState() + "] " + e.getMessage());
+            return false;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
     public boolean eliminarPedido() {
         return false;
     }

@@ -14,12 +14,16 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.example.AccesoDatos.ControladorBD;
 import org.example.Entidades.Producto;
+import org.example.Entidades.Tarjeta;
+import org.example.Gestion.GestionProductos.GestionPedido;
 import org.example.Gestion.GestionProductos.GestionProducto;
+import org.example.Gestion.GestionProductos.GestionTarjeta;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class controllerTarjetaCredito implements Initializable {
@@ -105,7 +109,7 @@ public class controllerTarjetaCredito implements Initializable {
     private Label iva;
 
     @FXML
-    private Label nombre;
+    private Label nombreText;
 
     @FXML
     private Label numReferencia;
@@ -117,7 +121,26 @@ public class controllerTarjetaCredito implements Initializable {
     private Label totalCompra;
 
     @FXML
+    private Label subTotalText;
+
+    @FXML
+    private Label ivaText;
+
+    @FXML
+    private Label totalText;
+
+    @FXML
     private TextField Nombre1;
+
+    @FXML
+    private Button agregarTarjeta;
+
+    @FXML
+    private TextField anoVence;
+
+    @FXML
+    private TextField mesVence;
+
 
     @FXML
     private ComboBox<String> Boton_Perfil;
@@ -131,6 +154,14 @@ public class controllerTarjetaCredito implements Initializable {
         listaPerfil.add("Log out");
         listaPerfil.add("Perfil");
         Boton_Perfil.setItems(listaPerfil);
+        nombreText.setText(ControladorRutas.getUsuario().getNombre());
+        correo.setText(ControladorRutas.getUsuario().getCorreo());
+        subTotalText.setText(String.valueOf(ControladorRutas.getPedido().getSubtotal()));
+        ivaText.setText(String.valueOf(ControladorRutas.getPedido().getSubtotal()*0.19));
+        totalText.setText(String.valueOf(ControladorRutas.getPedido().getTotal()));
+        numReferencia.setText(String.valueOf(ControladorRutas.getPedido().getId()));
+        descripcion.setText(ControladorRutas.getProducto().getTitulo());
+
         try {
             listaCatego = controladorBD.obtenerDeptos(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM CATEGORIA"));
             Boton_categorias.setItems(listaCatego);
@@ -139,6 +170,59 @@ public class controllerTarjetaCredito implements Initializable {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    @FXML
+    void AgregarTarjeta(ActionEvent event) throws Exception{
+        GestionTarjeta gestionTarjeta = new GestionTarjeta();
+        GestionPedido gestionPedido = new GestionPedido();
+        String numeroTarjeta, cvv,anoVencimiento,mesVencimiento;
+        Integer usuarioId,Activo;
+
+        numeroTarjeta=NumeroTarjeta.getText();
+        cvv=CVV.getText();
+        anoVencimiento=anoVence.getText();
+        mesVencimiento=mesVence.getText();
+        usuarioId=ControladorRutas.getUsuario().getId();
+        Activo=1;
+
+        int tarjetaExistente = gestionTarjeta.buscarTarjeta(numeroTarjeta);
+        System.out.println(tarjetaExistente);
+        if(tarjetaExistente==0){
+            Tarjeta tarjeta = new Tarjeta(usuarioId,numeroTarjeta,cvv,anoVencimiento,mesVencimiento,Activo);
+
+
+            boolean creada = gestionTarjeta.crearTarjeta(tarjeta);
+            int tarjetaId = gestionTarjeta.buscarTarjeta(numeroTarjeta);
+            gestionPedido.actualizarPedido(ControladorRutas.getPedido().getId(),tarjetaId);
+            if(creada){
+                agregarTarjeta.setDisable(true);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setTitle("CONFIRMACIÓN");
+                alert.setContentText("Estimado cliente se ha creado la tarjeta correctamente");
+                alert.showAndWait();
+            }else{
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setTitle("Error");
+                alert.setContentText("Estimado cliente hubo un problema en la creacion de su tarjeta");
+                alert.showAndWait();
+            }
+        }else{
+            ControladorRutas.getPedido().setTarjetaId(tarjetaExistente);
+            gestionPedido.actualizarPedido(ControladorRutas.getPedido().getId(),tarjetaExistente);
+            agregarTarjeta.setDisable(true);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText(null);
+            alert.setTitle("CONFIRMACIÓN");
+            alert.setContentText("Estimado cliente se ha creado la tarjeta correctamente");
+            alert.showAndWait();
+        }
+
+
+
+
     }
 
     @FXML
@@ -226,8 +310,13 @@ public class controllerTarjetaCredito implements Initializable {
     }
 
     @FXML
-    void ConfirmarDatosParaCompra(ActionEvent event) {
+    void ConfirmarDatosParaCompra(ActionEvent event) throws Exception {
 
+        int cantidadProducto = ControladorRutas.getProducto().getCantidad()-1;
+        controladorBD.ejecutarInsert("UPDATE safezone_db.producto set Cantidad="+cantidadProducto);
+        ControladorRutas.launchPagoExitoso();
+        Stage myStage = (Stage) this.Boton_Historial.getScene().getWindow();
+        myStage.close();
     }
 
     @FXML

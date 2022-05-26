@@ -1,6 +1,7 @@
 package org.example.Entidades;
 
 public class Pedido {
+    private int id;
     private int productoId ;
     private int compradorId;
     private int tarjetaId;
@@ -36,6 +37,14 @@ public class Pedido {
         this.cantidad = cantidad;
         this.subtotal = subtotal;
         this.total = total;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getProductoId() {

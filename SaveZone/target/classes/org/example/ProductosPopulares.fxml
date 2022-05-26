@@ -81,6 +81,7 @@
                   <AnchorPane prefHeight="518.0" prefWidth="939.0" style="-fx-background-color: white;">
                      <children>
                         <AnchorPane layoutX="23.0" layoutY="21.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f1f4f4;">
+
 <!--DESPL-->
 <children>
  <Button fx:id="12" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="20" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Gorra negra" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
