@@ -93,6 +93,11 @@
 
 
 
+
+
+
+
+
 <!--DESPL-->
 <children>
  <Button fx:id="12" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="20" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Gorra negra" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
