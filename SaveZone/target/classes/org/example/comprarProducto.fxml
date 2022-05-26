@@ -168,20 +168,17 @@
                         </Label>
                         <Separator layoutX="38.0" layoutY="284.0" prefHeight="6.0" prefWidth="386.0" />
                         <VBox layoutX="14.0" layoutY="328.0" prefHeight="141.0" prefWidth="125.0" />
-
-
-
-
-
-
-
-
-
-
-
-<!--DESPL-->
-
-<!--DESPL_FINAL-->
+                        <!--DESPL-->
+                        <Button fx:id="14" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="36.0" layoutY="333.0" mnemonicParsing="false" onAction="#CompararProducto" prefHeight="131.0" prefWidth="116.0" styleClass="productos_despliegue" stylesheets="@styles.css" text="Maleta Nike" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+                           <graphic>
+                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@PSE.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <!--DESPL_FINAL-->
                      </children>
                   </AnchorPane>
                </content>
