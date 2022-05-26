@@ -175,6 +175,9 @@
 
 
 
+
+
+
 <!--DESPL-->
  <Button fx:id="8" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="50" layoutY="350" mnemonicParsing="false" onAction="#CompararProducto" prefHeight="131.0" prefWidth="116.0" text="Aguardiente" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
                            <graphic>

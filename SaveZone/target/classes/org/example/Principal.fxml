@@ -108,6 +108,29 @@
                   <AnchorPane prefHeight="396.0" prefWidth="939.0" style="-fx-background-color: white;">
 
 
+<<<<<<< HEAD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+>>>>>>> 337b165b5daca0da7c9eefe3837e97fcb36ffdc8
 <!--DESPL-->
 <children>
  <Button fx:id="12" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="20" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Gorra negra" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
