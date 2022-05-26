@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="627.0" prefWidth="976.0" style="-fx-background-color: #f4f1f1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerModificarProducto">
+<AnchorPane prefHeight="627.0" prefWidth="976.0" style="-fx-background-color: #f4f1f1;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllerView.controllerModificarProducto">
    <children>
       <AnchorPane layoutX="2.0" prefHeight="66.0" prefWidth="974.0" style="-fx-background-color: white;">
          <children>
@@ -63,7 +58,6 @@
                      </font>
                   </Button>
                   <TextField fx:id="Nueva_Descripcion_Producto" alignment="TOP_LEFT" layoutX="160.0" layoutY="305.0" prefHeight="137.0" prefWidth="303.0" promptText="Nueva Descripción" style="-fx-background-color: #efecec;" />
-                  <Button fx:id="Cambiar_Imagen" layoutX="215.0" layoutY="221.0" mnemonicParsing="false" onAction="#NuevaImagen" prefHeight="26.0" prefWidth="127.0" style="-fx-background-color: #3fdfd4;" text="Subir imagen Nueva" />
                   <TextField fx:id="Nuevo_Nombre_Producto" layoutX="524.0" layoutY="38.0" prefHeight="17.0" prefWidth="130.0" promptText="Audifonos" style="-fx-background-color: #efecec;" />
                   <Text layoutX="524.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nuevo Nombre Producto:" />
                   <TextField fx:id="Color" alignment="TOP_LEFT" layoutX="710.0" layoutY="37.0" prefHeight="26.0" prefWidth="128.0" promptText="Blanco" style="-fx-background-color: #efecec;" />

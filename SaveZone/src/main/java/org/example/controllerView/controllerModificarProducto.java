@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.example.AccesoDatos.ControladorBD;
 import org.example.Entidades.Producto;
@@ -104,6 +105,9 @@ public class controllerModificarProducto implements Initializable {
 
     @FXML
     private ComboBox<String> Cambiar_Estado;
+
+    @FXML
+    private ImageView imagenAntigua;
 
     @FXML
     void AceptarModificarProducto(ActionEvent event) throws Exception {
@@ -207,11 +211,14 @@ public class controllerModificarProducto implements Initializable {
 
     @FXML
     void setProducto(Producto producto) throws IOException{
+
+        ControladorDespliegueProductos controladorDespliegueProductos = new ControladorDespliegueProductos();
+        controladorDespliegueProductos.base64ToLocal(producto.getImgdata(), producto.getIdProducto() + "producto");
         String path = ControladorRutas.class.getProtectionDomain().getCodeSource().getLocation().getPath();
         String decodedPath = URLDecoder.decode(path + "/org/example/" + producto.getIdProducto() + "producto.png", "UTF-8");
         InputStream stream = new FileInputStream(decodedPath);
         Image image = new Image(stream);
-        //imagenProducto.setImage(image);
+        imagenAntigua.setImage(image);
 
         Nuevo_Nombre_Producto.setText(producto.getTitulo());
         Cambiar_categoria.getSelectionModel().select(producto.getCategoria());
