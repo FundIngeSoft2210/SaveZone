@@ -499,7 +499,7 @@ public class ControladorRutas {
     public static void launchHistorialCompras() throws Exception {
         GestionProducto gestion = new GestionProducto();
         ControladorDespliegueProductos controladorDespliegue = new ControladorDespliegueProductos();
-        controladorDespliegue.desplegarProductos("/HistorialCompras", controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT pro.ID,pro.VendedorId,pro.Cantidad,pro.Titulo,pro.Descripcion,pro.Valor,pro.PorcentajeDescuento,pro.Peso,pro.Alto,pro.Largo,pro.Ancho,pro.Color,pro.EstadoProductoID,pro.CiudadID,pro.CategoriaID FROM PRODUCTO pro, pedido ped WHERE ped.CompradorID="+ControladorRutas.getUsuario().getId()+" AND pro.ID=ped.ProductoID")));
+        controladorDespliegue.desplegarPedido("/HistorialCompras",controladorBD.obtenerProductosConsulta(controladorBD.ejecutarConsulta("SELECT pro.ID,pro.VendedorId,ped.ID,pro.Titulo,pro.Descripcion,pro.Valor,pro.PorcentajeDescuento,pro.Peso,pro.Alto,pro.Largo,pro.Ancho,pro.Color,pro.EstadoProductoID,pro.CiudadID,pro.CategoriaID FROM PRODUCTO pro, pedido ped WHERE pro.VendedorId="+ControladorRutas.getUsuario().getId()+" AND pro.ID=ped.ProductoID")));
 
         FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../HistorialCompras.fxml"));
         Parent root = loader.load();

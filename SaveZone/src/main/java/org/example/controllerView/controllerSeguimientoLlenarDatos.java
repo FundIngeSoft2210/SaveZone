@@ -49,6 +49,9 @@ public class controllerSeguimientoLlenarDatos implements Initializable {
     private Label HoraEntrega;
 
     @FXML
+    private Label pesoText;
+
+    @FXML
     private TextField Nombre1;
 
     @FXML
@@ -86,6 +89,28 @@ public class controllerSeguimientoLlenarDatos implements Initializable {
 
     @FXML
     private Label tipo;
+
+    @FXML
+    private Label ciudadDestinoText;
+
+
+    @FXML
+    private Label fechaEntregaText;
+
+    @FXML
+    private Label CiudadOText;
+
+    @FXML
+    private Label ciudadDText;
+
+    @FXML
+    private Label direccionText;
+
+    @FXML
+    private Label contactoText;
+
+    @FXML
+    private Label tipoProductoText;
 
     @FXML
     private ComboBox<String> Boton_Perfil;
@@ -195,6 +220,23 @@ public class controllerSeguimientoLlenarDatos implements Initializable {
         listaPerfil.add("Log out");
         listaPerfil.add("Perfil");
         Boton_Perfil.setItems(listaPerfil);
+        int pedidoId=ControladorRutas.getPedido().getId();
+        try {
+            CiudadOText.setText(controladorBD.ejecutarConsulta("Select DireccionOrigen FROM pedido where ID="+pedidoId).getString(1));
+            ciudadDText.setText(controladorBD.ejecutarConsulta("Select DireccionDestino FROM pedido where ID="+pedidoId).getString(1));
+            contactoText.setText(controladorBD.ejecutarConsulta("SELECT user.Nombre FROM usuario user, producto pro, pedido ped where ped.ID="+pedidoId+" AND pro.ID=ped.ProductoID AND user.ID=pro.VendedorID").getString(1));
+            direccionText.setText(controladorBD.ejecutarConsulta("SELECT user.Direccion FROM usuario user, producto pro, pedido ped where ped.ID="+pedidoId+" AND pro.ID=ped.ProductoID AND user.ID=pro.VendedorID").getString(1));
+            tipoProductoText.setText(controladorBD.ejecutarConsulta("SELECT cat.Nombre FROM categoria cat, pedido ped, producto pro where ped.ID="+pedidoId+" AND ped.ProductoID=pro.ID AND pro.CategoriaID=cat.ID").getString(1));
+            pesoText.setText(controladorBD.ejecutarConsulta("SELECT pro.Peso FROM pedido ped, producto pro where ped.ID="+pedidoId+" AND ped.ProductoID=pro.ID").getString(1));
+            ciudadDestinoText.setText(controladorBD.ejecutarConsulta("Select DireccionDestino FROM pedido where ID="+pedidoId).getString(1));
+            nombreContacto.setText(ControladorRutas.getUsuario().getNombre());
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
         try {
             listaCatego = controladorBD.obtenerDeptos(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM CATEGORIA"));
             Boton_categorias.setItems(listaCatego);

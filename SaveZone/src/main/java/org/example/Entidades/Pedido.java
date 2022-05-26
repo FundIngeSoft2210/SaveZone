@@ -39,6 +39,10 @@ public class Pedido {
         this.total = total;
     }
 
+    public Pedido() {
+
+    }
+
     public int getId() {
         return id;
     }
