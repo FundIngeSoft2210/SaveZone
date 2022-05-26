@@ -106,19 +106,13 @@
             <ScrollPane layoutX="29.0" layoutY="55.0">
                <content>
                   <AnchorPane prefHeight="396.0" prefWidth="939.0" style="-fx-background-color: white;">
+
+
+
+
 <!--DESPL-->
 <children>
- <Button fx:id="1" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="20" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Tapabocas" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
-                           <graphic>
-                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@1producto.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children><children>
- <Button fx:id="2" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="255" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Ron viejo de caldas" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
+ <Button fx:id="2" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="20" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Iphone 13 pro" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
                            <graphic>
                               <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -128,7 +122,7 @@
                            </graphic>
                         </Button>
                      </children><children>
- <Button fx:id="3" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="490" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Manguera" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
+ <Button fx:id="3" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="255" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Ron Caldas" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
                            <graphic>
                               <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -138,7 +132,7 @@
                            </graphic>
                         </Button>
                      </children><children>
- <Button fx:id="4" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="725" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Parlante Sony" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
+ <Button fx:id="4" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="490" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Cuchillo de cocina" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
                            <graphic>
                               <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -148,11 +142,21 @@
                            </graphic>
                         </Button>
                      </children><children>
- <Button fx:id="5" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="20" layoutY="220" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Computador Lenovo Ideapad 500" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
+ <Button fx:id="5" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="725" layoutY="20" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Carrito de juguete" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
                            <graphic>
                               <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@5producto.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children><children>
+ <Button fx:id="8" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="20" layoutY="220" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="182.0" text="Aguardiente" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" styleClass="productos_despliegue">
+                           <graphic>
+                              <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@8producto.png" />
                                  </image>
                               </ImageView>
                            </graphic>
