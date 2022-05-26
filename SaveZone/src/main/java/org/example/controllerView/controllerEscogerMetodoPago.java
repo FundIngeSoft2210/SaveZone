@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class controllerEscogerMetodoPago implements Initializable {
@@ -239,6 +240,8 @@ public class controllerEscogerMetodoPago implements Initializable {
         subTotalText.setText(String.valueOf(ControladorRutas.getPedido().getSubtotal()));
         ivaText.setText(String.valueOf(ControladorRutas.getPedido().getSubtotal()*0.19));
         totalText.setText(String.valueOf(ControladorRutas.getPedido().getTotal()));
+        numReferencia.setText(String.valueOf(ControladorRutas.getPedido().getId()));
+        descripcionCompra.setText(ControladorRutas.getProducto().getTitulo());
         try {
             listaCatego = controladorBD.obtenerDeptos(controladorBD.ejecutarConsulta("SELECT NOMBRE FROM CATEGORIA"));
             Boton_categorias.setItems(listaCatego);

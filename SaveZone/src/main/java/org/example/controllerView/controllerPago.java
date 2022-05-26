@@ -121,8 +121,8 @@ public class controllerPago implements Initializable {
     @FXML
     void hacerPedido(ActionEvent event) throws Exception {
         GestionPedido gestionPedido = new GestionPedido();
-        Random numeroAleatorio = new Random();
         ControladorBD controladorBD = new ControladorBD();
+        Random numeroAleatorio = new Random();
         String direccionO,direccionD,guiaRastreo;
         Float pesoTotal,subTotal,total;
         Integer productoId,compradorId,tarjetaId,estadoPedidoId,estadoPagoId,cantidad;
@@ -143,6 +143,8 @@ public class controllerPago implements Initializable {
 
         Pedido pedido = new Pedido(productoId,compradorId,tarjetaId,estadoPedidoId,estadoPagoId,direccionO,direccionD,guiaRastreo,pesoTotal,cantidad,subTotal,total);
         gestionPedido.crearPedido(pedido);
+        Integer idPedidoBuscado = controladorBD.ejecutarConsulta("SELECT ID FROM safezone_db.pedido ORDER BY ID DESC").getInt(1);
+        pedido.setId(idPedidoBuscado);
         ControladorRutas.setPedido(pedido);
         ControladorRutas.launchMetodoPago();
         Stage myStage = (Stage) this.Boton_confirmar.getScene().getWindow();
