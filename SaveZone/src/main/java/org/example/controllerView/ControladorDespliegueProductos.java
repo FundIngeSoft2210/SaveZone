@@ -42,7 +42,7 @@ public class ControladorDespliegueProductos {
         }
 
         for (Producto producto : productosDesplegar) {
-            if(producto.getEstadoProductoID()==6)continue;
+            if (producto.getEstadoProductoID() == 6 || producto.getEstadoProductoID() == 3) continue;
             base64ToLocal(producto.getImgdata(), producto.getIdProducto() + "producto");
             etiquetaProducto = " <Button fx:id=\"" + producto.getIdProducto() + "\" alignment=\"CENTER\" contentDisplay=\"TOP\" ellipsisString=\"\" layoutX=\"" + x_actual + "\" layoutY=\"" + y_actual + "\" mnemonicParsing=\"false\" onAction=\"#CompararProducto\" prefHeight=\"131.0\" prefWidth=\"116.0\" text=\"" + producto.getTitulo() + "\" textAlignment=\"CENTER\" textOverrun=\"LEADING_WORD_ELLIPSIS\" wrapText=\"true\" styleClass=\"productos_despliegue\">\n" +
                     "                           <graphic>\n" +
@@ -107,7 +107,7 @@ public class ControladorDespliegueProductos {
         // Etiqueta quemada del producto XML.
 
         for (Producto producto : productosDesplegar) {
-            if(producto.getEstadoProductoID()==6)continue;
+            if (producto.getEstadoProductoID() == 6 || producto.getEstadoProductoID() == 3) continue;
             base64ToLocal(producto.getImgdata(), producto.getIdProducto() + "producto");
             etiquetaProducto = "<children>\n" +
                     " <Button fx:id=\"" + producto.getIdProducto() + "\" alignment=\"CENTER\" contentDisplay=\"TOP\" ellipsisString=\"\" layoutX=\"" + x_actual + "\" layoutY=\"" + y_actual + "\" mnemonicParsing=\"false\" onAction=\"#VerDetallesProducto\" prefHeight=\"182.0\" prefWidth=\"182.0\" text=\"" + producto.getTitulo() + "\" textAlignment=\"CENTER\" textOverrun=\"LEADING_WORD_ELLIPSIS\" wrapText=\"true\" styleClass=\"productos_despliegue\">\n" +
@@ -214,7 +214,7 @@ public class ControladorDespliegueProductos {
         // Etiqueta quemada del producto XML.
 
         for (Producto producto : productosDesplegar) {
-            if(producto.getEstadoProductoID()==6)continue;
+            if (producto.getEstadoProductoID() == 6 || producto.getEstadoProductoID() == 3) continue;
             base64ToLocal(producto.getImgdata(), producto.getIdProducto() + "producto");
 
             etiquetaProducto = "<children>\n" +

@@ -80,7 +80,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Acceder");
+        stage.setTitle("SafeZone | Acceder");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -99,7 +99,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Página Inicio");
+        stage.setTitle("SafeZone | Inicio");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -120,7 +120,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Página Inicio");
+        stage.setTitle("SafeZone | Inicio");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -137,7 +137,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Acceder");
+        stage.setTitle("SafeZone | Acceder");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -154,7 +154,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Registro");
+        stage.setTitle("SafeZone | Registro");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -177,7 +177,7 @@ public class ControladorRutas {
             stage.setScene(scene);
             scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
             stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-            stage.setTitle("Ver mis Productos");
+            stage.setTitle("SafeZone | Ver mis productos");
             stage.setScene(scene);
             stage.setMaximized(false);
             stage.setResizable(false);
@@ -202,7 +202,7 @@ public class ControladorRutas {
             stage.setScene(scene);
             scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
             stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-            stage.setTitle("Vender Tu Producto");
+            stage.setTitle("SafeZone | Vender producto");
             stage.setScene(scene);
             stage.setMaximized(false);
             stage.setResizable(false);
@@ -229,7 +229,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Modificar Producto");
+        stage.setTitle("SafeZone | Modificar producto");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -249,7 +249,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Eliminar Producto");
+        stage.setTitle("SafeZone | Eliminar producto");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -270,7 +270,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Productos Populares");
+        stage.setTitle("SafeZone | Productos populares");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -288,7 +288,7 @@ public class ControladorRutas {
             stage.setScene(scene);
             scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
             stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-            stage.setTitle("Historiales");
+            stage.setTitle("SafeZone | Historiales");
             stage.setScene(scene);
             stage.setMaximized(false);
             stage.setResizable(false);
@@ -313,7 +313,7 @@ public class ControladorRutas {
             stage.setScene(scene);
             scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
             stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-            stage.setTitle("Ayuda");
+            stage.setTitle("SafeZone | Ayuda");
             stage.setScene(scene);
             stage.setMaximized(false);
             stage.setResizable(false);
@@ -337,7 +337,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Recuperar Contraseña");
+        stage.setTitle("SafeZone | Recuperar contraseña");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -362,7 +362,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Comprar Producto");
+        stage.setTitle("SafeZone | " + producto.getTitulo());
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -380,7 +380,7 @@ public class ControladorRutas {
             stage.setScene(scene);
             scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
             stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-            stage.setTitle("Pago Paso 1");
+            stage.setTitle("SafeZone | Pago");
             stage.setScene(scene);
             stage.setMaximized(false);
             stage.setResizable(false);
@@ -404,7 +404,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Escoger Metodo De Pago");
+        stage.setTitle("SafeZone | Escoger metodo de pago");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -421,7 +421,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Tarjeta Crédito");
+        stage.setTitle("SafeZone | Tarjeta de crédito");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -454,7 +454,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Tarjeta Crédito");
+        stage.setTitle("SafeZone | Tarjeta de crédito");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -471,7 +471,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Tarjeta Crédito");
+        stage.setTitle("SafeZone | Tarjeta de crédito");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -488,7 +488,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Pago PSE");
+        stage.setTitle("SafeZone | Pago PSE");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -509,7 +509,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Historial Compras");
+        stage.setTitle("SafeZone | Historial compras");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -530,7 +530,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Historial Ventas");
+        stage.setTitle("SafeZone | Historial de ventas");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -547,7 +547,7 @@ public class ControladorRutas {
             stage.setScene(scene);
             scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
             stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-            stage.setTitle("Tus Favoritos");
+            stage.setTitle("SafeZone | Tus favoritos");
             stage.setScene(scene);
             stage.setMaximized(false);
             stage.setResizable(false);
@@ -572,7 +572,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Perfil");
+        stage.setTitle("SafeZone | Perfil");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -592,7 +592,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Productos Recomendados");
+        stage.setTitle("SafeZone | Productos recomendados");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -612,7 +612,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Productos Más Vendidos");
+        stage.setTitle("SafeZone | Productos más vendidos");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -628,7 +628,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Llenar Datos Envío");
+        stage.setTitle("SafeZone | Llenar datos de envío");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -644,7 +644,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Rastrear Envío");
+        stage.setTitle("SafeZone | Rastrear envío");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -660,7 +660,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Envío Entregado");
+        stage.setTitle("SafeZone | Envío entregado");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -676,7 +676,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Calificar Compra");
+        stage.setTitle("SafeZone | Calificar compra");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -694,7 +694,7 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Calificar Compra");
+        stage.setTitle("SafeZone | Calificar compra");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);
@@ -711,7 +711,23 @@ public class ControladorRutas {
         stage.setScene(scene);
         scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
         stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
-        stage.setTitle("Cambiar Contraseña");
+        stage.setTitle("SafeZone | Cambiar contraseña");
+        stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.show();
+        stage.show();
+    }
+
+    public static void launchModeracion() throws Exception {
+        FXMLLoader loader = new FXMLLoader(ControladorRutas.class.getResource("../HerramientasModeracion.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        scene.getStylesheets().add(ControladorRutas.class.getResource("../styles.css").toExternalForm());
+        stage.getIcons().add(new Image(ControladorRutas.class.getResourceAsStream("../logo.jpg")));
+        stage.setTitle("SafeZone | Moderación de contenido");
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.setResizable(false);

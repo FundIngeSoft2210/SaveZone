@@ -81,28 +81,6 @@
                   <AnchorPane prefHeight="518.0" prefWidth="939.0" style="-fx-background-color: white;">
                      <children>
                         <AnchorPane layoutX="23.0" layoutY="21.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f1f4f4;">
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -160,21 +138,6 @@
                         </Button>
                      </children>
 <!--DESPL_FINAL-->
-=======
-                           <!--DESPL-->
-                           <children>
-                              <Button fx:id="Producto" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="4.0" layoutY="9.0" mnemonicParsing="false" onAction="#VerDetallesProducto" prefHeight="182.0" prefWidth="215.0" style="-fx-background-color: #f4f1f1;" text="shampoo" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
-                                 <graphic>
-                                    <ImageView fx:id="ImagenProducto" fitHeight="88.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@/1.PNG" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                           </children>
-                           <!--DESPL_FINAL-->
->>>>>>> 950054bed3b0cac2793dcb269c53006e927ae8ab
                         </AnchorPane>
                      </children>
                   </AnchorPane>
